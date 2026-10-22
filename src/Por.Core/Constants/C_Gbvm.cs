@@ -1,0 +1,111 @@
+namespace Por.Core
+{
+    public static class C_Gbvm
+    {
+        public const int SCRIPT_FIRST = 0x9900;
+        public const int SCRIPT_LAST = 0xBFFF;
+        public const int SAVED_SCRIPT_BYTES = 7680;
+
+        public const int ZONE0_FIRST = 0x4900;
+        public const int ZONE0_LAST = 0x4CFF;
+        public const int ZONE1_FIRST = 0x6B00;
+        public const int ZONE1_LAST = 0x6EFF;
+        public const int ZONE2_FIRST = 0x9700;
+        public const int ZONE2_LAST = 0x98FF;
+
+        public const int PARTY_EFFECTS = 0x4900;
+        public const int PARTY_EFFECT_OWNERS = 0x4940;
+        public const int PARTY_EFFECTS_LAST = 0x497F;
+        public const int PARTY_X = 0x49C3;
+        public const int PARTY_Y = 0x49C4;
+        public const int MAP_ID = 0x49C5;
+        public const int CLOCK = 0x49C6;
+        public const int ANTIMAGIC = 0x49E5;
+        public const int VIEW_3D = 0x49E6;
+        public const int MAP_3D_GFX1 = 0x49E7;
+        public const int MAP_3D_GFX2 = 0x49E8;
+        public const int PREV_X = 0x49F0;
+        public const int PREV_Y = 0x49F1;
+        public const int PREV_SCRIPT_ID = 0x49F2;
+        public const int NO_AUTOMAP = 0x49FB;
+        public const int GAME_SPEED = 0x49FC;
+        public const int SKY_CEILING_COLOR = 0x49FD;
+        public const int ALT_SKY_COLOR = 0x49FE;
+        public const int SETTINGS = 0x49FF;
+        public const int YARASH_PYRAMID_LEFT = 0x4AA2;
+        public const int YARASH_MISSION_DONE = 0x4AB3;
+        public const int WALLSLOT_ID = 0x4AF9;
+        public const int WALLSLOT_SLOT = 0x4AFC;
+
+        public const int CHAR_NAME = 0x6B00;
+        public const int CHAR_DUMP = 0x6B00;
+        public const int CHAR_CON = 0x6B18;
+        public const int CHAR_MEMORIZED_FIRST = 0x6B20;
+        public const int CHAR_MEMORIZED_LAST = 0x6B70;
+        public const int CHAR_SAVE_PETRIFY = 0x6B9B;
+        public const int CHAR_LEVEL = 0x6BA0;
+        public const int CHAR_THIEF_SKILLS = 0x6BA5;
+        public const int CHAR_THIEF_SKILLS_LAST = 0x6BAC;
+        public const int CHAR_NPC = 0x6BB8;
+        public const int CHAR_COPPER = 0x6BBB;
+        public const int CHAR_SILVER = 0x6BBD;
+        public const int CHAR_ELECTRUM = 0x6BBF;
+        public const int CHAR_GOLD = 0x6BC1;
+        public const int CHAR_PLATINUM = 0x6BC3;
+        public const int CHAR_ALIGNMENT = 0x6BD8;
+        public const int CHAR_XP_AWARD = 0x6BF7;
+        public const int CHAR_XP_PER_HP = 0x6BF9;
+        public const int CHAR_ENABLED = 0x6C00;
+        public const int CHAR_CONTROL = 0x6C0C;
+        public const int CHAR_CONTROL_HI = 0x6C0D;
+        public const int CHAR_MOVEMENT = 0x6C1B;
+        public const int CHAR_PARTY_INDEX = 0x6DB1;
+        public const int CHAR_PARTY_INDEX2 = 0x6DB4;
+        public const int CHAR_LOYALTY = 0x6DCF;
+        public const int WALLSET_LOAD1 = 0x6E22;
+        public const int WALLSET_LOAD2 = 0x6E24;
+        public const int WALLSET_LOAD3 = 0x6E26;
+        public const int TRAIN_CLASS_MASK = 0x6DA8;
+        public const int MONSTER_DIST_REQ = 0x6DC0;
+        public const int MONSTER_DIST = 0x6DC1;
+        public const int MORALE_THRESHOLD = 0x6DC6;
+        public const int COMBAT_RESULT = 0x6DC7;
+        public const int MONSTERS_DEFEATED = 0x6DC8;
+        public const int MOVE_LOCKED = 0x6DC9;
+        public const int SEARCH_FLAGS = 0x6DCA;
+        public const int SURPRISE = 0x6DCB;
+        public const int REST_SAFE_TIME = 0x6DD2;
+        public const int REST_INTERRUPT_PCT = 0x6DD3;
+        public const int LEAVE_MAP = 0x6DD5;
+        public const int PIC_LOADING = 0x6DE1;
+        public const int ENTER_TEMPLE = 0x6DE2;
+        public const int NO_COMBAT_ITEMS = 0x6DE3;
+        public const int MIRROR_DUEL = 0x6DE6;
+        public const int DISK_NUM = 0x6E12;
+        public const int ATTACKED_ALLIES = 0x6E33;
+        public const int PARTY_SIZE = 0x6E3E;
+        public const int ENTER_SHOP = 0x6E6C;
+        public const int MONSTER_HIT_MOD = 0x6E70;
+        public const int PARTY_HIT_MOD = 0x6E71;
+        public const int MOD_MONSTER_THAC0 = 0x6E70;
+        public const int MOD_PARTY_THAC0 = 0x6E71;
+        public const int MOD_PARTY_MOVE = 0x6E72;
+
+        public const int READ_REG3 = 0xB1;
+        public const int WRITE_REG1 = 0xB8;
+        public const int WRITE_REG2 = 0xB9;
+        public const int READ_REG1 = 0xFB;
+        public const int READ_REG2 = 0xFC;
+        public const int FACING_RAW = 0x33D;
+        public const int CELL_35F = 0x35F;
+        public const int SOUND_EFFECT = 0x3DE;
+        public const int CELL_PARTY_X = 0xC04B;
+        public const int CELL_PARTY_Y = 0xC04C;
+        public const int CELL_FACING = 0xC04D;
+        public const int CELL_WALL_AHEAD = 0xC04E;
+        public const int CELL_EVENT = 0xC04F;
+        public const int CELL_WALL_COLOR = 0xC059;
+        public const int CELL_CEIL_FLOOR_COLOR = 0xC05F;
+        public const int CELL_IGNORED = 0xD022;
+    }
+}

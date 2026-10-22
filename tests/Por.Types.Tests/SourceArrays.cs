@@ -1,0 +1,63 @@
+using System; using System.Reflection; using Por.Core;
+public static class SourceArrays {
+ public static int Run() { int n=0;
+ Check("TCharRecord", "spellsKnown", typeof(byte), new int[]{57}); n++;
+ Check("TCharRecord", "saves", typeof(byte), new int[]{5}); n++;
+ Check("TCharRecord", "thiefSkills", typeof(byte), new int[]{9}); n++;
+ Check("TCharRecord", "coins", typeof(ushort), new int[]{7}); n++;
+ Check("TCharRecord", "classLevels", typeof(sbyte), new int[]{8}); n++;
+ Check("TCharRecord", "unarmedRollsA", typeof(byte), new int[]{3}); n++;
+ Check("TCharRecord", "unarmedDiceA", typeof(byte), new int[]{3}); n++;
+ Check("TCharRecord", "unarmedModA", typeof(sbyte), new int[]{3}); n++;
+ Check("TCharRecord", "clericSpells", typeof(byte), new int[]{4}); n++;
+ Check("TCharRecord", "mageSpells", typeof(byte), new int[]{4}); n++;
+ Check("TCharRecord", "iconColors", typeof(byte), new int[]{6}); n++;
+ Check("TCharRecord", "equipped", typeof(Types.TItemRec), new int[]{13}); n++;
+ Check("TCharRecord", "curRollsA", typeof(byte), new int[]{3}); n++;
+ Check("TCharRecord", "curDiceA", typeof(byte), new int[]{3}); n++;
+ Check("TCharRecord", "curModA", typeof(sbyte), new int[]{3}); n++;
+ Check("TItemRec", "nameIds", typeof(byte), new int[]{4}); n++;
+ Check("TImgBuf", "data", typeof(byte), new int[]{32001}); n++;
+ Check("TRandomItemTemplate", "nameIds", typeof(ushort), new int[]{4}); n++;
+ Check("TRandomItemTemplate", "properties", typeof(ushort), new int[]{4}); n++;
+ Check("TRuleRace", "strMin", typeof(byte), new int[]{2}); n++;
+ Check("TRuleRace", "strMax", typeof(byte), new int[]{2}); n++;
+ Check("TRuleRace", "excMax", typeof(byte), new int[]{2}); n++;
+ Check("TRuleThief", "values", typeof(sbyte), new int[]{9}); n++;
+ Check("TRuleThiefDex", "values", typeof(sbyte), new int[]{6}); n++;
+ Check("TRuleRaceClasses", "classes", typeof(sbyte), new int[]{14}); n++;
+ Check("TRuleClassParts", "values", typeof(sbyte), new int[]{4}); n++;
+ Check("TRuleAbilities", "values", typeof(sbyte), new int[]{6}); n++;
+ Check("TRuleClassLevels", "values", typeof(sbyte), new int[]{8}); n++;
+ Check("TRuleAgeCategories", "values", typeof(ushort), new int[]{6}); n++;
+ Check("TRuleClassAlignments", "alignments", typeof(sbyte), new int[]{10}); n++;
+ Check("TRuleSaves", "values", typeof(byte), new int[]{5}); n++;
+ Check("TRuleXp", "xp", typeof(int), new int[]{10}); n++;
+ Check("TRuleXp", "slots", typeof(byte), new int[]{10, 4}); n++;
+ Check("TViewSlotGeom", "start", typeof(byte), new int[]{10}); n++;
+ Check("TViewSlotGeom", "cols", typeof(byte), new int[]{10}); n++;
+ Check("TViewSlotGeom", "rows", typeof(byte), new int[]{10}); n++;
+ Check("TViewSlotGeom", "xCol", typeof(short), new int[]{10}); n++;
+ Check("TViewSlotGeom", "yRow", typeof(short), new int[]{10}); n++;
+ Check("TCellList", "x", typeof(sbyte), new int[]{65}); n++;
+ Check("TCellList", "y", typeof(sbyte), new int[]{65}); n++;
+ Check("TAttackPhaseView", "fill", typeof(byte), new int[]{273}); n++;
+ Check("TAttackPhaseView", "acCurArr", typeof(byte), new int[]{2}); n++;
+ Check("TAttackPhaseView", "curAtt", typeof(byte), new int[]{3}); n++;
+ Check("TArena", "cells", typeof(byte), new int[]{25, 50}); n++;
+ Check("TRaceLim", "strMin", typeof(byte), new int[]{2}); n++;
+ Check("TRaceLim", "strMax", typeof(byte), new int[]{2}); n++;
+ Check("TRaceLim", "excMax", typeof(byte), new int[]{2}); n++;
+ Check("TAnimRec", "frames", typeof(Types.TAnimFrame), new int[]{9}); n++;
+ Check("TStinkRec", "under", typeof(byte), new int[]{5}); n++;
+ Check("TStinkRec", "exists", typeof(byte), new int[]{5}); n++;
+return n; }
+ static void Check(string record,string name,Type element,int[] lengths) {
+ var t=typeof(Types).GetNestedType(record); if(t==null)throw new Exception(record);
+ var o=Activator.CreateInstance(t);var f=t.GetField(name);var p=t.GetProperty(name);
+ var a=(f!=null?f.GetValue(o):p!=null?p.GetValue(o):null) as Array;
+ if(a==null || a.GetType().GetElementType()!=element || a.Rank!=lengths.Length)throw new Exception(record+"."+name+" array shape/type");
+ for(int i=0;i<lengths.Length;i++)if(a.GetLength(i)!=lengths[i])throw new Exception(record+"."+name+" extent["+i+"] expected "+lengths[i]+" got "+a.GetLength(i));
+ if(!element.IsValueType && name!="equipped") for(int i=1;i<a.Length;i++)if(a.GetValue(i)==null)throw new Exception(record+"."+name+" null by-value record at "+i);
+ }
+}

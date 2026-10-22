@@ -1,0 +1,11 @@
+bin/
+obj/
+.tools/
+__pycache__/
+# Local evidence can contain media, captures, model exchanges and player information.
+evidence/
+.github-ready/
+*.user
+*.suo
+.env
+.env.*

@@ -1,0 +1,4 @@
+<Project Sdk="Microsoft.NET.Sdk">
+<PropertyGroup><OutputType>Exe</OutputType><TargetFramework>net8.0</TargetFramework><LangVersion>7.2</LangVersion><ImplicitUsings>disable</ImplicitUsings><Nullable>disable</Nullable><CheckForOverflowUnderflow>true</CheckForOverflowUnderflow><StartupObject>IntegrationVerification</StartupObject></PropertyGroup>
+<ItemGroup><Compile Include="../../src/Por.Core/**/*.cs" Exclude="../../src/Por.Core/obj/**;../../src/Por.Core/bin/**" Link="Production/%(RecursiveDir)%(Filename)%(Extension)"/></ItemGroup>
+</Project>

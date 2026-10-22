@@ -1,0 +1,1595 @@
+{
+  "source_commit": "7616920a9178fa32efd45939b9360e95933bbf49",
+  "inventory_total": 129,
+  "handled_current": 129,
+  "policy": "Source dispositions are not whole-game validation. Historical per-pass evidence is retained locally, not bundled.",
+  "files": [
+    {
+      "source": "src/TPC.CFG",
+      "source_sha256": "4140f23f7c210bd8fb0ce07c58a2d592935e50743f719d680f4b43a9b884b44d",
+      "disposition": "replaced-build-configuration",
+      "targets": [
+        "docs/TPC-MANAGED-REPLACEMENT.md",
+        "src/Por.Core/Por.Core.csproj"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/abiladj.pas",
+      "source_sha256": "71a000101c71c5f3bcbc1f72976f70a38021de27e627fb1e3964f75d5a1db62e",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Rules/AbilAdj.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/areaname.pas",
+      "source_sha256": "cf95055f69f89244b58d6e8caf7c8f7f054bf4f6d0b3e96f016bb3fa078712ea",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Rules/AreaName.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/bldshow.pas",
+      "source_sha256": "33045caf10fc84ad6eca78948f6ad983d69ee5f745f0b21fe5430d045f2e89e4",
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/UI/BldShow.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/blit.pas",
+      "source_sha256": "d19329a73ca083050d1a0d94ed49d7c712ac7d2a4fd9d3fc19587a44183c162d",
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/Video/Blit.Primitives.cs",
+        "src/Por.Core/Video/Blit.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/border.pas",
+      "source_sha256": "072527b587e35b6f3503201bcaa7e1d68705a7ee9003f312ef4e3be58f4db5a7",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/UI/Border.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/camp.pas",
+      "source_sha256": "2b28adbbf75814404e1744b46c240283b8afc9319c9006eb6f9760b2b30b36cd",
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/UI/Camp.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/cbtacts.pas",
+      "source_sha256": "ba7e18d6c6ffc33b6013a56842d7c57932b461528e3a1a1c6d080d2486759b17",
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/Rules/CbtActs.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/cbtmap.pas",
+      "source_sha256": "a71235cf9a01b5b35ead083cbed690756ce8c320c6ca87b7924caf2f937958ce",
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/Video/CbtMap.cs",
+        "src/Por.Core/Video/CbtMapBindings.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/chardisp.pas",
+      "source_sha256": "a96e693eb67f52ad0d4b3119d103fa1ae05b3661e60a7440316fa87fa03d3374",
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/UI/CharDisp.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/charedit.pas",
+      "source_sha256": "2a4fabebbcd9233437b791f69fc04fae40c6d1a162064ef81387ee5ca97e89e9",
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/UI/CharEdit.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/chargen.pas",
+      "source_sha256": "516004d65ba0546873e457bcc00c61346f1419908f251b2360fd77feb4dc5f24",
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/UI/CharGen.Generated.cs",
+        "src/Por.Core/UI/CharGen.cs",
+        "src/Por.Core/UI/CharGenBindings.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/charhlp.pas",
+      "source_sha256": "98db200182c04211182aae2d4e6ea129b9ba75fadfa04dff9030b18cff7c32dc",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Rules/CharHlp.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/classcal.pas",
+      "source_sha256": "c265092809d928808cda5843eaaa6145db51a9084c8177b0a06a7d87a72062a9",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Rules/ClassCal.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/clock.pas",
+      "source_sha256": "7c221c29b4f20eb88df1dde0343d14830a5605596a4fd3cfb4135ab1447701e5",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Rules/Clock.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/combat.pas",
+      "source_sha256": "b0b49d11778430ee2f905f0c624666af26043b3f302887b8736c43acf5227194",
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/Rules/Combat.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/combatai.pas",
+      "source_sha256": "b6872447b1ae151be66d4672f45a50bbabb2391a1776afebcbb2b864211a6d5f",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Rules/CombatAi.Generated.cs",
+        "src/Por.Core/Rules/CombatAi.Calls.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/combatst.pas",
+      "source_sha256": "a5932d15492312447bb05a88dcb56d35e5a5cc38f23fd7a5b4244b2a6a91975c",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Rules/CombatSt.Generated.cs",
+        "src/Por.Core/Rules/CombatSt.Calls.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/comptool.pas",
+      "source_sha256": "f7ba4abbd795890a6bf59849ca66030ccaa0e8c4717edc6be56db3c4c698429d",
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/UI/CompTool.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/dataarc.pas",
+      "source_sha256": "829a2c7f0d084ff33f3dd6d1f1896c99e717595ee5b7d9cda4c228cca2554a2e",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Data/DataArc.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/databld.pas",
+      "source_sha256": "fefc5d7e8a988481e76e10c420fe2fe0083b900544498f31a43695350de4e1ea",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Data/DataBld.Writing.cs",
+        "src/Por.Core/Data/DataBld.Encoding.cs",
+        "src/Por.Core/Data/DataBld.Startup.cs",
+        "src/Por.Core/Data/DataBld.Resolution.cs",
+        "src/Por.Core/Data/DataBld.Patching.cs",
+        "src/Por.Core/Data/DataBld.Families.cs",
+        "src/Por.Core/Data/DataBld.Sources.cs",
+        "src/Por.Core/Data/DataBld.StateCrc.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/datapat.pas",
+      "source_sha256": "2c11fb1b6ded609792a4f4873a38d9e817b378996dee11cb46c4bfb9608c26c5",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Data/DataPat.Records.cs",
+        "src/Por.Core/Data/DataPat.Bytes.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/daxio.pas",
+      "source_sha256": "bccc2b315fc1eb491cd761b5786a76b65c6bb9917d6110fa237d2269ac7f8eca",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Data/DaxIo.Archives.cs",
+        "src/Por.Core/Data/DaxIo.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/debug.pas",
+      "source_sha256": "3975d94b8206ec949efa96155a27da65e8ea6f2abd993a1f5ca15e3e188717e8",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/UI/Debug.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/dice.pas",
+      "source_sha256": "c287b812e4da8f7154c0b6ca5fca5197ea4f4c2442ec05cc6dcce4eacb1c554d",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Rules/Dice.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/eclmenu.pas",
+      "source_sha256": "3d08338ee8e5d93a09a380ba9629b33f7c34bee8eeaa8acda07ed76a1c000c00",
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/Script/EclMenu.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/ecltrace.pas",
+      "source_sha256": "146d991360cc3fdd1fe9a97b847bae6a9d59a739dbd3439b5cba7bbdadd68d46",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Script/EclTrace.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/eclvars.pas",
+      "source_sha256": "8ab0ed7cdeb90a1cfdf56369e98e2175e58bbf0e17849b185ff89aa44e0ce6f9",
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/Script/EclVars.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/eclvm.pas",
+      "source_sha256": "81eecf20ba59fd332b206a940d8781bbc6ba9188e0a01d50f3fe22bb35bf922f",
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/Script/EclVm.cs",
+        "src/Por.Core/Script/EclVmUnits.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/effhndlr.pas",
+      "source_sha256": "6af7ae9f5c05ee9e62a8efaf8abaa5ce0874b8e726bc411c8dfa11b85ff33e9f",
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/Rules/EffHndlr.cs",
+        "src/Por.Core/Rules/EffHndlrBindings.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/ending.pas",
+      "source_sha256": "3e60654e25366b3b82c4132e23a20ef173f954f5d9f7e33f0fd0f7666df69746",
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/UI/Ending.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/evtkind.pas",
+      "source_sha256": "6c2ad514aba65b2c2fbc6947ce9b05ae019e37e6f2f5ead7662d7080e92a9b85",
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/Script/EvtKind.cs",
+        "src/Por.Core/Script/EclBindings.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/explore.pas",
+      "source_sha256": "65b99104397c0e6f8510f76119d39f8a6fc6f19b98b6a44687dcbfd21e1d2eac",
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/Rules/Explore.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/explored.pas",
+      "source_sha256": "b90843f1ed49ce1b276ed30b7f5c6ddc5febdd63babb2637717d3ac0e382fef5",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Data/Explored.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/fileutil.pas",
+      "source_sha256": "8590d020d3167b1e176b1b1db73e837414d6837d9db901252173cbbfd17eb8ac",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Data/FileUtil.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/fixmain.pas",
+      "source_sha256": "56d8709f568168ad94a81bec47385f2d6df098906fb8422dfb708ba5e08ff83e",
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/Startup/FixMain.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/fxengine.pas",
+      "source_sha256": "fe0d4170ec2854004f7282a36d134afb958db732b3dfe3e7f4aff342e4b0ab18",
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/Rules/FxEngine.cs",
+        "src/Por.Core/Rules/FxEngine.Conditions.cs",
+        "src/Por.Core/Rules/FxEngineBindings.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/gameboot.pas",
+      "source_sha256": "41c0af3728597111495e9eb57b478b81d5a4889492e4b46d3c7aec9a66d78d0b",
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/Startup/GameBoot.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/gameinit.pas",
+      "source_sha256": "fbfa381098b4b91387c46c6a1ae61faa4a951280afc4a5fd3a760dbf4690fabf",
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/Startup/GameInit.cs",
+        "src/Por.Core/Startup/GameInit.Tables.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/gameio.pas",
+      "source_sha256": "d4d0838c075cd19ffa6483c9b23bf56f631a88915f6507b6bb74e48b2e222189",
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/IO/GameIo.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/gametime.pas",
+      "source_sha256": "73a9569be5a10ab732107796132456370bae652a19636fd2b3c5bb35e1b20b36",
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/Rules/GameTime.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/gdconsts.pas",
+      "source_sha256": "9991af66168e76baf54cb552297acfd91a63c451918f30a2e042867973a9dd3a",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/GlobalData/GDConsts.Part1.cs",
+        "src/Por.Core/GlobalData/GDConsts.Part3.cs",
+        "src/Por.Core/GlobalData/GDConsts.Part4.cs",
+        "src/Por.Core/GlobalData/GDConsts.Part5.cs",
+        "src/Por.Core/GlobalData/GDConsts.Part6.cs",
+        "src/Por.Core/GlobalData/GDConsts.Part2.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/gdvars.pas",
+      "source_sha256": "36777a8af0b7788533cb612d6aed8643dcd565042a40a05e759fa3125db99c33",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/GlobalData/GDVars.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/heaperr.pas",
+      "source_sha256": "862662eeb2bc228793ef7fc831040fa0691992819bba6fdaa1f5be112e3d94c8",
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/UI/HeapErr.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/includes/c_abil.pas",
+      "source_sha256": "d84feb23f7d15906315bcc407b74e323cec80143d339f3068b9c9a39f827be7e",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Constants/C_Abil.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/includes/c_align.pas",
+      "source_sha256": "e177deb731112fb3baffb3ed40449194c829ebdd28070ef31062ae9d0ddf9f7e",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Constants/C_Align.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/includes/c_area.pas",
+      "source_sha256": "6d8635a227f8061d35dc4afcdc9adaf5a0a4fa574249734143f427f72e3a8f4f",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Constants/C_Area.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/includes/c_class.pas",
+      "source_sha256": "8f8ff914b2ad8e298c8c68eea195f36846a86117ccc81ad9d7e08a873db6869e",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Constants/C_Class.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/includes/c_cond.pas",
+      "source_sha256": "e0415ab21a8eb9d7824426e06c59caa9eef9f23f00b9b022f227beb6341c3566",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Constants/C_Cond.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/includes/c_data.pas",
+      "source_sha256": "c432abcdfeecb075fefe681c7d90b60571dc1406a55d59bc52c1b8a325315f53",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Constants/C_Data.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/includes/c_dir.pas",
+      "source_sha256": "6790d82e65f6a7700db5fbb23cd21427618f4019b87faded31f97b7c87a2a462",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Constants/C_Dir.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/includes/c_ecl.pas",
+      "source_sha256": "6c6c82aaaf962e3508eb2be8cfe3b79dfb50075431104ca1d2724dbd7f5f2e1c",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Constants/C_Ecl.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/includes/c_effect.pas",
+      "source_sha256": "f9fa8cc34b5b59d44476dc76dee92881a8ddee6880bfa5fbb58a95c665f8ec3e",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Constants/C_Effect.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/includes/c_ega.pas",
+      "source_sha256": "92741d4a56d539ffb3cec938f6bd51d940e6deaaba608238067618eb0d04f633",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Constants/C_Ega.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/includes/c_equip.pas",
+      "source_sha256": "8e93cf6cab667837722ee17bfa24fb339234be3326383170077b7803ec16f5b0",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Constants/C_Equip.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/includes/c_gbvm.pas",
+      "source_sha256": "bd80a394c815bdd4055bb2ac0a6f15808b0fe799fafa83b4800abc8571ca5822",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Constants/C_Gbvm.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/includes/c_gender.pas",
+      "source_sha256": "cb1c4efc3800b831e366f26404127f6efcb2c7ba239595f22a99e76f3288baab",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Constants/C_Gender.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/includes/c_ifc.pas",
+      "source_sha256": "6a070efe68f3c19e822dba9f1359c3bbdb26a28f0ef946809074cc948338a975",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Constants/C_Ifc.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/includes/c_item.pas",
+      "source_sha256": "cdb7fb74d8059c5363a48ba4facd55b6741c3bcf15e1f8ad5b62bd993a4c1e9a",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Constants/C_Item.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/includes/c_jrnl.pas",
+      "source_sha256": "2e77fd13ee83085c73880748b3297f1abb9c9b46546ab1fe6688cafabf342196",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Constants/C_Jrnl.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/includes/c_keys.pas",
+      "source_sha256": "215dc5dcff62f3cdd23962ac2fb84d9e9e9bfa60d5667f5f9cc33dbc51f6f2ec",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Constants/C_Keys.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/includes/c_level.pas",
+      "source_sha256": "b5655b7a69f2d384daf4c245928471e26072dda2da5d0d789a8fb1f28b4ce7f5",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Constants/C_Level.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/includes/c_money.pas",
+      "source_sha256": "b2857591beba5bee3fa5f8c31673e2430f4f5cbfcb6d7ff9b00d78bfdc4a09cd",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Constants/C_Money.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/includes/c_msg.pas",
+      "source_sha256": "5d1cdd2665c3789e6d8ede8771eddedfa8e9c27cdfa3beb79dea2c79bf5dc1a9",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Constants/C_Msg.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/includes/c_npc.pas",
+      "source_sha256": "1fb9b93e8cfd61658508e4e7b526b52e49a0fe668f9f0f779be8f0843871ac8d",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Constants/C_Npc.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/includes/c_race.pas",
+      "source_sha256": "cb9e50df742d4bebb4f9caf4713617364b4b0a16ce9e24b7cf401ba156138894",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Constants/C_Race.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/includes/c_save.pas",
+      "source_sha256": "899682e1b297b17ce5e0ed282737cf2e92a0ebc0638d33c817ac253d506f25d9",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Constants/C_Save.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/includes/c_sound.pas",
+      "source_sha256": "eff425094d3433c10422284a79c9dd770010afbbda870f696d90a417d6e95b07",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Constants/C_Sound.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/includes/c_spell.pas",
+      "source_sha256": "d13d20e455ce3cb741faa2b86e02822a9ffac73888cac6fe8abd96656edf6958",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Constants/C_Spell.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/includes/c_status.pas",
+      "source_sha256": "43349535b4065237eb5255d8efd08490389c5ea003a4925fd9e31cfc4c839ed7",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Constants/C_Status.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/includes/c_terr.pas",
+      "source_sha256": "4f7e5f8a7e2d3530281bf2b78900c3c12a7aba1db633b9388469ab2ac5af4e19",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Constants/C_Terr.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/includes/c_tile.pas",
+      "source_sha256": "84882f409192c5ed86b0bb646ff4953c9edeb3ea9895d74964abd123990c5ef4",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Constants/C_Tile.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/includes/c_time.pas",
+      "source_sha256": "d73c0e4134374b0d017c09f4af15331c4e4508733cac1ec2113e13c7ce40efbe",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Constants/C_Time.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/includes/c_video.pas",
+      "source_sha256": "c95494c3b58cd71ed9be7d72258341b45ef29fd6215e447414eb3ab4e41e4391",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Constants/C_Video.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/intro.pas",
+      "source_sha256": "8db97a6ec32fbe228d0439c4e5fd5fb01771ed3b46e393aa058faaecad9a877c",
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/UI/Intro.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/journal1.pas",
+      "source_sha256": "10080687affd99ecc3c33e236249c69c4f117de2a717a7838da8d7296dd010c3",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Journal/Journal1.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/journal2.pas",
+      "source_sha256": "0e666b93afc352fec4ba32fbd9dc5128ef1d34a4b8e7acc2a766a93e78546c35",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Journal/Journal2.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/journal3.pas",
+      "source_sha256": "d211a57a0430417d11022cd821df989d3ff735203fe0dfc58956865c199b285e",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Journal/Journal3.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/journal4.pas",
+      "source_sha256": "f73e2a94ef6c8c4eb8be4852f48758e13ecadebb197d0719fd8b71baac4dc653",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Journal/Journal4.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/jrnllist.pas",
+      "source_sha256": "413c3d6c2b99e0e0ef60b58adfdbab061b16c76730aa04c58583d64dfe4e9409",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Journal/JrnlList.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/jrnlview.pas",
+      "source_sha256": "0297fbfde72e74d843a8d5ca4d522c3316a1bee1f9a80ee8db7e344211223bcf",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/UI/JrnlView.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/magic.pas",
+      "source_sha256": "c32daf28f7984aef9a18526920be295666d1c4da89510be01e9a45c1ef11e5cd",
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/Rules/Magic.cs",
+        "src/Por.Core/Rules/MagicBindings.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/mapnotes.pas",
+      "source_sha256": "e4028a0e2ee6047164590099b27acee87b00981b3f494a27bef0775d7eef8747",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Data/MapNotes.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/maptiles.pas",
+      "source_sha256": "1ccc23ecbcdd2e4a8173f5f630dea099c31cc3040538cfdcece119dd9f0f73eb",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Video/MapTiles.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/mapview.pas",
+      "source_sha256": "774a29600ccc15b42f158713575a9127462696b8435338a7e02c08981e431bc2",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Video/MapView.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/memshow.pas",
+      "source_sha256": "12efabb5184ce02cc6568e03bdb7060906ee5a3cdb6f7ea9a5084ae86e8a89c1",
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/UI/MemShow.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/menucore.pas",
+      "source_sha256": "94977729b9dc4119d9ab68309c7133f469a67ae16e0b28e027e185b70ce7024d",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/UI/MenuCore.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/money.pas",
+      "source_sha256": "bb72bc2ed2cd2887a118ccd009af09d82c1593cea99903f8b3d2cfb5370438e3",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/UI/Money.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/moneycal.pas",
+      "source_sha256": "9e7651a31aa016d5e99271ee614a2e53f0cb2806f42badffaf471f543ade67cb",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Rules/MoneyCal.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/options.pas",
+      "source_sha256": "c94a28bf87840f40b32e65bc775b8bc12607116c0b8798185a7128e4181f26b2",
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/UI/Options.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/party.pas",
+      "source_sha256": "5df8ac13aa9f5e4c0779d899226b2eaf4b0b46a36fcc194a7292f83ba8c7f552",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Rules/Party.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/pathing.pas",
+      "source_sha256": "b3cf104409bc858383a223f4c70528867f382d92e70285bdb12ebd0859578cfe",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Rules/Pathing.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/piccga.pas",
+      "source_sha256": "b6296a0a46bdb9c1b9df3d17959530bf9b60db7a074972a549426e42ff1b93df",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Video/PicCga.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/picega.pas",
+      "source_sha256": "55464c415c72dd853aca84d112f40edf90d6726d003b714de7076b502739f54e",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Video/PicEga.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/pictdy.pas",
+      "source_sha256": "30da445d34fbe2dd7ecfa14fd229fe61dd3a95037389ba76af5823fe052b1eb3",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Video/PicTdy.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/picvga.pas",
+      "source_sha256": "c25ba41fa59b7415b74a1ec6a5c6a3639b92d2243d157787dccf084190fab8a9",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Video/PicVga.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/portrait.pas",
+      "source_sha256": "ef295edfb4206352b5bdb73b7d3ab45cc896ba483e8d46da01029444f631f34e",
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/Video/Portrait.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/postcbt.pas",
+      "source_sha256": "e6905086b3cc73c18cb00f5942566896a8112108eb804f0d4a1051c96a32e726",
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/Rules/PostCbt.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/randitem.pas",
+      "source_sha256": "48ee1c07538900077a9fecd52c8639e2bb3d7b415ea8dbb01b76b98c89ca79b8",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Rules/RandItem.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/saveload.pas",
+      "source_sha256": "3e30589d76739f7ef16f509e0b87032c1de02b8291c4396147523382a366325c",
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/Data/SaveLoad.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/savemenu.pas",
+      "source_sha256": "780e5c70ce2e429cb05e8e06d7607088b3efc2b52d2f40336738a67d05da1b21",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/UI/SaveMenu.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/shop.pas",
+      "source_sha256": "9c70b4e69c19eeaab9b82857a0d5cd71ce728e164fcf0f52bf4ee1810b693523",
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/UI/Shop.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/sndnone.pas",
+      "source_sha256": "fa3b9a1afc6d64726dda5cb4e40153743b532d71409ae6bd6c3f57de3c03996a",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Sound/SndNone.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/sndopl.inc",
+      "source_sha256": "102a1ac1c2ce128c91e3dd6aab0251c1a89fe12ebdd8a3c01ef432a1506b9b5c",
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/Sound/OplSequencer.cs",
+        "src/Por.Core/Sound/SoundVoice.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/sndopl.pas",
+      "source_sha256": "ed77a40499f5e57198e4e0273f594cee6371774bec79d166683a900a7ebe0425",
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/Sound/SndOpl.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/sndsb.pas",
+      "source_sha256": "257ab2498236d5dd7444f3bc1cc7727ede1f283acbe09813d6c0360522113675",
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/Sound/SndSb.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/sndspk.inc",
+      "source_sha256": "b08e216ab13d00138f0015fad909e4ab99885b345684ecea5c9abd2129093383",
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/Sound/SpeakerSequencer.cs",
+        "src/Por.Core/Sound/SpeakerArrangement.Generated.cs",
+        "src/Por.Core/Sound/SoundArrangement.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/sndspk.pas",
+      "source_sha256": "6ce3417781bb434765939e77a5093c03ab4c940947111424af4dda919a08f784",
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/Sound/SndSpk.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/sndtdy.inc",
+      "source_sha256": "6af1d39082ac9afc40e9b91a2b62818dba42bed58a545cc5c19d07164bf793c1",
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/Sound/TandySequencer.cs",
+        "src/Por.Core/Sound/TandyArrangement.Generated.cs",
+        "src/Por.Core/Sound/SoundArrangement.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/sndtdy.pas",
+      "source_sha256": "3069369a14c2c358984f5fc5f0a5d18f9861c87188112f3ac7dd4631359c19d8",
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/Sound/SndTdy.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/sounddrv.asm",
+      "source_sha256": "51c1370dc86ca1270bd8192f62f250995c55181c313e702c265e039729eb77db",
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/Sound/SoundDriver.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/sounddrv.pas",
+      "source_sha256": "78952b496b36d8a14c5ce7c908f570535088111090fbd594ab3c470df692e5c3",
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/Sound/SoundDrv.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/stats.pas",
+      "source_sha256": "c10986a53639b01b8a6cd6294cfacb7ff013eac236dff5287a0a26859270b899",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Rules/Stats.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/strutil.pas",
+      "source_sha256": "39c732bf7c4f956013b343e901e3cb367b293b3f896615549a2c05fd84de8523",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Data/StrUtil.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/sym8x8.pas",
+      "source_sha256": "062da4fe78a9a7b1b4c3c7082696c338deec03329b30ddb08c91d5f78879967c",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Video/Sym8x8.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/temple.pas",
+      "source_sha256": "27c7a896e184212107c8408ddb2fb716cad85b814034c4c860667c46b1845649",
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/UI/Temple.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/textrend.pas",
+      "source_sha256": "a12ecc6e042e3249f6490cf621fcded7a30381871642da1e4558cf87d8171c34",
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/UI/TextRend.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/types.pas",
+      "source_sha256": "e2afca33e47257b20c3a6b39cb1ad69e5b7da03ae69499f186fa2b3f1215506c",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Types/Aliases.cs",
+        "src/Por.Core/Types/Character.cs",
+        "src/Por.Core/Types/GbvmViews.cs",
+        "src/Por.Core/Types/Records1.cs",
+        "src/Por.Core/Types/Records2.cs",
+        "src/Por.Core/Types/RuleOverlays.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/usualspl.pas",
+      "source_sha256": "f40055e8ff5051b906c8c6b8b2d97e02414553b51ef08f6e2bb441192a0e51f0",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Rules/UsualSpl.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/vault.pas",
+      "source_sha256": "881574c62f1ad2b33733f27132ae1c9ff7aa85a5975314110a75590229871e84",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/UI/Vault.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/vaultmnu.pas",
+      "source_sha256": "968af385b750df79221bd8e8e4254339da6ae2d25bf415826f85965e78af6bf8",
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/UI/VaultMnu.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/vidcga.pas",
+      "source_sha256": "ca665e9fcea46438f550c09c9d5b7f41d6fe76133484ad095c4d3f39792a552b",
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/Video/VidCga.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/videga.pas",
+      "source_sha256": "f3dbfe32ca7699d2cfc52b5116e568a7c63f7c1f73ec75831d0405a2d3e2159f",
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/Video/VidEga.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/vidops.pas",
+      "source_sha256": "9b2fbafe5e293b6f82dfbddb32bafe6136f61bdc8752f512789e5b8039a7fed5",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Video/VidOps.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/vidtdy.pas",
+      "source_sha256": "2d50f2b5411e0fa84ecf580486d665c5ba6304f880db1df243bb421cd8c385e0",
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/Video/VidTdy.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/vidvga.pas",
+      "source_sha256": "9859355d4bd1dbd4f1a5372485c63e2b9b7f6b97d3340b683e074f93e6320ce1",
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/Video/VidVga.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/view3d.pas",
+      "source_sha256": "66c3dac08298f05280dc6330940d34b9894a7a3dfad9ca7a34542d6837702a94",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Video/View3D.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/viewchar.pas",
+      "source_sha256": "f784eb9154d464de20f7de4166af077fa9b5486c417ac3d683def24c6e24b437",
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/UI/ViewChar.cs",
+        "src/Por.Core/UI/ViewCharBindings.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    },
+    {
+      "source": "src/wilds.pas",
+      "source_sha256": "cbcbcbb8fa422ae70a6895aa2763fbb1ae794e2637625ee5c3aaf6a1c47ce355",
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Video/Wilds.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false
+    }
+  ]
+}

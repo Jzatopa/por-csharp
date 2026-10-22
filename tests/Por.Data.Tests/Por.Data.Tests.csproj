@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><OutputType>Exe</OutputType><TargetFramework>net8.0</TargetFramework><ImplicitUsings>disable</ImplicitUsings><Nullable>disable</Nullable><StartupObject>DataVerification</StartupObject><CheckForOverflowUnderflow>true</CheckForOverflowUnderflow></PropertyGroup>
+  <!-- Explicit data-only slice: does NOT replace or hide the full-project build. -->
+  <ItemGroup><Compile Include="../../src/Por.Core/Data/*.cs" Link="Production/%(Filename)%(Extension)" /><Compile Include="../../src/Por.Core/Constants/*.cs" Link="Constants/%(Filename)%(Extension)"/><Compile Include="../../src/Por.Core/Types/*.cs" Link="Types/%(Filename)%(Extension)"/><Compile Include="../../src/Por.Core/GlobalData/*.cs" Link="Globals/%(Filename)%(Extension)"/></ItemGroup>
+</Project>

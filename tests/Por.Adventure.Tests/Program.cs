@@ -1,0 +1,24 @@
+using System;using System.IO;using Por.Core;using static Por.Core.Types;
+class Tests
+{
+ static int count;static void Eq(int e,int a,string name){count++;if(e!=a)throw new Exception(name+": expected "+e+" got "+a);}static void Yes(bool a,string name){count++;if(!a)throw new Exception(name);}
+ static TCharRecord Hero(){var c=new TCharRecord{name="PASS HERO",race=C_Race.HUMAN,charClass=C_Class.FIGHTER,age=25,alignment=C_Align.LAWFUL_GOOD,hpMax=20,hpCur=20,hpRolled=20,levelHighest=1,strCur=15,intCur=12,wisCur=12,dexCur=12,conCur=12,chaCur=12,status=C_Status.OKAY,enabled=1,acBase=10,acCur=10,iconSize=1,iconDimensions=1,portraitHead=1,portraitBody=1,iconHead=1,iconBody=1,movementBase=12,movementCur=12,attacks=2,useStrength=1,unarmedDiceA=new byte[]{0,2,0},unarmedRollsA=new byte[]{0,1,0}};c.classLevels[C_Level.FIGHTER]=1;for(int i=1;i<=6;i++)c.iconColors1[i]=(byte)(GDConsts.defIconCol[i]|(GDConsts.defIconCol[i]+8)<<4);return c;}
+ static int Main(string[] args)
+ {
+  try{
+   if(args.Length==2&&args[0]=="--fixture"){File.WriteAllBytes(args[1],SaveRecordCodec.Encode(Hero()));Console.WriteLine("Created synthetic packed character fixture");return 0;}
+   GDVars.zone0=new TGbvmZone0State();GDVars.zone1=new TGbvmZone1();GDVars.baseItems=new TBaseItems();GDVars.ifcState=C_Ifc.INDOORS;
+   EclMenu.Host=null;var flags=new TMonFlags();flags[0]=true;bool reproduced=false;try{EclMenu.DisplayMonster(0,0,0,flags);}catch(NotSupportedException ex){reproduced=ex.Message.Contains("EclMenu gameplay host not bound");}Yes(reproduced,"original unbound opening-map failure remains explicit");
+   FinalGameplayBindings.Bind();Yes(EclMenu.Host!=null,"script action host installed");Yes(GameTime.Services!=null,"rest action host installed");
+   var h=EclMenu.Host;for(int chance=0;chance<256;chance++)foreach(int weight in new[]{0,1,24,25,254,255,256,65535})Eq(Math.Max(0,chance-(weight>255?90:weight>24?50:0)),h.TheftChance((byte)chance,(ushort)weight),"weight-adjusted theft boundary");
+   var c=Hero();GDVars.curChar=c;GDVars.creatureList=c;var fx=new TEffectRec{id=3,duration=11};c.effectsAddr=fx;TEffectRec found=null;Yes(h.HasEffect(c,3,ref found)&&ReferenceEquals(found,fx),"real effect reference returned");Yes(!h.HasEffect(c,4,ref found)&&found==null,"missing effect clears var output");
+   TItemRec list=null;var item=new TItemRec{itemType=1,plus=2,weight=10};h.PrependItemCopy(ref list,item);Yes(list!=item&&list.plus==2,"prepend creates independent copy");item.plus=3;Eq(2,list.plus,"copy not aliased");
+   h.InflictDamage(c,256);Eq(20,c.hpCur,"word damage narrows to byte zero");h.InflictDamage(c,257);Eq(19,c.hpCur,"word damage narrows to byte one");
+   var rest=GameTime.Services;Yes(rest.RestoreHitPoints(c,1,true),"real healing service called");Eq(20,c.hpCur,"healing changed character");rest.AdvanceTime(5,C_Time.MINUTES);Eq(5,GDVars.zone0.words[C_Gbvm.CLOCK+C_Time.MINUTES],"rest uses real world clock");
+   var scroll=new TItemRec();scroll.nameIds[2]=(byte)(C_Item.NAME_WITH_1_SPELL+2);scroll.spells[1]=1;scroll.spells[2]=2;rest.RemoveSpellFromScroll(c,scroll,2);Eq(0,scroll.spells[2],"real scroll mutation");Eq(1,scroll.spells[1],"other scroll spell preserved");
+   var newcomer=Hero();GDVars.creatureList=null;GDVars.curChar=null;GDVars.zone1[C_Gbvm.PARTY_SIZE]=0;h.AddCharToParty(newcomer);Yes(GDVars.curChar==newcomer&&GDVars.creatureList==newcomer,"script creature enters real party");Eq(1,GDVars.zone1[C_Gbvm.PARTY_SIZE],"party size advanced");Eq(0,newcomer.orderNumber,"party slot assigned");
+   SaveLoad.MarkPartyForRedraw();Yes(SaveLoad.TakePartyRedraw(),"loaded party redraw requested");Yes(!SaveLoad.TakePartyRedraw(),"party redraw consumed once");SaveLoad.MarkPartyForRedraw();GDVars.creatureList=Hero();Yes(!SaveLoad.TakePartyRedraw(),"stale redraw cannot paint new party");
+   FinalGameplayBindings.Bind();Yes(EclMenu.Host!=null&&GameTime.Services!=null,"repeated composition remains complete");Console.WriteLine("Adventure integration: "+count+" assertions PASS");return 0;
+  }catch(Exception ex){Console.Error.WriteLine(ex);return 1;}
+ }
+}
