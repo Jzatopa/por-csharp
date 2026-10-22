@@ -4,6 +4,17 @@ A source-guided C# port of the Talonius Pool of Radiance Pascal/assembly reconst
 
 All 129 pinned source inputs have an explicit disposition. This is **not a fully validated playable release**, and source inventory completion is not a whole-game equivalence claim.
 
+## Original project
+
+This C# port is based on **Talonius’s Pool of Radiance Pascal/assembly reconstruction**:
+
+- **Original repository:** https://forgejo.brazencrows.com/talonius/pool-of-radiance
+- **Pinned source revision:** `7616920a9178fa32efd45939b9360e95933bbf49`
+- Upstream describes its reconstruction as SSI’s DOS **Pool of Radiance v1.3**, with fixes. This port does not independently establish upstream’s historical byte-identity claims.
+- The C# port supplies a managed engine and SDL2 desktop host; it does not include original game media or claim whole-game equivalence.
+
+Credit for the source reconstruction belongs to the upstream project and its contributors. See [UPSTREAM.md](UPSTREAM.md) for attribution and unresolved licensing/permission status; no new license grant is implied.
+
 ## Run on Linux
 
 Prerequisites: .NET 8 SDK, SDL2 (`libSDL2-2.0.so.0`), and your own original Pool of Radiance DOS game installation. No game archives, original executables, saves, SDK or native library binaries are bundled.
