@@ -4,7 +4,7 @@
 
 `bash scripts/test-portable.sh` builds core/desktop and runs Adventure, Desktop, CbtMap, FxEngine, Integration, Types, Global, Pathing, GameIo, Border, Blit, Sym8x8, Debug and VideoCold tests. These use synthetic inputs and source-contract oracles embedded in code. Desktop PCM checks run without opening SDL unless `--audio-probe` is supplied. Test-generated temporary files and synthetic map pictures are not original game assets.
 
-The workflow is prepared but has not run on GitHub until the repository is uploaded and Actions executes it.
+GitHub Actions runs the same portable lane. Native and extended checks below are separate from that lane.
 
 ## Source rescan
 
@@ -23,7 +23,10 @@ Requires Linux SDL2, Xvfb, xdotool, Python 3 with Pillow, and original game medi
 ```bash
 python3 scripts/test-adventure-smoke.py --data /path/to/poolofrad --output /tmp/por-native-replay
 python3 scripts/test-desktop-smoke.py --data /path/to/poolofrad --output /tmp/por-startup-replay
+python3 scripts/test-combat-smoke.py --data /path/to/poolofrad --output /tmp/por-combat-replay
 ```
+
+The combat replay uses a synthetic hero, creates a real quick-save, and changes only that disposable save's previous-script and position fields to seed the reported script-11 encounter. It checks combat entry and a later round through native keyboard input, not the natural travel route or campaign completion. The portable CbtMap `CombatEntry` group separately checks placement-to-redraw for zero, one, two, sixteen and maximum-slot rosters, plus an unplaceable party member.
 
 For captured rather than physical audio, set `SDL_AUDIODRIVER=disk` and `SDL_DISKAUDIOFILE=/tmp/por-audio.raw`. For a system-device probe run `scripts/dotnet.sh run --project tests/Por.Desktop.Tests -- --audio-probe`.
 

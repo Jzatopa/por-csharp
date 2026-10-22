@@ -41,6 +41,6 @@ Local native SDL/X11 checks cover title/menu/settings, the opening tour, initial
 
 See [source comparison](docs/SOURCE-COMPARISON.md), [source dispositions](docs/source-dispositions.json), [attribution and licensing status](UPSTREAM.md). There is no blanket new license grant over the reconstructed game code or data. Resolve distribution permissions before public publication.
 
-## Known issue — combat entry
+## Combat-entry repair
 
-A reported encounter at script 11, map (7,1), crashes with a `NullReferenceException` in `CbtMap.ScrollView` while drawing the initial combat screen. An arena-count/empty-slot boundary is suspected, not yet confirmed by a regression test. This snapshot includes the startup wiring review changes but does **not** repair that crash.
+The reported script-11 combat-entry crash was traced to placement leaving `arenaCount` one past the final creature. Placement now publishes the actual retained-slot count before rendering; the candidate-inclusive count is preserved during placement probes. Portable regression tests exercise placement followed by occupancy and redraw, including the final creature and full-capacity/empty rosters. A native replay at script11, (7,1), instruction40107 now renders combat and advances from round0 to round1. See [repair and verification](docs/COMBAT-ENTRY.md) and [testing](docs/TESTING.md) for scope and replay instructions. This is not full-campaign or all-combat validation.

@@ -542,6 +542,9 @@ GDVars.arenaCount=unchecked((byte)((GDVars.arenaCount+1)));
 }
 p=next;
 }
+// During placement arenaCount includes the candidate so occupancy probes can find it.
+// Once placement ends, slot is the next free index, not a creature count.
+GDVars.arenaCount=unchecked((byte)(slot-1));
 if((prev!=null)){prev.nextCharAddr=null;}
 }
 }

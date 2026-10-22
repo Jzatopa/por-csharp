@@ -47,6 +47,35 @@ static class Checks
   for(int size=0;size<=5;size++){GDVars.arenaLoc[1].size=B(size);for(int y=-4;y<=8;y++)for(int x=-4;x<=8;x++){GDVars.gridX[1]=S(x);GDVars.gridY[1]=S(y);var f=Foot(size);bool any=f.Any(p=>x+p[0]>=0&&x+p[0]<7&&y+p[1]>=0&&y+p[1]<7),all=f.All(p=>x+p[0]>=0&&x+p[0]<7&&y+p[1]>=0&&y+p[1]<7);Eq(size==0?0:size>4?1:any?1:0,CbtMap.CombatIconVisible(a,0)?1:0,"partial visibility");Eq(size==0?0:all?1:0,CbtMap.CombatIconVisible(a,1)?1:0,"whole visibility");}}
   var absent=new TCharRecord{combatAddr=new TCombatRec()};Eq(0,CbtMap.CombatSlot(absent),"absent slot");Eq(0,CbtMap.GetIconSize(absent),"absent size");Eq(0,CbtMap.CombatCellX(absent),"absent x");Eq(0,CbtMap.CombatCellY(absent),"absent y");CbtMap.SetCreatureFacing(absent,7,0,0);Eq(7,absent.combatAddr.direction,"off-map facing");
  }
+ static void CombatEntry()
+ {
+  // Exercise placement -> occupancy -> renderer, the seam missed by isolated source tests.
+  foreach(int count in new[]{0,1,2,16,ARENA_SLOTS,1})
+  {
+   Rig();GDVars.zone1=new TGbvmZone1();GDVars.gFacing=2;GDVars.zone1[C_Gbvm.MONSTER_DIST]=2;
+   GDVars.creatureList=null;TCharRecord previous=null;
+   for(int i=0;i<count;i++)
+   {
+    var c=new TCharRecord{enabled=1,iconDimensions=1,orderNumber=B(i+1),hostile=S(i%2),combatAddr=new TCombatRec()};
+    if(previous==null)GDVars.creatureList=c;else previous.nextCharAddr=c;previous=c;
+   }
+   CombatSt.View3DGetBarrierTypeCall=(x,y,d)=>1;CombatSt.View3DGetWallTypeCall=(x,y,d)=>0;
+   CombatSt.CharHlpCountTeamsCall=CharHlp.CountTeams;
+   CombatSt.CbtMapBuildArenaArraysCall=CbtMap.BuildArenaArrays;CombatSt.CbtMapProbeDirectionCall=CbtMap.ProbeDirection;
+   CombatSt.GameIoDiscardPendingKeysCall=()=>{};
+   CombatSt.PlaceAllCreatures();Eq(count,GDVars.arenaCount,"placement count excludes next free slot");
+   for(int i=1;i<=count;i++){Yes(GDVars.creatureArr[i]!=null,"counted slot populated");Eq(i,CbtMap.OccupantAt(GDVars.arenaLoc[i].x,GDVars.arenaLoc[i].y),"last slot included in occupancy");}
+   // Force a rebuild: this used to dereference creatureArr[count+1].
+   CbtMap.ScrollView(25,12,255,C_Dir.CENTER);Eq(1,flush,"placed arena redraw completes");
+   if(count>0){var last=GDVars.creatureArr[count];Eq(count,CbtMap.CombatSlot(last),"last creature remains addressable");CbtMap.DisplayMapViewCentered(last,255,false);Yes(calls.Any(t=>t.StartsWith("S:")&&t.EndsWith(":"+count)),"last creature rendered");}
+  }
+  // A non-placeable party member still occupies a roster slot, but has no icon.
+  Rig();GDVars.zone1=new TGbvmZone1();GDVars.gFacing=2;GDVars.zone1[C_Gbvm.MONSTER_DIST]=2;
+  var unplaced=new TCharRecord{enabled=1,iconDimensions=1,combatAddr=new TCombatRec()};GDVars.creatureList=unplaced;
+  byte oldCost=GDConsts.terrainInfo[23].cost;GDConsts.terrainInfo[23].cost=255;
+  CombatSt.PlaceAllCreatures();Eq(1,GDVars.arenaCount,"unplaced PC retained without extra slot");Eq(0,GDVars.arenaLoc[1].size,"unplaced PC has no footprint");Yes(ReferenceEquals(unplaced,GDVars.creatureArr[1]),"unplaced PC identity retained");
+  CbtMap.ScrollView(25,12,255,C_Dir.CENTER);Eq(1,flush,"unplaced PC redraw completes");GDConsts.terrainInfo[23].cost=oldCost;
+ }
  static void ScrollAndDraw()
  {
   Rig();foreach(int delta in new[]{0,1,3,127,128,254,255})for(int oy=0;oy<=18;oy+=3)for(int ox=0;ox<=43;ox+=4)for(int ty=0;ty<25;ty+=4)for(int tx=0;tx<50;tx+=5)
@@ -197,6 +226,6 @@ static class Checks
  }
  static int Main(string[] args)
  {
-  try{Action<string,Action> run=(n,a)=>{if(args.Length==0||args.Contains(n)){long start=checks;a();Console.WriteLine(n+": "+(checks-start)+" assertions PASS");}};run("Geometry",Geometry);run("Scroll",ScrollAndDraw);run("Probe",ProbeAndPlacement);run("Corpses",Corpses);run("Targets",Targets);run("Preview",Preview);run("Pixels",Pixels);run("Bindings",Bindings);run("RealMagic",RealMagic);Console.WriteLine("TOTAL "+checks+" assertions PASS");return 0;}catch(Exception e){Console.Error.WriteLine(e);return 1;}
+  try{Action<string,Action> run=(n,a)=>{if(args.Length==0||args.Contains(n)){long start=checks;a();Console.WriteLine(n+": "+(checks-start)+" assertions PASS");}};run("CombatEntry",CombatEntry);run("Geometry",Geometry);run("Scroll",ScrollAndDraw);run("Probe",ProbeAndPlacement);run("Corpses",Corpses);run("Targets",Targets);run("Preview",Preview);run("Pixels",Pixels);run("Bindings",Bindings);run("RealMagic",RealMagic);Console.WriteLine("TOTAL "+checks+" assertions PASS");return 0;}catch(Exception e){Console.Error.WriteLine(e);return 1;}
  }
 }

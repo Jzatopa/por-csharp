@@ -23,13 +23,18 @@
     },
     {
       "path": "README.md",
-      "bytes": 3471,
-      "sha256": "1edb7dbe4ca2b365907997d04378c27f826fb32269669005b7d45faf2c6b88b0"
+      "bytes": 3806,
+      "sha256": "bf55937f2fbc9b84a3067b2a2261eece85ce1f3e435fa461572acde7fdd883ca"
     },
     {
       "path": "UPSTREAM.md",
       "bytes": 1405,
       "sha256": "ac7613d88cabeca4ecbd3a310f314cacc80d8cebf99c7fa637aa0c93427d9a6c"
+    },
+    {
+      "path": "docs/COMBAT-ENTRY.md",
+      "bytes": 3018,
+      "sha256": "0e1fcf2b1d4723f919338c4615a576f145c9a98986076ce06ef67463cc32beff"
     },
     {
       "path": "docs/SOURCE-COMPARISON.md",
@@ -38,8 +43,8 @@
     },
     {
       "path": "docs/TESTING.md",
-      "bytes": 2379,
-      "sha256": "23cdccbd447a8ea9887dce2a044b23cb9ffe5c67a2cb89e4fbe5f8929b38f641"
+      "bytes": 2949,
+      "sha256": "c025518988050ace8ee8804f6ccd09fbaa7add80d98f4972e3cccfdaab09d2c6"
     },
     {
       "path": "docs/TPC-MANAGED-REPLACEMENT.md",
@@ -52,9 +57,14 @@
       "sha256": "d62d845fd6be3bf3d979ddf766d6678a93b157479428634d9e47c198a2ddd609"
     },
     {
+      "path": "docs/github/COMBAT-ENTRY.md",
+      "bytes": 3018,
+      "sha256": "0e1fcf2b1d4723f919338c4615a576f145c9a98986076ce06ef67463cc32beff"
+    },
+    {
       "path": "docs/github/README.md",
-      "bytes": 3471,
-      "sha256": "1edb7dbe4ca2b365907997d04378c27f826fb32269669005b7d45faf2c6b88b0"
+      "bytes": 3806,
+      "sha256": "bf55937f2fbc9b84a3067b2a2261eece85ce1f3e435fa461572acde7fdd883ca"
     },
     {
       "path": "docs/github/SOURCE-COMPARISON.md",
@@ -63,8 +73,8 @@
     },
     {
       "path": "docs/github/TESTING.md",
-      "bytes": 2379,
-      "sha256": "23cdccbd447a8ea9887dce2a044b23cb9ffe5c67a2cb89e4fbe5f8929b38f641"
+      "bytes": 2949,
+      "sha256": "c025518988050ace8ee8804f6ccd09fbaa7add80d98f4972e3cccfdaab09d2c6"
     },
     {
       "path": "docs/github/UPSTREAM.md",
@@ -88,8 +98,8 @@
     },
     {
       "path": "scripts/prepare-github.py",
-      "bytes": 5709,
-      "sha256": "14b12f458822e77c200c78b93613721a3225e5bb3fb94c0a17ed44b7e8a7feaf"
+      "bytes": 5760,
+      "sha256": "582fb1c04b186f0ec35b2c1e245ac2d28256de2fc98cf9c59a05d709368ecbd7"
     },
     {
       "path": "scripts/recompare-source.py",
@@ -100,6 +110,11 @@
       "path": "scripts/test-adventure-smoke.py",
       "bytes": 6002,
       "sha256": "b31c18d3d13496828766ece4cbe8bbac0022618760736d5393ed608111ec308a"
+    },
+    {
+      "path": "scripts/test-combat-smoke.py",
+      "bytes": 6227,
+      "sha256": "ba741d57c4c5def3586b3252c6e25a554e908946fb5cd8d8920b7dec587495f2"
     },
     {
       "path": "scripts/test-desktop-smoke.py",
@@ -473,8 +488,8 @@
     },
     {
       "path": "src/Por.Core/Rules/CombatSt.Generated.cs",
-      "bytes": 28567,
-      "sha256": "22e0ffb742bb6e1a143bcfd294a5a11e959fd8fe0d454025439860d98147db00"
+      "bytes": 28774,
+      "sha256": "8d30be98096e73fb2281221695d4e55f388d3a4edd83176843e307afd021368d"
     },
     {
       "path": "src/Por.Core/Rules/Dice.cs",
@@ -1013,8 +1028,8 @@
     },
     {
       "path": "src/Por.Desktop/DesktopHost.cs",
-      "bytes": 8454,
-      "sha256": "3729c0becaa4b481e016c39b3b01fddeb87c79b6208f4fac5c2f014cbc2bea1e"
+      "bytes": 8509,
+      "sha256": "edb837aeb87946a6464bed59cb31157735bc95fc731fc31632fbf3172885947f"
     },
     {
       "path": "src/Por.Desktop/DesktopSound.cs",
@@ -1098,8 +1113,8 @@
     },
     {
       "path": "tests/Por.CbtMap.Tests/Program.cs",
-      "bytes": 24068,
-      "sha256": "17e1e2ebae07d0fd7b6a77314dc2d81697443e34e6d3e6346e9c6ead15d479b0"
+      "bytes": 26435,
+      "sha256": "f36e60d7d38089c040678ce60ff399c3580933a63efb0c645da73e94f2273587"
     },
     {
       "path": "tests/Por.CompTool.Tests/Por.CompTool.Tests.csproj",
@@ -1258,8 +1273,8 @@
     },
     {
       "path": "tests/Por.FinalThree.Tests/CombatChecks.cs",
-      "bytes": 13048,
-      "sha256": "83e5f63bd4785bb3d63075261bedadf7b6004a2d78d49173cbf9fed66e9b7b97"
+      "bytes": 13071,
+      "sha256": "c85059ca7ffcbe805c9fa5dbfc3960b0d3fe3c3742f6161db8c2a6b1a4d5adf6"
     },
     {
       "path": "tests/Por.FinalThree.Tests/DungeonOracle.cs",
@@ -1817,7 +1832,7 @@
       "sha256": "9d2b4f1c0ead14dfbd33a7c2d34ffe4c8668b4fb53a176a214e4df568f2aec80"
     }
   ],
-  "payload_files": 363,
+  "payload_files": 366,
   "production_files": 188,
   "test_source_files": 153,
   "original_media_hashes_excluded": 165,
