@@ -1,0 +1,500 @@
+{
+  "schema": 1,
+  "scope": "Pool of Radiance C# campaign combat validation; incomplete",
+  "campaign_completion": false,
+  "static_scan": {
+    "scripts": 29,
+    "candidate_squares": 1301,
+    "unresolved_event_squares": 1466,
+    "unresolved_geometry_references": 3,
+    "source": "evidence/campaign-combat-2026-10-22/static-inventory-v2.json",
+    "limits": "Unpatched media, bounded static classifier and literal map ids only. Squares are NOT distinct encounters; dynamic/rest/wilderness/story alternatives not exhaustively identified."
+  },
+  "areas": [
+    {
+      "scriptId": 0,
+      "disk": 3,
+      "maps": [
+        {
+          "mapId": 0,
+          "area": "NEW PHLAN",
+          "static_fight_candidate_squares": 8
+        }
+      ],
+      "native_victory_lifecycles": 0,
+      "native_defeat_recovery_lifecycles": 0,
+      "natural_campaign_route_validated": false
+    },
+    {
+      "scriptId": 1,
+      "disk": 6,
+      "maps": [
+        {
+          "mapId": 1,
+          "area": "BUCCANEER'S BASE",
+          "static_fight_candidate_squares": 3
+        }
+      ],
+      "native_victory_lifecycles": 0,
+      "native_defeat_recovery_lifecycles": 0,
+      "natural_campaign_route_validated": false
+    },
+    {
+      "scriptId": 2,
+      "disk": 4,
+      "maps": [
+        {
+          "mapId": 2,
+          "area": "TEXTILE HOUSE",
+          "static_fight_candidate_squares": 127
+        }
+      ],
+      "native_victory_lifecycles": 0,
+      "native_defeat_recovery_lifecycles": 0,
+      "natural_campaign_route_validated": false
+    },
+    {
+      "scriptId": 3,
+      "disk": 5,
+      "maps": [],
+      "native_victory_lifecycles": 0,
+      "native_defeat_recovery_lifecycles": 0,
+      "natural_campaign_route_validated": false
+    },
+    {
+      "scriptId": 4,
+      "disk": 5,
+      "maps": [
+        {
+          "mapId": 4,
+          "area": "VALJEVO CASTLE NE",
+          "static_fight_candidate_squares": 22
+        }
+      ],
+      "native_victory_lifecycles": 0,
+      "native_defeat_recovery_lifecycles": 0,
+      "natural_campaign_route_validated": false
+    },
+    {
+      "scriptId": 5,
+      "disk": 5,
+      "maps": [],
+      "native_victory_lifecycles": 0,
+      "native_defeat_recovery_lifecycles": 0,
+      "natural_campaign_route_validated": false
+    },
+    {
+      "scriptId": 6,
+      "disk": 5,
+      "maps": [
+        {
+          "mapId": 6,
+          "area": "VALJEVO CASTLE SW",
+          "static_fight_candidate_squares": 10
+        }
+      ],
+      "native_victory_lifecycles": 0,
+      "native_defeat_recovery_lifecycles": 0,
+      "natural_campaign_route_validated": false
+    },
+    {
+      "scriptId": 7,
+      "disk": 5,
+      "maps": [
+        {
+          "mapId": 3,
+          "area": "VALJEVO TOWER",
+          "static_fight_candidate_squares": 0
+        },
+        {
+          "mapId": 7,
+          "area": "VALJEVO TOWER",
+          "static_fight_candidate_squares": 4
+        }
+      ],
+      "native_victory_lifecycles": 0,
+      "native_defeat_recovery_lifecycles": 0,
+      "natural_campaign_route_validated": false
+    },
+    {
+      "scriptId": 8,
+      "disk": 3,
+      "maps": [
+        {
+          "mapId": 0,
+          "area": "PHLAN CITY HALL",
+          "static_fight_candidate_squares": 0
+        }
+      ],
+      "native_victory_lifecycles": 0,
+      "native_defeat_recovery_lifecycles": 0,
+      "natural_campaign_route_validated": false
+    },
+    {
+      "scriptId": 9,
+      "disk": 2,
+      "maps": [
+        {
+          "mapId": 9,
+          "area": "STOJANOW GATE",
+          "static_fight_candidate_squares": 24
+        }
+      ],
+      "native_victory_lifecycles": 0,
+      "native_defeat_recovery_lifecycles": 0,
+      "natural_campaign_route_validated": false
+    },
+    {
+      "scriptId": 10,
+      "disk": 4,
+      "maps": [
+        {
+          "mapId": 10,
+          "area": "VALHINGEN GRAVES",
+          "static_fight_candidate_squares": 174
+        }
+      ],
+      "native_victory_lifecycles": 0,
+      "native_defeat_recovery_lifecycles": 0,
+      "natural_campaign_route_validated": false
+    },
+    {
+      "scriptId": 11,
+      "disk": 3,
+      "maps": [
+        {
+          "mapId": 0,
+          "area": "TRAINING HALL",
+          "static_fight_candidate_squares": 4
+        }
+      ],
+      "native_victory_lifecycles": 1,
+      "native_defeat_recovery_lifecycles": 0,
+      "natural_campaign_route_validated": false
+    },
+    {
+      "scriptId": 13,
+      "disk": 8,
+      "maps": [
+        {
+          "mapId": 13,
+          "area": "KOBOLD CAVES",
+          "static_fight_candidate_squares": 222
+        }
+      ],
+      "native_victory_lifecycles": 0,
+      "native_defeat_recovery_lifecycles": 0,
+      "natural_campaign_route_validated": false
+    },
+    {
+      "scriptId": 14,
+      "disk": 3,
+      "maps": [
+        {
+          "mapId": 14,
+          "area": "KOVEL MANSION",
+          "static_fight_candidate_squares": 31
+        }
+      ],
+      "native_victory_lifecycles": 0,
+      "native_defeat_recovery_lifecycles": 0,
+      "natural_campaign_route_validated": false
+    },
+    {
+      "scriptId": 15,
+      "disk": 2,
+      "maps": [
+        {
+          "mapId": 15,
+          "area": "MENDOR'S LIBRARY",
+          "static_fight_candidate_squares": 0
+        }
+      ],
+      "native_victory_lifecycles": 0,
+      "native_defeat_recovery_lifecycles": 0,
+      "natural_campaign_route_validated": false
+    },
+    {
+      "scriptId": 16,
+      "disk": 8,
+      "maps": [
+        {
+          "mapId": 16,
+          "area": "LIZARD MAN KEEP",
+          "static_fight_candidate_squares": 0
+        },
+        {
+          "mapId": 30,
+          "area": "LIZARD CATACOMBS",
+          "static_fight_candidate_squares": 0
+        }
+      ],
+      "native_victory_lifecycles": 0,
+      "native_defeat_recovery_lifecycles": 0,
+      "natural_campaign_route_validated": false
+    },
+    {
+      "scriptId": 17,
+      "disk": 7,
+      "maps": [
+        {
+          "mapId": 17,
+          "area": "NOMAD CAMP",
+          "static_fight_candidate_squares": 82
+        }
+      ],
+      "native_victory_lifecycles": 0,
+      "native_defeat_recovery_lifecycles": 0,
+      "natural_campaign_route_validated": false
+    },
+    {
+      "scriptId": 18,
+      "disk": 1,
+      "maps": [
+        {
+          "mapId": 18,
+          "area": "PODAL PLAZA",
+          "static_fight_candidate_squares": 7
+        }
+      ],
+      "native_victory_lifecycles": 0,
+      "native_defeat_recovery_lifecycles": 0,
+      "natural_campaign_route_validated": false
+    },
+    {
+      "scriptId": 19,
+      "disk": 6,
+      "maps": [],
+      "native_victory_lifecycles": 0,
+      "native_defeat_recovery_lifecycles": 0,
+      "natural_campaign_route_validated": false
+    },
+    {
+      "scriptId": 20,
+      "disk": 2,
+      "maps": [
+        {
+          "mapId": 20,
+          "area": "SLUMS",
+          "static_fight_candidate_squares": 130
+        }
+      ],
+      "native_victory_lifecycles": 1,
+      "native_defeat_recovery_lifecycles": 1,
+      "natural_campaign_route_validated": false
+    },
+    {
+      "scriptId": 21,
+      "disk": 4,
+      "maps": [
+        {
+          "mapId": 21,
+          "area": "SOKAL KEEP",
+          "static_fight_candidate_squares": 72
+        }
+      ],
+      "native_victory_lifecycles": 0,
+      "native_defeat_recovery_lifecycles": 0,
+      "natural_campaign_route_validated": false
+    },
+    {
+      "scriptId": 22,
+      "disk": 7,
+      "maps": [
+        {
+          "mapId": 22,
+          "area": "SORCERER'S ISLAND",
+          "static_fight_candidate_squares": 0
+        }
+      ],
+      "native_victory_lifecycles": 0,
+      "native_defeat_recovery_lifecycles": 0,
+      "natural_campaign_route_validated": false
+    },
+    {
+      "scriptId": 23,
+      "disk": 7,
+      "maps": [
+        {
+          "mapId": 23,
+          "area": "YARASH'S PYRAMID",
+          "static_fight_candidate_squares": 1
+        }
+      ],
+      "native_victory_lifecycles": 0,
+      "native_defeat_recovery_lifecycles": 0,
+      "natural_campaign_route_validated": false
+    },
+    {
+      "scriptId": 24,
+      "disk": 1,
+      "maps": [
+        {
+          "mapId": 24,
+          "area": "TEMPLE OF BANE",
+          "static_fight_candidate_squares": 168
+        },
+        {
+          "mapId": 31,
+          "area": "WEALTHY AREA",
+          "static_fight_candidate_squares": 165
+        }
+      ],
+      "native_victory_lifecycles": 0,
+      "native_defeat_recovery_lifecycles": 0,
+      "natural_campaign_route_validated": false
+    },
+    {
+      "scriptId": 25,
+      "disk": 6,
+      "maps": [
+        {
+          "mapId": 25,
+          "area": "WESTERN WILDERNESS",
+          "static_fight_candidate_squares": 10
+        }
+      ],
+      "native_victory_lifecycles": 0,
+      "native_defeat_recovery_lifecycles": 0,
+      "natural_campaign_route_validated": false
+    },
+    {
+      "scriptId": 26,
+      "disk": 7,
+      "maps": [
+        {
+          "mapId": 26,
+          "area": "CENTRAL WILDERNESS",
+          "static_fight_candidate_squares": 11
+        }
+      ],
+      "native_victory_lifecycles": 0,
+      "native_defeat_recovery_lifecycles": 0,
+      "natural_campaign_route_validated": false
+    },
+    {
+      "scriptId": 27,
+      "disk": 8,
+      "maps": [
+        {
+          "mapId": 27,
+          "area": "EASTERN WILDERNESS",
+          "static_fight_candidate_squares": 23
+        }
+      ],
+      "native_victory_lifecycles": 0,
+      "native_defeat_recovery_lifecycles": 0,
+      "natural_campaign_route_validated": false
+    },
+    {
+      "scriptId": 28,
+      "disk": 6,
+      "maps": [
+        {
+          "mapId": 28,
+          "area": "ZHENTIL OUTPOST",
+          "static_fight_candidate_squares": 3
+        }
+      ],
+      "native_victory_lifecycles": 0,
+      "native_defeat_recovery_lifecycles": 0,
+      "natural_campaign_route_validated": false
+    },
+    {
+      "scriptId": 29,
+      "disk": 8,
+      "maps": [
+        {
+          "mapId": 29,
+          "area": "KUTO'S WELL",
+          "static_fight_candidate_squares": 0
+        },
+        {
+          "mapId": 32,
+          "area": "KUTO'S CATACOMBS",
+          "static_fight_candidate_squares": 0
+        }
+      ],
+      "native_victory_lifecycles": 0,
+      "native_defeat_recovery_lifecycles": 0,
+      "natural_campaign_route_validated": false
+    }
+  ],
+  "runtime_scenarios": [
+    {
+      "id": "lifecycle-1",
+      "script": 11,
+      "position": [
+        7,
+        1
+      ],
+      "mode": "synthetic-save real SDL/keyboard/AI",
+      "status": "victory_cleanup_save_load_pass",
+      "natural_campaign_progression": false,
+      "hp": 28,
+      "xp": 880,
+      "coins": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "inventory_items": 0,
+      "party_name_text_pixels": 85,
+      "evidence": "evidence/campaign-combat-2026-10-22/lifecycle-1"
+    },
+    {
+      "id": "slums-text-check",
+      "script": 20,
+      "position": [
+        13,
+        1
+      ],
+      "mode": "synthetic-save real SDL/keyboard/AI",
+      "status": "victory_cleanup_save_load_pass",
+      "natural_campaign_progression": false,
+      "hp": 62,
+      "xp": 510,
+      "coins": [
+        0,
+        96,
+        0,
+        0,
+        37,
+        0,
+        0
+      ],
+      "inventory_items": 1,
+      "party_name_text_pixels": 85,
+      "evidence": "evidence/campaign-combat-2026-10-22/slums-text-check"
+    },
+    {
+      "id": "slums-defeat-6",
+      "script": 20,
+      "position": [
+        13,
+        1
+      ],
+      "mode": "synthetic-save real SDL/keyboard/AI",
+      "status": "defeat_main_menu_recovery_pass",
+      "natural_campaign_progression": false,
+      "combat_result": 128,
+      "recovered_hp": 20,
+      "evidence": "evidence/campaign-combat-2026-10-22/slums-defeat-6"
+    }
+  ],
+  "natural_campaign_runs": [],
+  "pending_gates": [
+    "defeat and recovery",
+    "flee / morale / continue battle",
+    "nonempty loot acquisition and redistribution",
+    "multi-PC party ordering and downed members",
+    "ranged / spells / items / turn undead / effects",
+    "wilderness / large icons / full-capacity combat",
+    "early/middle/late story prerequisites and encounters",
+    "natural campaign progression and final battle completion"
+  ]
+}

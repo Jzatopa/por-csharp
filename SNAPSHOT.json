@@ -23,13 +23,18 @@
     },
     {
       "path": "README.md",
-      "bytes": 3806,
-      "sha256": "bf55937f2fbc9b84a3067b2a2261eece85ce1f3e435fa461572acde7fdd883ca"
+      "bytes": 4215,
+      "sha256": "cee1e477510a76d363e996cd84567603453c943630b90bcf4dbb3d3a6bb8da1b"
     },
     {
       "path": "UPSTREAM.md",
       "bytes": 1405,
       "sha256": "ac7613d88cabeca4ecbd3a310f314cacc80d8cebf99c7fa637aa0c93427d9a6c"
+    },
+    {
+      "path": "docs/CAMPAIGN-COMBAT.md",
+      "bytes": 3389,
+      "sha256": "11f9d93726f5e6edc68e8b488b137949a6d16304fda4d62e20465dcf45d41418"
     },
     {
       "path": "docs/COMBAT-ENTRY.md",
@@ -43,8 +48,8 @@
     },
     {
       "path": "docs/TESTING.md",
-      "bytes": 2949,
-      "sha256": "c025518988050ace8ee8804f6ccd09fbaa7add80d98f4972e3cccfdaab09d2c6"
+      "bytes": 4071,
+      "sha256": "6fecbb576b01381e868029d640735afc29ee5e776fd4c3e192c4b22655beb058"
     },
     {
       "path": "docs/TPC-MANAGED-REPLACEMENT.md",
@@ -52,9 +57,19 @@
       "sha256": "c7e405df0f9e402754831226d178d75b9425e0a6a186905a8b2af2026bdfe180"
     },
     {
+      "path": "docs/campaign-combat-coverage.json",
+      "bytes": 12295,
+      "sha256": "7eab8fb0f1afedb9c0422d3fa75cb3bf286aab8c3bb07116c43546772aed6da5"
+    },
+    {
       "path": "docs/github/AGENTS.md",
       "bytes": 738,
       "sha256": "d62d845fd6be3bf3d979ddf766d6678a93b157479428634d9e47c198a2ddd609"
+    },
+    {
+      "path": "docs/github/CAMPAIGN-COMBAT.md",
+      "bytes": 3389,
+      "sha256": "11f9d93726f5e6edc68e8b488b137949a6d16304fda4d62e20465dcf45d41418"
     },
     {
       "path": "docs/github/COMBAT-ENTRY.md",
@@ -63,8 +78,8 @@
     },
     {
       "path": "docs/github/README.md",
-      "bytes": 3806,
-      "sha256": "bf55937f2fbc9b84a3067b2a2261eece85ce1f3e435fa461572acde7fdd883ca"
+      "bytes": 4215,
+      "sha256": "cee1e477510a76d363e996cd84567603453c943630b90bcf4dbb3d3a6bb8da1b"
     },
     {
       "path": "docs/github/SOURCE-COMPARISON.md",
@@ -73,8 +88,8 @@
     },
     {
       "path": "docs/github/TESTING.md",
-      "bytes": 2949,
-      "sha256": "c025518988050ace8ee8804f6ccd09fbaa7add80d98f4972e3cccfdaab09d2c6"
+      "bytes": 4071,
+      "sha256": "6fecbb576b01381e868029d640735afc29ee5e776fd4c3e192c4b22655beb058"
     },
     {
       "path": "docs/github/UPSTREAM.md",
@@ -98,8 +113,8 @@
     },
     {
       "path": "scripts/prepare-github.py",
-      "bytes": 5760,
-      "sha256": "582fb1c04b186f0ec35b2c1e245ac2d28256de2fc98cf9c59a05d709368ecbd7"
+      "bytes": 5867,
+      "sha256": "284bc24d19b93a6c021f66636ca6d1d1ee0d967962daf98d6eeeb761cf4e14aa"
     },
     {
       "path": "scripts/recompare-source.py",
@@ -113,8 +128,8 @@
     },
     {
       "path": "scripts/test-combat-smoke.py",
-      "bytes": 6227,
-      "sha256": "ba741d57c4c5def3586b3252c6e25a554e908946fb5cd8d8920b7dec587495f2"
+      "bytes": 11059,
+      "sha256": "dbad380c0635a715fd5e73bda04d3e6dbd495f2c1df3fe255d3e59780e924541"
     },
     {
       "path": "scripts/test-desktop-smoke.py",
@@ -125,6 +140,11 @@
       "path": "scripts/test-portable.sh",
       "bytes": 553,
       "sha256": "cba3b734152a561e05c3d77e59334848f5a03f8d74dacb1f038b0b7bdcdc4c5a"
+    },
+    {
+      "path": "scripts/update-campaign-combat-coverage.py",
+      "bytes": 4871,
+      "sha256": "6268b74feca8998a844fbca25586fa5b2e6384c8884641b0682d43857f5d1677"
     },
     {
       "path": "src/Por.Core/Constants/C_Abil.cs",
@@ -1028,8 +1048,8 @@
     },
     {
       "path": "src/Por.Desktop/DesktopHost.cs",
-      "bytes": 8509,
-      "sha256": "edb837aeb87946a6464bed59cb31157735bc95fc731fc31632fbf3172885947f"
+      "bytes": 9458,
+      "sha256": "4454fa3d4af1f86adef5393c60f6892fb08bdacee34da4af210a9b6a48031d22"
     },
     {
       "path": "src/Por.Desktop/DesktopSound.cs",
@@ -1073,8 +1093,8 @@
     },
     {
       "path": "tests/Por.Adventure.Tests/Program.cs",
-      "bytes": 4065,
-      "sha256": "56b4637aeec9188705a18498b76cc18650c022ed12cfb0a8559beea20830de76"
+      "bytes": 4660,
+      "sha256": "c8caf33c88a171696d6349f43fd361105e47b2091fc50fe6f1081e01c160b139"
     },
     {
       "path": "tests/Por.Blit.Tests/Por.Blit.Tests.csproj",
@@ -1243,8 +1263,8 @@
     },
     {
       "path": "tests/Por.EvtKind.Media/Program.cs",
-      "bytes": 11726,
-      "sha256": "3e02705daf7f9d18b7dc3090f2cd947466c0a186925d6cd6a0fd1fabc850e103"
+      "bytes": 13137,
+      "sha256": "19a2f137abc33e845945af0e51e508c03682ec7bc48bdcb8fa9569bc2d03d11c"
     },
     {
       "path": "tests/Por.EvtKind.Tests/Checks.cs",
@@ -1832,7 +1852,7 @@
       "sha256": "9d2b4f1c0ead14dfbd33a7c2d34ffe4c8668b4fb53a176a214e4df568f2aec80"
     }
   ],
-  "payload_files": 366,
+  "payload_files": 370,
   "production_files": 188,
   "test_source_files": 153,
   "original_media_hashes_excluded": 165,

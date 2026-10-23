@@ -37,3 +37,9 @@ All current C# test source is retained. Some older suites consume local `evidenc
 ## Limits
 
 Large assertion counts measure individual comparisons, not distinct gameplay scenarios. Source-derived oracles can share source misunderstandings. A passing host replay does not validate the full campaign, every combat spell/encounter, all hardware or original Turbo Pascal arithmetic equivalence.
+
+## Campaign combat lifecycle
+
+Use `python3 scripts/test-combat-smoke.py --complete` for a seeded duel victory through postcombat and save/load; specify `--script 20 --x 14 --y 1 --facing 6` for the Slums battle. Completion mode uses a synthetic level-8 fighter; the default entry/round smoke keeps the level-1 fixture. The level-1 fixture now uses the original internal AC convention (50 represents displayed AC 10). Capture snapshots include creature HP/status/XP, coins and item state; character-name white pixels are checked inside the text area, excluding decorative borders. The coverage summarizer revalidates accepted evidence instead of treating an existing result file alone as proof. See [campaign scope](CAMPAIGN-COMBAT.md).
+
+Add `--defeat` to completion mode for a normal-level-1 Slums party-loss/main-menu-reload case. It records the actual game-over input boundary before queued input can clear the transient result. The default victory replay still requires XP growth and matching postcombat saved/loaded party state; a duel defeat cannot count as a victory merely because its partyDefeated flag is false.

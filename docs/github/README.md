@@ -44,3 +44,7 @@ See [source comparison](docs/SOURCE-COMPARISON.md), [source dispositions](docs/s
 ## Combat-entry repair
 
 The reported script-11 combat-entry crash was traced to placement leaving `arenaCount` one past the final creature. Placement now publishes the actual retained-slot count before rendering; the candidate-inclusive count is preserved during placement probes. Portable regression tests exercise placement followed by occupancy and redraw, including the final creature and full-capacity/empty rosters. A native replay at script11, (7,1), instruction40107 now renders combat and advances from round0 to round1. See [repair and verification](docs/COMBAT-ENTRY.md) and [testing](docs/TESTING.md) for scope and replay instructions. This is not full-campaign or all-combat validation.
+
+## Campaign combat validation started
+
+Native seeded replays now cover training-hall and four-orc Slums victories, postcombat cleanup, real HP/XP/coin/item save-load checks, and Slums defeat/main-menu recovery. These are targeted synthetic-state checks, not natural campaign completion. See [campaign validation and replay](docs/CAMPAIGN-COMBAT.md) and [coverage ledger](docs/campaign-combat-coverage.json).

@@ -34,11 +34,12 @@ for folder in ['src', 'tests']:
 for relative in ['play-desktop.sh', '.gitignore', '.gitattributes', '.github/workflows/ci.yml',
  'scripts/dotnet.sh', 'scripts/test-portable.sh', 'scripts/recompare-source.py', 'scripts/prepare-github.py',
  'scripts/test-adventure-smoke.py', 'scripts/test-desktop-smoke.py', 'scripts/test-combat-smoke.py',
+ 'scripts/update-campaign-combat-coverage.py', 'docs/campaign-combat-coverage.json',
  'docs/TPC-MANAGED-REPLACEMENT.md']:
     transfer(root/relative, pathlib.Path(relative))
 for name in ['README.md', 'UPSTREAM.md', 'AGENTS.md']:
     transfer(root/'docs/github'/name, pathlib.Path(name))
-for name in ['TESTING.md', 'SOURCE-COMPARISON.md', 'COMBAT-ENTRY.md']:
+for name in ['TESTING.md', 'SOURCE-COMPARISON.md', 'COMBAT-ENTRY.md', 'CAMPAIGN-COMBAT.md']:
     transfer(root/'docs/github'/name, pathlib.Path('docs')/name)
 # Keep the public templates so the code-only export can be reproduced from this snapshot.
 for source in sorted((root/'docs/github').glob('*.md')):

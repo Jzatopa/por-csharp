@@ -15,7 +15,18 @@ public sealed class DesktopHost:IVideoHardware,IGameIoHost,DaxIo.IDaxPlatform,IG
  }
  void Decode(){for(int i=0;i<64000;i++)rgb[i]=palette[Frame[i]];}
  public void Present(bool force=false){if(!force&&clock.ElapsedMilliseconds-lastPresent<16)return;lastPresent=clock.ElapsedMilliseconds;if(dirty||force){Decode();Sdl.SDL_UpdateTexture(texture,IntPtr.Zero,rgb,320*4);dirty=false;}Sdl.SDL_RenderClear(renderer);Sdl.SDL_RenderCopy(renderer,texture,IntPtr.Zero,IntPtr.Zero);Sdl.SDL_RenderPresent(renderer);}
- public void Capture(string label){Decode();string file=Path.Combine(captures,$"{shot++:D3}-{label}.png");Png.Save(file,rgb,320,200);File.WriteAllText(Path.ChangeExtension(file,".json"),System.Text.Json.JsonSerializer.Serialize(new{stage,x=GDVars.gMapX,y=GDVars.gMapY,facing=GDVars.gFacing,script=GDVars.eclScriptId,eclIp=GDVars.eclIp,interfaceState=GDVars.ifcState,arenaCount=GDVars.arenaCount,round=GDVars.roundCounter,clock=GDVars.zone0==null?Array.Empty<int>():Enumerable.Range(0,7).Select(i=>(int)GDVars.zone0.words[C_Gbvm.CLOCK+i]).ToArray(),hp=GDVars.curChar==null?0:GDVars.curChar.hpCur,partySize=GDVars.zone1==null?0:GDVars.zone1[C_Gbvm.PARTY_SIZE]}));Console.WriteLine("CAPTURE "+file);}
+ public static object[] PartyState()
+ {
+  var result=new List<object>();
+  for(var c=GDVars.creatureList;c!=null&&result.Count<ARENA_SLOTS;c=c.nextCharAddr)
+  {
+   var items=new List<object>();for(var it=c.itemsAddr;it!=null&&items.Count<256;it=it.next)items.Add(new{it.itemType,it.quantity,it.plus,it.equipped,it.charges,it.weight,it.value,it.cursed,it.unidMask,it.saveBonus,nameIds=it.nameIds.ToArray(),variantData=it.variantData.ToArray()});
+   result.Add(new{c.name,hp=(int)c.hpCur,status=(int)c.status,enabled=(int)c.enabled,c.experience,coins=c.coins.ToArray(),items=items.ToArray(),combatRecord=c.combatAddr!=null});
+  }
+  return result.ToArray();
+ }
+ public void Capture(string label){Decode();string file=Path.Combine(captures,$"{shot++:D3}-{label}.png");Png.Save(file,rgb,320,200);File.WriteAllText(Path.ChangeExtension(file,".json"),System.Text.Json.JsonSerializer.Serialize(new{stage,x=GDVars.gMapX,y=GDVars.gMapY,facing=GDVars.gFacing,script=GDVars.eclScriptId,eclIp=GDVars.eclIp,interfaceState=GDVars.ifcState,arenaCount=GDVars.arenaCount,round=GDVars.roundCounter,duel=GDVars.duelFlag,partyDefeated=GDVars.partyDefeated,combatResult=GDVars.zone1==null?0:GDVars.zone1[C_Gbvm.COMBAT_RESULT],party=PartyState(),clock=GDVars.zone0==null?Array.Empty<int>():Enumerable.Range(0,7).Select(i=>(int)GDVars.zone0.words[C_Gbvm.CLOCK+i]).ToArray(),hp=GDVars.curChar==null?0:GDVars.curChar.hpCur,partySize=GDVars.zone1==null?0:GDVars.zone1[C_Gbvm.PARTY_SIZE]}));Console.WriteLine("CAPTURE "+file);}
+ bool defeatCaptured;
  public DesktopSound Audio;
  public void Pump()
  {
@@ -24,7 +35,7 @@ public sealed class DesktopHost:IVideoHardware,IGameIoHost,DaxIo.IDaxPlatform,IG
   Present();
   if(!stageCaptured&&stage=="intro"){stageCaptured=true;Capture("title");Console.WriteLine("READY intro");}
  }
- public void OnStage(string value){stage=value;stageCaptured=false;Console.WriteLine("STATE "+value);}
+ public void OnStage(string value){if(value=="menu")defeatCaptured=false;stage=value;stageCaptured=false;Console.WriteLine("STATE "+value);}
  public static byte[] TranslateKey(int key,ushort mod)
  {
   if((mod&0x300)!=0){int scan=key switch{113=>16,120=>45,109=>50,114=>19,_=>-1};return scan<0?Array.Empty<byte>():new byte[]{0,(byte)scan};}
@@ -34,7 +45,7 @@ public sealed class DesktopHost:IVideoHardware,IGameIoHost,DaxIo.IDaxPlatform,IG
   if(key>=33&&key<=126){char ch=(char)key;if(ch>='a'&&ch<='z'&&(((mod&3)!=0)^((mod&0x2000)!=0)))ch=char.ToUpperInvariant(ch);if((mod&3)!=0){const string plain="1234567890-=[]\\;',./`";const string shifted="!@#$%^&*()_+{}|:\"<>?~";int i=plain.IndexOf(ch);if(i>=0)ch=shifted[i];}return new[]{(byte)ch};}return Array.Empty<byte>();
  }
  public bool KeyPressed{get{Pump();if(!stageCaptured&&(stage=="menu"||stage=="explore")){stageCaptured=true;Capture(stage=="menu"?"main-menu":"exploration");Console.WriteLine("READY "+stage);}if(keys.Count==0)Thread.Sleep(1);return keys.Count>0;}}
- public byte ReadKey(){while(!KeyPressed)Thread.Sleep(1);return keys.Dequeue();}
+ public byte ReadKey(){if(GDVars.partyDefeated&&!defeatCaptured){defeatCaptured=true;Capture("party-defeat");}while(!KeyPressed)Thread.Sleep(1);return keys.Dequeue();}
  public int BiosTicks(){Pump();return (int)(clock.Elapsed.TotalSeconds*1193182/65536)%0x1800b0;}
  public void Delay(ushort ms){long end=clock.ElapsedMilliseconds+ms;do{Pump();Thread.Sleep(1);}while(clock.ElapsedMilliseconds<end);}
  public byte ReadByte(ushort segment,ushort offset){if(segment!=0xA000)throw new NotSupportedException($"Video segment {segment:X}");return Frame[offset];}

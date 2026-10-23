@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using Por.Core;
 
 class DaxHost : DaxIo.IDaxPlatform
@@ -103,6 +104,8 @@ static class Program
         Directory.CreateDirectory(dir);
         var sb = new StringBuilder();
         int failures = 0;
+        var inventory = new List<object>();
+        var geometryIssues = new List<object>();
         try
         {
             foreach (var f in Directory.GetFiles(src))
@@ -156,11 +159,13 @@ static class Program
                         var maps = MapsLoaded();
                         var counts = new int[8];
                         int cells = 0;
+                        var mapInventory = new List<object>();
                         foreach (int m in maps)
                         {
                             var geo = Load("GEO" + disk, (byte)m);
-                            if (geo == null || geo.Length != 1026) { sb.AppendLine("- GEO" + disk + " map " + m + " (from script " + id + "): missing or not 1026 bytes"); continue; }
+                            if (geo == null || geo.Length != 1026) { geometryIssues.Add(new { disk, scriptId=(int)id, mapId=m, observedBytes=geo==null?0:geo.Length }); sb.AppendLine("- GEO" + disk + " map " + m + " (from script " + id + "): missing or not 1026 bytes"); continue; }
                             var cellsByKind = new List<string>();
+                            var candidates = new List<object>();
                             for (int y = 0; y < 16; y++)
                                 for (int x = 0; x < 16; x++)
                                 {
@@ -168,12 +173,15 @@ static class Program
                                     if (ev == 0) continue;
                                     byte k = EvtKind.Kind(ev);
                                     counts[k]++; cells++;
+                                    if (k == EvtKind.KIND_FIGHT) candidates.Add(new { x, y, eventId=(int)ev, status="static_candidate_not_runtime_validated" });
                                     if (k == EvtKind.KIND_EVENT) cellsByKind.Add("(" + x + "," + y + ")=" + ev);
                                     if (k == EvtKind.KIND_EXIT) edgeExit[(x == 0 || y == 0 || x == 15 || y == 15) ? 0 : 1]++;
                                 }
+                            mapInventory.Add(new { mapId=m, area=AreaName.AreaFor(id,(byte)m), fightCandidates=candidates });
                             if (cellsByKind.Count > 0)
                                 unknown.AppendLine("- Disk " + disk + ", script " + id + ", map " + m + ": " + string.Join(" ", cellsByKind));
                         }
+                        inventory.Add(new { disk, scriptId=(int)id, scriptSha256=Convert.ToHexString(System.Security.Cryptography.SHA256.HashData(data)).ToLowerInvariant(), maps=mapInventory, dispatches, status="static_scan_only", scanLimits="bounded classifier; literal LOADFILES only; dynamic/random/rest encounters and state-dependent alternatives are not enumerated exhaustively" });
                         for (int k = 0; k < 8; k++) totals[k] += counts[k];
                         squares += cells;
                         table.AppendLine("| " + disk + " | " + id + " | " + len + " | " + dispatches + " | " + (maps.Count == 0 ? "–" : string.Join(",", maps)) +
@@ -202,6 +210,7 @@ static class Program
             o.AppendLine("## Squares whose dispatch was not found (event?)"); o.AppendLine();
             o.Append(unknown.Length > 0 ? unknown.ToString() : "None.\n");
             File.WriteAllText(report, o.ToString());
+            if(args.Length>2)File.WriteAllText(args[2],JsonSerializer.Serialize(new { schema=1, scope="unpatched original area script static candidates, NOT campaign runtime coverage", failures, scanTotals=new { eventSquares=squares, unresolvedEventSquares=totals[1], fightClassifiedSquares=totals[6] }, geometryIssues, scripts=inventory },new JsonSerializerOptions { WriteIndented=true }));
             Console.WriteLine("scripts=" + scripts + " failures=" + failures + " squares=" + squares + " listsCut=" + EvtKind.listsCut);
             Console.WriteLine(string.Join(" ", Enumerable.Range(0, 8).Select(k => KindName[k] + "=" + totals[k])));
         }
