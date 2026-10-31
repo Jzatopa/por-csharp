@@ -3,8 +3,8 @@
   "files": [
     {
       "path": ".gitattributes",
-      "bytes": 84,
-      "sha256": "59ca88fbccc73bc0f571dc0aee85b855c71aab84d0d82bfc43da4c0fbb3b057c"
+      "bytes": 234,
+      "sha256": "811c1ca28dcdff8d84af77e66a3eb2817c8c8a16e986b2c41db9b387540bfda7"
     },
     {
       "path": ".github/workflows/ci.yml",
@@ -23,8 +23,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 4215,
-      "sha256": "cee1e477510a76d363e996cd84567603453c943630b90bcf4dbb3d3a6bb8da1b"
+      "bytes": 6925,
+      "sha256": "91b767d2983c27bbb7847d61e392eea3bf5a1d97f1d82cfd43f66936517bca6f"
     },
     {
       "path": "UPSTREAM.md",
@@ -33,13 +33,43 @@
     },
     {
       "path": "docs/CAMPAIGN-COMBAT.md",
-      "bytes": 3389,
-      "sha256": "11f9d93726f5e6edc68e8b488b137949a6d16304fda4d62e20465dcf45d41418"
+      "bytes": 4489,
+      "sha256": "910e60441f2c518fe35c150c88407b2c3d1748a0683fe153d74066d00041ff9b"
     },
     {
       "path": "docs/COMBAT-ENTRY.md",
       "bytes": 3018,
       "sha256": "0e1fcf2b1d4723f919338c4615a576f145c9a98986076ce06ef67463cc32beff"
+    },
+    {
+      "path": "docs/COMPLETION-PASS-2026-10-23.md",
+      "bytes": 8458,
+      "sha256": "a2ea19841db67fd4e08fb37ea7b973abae234f172d397da5ff973c81f1a0142a"
+    },
+    {
+      "path": "docs/EXPANDED-THREE-PASSES-2026-10-25.md",
+      "bytes": 10588,
+      "sha256": "933bd9435a1513b9d7e42c576b056397f9149d3589681874b03f1c3362a96d06"
+    },
+    {
+      "path": "docs/EXPLICIT-ITEM-PASS-2026-10-24.md",
+      "bytes": 5169,
+      "sha256": "5b46d8a92074b3d2f614cc8fcb30af1df6eb3ae39adfd2a8da12997e8fc615aa"
+    },
+    {
+      "path": "docs/EXPLICIT-SPELL-PASS-2026-10-24.md",
+      "bytes": 5016,
+      "sha256": "3ed7cc986cfca0012c2911c8927a9dfc0b4f333ead58422ce5c3c9ca093c4b67"
+    },
+    {
+      "path": "docs/FULL-DESKTOP-AUDIO-2026-10-22.md",
+      "bytes": 7521,
+      "sha256": "6c64d0e7291f846415fb5b2a5e19fc19fe3ff21ca033b85c3368dfec7765cf08"
+    },
+    {
+      "path": "docs/REPOSITORY-CLOSURE-2026-10-23.md",
+      "bytes": 6999,
+      "sha256": "a971974661fe04d393f9a8ecb7a229b1374053909c99d938e813defc6760caba"
     },
     {
       "path": "docs/SOURCE-COMPARISON.md",
@@ -48,18 +78,43 @@
     },
     {
       "path": "docs/TESTING.md",
-      "bytes": 4071,
-      "sha256": "6fecbb576b01381e868029d640735afc29ee5e776fd4c3e192c4b22655beb058"
+      "bytes": 5264,
+      "sha256": "44c2f720b309c2c0343b4b2616cd13e1f20531e68e397db862ac2bfa7cdf649b"
+    },
+    {
+      "path": "docs/THREE-ACTION-PASSES-2026-10-24.md",
+      "bytes": 7243,
+      "sha256": "975e9351b296d57dfbf5871e2097e2fa821705c1aec9539ad079867d923b2c16"
     },
     {
       "path": "docs/TPC-MANAGED-REPLACEMENT.md",
-      "bytes": 1748,
-      "sha256": "c7e405df0f9e402754831226d178d75b9425e0a6a186905a8b2af2026bdfe180"
+      "bytes": 2497,
+      "sha256": "eca9798788999080d008cb3769b2e7f62b9eb9fcbe4960e1ff40a3441c08ed1b"
+    },
+    {
+      "path": "docs/UPDATES-2026-10-31.md",
+      "bytes": 7997,
+      "sha256": "31834083944327e5de1238030001b4f7068127ba4e76736e8a5aa3819292dc43"
+    },
+    {
+      "path": "docs/UPSTREAM-AUDIO-AND-VALIDATION-2026-10-23.md",
+      "bytes": 6207,
+      "sha256": "eeb8de8f96a230e19d30111978334e1e86acbf5788a838162e8ecaeaf0954290"
+    },
+    {
+      "path": "docs/WILDERNESS-COMBAT-PASS-2026-10-23.md",
+      "bytes": 4433,
+      "sha256": "8fd9b2cf5b9bba179a3c61db493e99562c9fdd36ddbcdaca5e93014218701904"
+    },
+    {
+      "path": "docs/WILDERNESS-PASS-2026-10-23.md",
+      "bytes": 5708,
+      "sha256": "37c6a4575ab1aac92d6ddee121dff20c598383650102c86bf2ee236f56305f6e"
     },
     {
       "path": "docs/campaign-combat-coverage.json",
-      "bytes": 12295,
-      "sha256": "7eab8fb0f1afedb9c0422d3fa75cb3bf286aab8c3bb07116c43546772aed6da5"
+      "bytes": 27990,
+      "sha256": "d221f4bfd3b8d6b8b33f87643c6667cc91a1e6f78d997d6fe055b6668a4bcec7"
     },
     {
       "path": "docs/github/AGENTS.md",
@@ -68,8 +123,8 @@
     },
     {
       "path": "docs/github/CAMPAIGN-COMBAT.md",
-      "bytes": 3389,
-      "sha256": "11f9d93726f5e6edc68e8b488b137949a6d16304fda4d62e20465dcf45d41418"
+      "bytes": 4489,
+      "sha256": "910e60441f2c518fe35c150c88407b2c3d1748a0683fe153d74066d00041ff9b"
     },
     {
       "path": "docs/github/COMBAT-ENTRY.md",
@@ -78,8 +133,8 @@
     },
     {
       "path": "docs/github/README.md",
-      "bytes": 4215,
-      "sha256": "cee1e477510a76d363e996cd84567603453c943630b90bcf4dbb3d3a6bb8da1b"
+      "bytes": 6925,
+      "sha256": "91b767d2983c27bbb7847d61e392eea3bf5a1d97f1d82cfd43f66936517bca6f"
     },
     {
       "path": "docs/github/SOURCE-COMPARISON.md",
@@ -88,8 +143,13 @@
     },
     {
       "path": "docs/github/TESTING.md",
-      "bytes": 4071,
-      "sha256": "6fecbb576b01381e868029d640735afc29ee5e776fd4c3e192c4b22655beb058"
+      "bytes": 5264,
+      "sha256": "44c2f720b309c2c0343b4b2616cd13e1f20531e68e397db862ac2bfa7cdf649b"
+    },
+    {
+      "path": "docs/github/UPDATES-2026-10-31.md",
+      "bytes": 7997,
+      "sha256": "31834083944327e5de1238030001b4f7068127ba4e76736e8a5aa3819292dc43"
     },
     {
       "path": "docs/github/UPSTREAM.md",
@@ -97,9 +157,29 @@
       "sha256": "ac7613d88cabeca4ecbd3a310f314cacc80d8cebf99c7fa637aa0c93427d9a6c"
     },
     {
+      "path": "docs/repository-file-dispositions.json",
+      "bytes": 139607,
+      "sha256": "654f3a4f7fcb1ddc3e1e267babd424ae6dafe6f7dafe1d5c2b2082d095627ecf"
+    },
+    {
       "path": "docs/source-dispositions.json",
-      "bytes": 50630,
-      "sha256": "c4eca6f50ae140868041d3703860a6ea44ae4d7a5422c984113293b062a4ef57"
+      "bytes": 97298,
+      "sha256": "12efec5c1eba833e24b6a12ebfaddd4cea3ec13e85fc5674298b819b98c1c256"
+    },
+    {
+      "path": "docs/source-inventory.json",
+      "bytes": 50480,
+      "sha256": "13a7c4bec409527cd0bbd288041b5965cbaaa243f04e653776de01aa592a44ab"
+    },
+    {
+      "path": "docs/upstream-review-2026-10-31.json",
+      "bytes": 118423,
+      "sha256": "85fe6e915810ce34c361605977aa920dcc18ba06390cd7be698bddbcbdec465c"
+    },
+    {
+      "path": "native/por_opl.c",
+      "bytes": 514,
+      "sha256": "1e683baa900b7c7ddae2b0f95880cef1141e4d552c4fe22140fd7f7f32c290e7"
     },
     {
       "path": "play-desktop.sh",
@@ -107,24 +187,239 @@
       "sha256": "4c9aaa8e7313382b3e907ebe5afccdf8e1ea138e8ceb561f3aa6f3ab1e0edd5f"
     },
     {
+      "path": "references/upstream-pinned/.forgejo/scripts/release.sh",
+      "bytes": 3012,
+      "sha256": "ec6c931d2d24dcc2442178e7b8a4022e4a691156238f58a3534f364a8ae0fd21"
+    },
+    {
+      "path": "references/upstream-pinned/.forgejo/scripts/reproduce.sh",
+      "bytes": 1619,
+      "sha256": "d032881a42bbe35b517133f3fcf3f846204768c8513446616bb26307e613aac8"
+    },
+    {
+      "path": "references/upstream-pinned/.forgejo/ssi-releases.txt",
+      "bytes": 984,
+      "sha256": "e2cac131ab07450ccd865ac415050ac167cf9b06414b488f52f835355ca15523"
+    },
+    {
+      "path": "references/upstream-pinned/.forgejo/workflows/build.yml",
+      "bytes": 7146,
+      "sha256": "5a9eee355f30b88c84adf90ff9542688856644fcafdb0ba700e0c8c85d82390b"
+    },
+    {
+      "path": "references/upstream-pinned/.gitattributes",
+      "bytes": 285,
+      "sha256": "b5683c3fcd70b56c6701b8902f9bfb71bbd40dddd8d3bb0cf42096b3ab23c24d"
+    },
+    {
+      "path": "references/upstream-pinned/.gitignore",
+      "bytes": 559,
+      "sha256": "6674adee3d2cbf10bc453acccf1f9f95920aee0a062fe4f1aedfc6df64a6ce18"
+    },
+    {
+      "path": "references/upstream-pinned/README.md",
+      "bytes": 2311,
+      "sha256": "20f63dee3395aba0a44c11969d83a714ed32700962a8a294ffe98124964c2f14"
+    },
+    {
+      "path": "references/upstream-pinned/bench/sndbench.sh",
+      "bytes": 1805,
+      "sha256": "7bea2fbaab6ccdb4400e1eacb1d889fbfcb75895e178704408ad9359d1a65ada"
+    },
+    {
+      "path": "references/upstream-pinned/bench/vidbench.sh",
+      "bytes": 1861,
+      "sha256": "b61f28c17a84c56737f83fe5688b4fb576f8a63611f1b10c9c9dfc1d00f7bf46"
+    },
+    {
+      "path": "references/upstream-pinned/build/build.bat",
+      "bytes": 1255,
+      "sha256": "725bbc08369822c932e3d1aacd31d328faabeacf55cd4a49da4e41b7f4a39228"
+    },
+    {
+      "path": "references/upstream-pinned/build/ovlsizes.py",
+      "bytes": 1628,
+      "sha256": "c11cd641e50742887e8bfdff132ddad844b2099f732b3a74a43e76b720da187b"
+    },
+    {
+      "path": "references/upstream-pinned/build/toolchain",
+      "bytes": 18,
+      "sha256": "98f3ecef05d8fa5c6fed9f1367b8e127296a585cc6b1ce35c03ed9fad98ab693"
+    },
+    {
+      "path": "references/upstream-pinned/build.sh",
+      "bytes": 13813,
+      "sha256": "afdefe7325da592d240f561bbb7acb18cdb0a982c3ba8559b5a7231f8d5f6c8a"
+    },
+    {
+      "path": "references/upstream-pinned/docs/changelog.md",
+      "bytes": 10003,
+      "sha256": "8fc83996a6cbf0cc02d827ac83cafeeb6a6875d585d8bf80df1f4340b03c3593"
+    },
+    {
+      "path": "references/upstream-pinned/docs/detailed-changes.md",
+      "bytes": 72998,
+      "sha256": "33048a053b84f9bc9a0f6033ab9062840f9158034fea02f801ab0f54f750637d"
+    },
+    {
+      "path": "references/upstream-pinned/docs/refactor-plan.md",
+      "bytes": 70807,
+      "sha256": "d3871cf8e4381a2ab91d9255330d142de0a09a0016e2b6315dec9dc0936ccd72"
+    },
+    {
+      "path": "references/upstream-pinned/package.sh",
+      "bytes": 3635,
+      "sha256": "f2e4f3c8f08e376802063a2c0ecd950ece003225b710cd38ebb5d72331ad6648"
+    },
+    {
+      "path": "references/upstream-pinned/tests/ovlloads.py",
+      "bytes": 991,
+      "sha256": "bc6323a9def88c6386dc18052e55dbd56c65b91ea6b97b41569d77eff913754d"
+    },
+    {
+      "path": "references/upstream-pinned/tests/regress.sh",
+      "bytes": 5050,
+      "sha256": "6d0b5a11fb49231cd9cfd78bcc31799f92c18f6549aa5b686bee191c09fb02f3"
+    },
+    {
+      "path": "references/upstream-pinned/tests/scenarios/README.md",
+      "bytes": 3695,
+      "sha256": "2a1a92d7e3a5214bbb044de9a0cdc947a22151862acf20f35caebb369e7081b4"
+    },
+    {
+      "path": "references/upstream-pinned/tests/scenarios/areachange.txt",
+      "bytes": 958,
+      "sha256": "f6b7281840503a1d2457a81a3085346c604af08d30991ea05c7ee45c63cd61e1"
+    },
+    {
+      "path": "references/upstream-pinned/tests/scenarios/boot.txt",
+      "bytes": 559,
+      "sha256": "5db6c25b4cf205313db827980f4a74603c60bcda835fc1838085374463c6bf55"
+    },
+    {
+      "path": "references/upstream-pinned/tests/scenarios/camp.txt",
+      "bytes": 574,
+      "sha256": "de6acae11de66a6f6ea7a13126b146f3cdcc77f4d15b9155c84eeceb9bda160c"
+    },
+    {
+      "path": "references/upstream-pinned/tests/scenarios/chargen.txt",
+      "bytes": 566,
+      "sha256": "daef236949740e9c68c80efec24278b40beeef56c18ea92a64bf2edabe90983b"
+    },
+    {
+      "path": "references/upstream-pinned/tests/scenarios/combat.txt",
+      "bytes": 1473,
+      "sha256": "9544783e4d610568ee13388698ece37dd4ae6b8e35df43f6a15507e3f72dfe24"
+    },
+    {
+      "path": "references/upstream-pinned/tests/scenarios/companion.txt",
+      "bytes": 2457,
+      "sha256": "0abf3fdecd5f62d5a1b72a2c61e4927028694837fdee9fa6643319b6103517ae"
+    },
+    {
+      "path": "references/upstream-pinned/tests/scenarios/journal.txt",
+      "bytes": 283,
+      "sha256": "7b88df9fe39e9b8c90b03a1f072718786712a04e642173c2df8a94695a847b23"
+    },
+    {
+      "path": "references/upstream-pinned/tests/scenarios/loadsave.txt",
+      "bytes": 1098,
+      "sha256": "75e6414ea49764d4c39e9b20c1387286bc0fe0f7f3acab9d821e23a31d364337"
+    },
+    {
+      "path": "references/upstream-pinned/tests/scenarios/shop.txt",
+      "bytes": 929,
+      "sha256": "4a84c664c741140fdcfd221bd3a8de8970c8a1b3505b49a020ee7b3a503096cb"
+    },
+    {
+      "path": "references/upstream-pinned/tests/scenarios/ssiformat.txt",
+      "bytes": 2365,
+      "sha256": "51404947b9a6e26c61064c7fca91fd928c53bbe923b3badd244bf5f5671bcd5d"
+    },
+    {
+      "path": "references/upstream-pinned/tests/scenarios/vault.txt",
+      "bytes": 960,
+      "sha256": "6652e95ecca1c5a3e2ef319b4cd41fa67040ee92c839f92a627cb610b0a98584"
+    },
+    {
+      "path": "references/upstream-pinned/tests/scenarios/wilderness.txt",
+      "bytes": 984,
+      "sha256": "fedf211fd2ce04733783bf0cb8637ffa6603c98ade15ad9ff869cee8ac0047ab"
+    },
+    {
+      "path": "references/upstream-pinned/tests/scenarios/wildfight.txt",
+      "bytes": 1978,
+      "sha256": "3c97cdf22231380af6d7a4f65560b72765e5ef15a6474d6ec418b349462373db"
+    },
+    {
+      "path": "references/upstream-pinned/tools/sbsfx.py",
+      "bytes": 8303,
+      "sha256": "f17db8ef5f5371ef37e77639f3401b693f10d798fb3f7a118de450f5bfa54600"
+    },
+    {
+      "path": "scripts/build-sbsfx.py",
+      "bytes": 5837,
+      "sha256": "7c4cead113fb64cee74900a76be0521fba2c0a48fcc55e4c8dc6e135102423d4"
+    },
+    {
+      "path": "scripts/check-expanded-action-mutations.py",
+      "bytes": 4443,
+      "sha256": "727e46c6a656febfac093f3018660e6c18a073c97f5fe9c2572fc03c1155f6fd"
+    },
+    {
+      "path": "scripts/check-three-action-mutations.py",
+      "bytes": 3807,
+      "sha256": "ce74040979411a8208472856cc0240de280a380f600e16ce50e479d77bb215f9"
+    },
+    {
+      "path": "scripts/compare-native-repeats.py",
+      "bytes": 3223,
+      "sha256": "8e5d669815b4b90034a8736599e8b5d36fa5e69d192d01eeba5f720289af3502"
+    },
+    {
       "path": "scripts/dotnet.sh",
       "bytes": 501,
       "sha256": "cebd06e9453e28fc1b6281147c53153689fc313c89e16782aa635976892d6b4b"
     },
     {
+      "path": "scripts/native_expanded_actions.py",
+      "bytes": 6403,
+      "sha256": "0c838990a255aaaad90e79624460bd85ad3fdda1e69de1d65d227ef4f9005f7d"
+    },
+    {
+      "path": "scripts/package-desktop.py",
+      "bytes": 2503,
+      "sha256": "0b10b21da3057c782525f798d244c6d03243337084e0f8de1cf117a4c4a884fb"
+    },
+    {
       "path": "scripts/prepare-github.py",
-      "bytes": 5867,
-      "sha256": "284bc24d19b93a6c021f66636ca6d1d1ee0d967962daf98d6eeeb761cf4e14aa"
+      "bytes": 7409,
+      "sha256": "88431e00d3c7db406050c3e6413e6da9a69e15211596f255f9d08f76c45503c9"
     },
     {
       "path": "scripts/recompare-source.py",
-      "bytes": 3590,
-      "sha256": "995198e6315d78cf2a793fd197f40b06836ca2d5882f60599a5eac0110e66fd0"
+      "bytes": 3920,
+      "sha256": "db0ab18ca623184cbad708dc2e1aa7bac9afcf3bbdf45872a0f43b69f57b97dc"
+    },
+    {
+      "path": "scripts/reconcile-upstream.py",
+      "bytes": 10896,
+      "sha256": "6801a4de5d70d51a6a07c98383ca807ecce6fcb6981b6303bca1da513cd6a8ad"
+    },
+    {
+      "path": "scripts/release-desktop.py",
+      "bytes": 2855,
+      "sha256": "81feaf91ca6ba0def7cb39b9930d7f510e740827ef92b8b546d60b3f1563a0cb"
     },
     {
       "path": "scripts/test-adventure-smoke.py",
-      "bytes": 6002,
-      "sha256": "b31c18d3d13496828766ece4cbe8bbac0022618760736d5393ed608111ec308a"
+      "bytes": 6484,
+      "sha256": "26e8f0c0c45913d32a133d5f7430e2ef5fbc3755cd1332e2e7e88a1efa5f3b64"
+    },
+    {
+      "path": "scripts/test-combat-extended.py",
+      "bytes": 13161,
+      "sha256": "d621b4b7223ac7b5f719285017512322d9cdd387a82844538daf65e4140a233e"
     },
     {
       "path": "scripts/test-combat-smoke.py",
@@ -138,13 +433,33 @@
     },
     {
       "path": "scripts/test-portable.sh",
-      "bytes": 553,
-      "sha256": "cba3b734152a561e05c3d77e59334848f5a03f8d74dacb1f038b0b7bdcdc4c5a"
+      "bytes": 838,
+      "sha256": "08ea423d529f6c9f15ffb93b595c85803a098d4976ed19c18e5471cde33bcfe8"
+    },
+    {
+      "path": "scripts/test-sbsfx.py",
+      "bytes": 2458,
+      "sha256": "415882ad3d3c430866b4702ac1d2037a80294692d3d2a95e1312c8c05bda3d23"
+    },
+    {
+      "path": "scripts/test-wilderness-native.py",
+      "bytes": 28986,
+      "sha256": "f6998bbd2d35adbe2abcdb614bda9fad8cfdf5b9cfe5a57576eda342ce909bfb"
     },
     {
       "path": "scripts/update-campaign-combat-coverage.py",
-      "bytes": 4871,
-      "sha256": "6268b74feca8998a844fbca25586fa5b2e6384c8884641b0682d43857f5d1677"
+      "bytes": 19707,
+      "sha256": "2c0055f81b32a839a396bb3f99e66fa589f2b6a055d62578d96a7529bc504829"
+    },
+    {
+      "path": "scripts/validate-expanded-actions.py",
+      "bytes": 10123,
+      "sha256": "8a60aabf5120f1ef20a0dd0a691a75f46befee38902ffd76ffc31baec6cd448d"
+    },
+    {
+      "path": "scripts/validate-three-actions.py",
+      "bytes": 8392,
+      "sha256": "923abe041a3a12374ae82d2255230fff4298f69f7c07be622e61e0995e9e8ee8"
     },
     {
       "path": "src/Por.Core/Constants/C_Abil.cs",
@@ -488,8 +803,8 @@
     },
     {
       "path": "src/Por.Core/Rules/Combat.cs",
-      "bytes": 12300,
-      "sha256": "501910b94dfaf0b9ffd9772473f1f02dce182229e1c3eb6d87c40e7b2b4d198b"
+      "bytes": 12371,
+      "sha256": "3d7a325080340531c2e962a1a6be60fdca27e9df92c75c4608ad74d37d9bdd89"
     },
     {
       "path": "src/Por.Core/Rules/CombatAi.Calls.cs",
@@ -518,8 +833,8 @@
     },
     {
       "path": "src/Por.Core/Rules/EffHndlr.cs",
-      "bytes": 81436,
-      "sha256": "62dbe62092c23063389c3f48310d5dab78e48c4bdd20eab36e2f8995cc9db6b1"
+      "bytes": 82481,
+      "sha256": "98e2fb5d6f56c07412ef41951a4b51d163dd7b89fb2b30e90423952d95dddac7"
     },
     {
       "path": "src/Por.Core/Rules/EffHndlrBindings.cs",
@@ -638,13 +953,13 @@
     },
     {
       "path": "src/Por.Core/Script/EclVars.cs",
-      "bytes": 30390,
-      "sha256": "969de03cc4a8edacc3b53d4061902a33410c096f66ef46b7ba76b22d3505b597"
+      "bytes": 30931,
+      "sha256": "5ba2c2fb2c9755d812c976a9c4ed6cb16043239306d4f092c820c007d3260a12"
     },
     {
       "path": "src/Por.Core/Script/EclVm.cs",
-      "bytes": 82075,
-      "sha256": "1f96cee4c3450f170ea8a7975f0c1670fb58e79906523f527dbb16dc698160fb"
+      "bytes": 82178,
+      "sha256": "7b5d5d18fd8d366d3e8d0cbce51ecfe7fd640233d9b76daa5f2f8667db434135"
     },
     {
       "path": "src/Por.Core/Script/EclVmUnits.cs",
@@ -858,8 +1173,8 @@
     },
     {
       "path": "src/Por.Core/UI/Ending.cs",
-      "bytes": 6063,
-      "sha256": "723e2394851d7301d90318f9744c3e7ff37b522db8476109961f35b5bec34ce1"
+      "bytes": 6204,
+      "sha256": "f2b5248d24f5524929842bdb6e9a6dce01beb5ef96366150500045667c9a33a8"
     },
     {
       "path": "src/Por.Core/UI/HeapErr.cs",
@@ -953,8 +1268,8 @@
     },
     {
       "path": "src/Por.Core/Video/CbtMapBindings.cs",
-      "bytes": 8465,
-      "sha256": "657d0a8ccaab51ab0e90367884cee81426901a58c66db82155822a87785f758c"
+      "bytes": 8916,
+      "sha256": "75c0f8c8582b7bede3282c383db365fa4c48f19d885fdfd36b1ba6fbc8819aa5"
     },
     {
       "path": "src/Por.Core/Video/MapTiles.cs",
@@ -1037,24 +1352,39 @@
       "sha256": "7264724dd4a50bcae058c66efafaf5e96bb378e843f0d129c97ade28c57f4181"
     },
     {
+      "path": "src/Por.Desktop/BlasterPcm.cs",
+      "bytes": 3938,
+      "sha256": "90c6472fe81a1a8d88a3e31743c4044fdc3718ad975774499a4313e2726470ae"
+    },
+    {
       "path": "src/Por.Desktop/BuildPlatform.cs",
       "bytes": 1157,
       "sha256": "6478d99fab074e3f61cf6d254478ba0904bcabe26b2fa6127185437cda422a7f"
     },
     {
       "path": "src/Por.Desktop/DesktopComposition.cs",
-      "bytes": 858,
-      "sha256": "3107b3a06205148b708339efabdd1d6035963f4ba643d2d6331fdb9ab7186088"
+      "bytes": 837,
+      "sha256": "3cc88e0a430111bf0706364f28d12f33b1e385e7ebd46c639bdd5a7da3401ac7"
     },
     {
       "path": "src/Por.Desktop/DesktopHost.cs",
-      "bytes": 9458,
-      "sha256": "4454fa3d4af1f86adef5393c60f6892fb08bdacee34da4af210a9b6a48031d22"
+      "bytes": 12123,
+      "sha256": "edb59aa595c36f3d42ea90aadcbb4771d097e24187aafe02c9f3d6ddcdb4e4e1"
     },
     {
       "path": "src/Por.Desktop/DesktopSound.cs",
-      "bytes": 3168,
-      "sha256": "a0a12aa7bd3c577788ac346a712c84ea5fa0acfc9f311a0acb9ac6835c09e018"
+      "bytes": 3698,
+      "sha256": "88dc1aa3dbd0dc91f198e415ef3bd555c2622450054cf71c8961036f4a27fecd"
+    },
+    {
+      "path": "src/Por.Desktop/EffectPack.cs",
+      "bytes": 1943,
+      "sha256": "7b8d80643e0ae5aacf4020b2752b21897011009ba3e2aaf77e119fc0a181c8eb"
+    },
+    {
+      "path": "src/Por.Desktop/OplPcm.cs",
+      "bytes": 1135,
+      "sha256": "8707ec8f68145b2c8e3f05c34d4420839ca7ca5b4a8dcf9c5fd32caebe7326de"
     },
     {
       "path": "src/Por.Desktop/Png.cs",
@@ -1063,13 +1393,13 @@
     },
     {
       "path": "src/Por.Desktop/Por.Desktop.csproj",
-      "bytes": 291,
-      "sha256": "f522f8912a71c67633c79ca9acdbf01edbc854ed2fbba7dd086af24f4b533d25"
+      "bytes": 1315,
+      "sha256": "7e3aa0f3d0e731fe5f22d6ca36ff26f0452bd902cae5645fafe1592af6d3ac00"
     },
     {
       "path": "src/Por.Desktop/Program.cs",
-      "bytes": 4643,
-      "sha256": "4ec33581aad82ca4f92dd5dde6dd115920853f6b41cbc42d1db057c959458094"
+      "bytes": 6183,
+      "sha256": "76554f45c04405dd7427dd1520b4c519b108b4e68d3d1a883bdc76865506e109"
     },
     {
       "path": "src/Por.Desktop/RosterRecovery.cs",
@@ -1083,8 +1413,58 @@
     },
     {
       "path": "src/Por.Desktop/SpeakerPcm.cs",
-      "bytes": 2378,
-      "sha256": "b836c10bc121135f64257b35ce93cadc0d3a995bebd03d4c6b4bccc81db829e2"
+      "bytes": 3019,
+      "sha256": "86c2699a348639b4667be0a60b0bbdc149daaea1996133e295752b5c8e1b7a44"
+    },
+    {
+      "path": "src/Por.Desktop/TandyPcm.cs",
+      "bytes": 1530,
+      "sha256": "06cf3178b877743ade7c2ad8e4b5f9b68f620221d61370eb2e49553ec0b00c5e"
+    },
+    {
+      "path": "src/Por.UpstreamTools/BenchmarkHosts.cs",
+      "bytes": 4759,
+      "sha256": "b63f261bce89a96875d614581a6f5758a08fda942abb4856737deb0d19abc4ce"
+    },
+    {
+      "path": "src/Por.UpstreamTools/LegacyTools.cs",
+      "bytes": 3477,
+      "sha256": "6d48e7b7c42ebd22a3afaa944ddce19f0172a36c16f46f21f426191d5098f4f0"
+    },
+    {
+      "path": "src/Por.UpstreamTools/Por.UpstreamTools.csproj",
+      "bytes": 350,
+      "sha256": "9f9fcdbb06d6fb27760ec5ae7dbf72f27e666d867efa8d18548ff57c80d66eb7"
+    },
+    {
+      "path": "src/Por.UpstreamTools/Program.cs",
+      "bytes": 1724,
+      "sha256": "830db761cc7329fc529e7dd233be1172d8e66d4de035012a477da5a4b686d5f4"
+    },
+    {
+      "path": "src/Por.UpstreamTools/Scenario.cs",
+      "bytes": 1705,
+      "sha256": "1bc4c945dfd8d2e100b8fa9494a9674569c03a312bdca60c7e7694ebc3511161"
+    },
+    {
+      "path": "src/Por.UpstreamTools/SoundBenchmark.cs",
+      "bytes": 2624,
+      "sha256": "1f903a75dda27cb14c7e3b51d078f45b95df8cc924946b8ea47ea4270c7e4c92"
+    },
+    {
+      "path": "src/Por.UpstreamTools/SoundTrace.cs",
+      "bytes": 796,
+      "sha256": "77ebfc3f329f03efa320208d9e22907653fbf040a7c84573e9a74a0d4649e4aa"
+    },
+    {
+      "path": "src/Por.UpstreamTools/VideoBenchmark.cs",
+      "bytes": 3015,
+      "sha256": "4b6af496b5d8db744daed3271058045e3db09010faf83fc0d0fb2a4365e82549"
+    },
+    {
+      "path": "tests/Por.Adventure.Tests/ExpandedActions.cs",
+      "bytes": 2856,
+      "sha256": "a7e3974bd816910b290011b657e743186f2a86b066eef39734d9d2e3ec53c535"
     },
     {
       "path": "tests/Por.Adventure.Tests/Por.Adventure.Tests.csproj",
@@ -1093,8 +1473,8 @@
     },
     {
       "path": "tests/Por.Adventure.Tests/Program.cs",
-      "bytes": 4660,
-      "sha256": "c8caf33c88a171696d6349f43fd361105e47b2091fc50fe6f1081e01c160b139"
+      "bytes": 4839,
+      "sha256": "587cbb1b01d8869a1086f1b5977027ec2d11f648b35845c324dba51582592ac3"
     },
     {
       "path": "tests/Por.Blit.Tests/Por.Blit.Tests.csproj",
@@ -1133,8 +1513,8 @@
     },
     {
       "path": "tests/Por.CbtMap.Tests/Program.cs",
-      "bytes": 26435,
-      "sha256": "f36e60d7d38089c040678ce60ff399c3580933a63efb0c645da73e94f2273587"
+      "bytes": 27250,
+      "sha256": "19448fc0a66adc539c5578bd93bc8cb4fee22b06db2741dd83f44094c47f4413"
     },
     {
       "path": "tests/Por.CompTool.Tests/Por.CompTool.Tests.csproj",
@@ -1182,14 +1562,19 @@
       "sha256": "403dd5f7fc21d5d901fae6b1959be356e21e41e2029de4dbc58f0cf0b667e9b4"
     },
     {
+      "path": "tests/Por.Desktop.Tests/FullAudioChecks.cs",
+      "bytes": 6013,
+      "sha256": "5457cf8979b9895b9dfe8731b1f6c00f79bc31e0411efce80484bbb801ead102"
+    },
+    {
       "path": "tests/Por.Desktop.Tests/Por.Desktop.Tests.csproj",
       "bytes": 304,
       "sha256": "9f3e5122288848ac938702d8ff3f4a601d05a8f0588f808efadc8ca3e3ce7eb9"
     },
     {
       "path": "tests/Por.Desktop.Tests/Program.cs",
-      "bytes": 7607,
-      "sha256": "f69e64a37789a7c0142e413f65470ade00e4be3bfcf3c4b0c24da7c7a4ca20d1"
+      "bytes": 11059,
+      "sha256": "6b616a21aceff163bbad3e8cdc474ab35232613e5d767e924284569288aeacd4"
     },
     {
       "path": "tests/Por.DirectTen.Tests/EndingChecks.cs",
@@ -1223,13 +1608,13 @@
     },
     {
       "path": "tests/Por.EclPair.Tests/Program.cs",
-      "bytes": 9627,
-      "sha256": "e84bccbf25bd49f7e9c019f7c5668b8880bf7741024a102ec508238c1bcd34be"
+      "bytes": 10841,
+      "sha256": "c12573d094c7fe69e4483fadc94ab6b4326e5f593d4048c18a5cf22c8a72c39d"
     },
     {
       "path": "tests/Por.EclVm.Tests/CoreChecks.cs",
-      "bytes": 16190,
-      "sha256": "158406e81a2298f2eee16ec8d723e27b2745f996c680a3f8637e4e7632617dfd"
+      "bytes": 16438,
+      "sha256": "d6d6bfb5f050578ef6ae6ee04a2ec5e3032bc3b892241ac714e5a59721626093"
     },
     {
       "path": "tests/Por.EclVm.Tests/Fake.cs",
@@ -1283,8 +1668,8 @@
     },
     {
       "path": "tests/Por.FinalThree.Tests/AdlibChecks.cs",
-      "bytes": 1536,
-      "sha256": "3a7fc1eb0f99e2701b6d957ca1a88f08fb4f5ea20c40f3f2c02ab1538760aeef"
+      "bytes": 1867,
+      "sha256": "6bb1db7703c25c92e8c254c3897cceb78b8984b4c66d6808e4612c3a82a5dea0"
     },
     {
       "path": "tests/Por.FinalThree.Tests/AiBehavior.cs",
@@ -1308,8 +1693,13 @@
     },
     {
       "path": "tests/Por.FinalThree.Tests/Program.cs",
-      "bytes": 8343,
-      "sha256": "f3c39b50acef1a01c79f850e04662a84188ef49b442fa1fb0da0c0099abcc8a1"
+      "bytes": 8262,
+      "sha256": "bfc61e9a7cd79eea602bbc8ed454c63232f3d5886421be0970b638638c9e0b75"
+    },
+    {
+      "path": "tests/Por.FinalThree.Tests/SoundGoldenRecords.cs",
+      "bytes": 2558,
+      "sha256": "ee1c23ba821c0f64d462c18384b27a0440ff3cd02e2848ee231e8d12e10ee45f"
     },
     {
       "path": "tests/Por.FinalThree.Tests/WildernessChecks.cs",
@@ -1323,13 +1713,18 @@
     },
     {
       "path": "tests/Por.FxEngine.Tests/Program.cs",
-      "bytes": 15083,
-      "sha256": "95bbed09d8ce63661d80355bd9f7a9d951dfe13be6183f8f72bfc61efe01cf84"
+      "bytes": 15155,
+      "sha256": "352f9abdd189d70d24b3d0e9db9f9739a34bdafd926c1ecea2b4ecae3c471281"
     },
     {
       "path": "tests/Por.FxEngine.Tests/StateChecks.cs",
       "bytes": 12637,
       "sha256": "d4456c43ca9168104b184512cc3fb39bc335ef5df24759ea05035e018cbf10d7"
+    },
+    {
+      "path": "tests/Por.FxEngine.Tests/UpstreamReview.cs",
+      "bytes": 3670,
+      "sha256": "381efbf2044539344288d221caa5d42a4a2616400dc657d129bb3e8858db0df3"
     },
     {
       "path": "tests/Por.GameIo.Tests/Por.GameIo.Tests.csproj",
@@ -1542,6 +1937,11 @@
       "sha256": "35837d5f9c4a878e5dbec75df89cfbefe112d38104ec351a8e97515ced02aac6"
     },
     {
+      "path": "tests/Por.NextTen.Tests/EffDisplacedReadyChecks.cs",
+      "bytes": 1388,
+      "sha256": "43b68897395903b9d6c62c6cfe70d468dbedc368a2fe30365b1acf9235beee7a"
+    },
+    {
       "path": "tests/Por.NextTen.Tests/EffHndlrChecks1.cs",
       "bytes": 30357,
       "sha256": "1a388262933b2511c7f65b7baf8d98834523d9293c693d1f2bde88456cb3f7db"
@@ -1553,8 +1953,8 @@
     },
     {
       "path": "tests/Por.NextTen.Tests/EffHndlrOracle.cs",
-      "bytes": 38823,
-      "sha256": "6797e1a7351bcb21677bd74dddc74b76c0a1c82e248846ac08b330fe9c5cad93"
+      "bytes": 38988,
+      "sha256": "d953025e10f1cfa9889660cee5c87af11de9f21ec7d534c0523d6977678813b3"
     },
     {
       "path": "tests/Por.NextTen.Tests/IntroChecks.cs",
@@ -1603,8 +2003,8 @@
     },
     {
       "path": "tests/Por.NextTen.Tests/Program.cs",
-      "bytes": 7981,
-      "sha256": "9df2ee693b67d52a4c56cc0b45981e6c4e4828cf61686c20e07a926e7b7d84b9"
+      "bytes": 8038,
+      "sha256": "4161f6648ecdd0d3e7f8d37c2f82dd7c5be68f6d6a64f6064fcba9edfdd2c344"
     },
     {
       "path": "tests/Por.NextTen.Tests/SaveMenuChecks.cs",
@@ -1842,6 +2242,16 @@
       "sha256": "1531860d2bd6b4a55f622e6907b0f31556d359a4c3300cc2692a3ff3ffcfc4be"
     },
     {
+      "path": "tests/Por.Upstream.Tests/Por.Upstream.Tests.csproj",
+      "bytes": 428,
+      "sha256": "d341b3b48fc52c4abd7829975b79417401fc509b5e1894ce2f936b30ef93f67d"
+    },
+    {
+      "path": "tests/Por.Upstream.Tests/Program.cs",
+      "bytes": 5823,
+      "sha256": "d777e50d374154e814203b7631544ad259a99bb6081ece8e3734ac5777037082"
+    },
+    {
       "path": "tests/Por.VideoCold.Tests/Por.VideoCold.Tests.csproj",
       "bytes": 490,
       "sha256": "2391e00ba538c41b50963e88d1cdd5eb5d333cf41b2c7f5f2aa46cb96e2aa08d"
@@ -1850,11 +2260,116 @@
       "path": "tests/Por.VideoCold.Tests/Program.cs",
       "bytes": 9922,
       "sha256": "9d2b4f1c0ead14dfbd33a7c2d34ffe4c8668b4fb53a176a214e4df568f2aec80"
+    },
+    {
+      "path": "tests/UpstreamScenarios/POOL-CGA.CFG",
+      "bytes": 40,
+      "sha256": "e4fdc971b20d78771f15476e94e871c902ef9e71c15c69757de27367395a1e77"
+    },
+    {
+      "path": "tests/UpstreamScenarios/POOL-TANDY.CFG",
+      "bytes": 40,
+      "sha256": "a7c34b9c47955c38458d70d58bbe84725941803414eb8f230590f3390cdf3e1e"
+    },
+    {
+      "path": "tests/UpstreamScenarios/POOL-VGA.CFG",
+      "bytes": 40,
+      "sha256": "50d0c2fd22b9aba2955aa348d924aa9ed24816981340f919975559d47b48222f"
+    },
+    {
+      "path": "tests/UpstreamScenarios/POOL.CFG",
+      "bytes": 40,
+      "sha256": "7bf9c84726e7674c4ea04ee6960abe20d6365e6a2c4191e494fd542df316a925"
+    },
+    {
+      "path": "tests/UpstreamScenarios/areachange.txt",
+      "bytes": 958,
+      "sha256": "f6b7281840503a1d2457a81a3085346c604af08d30991ea05c7ee45c63cd61e1"
+    },
+    {
+      "path": "tests/UpstreamScenarios/boot.txt",
+      "bytes": 559,
+      "sha256": "5db6c25b4cf205313db827980f4a74603c60bcda835fc1838085374463c6bf55"
+    },
+    {
+      "path": "tests/UpstreamScenarios/camp.txt",
+      "bytes": 574,
+      "sha256": "de6acae11de66a6f6ea7a13126b146f3cdcc77f4d15b9155c84eeceb9bda160c"
+    },
+    {
+      "path": "tests/UpstreamScenarios/chargen.txt",
+      "bytes": 566,
+      "sha256": "daef236949740e9c68c80efec24278b40beeef56c18ea92a64bf2edabe90983b"
+    },
+    {
+      "path": "tests/UpstreamScenarios/combat.txt",
+      "bytes": 1473,
+      "sha256": "9544783e4d610568ee13388698ece37dd4ae6b8e35df43f6a15507e3f72dfe24"
+    },
+    {
+      "path": "tests/UpstreamScenarios/companion.txt",
+      "bytes": 2457,
+      "sha256": "0abf3fdecd5f62d5a1b72a2c61e4927028694837fdee9fa6643319b6103517ae"
+    },
+    {
+      "path": "tests/UpstreamScenarios/journal.txt",
+      "bytes": 283,
+      "sha256": "7b88df9fe39e9b8c90b03a1f072718786712a04e642173c2df8a94695a847b23"
+    },
+    {
+      "path": "tests/UpstreamScenarios/loadsave.txt",
+      "bytes": 1098,
+      "sha256": "75e6414ea49764d4c39e9b20c1387286bc0fe0f7f3acab9d821e23a31d364337"
+    },
+    {
+      "path": "tests/UpstreamScenarios/shop.txt",
+      "bytes": 929,
+      "sha256": "4a84c664c741140fdcfd221bd3a8de8970c8a1b3505b49a020ee7b3a503096cb"
+    },
+    {
+      "path": "tests/UpstreamScenarios/ssiformat.txt",
+      "bytes": 2365,
+      "sha256": "51404947b9a6e26c61064c7fca91fd928c53bbe923b3badd244bf5f5671bcd5d"
+    },
+    {
+      "path": "tests/UpstreamScenarios/vault.txt",
+      "bytes": 960,
+      "sha256": "6652e95ecca1c5a3e2ef319b4cd41fa67040ee92c839f92a627cb610b0a98584"
+    },
+    {
+      "path": "tests/UpstreamScenarios/wilderness.txt",
+      "bytes": 984,
+      "sha256": "fedf211fd2ce04733783bf0cb8637ffa6603c98ade15ad9ff869cee8ac0047ab"
+    },
+    {
+      "path": "tests/UpstreamScenarios/wildfight.txt",
+      "bytes": 1978,
+      "sha256": "3c97cdf22231380af6d7a4f65560b72765e5ef15a6474d6ec418b349462373db"
+    },
+    {
+      "path": "third_party/nuked-opl3/LICENSE",
+      "bytes": 26526,
+      "sha256": "20c17d8b8c48a600800dfd14f95d5cb9ff47066a9641ddeab48dc54aec96e331"
+    },
+    {
+      "path": "third_party/nuked-opl3/README.md",
+      "bytes": 578,
+      "sha256": "f933b9c0d7a5322f86a2794bd3de3cc7f83bcfd66e06d25c92943cd8ab30efad"
+    },
+    {
+      "path": "third_party/nuked-opl3/opl3.c",
+      "bytes": 41716,
+      "sha256": "59eb873fdb6d52bc7977a0fcbb97c1bae03dd71cc88e3acddbcc01b7121bfe03"
+    },
+    {
+      "path": "third_party/nuked-opl3/opl3.h",
+      "bytes": 4397,
+      "sha256": "a84266b8d71a4929f15f573afbe407fd24310b77757d855835dacabf68763679"
     }
   ],
-  "payload_files": 370,
-  "production_files": 188,
-  "test_source_files": 153,
+  "payload_files": 473,
+  "production_files": 200,
+  "test_source_files": 177,
   "original_media_hashes_excluded": 165,
   "excluded_categories": [
     "game media",

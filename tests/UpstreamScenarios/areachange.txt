@@ -1,0 +1,29 @@
+# An area change: from New Phlan (save A) onto the training hall's notice board at (6,2), where New Phlan's script
+# hands over to the training hall's (NEWECL 11); the save popup then names the new area.
+boot NORAND
+ignore POOL OF RADIANCE V
+ignore \d{4}/\d\d/\d\d \d\d:\d\d
+wait RADIANCE
+golden: press l a ret
+candidate: press l a
+wait AREA
+checkpoint new-phlan
+# north to (5,2), then east onto (6,2)
+press right up right up
+wait AREA
+checkpoint training-hall
+press e
+wait CAMP
+golden: press s d ret
+candidate: press s d
+# ours lays the popup out anew (#656): recorded apart, not compared
+golden: checkpoint save-popup
+candidate: checkpoint save-popup-656
+press esc esc
+# the overlay loads so far (STING Ctrl-Y), recorded but not compared; tests/ovlloads.py prints both builds' counts
+ignore OVERLAY LOADS
+press ctrl-y
+checkpoint overlay-loads
+press ret ret ret
+# the picture-memory line (phase 6), which the golden build does not have
+candidate: press ret

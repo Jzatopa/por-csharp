@@ -3,3 +3,6 @@
 *.py text eol=lf
 *.cs text eol=lf
 *.csproj text eol=lf
+# These are pinned byte-for-byte inputs, not source files for EOL normalization.
+tests/UpstreamScenarios/** -text
+references/upstream-pinned/** -text

@@ -2,7 +2,7 @@ using System;using System.IO;using System.Linq;using System.Collections.Generic;
 partial class Tests{
  static long checks;static Random rng=new Random(830819);static void Yes(bool v,string m){checks++;if(!v)throw new Exception(m);}static byte B(int n){return unchecked((byte)n);}static ushort W(int n){return unchecked((ushort)n);}static void Reset(){GDVars.zone0=new Types.TGbvmZone0State();GDVars.zone1=new Types.TGbvmZone1();GDVars.zone2=new Types.TZone2();GDVars.zone3=new Types.TZone3();GDVars.gbStrings=new Types.TGbStrings();GDVars.curChar=new Types.TCharRecord();GDVars.creatureList=null;GDVars.eclIp=0x9900;GDVars.curOpcode=0;GDVars.dumpCr6B00=GDVars.dumpCr6C00=GDVars.redrawSky=GDVars.movedParty=GDVars.picRegionW=false;EclVars.diskHook=d=>{};EclVars.wallSetHook=(f,s)=>{};EclVars.RecalcStats=c=>{};}
  static int Zone(int a){return a>=0x4900&&a<=0x4cff?0:a>=0x6b00&&a<=0x6eff?1:a>=0x9700&&a<=0x98ff?2:a>=0x9900&&a<=0xbfff?3:4;}
- static void Main(string[] a){Reset();if(a.Length==0||a[0]=="EclVars")RunEclVars();else typeof(Tests).GetMethod("Run"+a[0],BindingFlags.NonPublic|BindingFlags.Static).Invoke(null,null);Console.WriteLine((a.Length==0?"EclVars":a[0])+" source-derived assertions: "+checks);}
+ static void Main(string[] a){Reset();if(a.Length==0||a[0]=="EclVars")RunEclVars();else typeof(Tests).GetMethod("Run"+a[0],BindingFlags.NonPublic|BindingFlags.Static).Invoke(null,null);Console.WriteLine((a.Length==0?"EclVars":a[0])+" assertions (source contracts plus explicit compatibility policy): "+checks);}
  static void RunEclVars(){
   for(int lo=0;lo<256;lo++)for(int hi=0;hi<256;hi++)Yes(EclVars.CombineBytesToWord((byte)lo,(byte)hi)==lo+hi*256,"all byte pairs");
   for(int a=0;a<65536;a++){int zone=Zone(a);Yes(EclVars.GbvmZone((ushort)a)==zone,"all zone boundaries");ushort val=W(a*47+3);EclVars.WriteGbvm((ushort)a,val);if(zone==0)Yes(GDVars.zone0.words[a]==val,"raw zone0 wordstore");if(zone==1)Yes(GDVars.zone1[a]==val,"raw zone1 store before handler");if(zone==2)Yes(GDVars.zone2[a]==val,"raw zone2 wordstore");if(zone==3)Yes(GDVars.zone3[a]==B(val),"raw zone3 byte truncation");}
@@ -13,7 +13,8 @@ partial class Tests{
   for(int value=0;value<65536;value++){EclVars.WriteGbvm(C_Gbvm.CHAR_NPC,W(value));Yes(c.npc==B(value>178?value-50:value),"NPC full Word comparison before bytewrap");c.enabled=7;c.status=1;GDVars.dumpCr6C00=false;EclVars.WriteGbvm(C_Gbvm.CHAR_ENABLED,W(value));Yes(c.enabled==(value>=128?0:7)&&c.status==(value==135?C_Status.STONED:1)&&GDVars.dumpCr6C00==(value==0),"enabled/stoned fullvalue semantics");}
   int recalc=0;EclVars.RecalcStats=who=>{recalc++;Yes(GDVars.zone1[C_Gbvm.CHAR_COPPER]==0xFEDC&&Object.ReferenceEquals(who,c),"wordstore before stats hook");};EclVars.WriteGbvm(C_Gbvm.CHAR_COPPER,0xFEDC);Yes(c.coins[0]==0xFEDC&&recalc==1,"coin value/recalc");EclVars.RecalcStats=null;bool failed=false;try{EclVars.WriteGbvm(C_Gbvm.CHAR_COPPER,31);}catch(NotSupportedException){failed=true;}Yes(failed&&c.coins[0]==31&&GDVars.zone1[C_Gbvm.CHAR_COPPER]==31,"missinghook fails after definedstores");
   for(int charisma=0;charisma<256;charisma++){c.chaCur=(byte)charisma;if(charisma>=3&&charisma<=25){int expected=charisma==3?0:charisma==4?5:charisma==5?10:charisma==6?15:charisma==7?20:charisma<=12?25:charisma==13?30:charisma==14?35:charisma==15?40:charisma==16?50:charisma==17?55:60;Yes(EclVars.ReadGbvm(C_Gbvm.CHAR_LOYALTY)==expected,"loyalty table");}else{failed=false;try{EclVars.ReadGbvm(C_Gbvm.CHAR_LOYALTY);}catch(InvalidOperationException){failed=true;}Yes(failed,"undefined loyalty explicit");}}
-  foreach(ushort a in new ushort[]{0x6C0D,0x35F,0xC059,0x999}){failed=false;try{EclVars.ReadGbvm(a);}catch(InvalidOperationException){failed=true;}Yes(failed,"undefined read not guessed zero");}
+  RunWildernessCompatibility();
+  foreach(ushort a in new ushort[]{0x6C0D,0xC059,0x999}){failed=false;try{EclVars.ReadGbvm(a);}catch(InvalidOperationException){failed=true;}Yes(failed,"undefined read not guessed zero");}
   Reset();for(int value=0;value<65536;value++){int disks=0;EclVars.diskHook=d=>{disks++;Yes(d==value&&GDVars.zone1[C_Gbvm.DISK_NUM]==value,"disk full raw store before hook");};EclVars.WriteGbvm(C_Gbvm.DISK_NUM,(ushort)value);Yes(disks==(value>=1&&value<=8?1:0),"valid disk range only");foreach(ushort a in new ushort[]{C_Gbvm.WALLSET_LOAD1,C_Gbvm.WALLSET_LOAD2,C_Gbvm.WALLSET_LOAD3}){int walls=0;EclVars.wallSetHook=(id,slot)=>{walls++;Yes(id==(value&127)&&slot==(a-C_Gbvm.WALLSET_LOAD1)/2+1&&GDVars.zone1[a]==value,"wall hook fullvalue and slot");};EclVars.WriteGbvm(a,(ushort)value);Yes(walls==(value>128?1:0),"wall loading predicate before narrowing");}}
   Reset();Types.TCharRecord tail=null;for(int i=0;i<6;i++){var p=new Types.TCharRecord();if(tail==null)GDVars.creatureList=p;else tail.nextCharAddr=p;tail=p;Types.TEffectRec last=null;for(int j=0;j<i*4;j++){var e=new Types.TEffectRec{id=B(i*20+j)};if(last==null)p.effectsAddr=e;else last.next=e;last=e;}}var effects=new List<(int id,int owner)>();int owner=0;for(var p=GDVars.creatureList;p!=null;p=p.nextCharAddr,owner++)for(var e=p.effectsAddr;e!=null;e=e.next)effects.Add((e.id,owner));for(int i=0;i<64;i++){Yes(EclVars.ReadGbvm(W(0x4900+i))==(i<effects.Count?effects[i].id:0),"party effect traversal");Yes(EclVars.ReadGbvm(W(0x4940+i))==(i<effects.Count?effects[i].owner:0),"party effect owners");}
   Strings();Skip();
@@ -24,6 +25,24 @@ partial class Tests{
   for(int i=0;i<260;i++)GDVars.zone2[0x9700+i]=65;GDVars.eclIp=0x9900;GDVars.zone3[0x9902]=0;GDVars.zone3[0x9903]=0x97;EclVars.LoadEclVars(1);Yes(GDVars.gbStrings[1].Length==255,"unterminated reference cap255");
   for(int count=0;count<256;count++){GDVars.eclIp=0x9900;Array.Fill(GDVars.dsGbvmType,(byte)55);for(int j=1;j<=count;j++){GDVars.zone3[0x9900+2*j-1]=128;GDVars.zone3[0x9900+2*j]=0;}EclVars.LoadEclVars((byte)count);Yes(GDVars.eclIp==0x9901+count*2,"all operand counts including255");for(int j=1;j<=64;j++)Yes(GDVars.dsGbvmType[j]==(j<=count?128:55),"onlyfirst64variablesstored");}
   GDVars.eclIp=0x9900;int at=0x9901;for(int j=1;j<=25;j++){GDVars.zone3[at++]=128;GDVars.zone3[at++]=1;GDVars.zone3[at++]=B(j<<2);}EclVars.LoadEclVars(25);for(int j=1;j<=20;j++)Yes(GDVars.gbStrings[j]==((char)((j==20?25:j)+64)).ToString(),"string slots saturate20 overwrite20th");
+ }
+ // Deliberate managed compatibility policy, NOT a source-derived return value:
+ // SSI and pinned Pascal leave CELL_35F's result stack word uninitialized.
+ // Real wilderness script 26 reaches it on its very first native movement.
+ static void RunWildernessCompatibility(){
+  Reset();EclBindings.BindConvertedUnits();
+  foreach(byte kind in new byte[]{1,3})foreach(byte facing in new byte[]{0,2,4,6}){
+   GDVars.gFacing=facing;GDVars.zone0.words[0x4980]=0xABCD;
+   GDVars.eclIp=0x9900;GDVars.curOpcode=C_Ecl.COMPARE;
+   GDVars.zone3[0x9900]=C_Ecl.COMPARE;
+   GDVars.zone3[0x9901]=kind;GDVars.zone3[0x9902]=0x5F;GDVars.zone3[0x9903]=3;
+   GDVars.zone3[0x9904]=0;GDVars.zone3[0x9905]=0;
+   EclVm.ExecNextEclCmd();
+   Yes(GDVars.eclIp==0x9906,"real decoder/compare consumes legacy-cell operand");
+   Yes(GDVars.cmpFlags[0]&&!GDVars.cmpFlags[1]&&!GDVars.cmpFlags[2]&&!GDVars.cmpFlags[3]&&GDVars.cmpFlags[4]&&GDVars.cmpFlags[5],"legacy-cell managed zero policy drives real comparison");
+   Yes(EclVars.ReadGbvm(C_Gbvm.CELL_35F)==0&&GDVars.gFacing==facing&&GDVars.zone0.words[0x4980]==0xABCD,"legacy read stable and side-effect free");
+  }
+  Reset();
  }
  static void Skip(){Reset();using(var d=JsonDocument.Parse(File.ReadAllText("evidence/ecl-vars-menu-2026-10-21/skip-counts.json"))){var fixedCounts=d.RootElement.GetProperty("fixed");var variable=d.RootElement.GetProperty("variable");for(int op=0;op<256;op++){GDVars.eclIp=0x9900;GDVars.zone3[0x9900]=B(op);JsonElement count;int n=fixedCounts.TryGetProperty(op.ToString(),out count)?count.GetInt32():0;if(variable.TryGetProperty(op.ToString(),out count)){int first=count.GetInt32();foreach(int tail in new[]{0,1,65,255}){GDVars.eclIp=0x9900;for(int j=1;j<=first+tail;j++){GDVars.zone3[0x9900+j*2-1]=0;GDVars.zone3[0x9900+j*2]=B(j==first?tail:j);}EclVars.SkipEclCmd();Yes(GDVars.eclIp==0x9901+(first+tail)*2&&GDVars.curOpcode==op,"counted skip exact operands/IP");}}else{for(int j=1;j<=n;j++){GDVars.zone3[0x9900+j*2-1]=0;GDVars.zone3[0x9900+j*2]=B(j);}EclVars.SkipEclCmd();Yes(GDVars.eclIp==0x9901+n*2&&GDVars.curOpcode==op,"all opcode fixed/unknown skips");}}}}
 }

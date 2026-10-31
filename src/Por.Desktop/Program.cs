@@ -11,7 +11,11 @@ static class Program
  {
   string crashDirectory=null;
   try{
-   if(args.Contains("--help")){Console.WriteLine("Por.Desktop --data ORIGINAL_DIRECTORY [--state WRITABLE_DIRECTORY] [--captures DIRECTORY] [--short-intro] [--no-audio]\nLinux SDL2 desktop; PC Speaker audio enabled. F12 saves a framebuffer capture. All game writes stay in --state.");return 0;}
+   if(args.Contains("--help")){Console.WriteLine("Por.Desktop --data ORIGINAL_DIRECTORY [--state WRITABLE_DIRECTORY] [--captures DIRECTORY] [--short-intro] [--deterministic] [--trace-combat-actions] [--live-frames] [--audio auto|adlib|tandy|speaker|blaster] [--effects SBSFX.DAT] [--install-effects-only] [--no-audio]\nLinux SDL2 desktop; Audio auto-selects Sound Blaster when SBSFX.DAT is installed, otherwise AdLib. F12 saves a framebuffer capture. All game writes stay in --state.");return 0;}
+   string audioMode=Value(args,"--audio","auto");
+   if(!new[]{"auto","adlib","tandy","speaker","blaster"}.Contains(audioMode))throw new ArgumentException("Unknown --audio mode: "+audioMode);
+   if(args.Contains("--install-effects-only")&&!args.Contains("--effects"))throw new ArgumentException("--install-effects-only requires --effects SBSFX.DAT");
+   string effects=Array.IndexOf(args,"--effects")<0?null:Canonical(Value(args,"--effects",null));
    string original=Canonical(Value(args,"--data",Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile),"Downloads/poolofrad")));
    string state=Canonical(Value(args,"--state",Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),"goldenbox/por-csharp")));
    if(!Directory.Exists(original))throw new DirectoryNotFoundException(original);
@@ -21,11 +25,17 @@ static class Program
    foreach(string file in Directory.EnumerateFiles(original)){string dest=Path.Combine(data,Path.GetFileName(file));if(new FileInfo(dest).LinkTarget!=null)throw new IOException("State data must not contain file symlinks: "+dest);if(!File.Exists(dest))File.Copy(file,dest);}
    string captures=Canonical(Value(args,"--captures",Path.Combine(state,"captures")));if(Within(captures,original))throw new ArgumentException("Captures cannot be written to original media.");
    string logs=Path.Combine(state,"logs");if(Within(Canonical(logs),original))throw new ArgumentException("Logs cannot be written to original media.");Directory.CreateDirectory(logs);crashDirectory=logs;
+   if(effects!=null)EffectPack.Import(effects,data);
+   audioMode=EffectPack.SelectMode(audioMode,data);
+   if(args.Contains("--install-effects-only")){Console.WriteLine("AUDIO pack installed; default mode="+EffectPack.SelectMode("auto",data));return 0;}
    string[] recovered=RosterRecovery.Recover(saves);if(recovered.Length>0)Console.WriteLine("RECOVERY restored "+recovered.Length+" orphan character(s) to roster; character files unchanged.");
-   Directory.SetCurrentDirectory(data);using var host=new DesktopHost(captures);
+   if(audioMode=="blaster"&&!Directory.EnumerateFiles(data).Any(f=>Path.GetFileName(f).Equals("SBSFX.DAT",StringComparison.OrdinalIgnoreCase)))Console.WriteLine("AUDIO no SBSFX.DAT: AdLib music / PC Speaker effects fallback (use --effects to install a pack)");
+   Directory.SetCurrentDirectory(data);using var host=new DesktopHost(captures);host.LiveFrames=args.Contains("--live-frames");
    Console.WriteLine("DATA copied/read-write "+data);Console.WriteLine("SAVES "+saves);Console.WriteLine("Platform: SDL2 VGA, managed startup (no DOS overlay/EMS emulation)");
-   GDConsts.GAME_VERSION="C# desktop preview";DesktopComposition.InstallHosts(host);
-   using var audio=args.Contains("--no-audio")?null:new DesktopSound(host.Shutdown);host.Audio=audio;
+   GDConsts.GAME_VERSION="C# desktop preview";host.SecondArgument=args.Contains("--deterministic")?"NORAND":"";TenDBindings.SecondArgument=host.SecondArgument;DesktopComposition.InstallHosts(host);
+   if(args.Contains("--trace-combat-actions"))CbtMapBindings.ManualActionObserved=host.Capture;
+   if(args.Contains("--deterministic"))Console.WriteLine("RNG managed fixed seed 1 (not DOS RNG parity)");
+   using var audio=args.Contains("--no-audio")?null:new DesktopSound(host.Shutdown,audioMode);host.Audio=audio;
    DesktopComposition.InstallSound(host,audio);if(audio==null)Console.WriteLine("AUDIO disabled by --no-audio");
    GDVars.soundMode=GDVars.sound.mode;GDVars.soundSaved=GDVars.sound.mode;
    GDVars.gameDir=data+Path.DirectorySeparatorChar;GDVars.dsSaveDirectory=saves+Path.DirectorySeparatorChar;GDVars.fullIntro=!args.Contains("--short-intro");GDVars.stingArg=false;GDVars.savedVideoMode=3;GDVars.curVideoMode=3;VidVga.Install();Blit.SetVideoMode(GDVars.video.biosMode);GDVars.video.Start();

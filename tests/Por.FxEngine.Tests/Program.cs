@@ -107,6 +107,6 @@ static partial class Checks
  }
  static int Main(string[] args)
  {
-  try{Action<string,Action> run=(n,a)=>{if(args.Length==0||args.Contains(n)){long start=checks;a();Console.WriteLine(n+": "+(checks-start)+" assertions PASS");}};run("Dispatch",Dispatch);run("Lists",Lists);run("Auras",Auras);run("Rolls",Rolls);run("Strength",Strength);run("ImmunityHealing",ImmunityAndHealing);run("Timeout",Timeout);run("Damage",Damage);run("Equipment",Equipment);run("HoldsRevive",HoldsRevive);run("Bindings",Bindings);Console.WriteLine("TOTAL "+checks+" assertions PASS");return 0;}catch(Exception e){Console.Error.WriteLine(e);return 1;}
+  try{Action<string,Action> run=(n,a)=>{if(args.Length==0||args.Contains(n)){long start=checks;a();Console.WriteLine(n+": "+(checks-start)+" assertions PASS");}};run("Dispatch",Dispatch);run("Lists",Lists);run("Auras",Auras);run("Rolls",Rolls);run("Strength",Strength);run("ImmunityHealing",ImmunityAndHealing);run("Timeout",Timeout);run("Damage",Damage);run("Equipment",Equipment);run("HoldsRevive",HoldsRevive);run("Bindings",Bindings);run("UpstreamReady",UpstreamReady);run("UpstreamEnding",UpstreamEnding);Console.WriteLine("TOTAL "+checks+" assertions PASS");return 0;}catch(Exception e){Console.Error.WriteLine(e);return 1;}
  }
 }

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Native launcher -> orphan roster recovery -> add -> begin/tour -> exploration -> quick save/load -> camp/rest. Synthetic character, disposable state."""
 import pathlib,subprocess,tempfile,time,os,json,argparse,hashlib,signal
-root=pathlib.Path(__file__).resolve().parents[1];p=argparse.ArgumentParser();p.add_argument('--data',default=str(pathlib.Path.home()/'Downloads/poolofrad'));p.add_argument('--output',default=str(root/'evidence/adventure-entry-2026-10-22/native'));a=p.parse_args();out=pathlib.Path(a.output).resolve();out.mkdir(parents=True,exist_ok=True);caps=out/'captures';caps.mkdir(exist_ok=True);dotnet=str(root/'scripts/dotnet.sh')
+root=pathlib.Path(__file__).resolve().parents[1];p=argparse.ArgumentParser();p.add_argument('--data',default=str(pathlib.Path.home()/'Downloads/poolofrad'));p.add_argument('--effects');p.add_argument('--audio',choices=['auto','adlib','tandy','speaker','blaster'],default='auto');p.add_argument('--output',default=str(root/'evidence/adventure-entry-2026-10-22/native'));a=p.parse_args();out=pathlib.Path(a.output).resolve();out.mkdir(parents=True,exist_ok=True);caps=out/'captures';caps.mkdir(exist_ok=True);dotnet=str(root/'scripts/dotnet.sh')
 subprocess.run([dotnet,'build',str(root/'src/Por.Desktop'),'-v:q'],check=True,cwd=root)
 original=pathlib.Path(a.data);hashes=lambda:{f.name:hashlib.sha256(f.read_bytes()).hexdigest() for f in original.iterdir() if f.is_file()};before=hashes();game=server=None
 with tempfile.TemporaryDirectory(prefix='por-adventure-native-') as temp:
@@ -14,7 +14,7 @@ with tempfile.TemporaryDirectory(prefix='por-adventure-native-') as temp:
     time.sleep(.05)
   env=dict(os.environ,DISPLAY=':'+(temp/'display').read_text().strip())
   with (out/'run.log').open('w') as log:
-   game=subprocess.Popen([str(root/'play-desktop.sh'),'--data',str(original),'--state',str(state),'--captures',str(caps),'--short-intro'],cwd=root,env=env,stdout=log,stderr=subprocess.STDOUT)
+   game=subprocess.Popen([str(root/'play-desktop.sh'),'--data',str(original),'--state',str(state),'--captures',str(caps),'--short-intro','--audio',a.audio]+(['--effects',str(pathlib.Path(a.effects).resolve())] if a.effects else []),cwd=root,env=env,stdout=log,stderr=subprocess.STDOUT)
    def alive():
     if game.poll()!=None:raise RuntimeError((out/'run.log').read_text())
    def wait(test,timeout=45):
@@ -37,6 +37,7 @@ with tempfile.TemporaryDirectory(prefix='por-adventure-native-') as temp:
     key('Return',.85)
    else:raise RuntimeError('Opening script never reached exploration')
    wait(lambda:'READY explore' in text());base=capture('exploration');assert base['interfaceState']==4 and base['partySize']==1
+   if a.effects:assert base['audioMode']=='blaster' and base['sampledEffects']>0,'Installed sample pack was not exercised'
    key('Right');turned=capture('turned');assert turned['facing']==(base['facing']+2)%8
    key('Left');key('Up',1);moved=capture('moved');assert (moved['x'],moved['y'],moved['script'])!=(base['x'],base['y'],base['script'])
    # A boundary arrival may still be at the script's press-any-key message. Finish that message before retrying the hotkey.
@@ -53,7 +54,11 @@ with tempfile.TemporaryDirectory(prefix='por-adventure-native-') as temp:
    key('e');camp=capture('camp');assert camp['interfaceState']==2
    key('r');key('i');key('r',1);rested=capture('rested');assert rested['clock']!=camp['clock']
    # Preserve a valid quicksave, then leave through Camp's Save/quit route (cancel the second save slot dialog).
-   key('s');key('Escape');key('y',.1,False);code=game.wait(timeout=10);assert code==0
+   key('s',.8);capture('exit-save-dialog');key('Escape',.8);capture('exit-quit-prompt');key('y',.1,False)
+   try:code=game.wait(timeout=10)
+   except subprocess.TimeoutExpired:
+    capture('exit-timeout');raise
+   assert code==0
    assert before==hashes();result={'exit_code':code,'orphan_roster_recovered_without_character_mutation':True,'opening_script_reached_exploration':True,'turned_and_crossed_map_boundary':True,'quick_save_load_restored_position_facing_party_and_hp':True,'camp_rest_advanced_clock':True,'loaded_party_panel_colored_pixels':party_pixels,'original_files_checked':len(before),'original_media_unchanged':True,'quicksave_world_bytes':(saves/'savgamQ.dat').stat().st_size,'scope':'synthetic saved character through real native UI; not a full game completion test'};(out/'result.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result,indent=2),flush=True)
  finally:
   if game is not None and game.poll()==None:game.terminate();game.wait(timeout=10)

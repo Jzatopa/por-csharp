@@ -1,1 +1,9 @@
-<Project Sdk="Microsoft.NET.Sdk"><PropertyGroup><OutputType>Exe</OutputType><TargetFramework>net8.0</TargetFramework><ImplicitUsings>enable</ImplicitUsings><Nullable>disable</Nullable></PropertyGroup><ItemGroup><ProjectReference Include="../Por.Core/Por.Core.csproj"/></ItemGroup></Project>
+<Project Sdk="Microsoft.NET.Sdk"><PropertyGroup><OutputType>Exe</OutputType><TargetFramework>net8.0</TargetFramework><ImplicitUsings>enable</ImplicitUsings><Nullable>disable</Nullable></PropertyGroup><ItemGroup><ProjectReference Include="../Por.Core/Por.Core.csproj"/></ItemGroup><ItemGroup><None Include="$(MSBuildProjectDirectory)/bin/$(Configuration)/$(TargetFramework)/libpor_opl.so" Link="libpor_opl.so" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" Condition="$([MSBuild]::IsOSPlatform('Linux'))" /></ItemGroup>
+<ItemGroup>
+<None Include="../../third_party/nuked-opl3/*" Link="third_party/nuked-opl3/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+<None Include="../../native/por_opl.c" Link="native/por_opl.c" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+</ItemGroup>
+<Target Name="BuildOpl" BeforeTargets="PrepareForBuild" Condition="$([MSBuild]::IsOSPlatform('Linux'))">
+<MakeDir Directories="$(OutputPath)" />
+<Exec Command="cc -O2 -fPIC -shared &quot;$(MSBuildProjectDirectory)/../../native/por_opl.c&quot; &quot;$(MSBuildProjectDirectory)/../../third_party/nuked-opl3/opl3.c&quot; -o &quot;$(MSBuildProjectDirectory)/$(OutputPath)libpor_opl.so&quot;" />
+</Target></Project>

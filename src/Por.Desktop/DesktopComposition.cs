@@ -10,6 +10,6 @@ public static class DesktopComposition
  // audio null means --no-audio.
  public static void InstallSound(DesktopHost host,DesktopSound audio)
  {
-  if(audio==null){SoundDrv.Host=new SoundDriver(host,host);SndNone.Install();}else{SoundDrv.Host=audio;SndSpk.Install();}
+  if(audio==null){SoundDrv.Host=new SoundDriver(host,host);SndNone.Install();}else{audio.Install();}
  }
 }

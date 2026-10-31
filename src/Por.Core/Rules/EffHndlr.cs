@@ -167,7 +167,9 @@ namespace Por.Core
         // Undead slaying weapon (eff 3)
         public static void EffUndeadSlayer(TCharRecord creature, object p, bool removed)
         {
-            GDVars.dsOtherCreatureCurrentPtr = creature.combatAddr.other;
+            // Post-pin upstream d6874f1 (#1094): a ready item has no attack target yet.
+            GDVars.dsOtherCreatureCurrentPtr = creature.combatAddr == null ? null : creature.combatAddr.other;
+            if (GDVars.dsOtherCreatureCurrentPtr == null) return;
             // undead
             if (GDVars.dsOtherCreatureCurrentPtr.charType == 4)
             {
@@ -187,7 +189,8 @@ namespace Por.Core
         public static void EffFlameTongue(TCharRecord creature, object p, bool removed)
         {
             byte bonus;
-            GDVars.dsOtherCreatureCurrentPtr = creature.combatAddr.other;
+            GDVars.dsOtherCreatureCurrentPtr = creature.combatAddr == null ? null : creature.combatAddr.other;
+            if (GDVars.dsOtherCreatureCurrentPtr == null) return;
             switch (GDVars.dsOtherCreatureCurrentPtr.charType)
             {
                 // regenerating
@@ -1246,6 +1249,10 @@ namespace Por.Core
         // Displaced (eff 89). strength bit 4 = "already displaced an attack this round"
         public static void EffDisplaced(TCharRecord creature, object p, bool removed)
         {
+            // EffReadyItem calls this with p = nil when a Cloak of Displacement is readied; Pascal then writes through nil^
+            // (a stray real-mode store with no game state behind it). There is no effect record to update, so do nothing.
+            if (p == null)
+                return;
             if ((GDVars.roundCounter == 0) && (GDVars.gAttackRoll == 0))
                 Eff(p).strength = B(Eff(p).strength & 0xF);
             else if ((Eff(p).strength & 0x10) == 0)
@@ -1631,7 +1638,14 @@ namespace Por.Core
             else
             {
                 Fx.AddEffect(creature, item.effect, 0, 12, false);
-                Fx.CallEffectHandler(item.effect, creature, null, false);
+                // Post-pin upstream d6874f1 (#1094): only these effects act at ready time.
+                // Attack/save-time effects must not run against a stale or absent target.
+                if (item.effect == C_Effect.RING_INVIS || item.effect == C_Effect.CAMOUFLAGE)
+                {
+                    TEffectRec effect = creature.effectsAddr;
+                    while (effect.next != null) effect = effect.next;
+                    Fx.CallEffectHandler(item.effect, creature, effect, false);
+                }
             }
         }
 

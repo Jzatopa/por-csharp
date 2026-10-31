@@ -131,16 +131,19 @@ static partial class Tests
         n.Load();
         GDVars.eclScriptId = 7;
         GDVars.virtualDisk = 3;
+        string originalGameDir = GDVars.gameDir;
+        GDVars.gameDir = Path.Combine(Path.GetTempPath(), new string('d', 100)) + Path.DirectorySeparatorChar;
         EclVm.filesLoaded = 1;
         EclVm.CallEclScript(Asm.Base);
         Yes(GDVars.dsEclStackTopPtr == null, "NEWECL frees the return stack");
         Yes(GDVars.zone0.previousScriptId == 7 && GDVars.eclScriptId == 42, "NEWECL script ids");
         Yes(EclVm.newEclFlag == 1 && EclVm.filesLoaded == 0, "NEWECL flags");
         string file = GDVars.gameDir + DaxIo.ArchiveName("ECL3") + ".dax";
-        if (file.Length > 79) file = file.Substring(0, 79);
+        Yes(file.Length > 79, "NEWECL regression exercises a long managed host path");
         int cf = fake.Log.IndexOf("CheckFile:" + file), ls = fake.Log.IndexOf("LoadEclScript:42"), ei = fake.Log.IndexOf("EclInit");
-        Yes(cf >= 0 && cf < ls && ls < ei, "NEWECL check, load, init order");
+        GDVars.gameDir = originalGameDir;
         GDVars.virtualDisk = 1;
+        Yes(cf >= 0 && cf < ls && ls < ei, "NEWECL checks full host path before load and init");
 
         // the VM stops when the party is defeated before running anything
         Setup();

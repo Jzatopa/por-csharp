@@ -16,3 +16,7 @@ The pinned12-line Turbo Pascal compiler configuration is build input, not a runt
 | `/$V+` | Source short-string limits enforced at translation/serialization boundaries; not CLR string layout |
 
 The core project's `CheckForOverflowUnderflow=false` does not alone establish Pascal arithmetic fidelity. Tests compile the production sources with checked arithmetic to expose missing explicit narrowings. This disposition is a checked build-configuration replacement, not another C# conversion or gameplay validation. The original config remains read-only at the pinned source revision.
+
+## Test and benchmark compiler configurations
+
+`tests/TPC.CFG` and `bench/TPC.CFG` contain the same 12 switches. Their only difference from the game configuration is the unit search path `/U.;..\SRC;..\SRC\INCLUDES`, replaced by explicit project references to `Por.Core` and SDK source inclusion. The table above applies to every remaining switch. `tests/Por.Upstream.Tests/Por.Upstream.Tests.csproj` replaces the test build and `src/Por.UpstreamTools/Por.UpstreamTools.csproj` builds both benchmarks. Far calls, DOS object linking and emulator CPU speed are deliberately not reproduced by the managed toolchain. This is a platform-specific configuration replacement, not a claim that an unknown legacy switch was translated to a guessed SDK flag.

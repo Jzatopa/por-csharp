@@ -2,7 +2,13 @@
 
 A source-guided C# port of the Talonius Pool of Radiance Pascal/assembly reconstruction, pinned to `7616920a9178fa32efd45939b9360e95933bbf49`.
 
-All 129 pinned source inputs have an explicit disposition. This is **not a fully validated playable release**, and source inventory completion is not a whole-game equivalence claim.
+All 165 inventoried source inputs and all 227 pinned repository files have explicit dispositions. This is **not a fully validated release**, and inventory completion is not a whole-game equivalence claim.
+
+## October 31 update
+
+See [what changed and the upstream review](docs/UPDATES-2026-10-31.md) for the changes included in this push, the two selectively incorporated upstream fixes, and the remaining upstream candidates. The C# baseline remains pinned; this is not a wholesale synchronization with current Talonius main.
+
+A legitimate level-one-to-current-checkpoint campaign has reached checkpoint **0087**: Sokal Keep, Mendor's Library, Podal auction, Cadorna's treasure, Kovel Mansion and Wealthy Area have recorded resolutions. Ara is cleric5/28HP, Hero fighter5/44HP; all eight party members are healthy, and native save/reload was verified. Final battle and ending remain **unverified**. No campaign saves or private logs are bundled.
 
 ## Original project
 
@@ -25,7 +31,7 @@ Prerequisites: .NET 8 SDK, SDL2 (`libSDL2-2.0.so.0`), and your own original Pool
 
 The launcher accepts a system `dotnet`, a local `.tools/dotnet/dotnet`, or an explicit `POR_DOTNET` executable. It does not download an SDK. Original media is read-only; generated archives and saves use a separate platform-local application-data directory. Optional flags: `--state DIRECTORY`, `--captures DIRECTORY`, `--short-intro`, `--no-audio`.
 
-PC Speaker music and effects are enabled by default through SDL2; existing Settings → Music/Sound preferences are respected. Tandy/AdLib synthesis is not enabled. F5/F8 quick-save/load, F6 Companion Tools when enabled, F12 framebuffer capture, Ctrl+S sound toggle.
+Automatic audio selects an installed Sound Blaster effects pack or AdLib with source-defined PC Speaker effects through SDL2; existing Settings → Music/Sound preferences are respected. Tandy and Sound Blaster modes are selectable; see the full audio setup below. F5/F8 quick-save/load, F6 Companion Tools when enabled, F12 framebuffer capture, Ctrl+S sound toggle.
 
 ## Verify without game data
 
@@ -33,7 +39,7 @@ PC Speaker music and effects are enabled by default through SDL2; existing Setti
 bash scripts/test-portable.sh
 ```
 
-This runs 14 self-contained console test projects; it needs neither game media nor the pinned Pascal checkout. The GitHub workflow runs that same command. Native desktop replays and legacy extended suites have additional requirements; see [testing](docs/TESTING.md).
+This runs 17 self-contained console test projects; it needs neither game media nor the pinned Pascal checkout. The GitHub workflow runs that same command. Native desktop replays and legacy extended suites have additional requirements; see [testing](docs/TESTING.md).
 
 ## Status and provenance
 
@@ -48,3 +54,17 @@ The reported script-11 combat-entry crash was traced to placement leaving `arena
 ## Campaign combat validation started
 
 Native seeded replays now cover training-hall and four-orc Slums victories, postcombat cleanup, real HP/XP/coin/item save-load checks, and Slums defeat/main-menu recovery. These are targeted synthetic-state checks, not natural campaign completion. See [campaign validation and replay](docs/CAMPAIGN-COMBAT.md) and [coverage ledger](docs/campaign-combat-coverage.json).
+
+## Full desktop audio
+
+Linux builds require a C compiler (`cc`) in addition to .NET 8 and SDL2. Automatic audio selects Blaster with an installed pack, otherwise AdLib. Select `--audio adlib|tandy|speaker|blaster`, or `--no-audio`. Sound Blaster sampled effects require an optional `--effects SBSFX.DAT` v2 pack; missing samples retain the source-defined PC Speaker fallback. No effects pack is bundled. See [audio setup](docs/FULL-DESKTOP-AUDIO-2026-10-22.md). Nuked-OPL3 is dynamically linked; its source, notices and LGPL license are in `third_party/nuked-opl3`.
+
+### Recorded-effect packs
+
+Default `--audio auto` selects Sound Blaster when a valid SBSFX.DAT is installed, otherwise AdLib. Use `--effects /path/to/SBSFX.DAT --install-effects-only` to install without launching. `scripts/build-sbsfx.py --pools /path/to/ZOUNDS.DAX --dqk /path/to/SFXDQ.VOC --out /tmp/SBSFX.DAT` builds the source-defined pack from user-owned recordings. A missing source is an error unless `--allow-partial` is explicit; partial packs retain fallback for missing cues. No recordings are included. See [current verification](docs/COMPLETION-PASS-2026-10-23.md).
+
+### Upstream audio integration review
+
+The complete upstream-defined11cuepack was built from stock FRUA recordings plus the source-defined Pools footstep, compared byte-for-byte with upstream and verified through native playback. Recordings remain external/local and are not bundled in this source repository. See [review, verification and remaining campaign gate](docs/UPSTREAM-AUDIO-AND-VALIDATION-2026-10-23.md).
+
+All 227 pinned upstream files now have explicit dispositions (ports, managed platform replacements, preserved text resources or external test data). This is not 227 literal C# translations or full campaign validation. See [repository audit](docs/REPOSITORY-CLOSURE-2026-10-23.md).

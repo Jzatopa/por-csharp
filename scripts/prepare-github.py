@@ -32,14 +32,21 @@ for folder in ['src', 'tests']:
         if source.is_file() and (source.suffix in ('.cs', '.csproj') or source.name.endswith('.cs.in')):
             transfer(source, relative)
 for relative in ['play-desktop.sh', '.gitignore', '.gitattributes', '.github/workflows/ci.yml',
- 'scripts/dotnet.sh', 'scripts/test-portable.sh', 'scripts/recompare-source.py', 'scripts/prepare-github.py',
- 'scripts/test-adventure-smoke.py', 'scripts/test-desktop-smoke.py', 'scripts/test-combat-smoke.py',
- 'scripts/update-campaign-combat-coverage.py', 'docs/campaign-combat-coverage.json',
- 'docs/TPC-MANAGED-REPLACEMENT.md']:
+ 'scripts/dotnet.sh', 'scripts/test-portable.sh', 'scripts/reconcile-upstream.py', 'scripts/package-desktop.py', 'scripts/release-desktop.py', 'scripts/recompare-source.py', 'scripts/prepare-github.py',
+ 'scripts/compare-native-repeats.py', 'scripts/native_expanded_actions.py', 'scripts/validate-expanded-actions.py', 'scripts/check-expanded-action-mutations.py', 'docs/EXPANDED-THREE-PASSES-2026-10-25.md', 'scripts/validate-three-actions.py', 'scripts/check-three-action-mutations.py', 'docs/THREE-ACTION-PASSES-2026-10-24.md', 'scripts/test-wilderness-native.py', 'docs/WILDERNESS-PASS-2026-10-23.md', 'docs/WILDERNESS-COMBAT-PASS-2026-10-23.md', 'docs/EXPLICIT-SPELL-PASS-2026-10-24.md', 'docs/EXPLICIT-ITEM-PASS-2026-10-24.md', 'scripts/test-adventure-smoke.py', 'scripts/test-desktop-smoke.py', 'scripts/test-combat-smoke.py',
+ 'scripts/update-campaign-combat-coverage.py', 'scripts/test-combat-extended.py', 'scripts/build-sbsfx.py', 'scripts/test-sbsfx.py', 'docs/campaign-combat-coverage.json',
+ 'docs/source-inventory.json', 'docs/upstream-review-2026-10-31.json', 'docs/REPOSITORY-CLOSURE-2026-10-23.md', 'docs/repository-file-dispositions.json', 'docs/TPC-MANAGED-REPLACEMENT.md', 'docs/FULL-DESKTOP-AUDIO-2026-10-22.md', 'docs/COMPLETION-PASS-2026-10-23.md', 'docs/UPSTREAM-AUDIO-AND-VALIDATION-2026-10-23.md',
+ 'native/por_opl.c', 'third_party/nuked-opl3/opl3.c', 'third_party/nuked-opl3/opl3.h',
+ 'third_party/nuked-opl3/LICENSE', 'third_party/nuked-opl3/README.md']:
     transfer(root/relative, pathlib.Path(relative))
+# Preserve textual scenario/configuration fixtures and historical support references; never game saves.
+for folder in ['tests/UpstreamScenarios', 'references/upstream-pinned']:
+    for source in sorted((root/folder).rglob('*')):
+        if source.is_file():
+            transfer(source, source.relative_to(root))
 for name in ['README.md', 'UPSTREAM.md', 'AGENTS.md']:
     transfer(root/'docs/github'/name, pathlib.Path(name))
-for name in ['TESTING.md', 'SOURCE-COMPARISON.md', 'COMBAT-ENTRY.md', 'CAMPAIGN-COMBAT.md']:
+for name in ['TESTING.md', 'SOURCE-COMPARISON.md', 'COMBAT-ENTRY.md', 'CAMPAIGN-COMBAT.md', 'UPDATES-2026-10-31.md']:
     transfer(root/'docs/github'/name, pathlib.Path('docs')/name)
 # Keep the public templates so the code-only export can be reproduced from this snapshot.
 for source in sorted((root/'docs/github').glob('*.md')):
@@ -47,7 +54,7 @@ for source in sorted((root/'docs/github').glob('*.md')):
 
 # Preserve public source integrity/dispositions, not user-directed chat prose or local evidence history.
 ledger = json.loads((root/'docs/source-dispositions.json').read_text())
-keys = ['source', 'source_sha256', 'disposition', 'targets', 'handled', 'compiled', 'source_tested', 'gameplay_runtime_validated']
+keys = ['source', 'source_sha256', 'disposition', 'targets', 'handled', 'compiled', 'source_tested', 'gameplay_runtime_validated', 'compatibility_notes', 'source_test_scope', 'scope']
 public = dict(source_commit=ledger['source_commit'], inventory_total=ledger['inventory_total'],
  handled_current=ledger['handled_current'],
  policy='Source dispositions are not whole-game validation. Historical per-pass evidence is retained locally, not bundled.',

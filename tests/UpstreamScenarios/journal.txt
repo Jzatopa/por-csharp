@@ -1,0 +1,13 @@
+# The journal, from the map menu: its list and the first entry.
+boot NORAND
+ignore POOL OF RADIANCE V
+wait RADIANCE
+# a slot's letter loads it at once in ours (#652)
+golden: press l a ret
+candidate: press l a
+wait AREA
+press j
+checkpoint journal
+press ret
+checkpoint entry
+press esc

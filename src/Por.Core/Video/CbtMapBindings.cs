@@ -5,6 +5,8 @@ namespace Por.Core
     // Explicit, idempotent integration. Unrelated combat services remain delegated to their prior owner.
     public static class CbtMapBindings
     {
+        // Optional read-only host diagnostics; null in normal runtime. No input or state override.
+        public static Action<string> ManualActionObserved;
         public static void Bind()
         {
             MagicBindings.BindCombatMap();
@@ -71,13 +73,13 @@ namespace Por.Core
             public void AiControl(TCharRecord c){if(GameplayBound)CombatAi.CombatAiControl(c);else Other.AiControl(c);}
             public void ToggleQuickMagic(){if(GameplayBound)CombatAi.ToggleQuickMagic();else Other.ToggleQuickMagic();}
             public void AllToManual(){if(GameplayBound)CombatAi.AllToManual();else Other.AllToManual();}
-            public void CastSpellNC(byte spell,bool a,bool b,ref bool done){if(GameplayBound)Magic.CastSpellNC(spell,a,b,ref done);else Other.CastSpellNC(spell,a,b,ref done);}
+            public void CastSpellNC(byte spell,bool a,bool b,ref bool done){if(GameplayBound)Magic.CastSpellNC(spell,a,b,ref done);else Other.CastSpellNC(spell,a,b,ref done);if(ManualActionObserved!=null&&GDVars.curChar!=null&&GDVars.curChar.quickfight==0)ManualActionObserved.Invoke("manual-cast-resolved");}
             public void ViewCharacter(ref bool done){if(GameplayBound)ViewChar.ViewCharMenu(ref done);else Other.ViewCharacter(ref done);}
             public void UseItem(ref bool done){if(GameplayBound)ViewChar.UseItemMenu(ref done);else Other.UseItem(ref done);}
             public void SetCurAttacksX2(TCharRecord c){if(GameplayBound)CbtActs.SetCurAttacksX2(c);else Other.SetCurAttacksX2(c);}
-            public void AimMenu(TCharRecord c,byte spell,byte mode,byte range,ref bool done,ref object target){if(GameplayBound){TAimTarget aim=target as TAimTarget;CbtActs.CombatAimMenu(c,spell,mode,range,ref done,ref aim);target=aim;}else Other.AimMenu(c,spell,mode,range,ref done,ref target);}
-            public void CastSpellCombat(byte spell,byte item,ref bool done){if(GameplayBound)CbtActs.CastSpellCombat(spell,item,ref done);else Other.CastSpellCombat(spell,item,ref done);}
-            public void TurnUndead(TCharRecord c){if(GameplayBound)CbtActs.CombatTurnUndead(c);else Other.TurnUndead(c);}
+            public void AimMenu(TCharRecord c,byte spell,byte mode,byte range,ref bool done,ref object target){if(GameplayBound){TAimTarget aim=target as TAimTarget;CbtActs.CombatAimMenu(c,spell,mode,range,ref done,ref aim);target=aim;ManualActionObserved?.Invoke("manual-aim-resolved");}else Other.AimMenu(c,spell,mode,range,ref done,ref target);}
+            public void CastSpellCombat(byte spell,byte item,ref bool done){if(GameplayBound)CbtActs.CastSpellCombat(spell,item,ref done);else Other.CastSpellCombat(spell,item,ref done);ManualActionObserved?.Invoke("manual-cast-selected");}
+            public void TurnUndead(TCharRecord c){if(GameplayBound)CbtActs.CombatTurnUndead(c);else Other.TurnUndead(c);ManualActionObserved?.Invoke("manual-turn-resolved");}
             public byte TurnLevel(TCharRecord c){return GameplayBound?unchecked((byte)CbtActs.TurnLevel(c)):Other.TurnLevel(c);}
             public bool StingVictoryCheat(){return GameplayBound?CbtActs.StingVictoryCheat():Other.StingVictoryCheat();}
             public bool FleeAttempt(TCharRecord c){return GameplayBound?CbtActs.CombatFleeAttempt(c):Other.FleeAttempt(c);}

@@ -1,0 +1,15 @@
+# Boot to the main menu, and the settings screen.
+boot NORAND
+ignore POOL OF RADIANCE V
+# the settings screen names the build
+ignore COMMIT  |VERSION  
+# and the memory left, which moves with the size of the code
+ignore FREE MEMORY|LARGEST BLOCK
+# and the data version, which a data fix raises (DataPat, C_Data.VERSION)
+strip V\d+ +MERGED
+wait RADIANCE
+checkpoint main-menu
+press g
+# ours has the Companion Tools line (phase 8), which moves the lines under it: recorded apart, not compared
+golden: checkpoint settings
+candidate: checkpoint settings-companion

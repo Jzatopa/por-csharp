@@ -103,7 +103,7 @@ namespace Por.Core
         internal static void DoneMenu(TCharRecord c,ref bool done)
         {
             done=false;string menu=!CharHlp.HasRangedWeapon(c)||CharHlp.HasThrowableWeapon(c)?"Guard ":"";menu+="Delay Quit ";if(BandageDying(false))menu+="Bandage ";menu+="Speed Exit";if(menu.Length>40)menu=menu.Substring(0,40);byte key=32;
-            while(key!=0&&key!='E'&&!done){key=MenuCore.MenuHorizontal("",menu,13,10,15,false,false,ref GDVars.doneRoundFlag);switch(key){case (byte)'G':done=CharHlp.Guard(c);CharDisp.PrintBottomLine("Guarding");break;case (byte)'D':c.combatAddr.initiative=1;done=true;break;case (byte)'Q':done=CharHlp.EndActions(c);break;case (byte)'B':BandageDying(true);done=CharHlp.EndActions(c);break;case (byte)'S':SpeedMenu();break;}}
+            while(key!=0&&key!='E'&&!done){key=MenuCore.MenuHorizontal("",menu,13,10,15,false,false,ref GDVars.doneRoundFlag);switch(key){case (byte)'G':done=CharHlp.Guard(c);CharDisp.PrintBottomLine("Guarding");break;case (byte)'D':c.combatAddr.initiative=1;done=true;break;case (byte)'Q':done=CharHlp.EndActions(c);break;case (byte)'B':BandageDying(true);CbtMapBindings.ManualActionObserved?.Invoke("manual-bandage-resolved");done=CharHlp.EndActions(c);break;case (byte)'S':SpeedMenu();break;}}
         }
         public static bool BandageDying(bool bandage)
         {

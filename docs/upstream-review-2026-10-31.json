@@ -1,0 +1,4366 @@
+{
+  "original_repository": "https://forgejo.brazencrows.com/talonius/pool-of-radiance",
+  "baseline": "7616920a9178fa32efd45939b9360e95933bbf49",
+  "reviewed_head": "e6db175322c38750a7e20a88b4b06106a8bbf5d4",
+  "review_date": "2026-10-31",
+  "baseline_tracked_files": 227,
+  "current_tracked_files": 349,
+  "git_default_rename_aware_diffstat": "325 files changed, 44610 insertions(+), 18319 deletions(-)",
+  "raw_changed_paths_including_rename_sources_and_destinations": 330,
+  "raw_changed_source_paths": 175,
+  "scope": "Full changed-path detection; bounded behavioral review, not a wholesale rebase. Baseline objects supplied from preserved local checkout; ancestry not asserted.",
+  "incorporated": [
+    {
+      "commit": "d6874f1fd63de709772f6c1d80fc214f19a40e78",
+      "scope": "partial: ready allowlist and two weapon target guards"
+    },
+    {
+      "commit": "8149706d537ba641a3bf6bfd2d5c736519b1bc23",
+      "scope": "ending bottom-row lifecycle"
+    }
+  ],
+  "changes": [
+    {
+      "path": ".forgejo/scripts/changes.sh",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100755",
+        "kind": "blob",
+        "blob": "3539a1890b83c6330b6fc5c69ba392485dbd32df"
+      },
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": ".forgejo/scripts/notes.sh",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "f5143d33e1098e87601b7a8a12459aa9be6f3253"
+      },
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": ".forgejo/scripts/release-asset.sh",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100755",
+        "kind": "blob",
+        "blob": "d2ea180639257eb27127d9638b9ad74d93ea554a"
+      },
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": ".forgejo/scripts/release.sh",
+      "status": "modified",
+      "baseline": {
+        "mode": "100755",
+        "kind": "blob",
+        "blob": "3534d438bfdeb098be49fd2d8a4f89dcf4d1bec2"
+      },
+      "current": {
+        "mode": "100755",
+        "kind": "blob",
+        "blob": "c9ee484f17bda0d8c280344f91342a4d862baf9e"
+      },
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": ".forgejo/scripts/reproduce.sh",
+      "status": "modified",
+      "baseline": {
+        "mode": "100755",
+        "kind": "blob",
+        "blob": "df6c23723da0b8994d1c204f9dac84a2b171880d"
+      },
+      "current": {
+        "mode": "100755",
+        "kind": "blob",
+        "blob": "ec78c2119f893b242e8a902a28a5e081786c281c"
+      },
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": ".forgejo/workflows/build.yml",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "2d12ba39217d7e663185ff1f701d81ee4517a361"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "301035baeb4aa2cda17d7879a2ebb822bf09b2c3"
+      },
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": ".gitignore",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "6c637e361d75c6e8a7293ca78db511fed8811fbf"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "a82bddc1341da1209e643c8f867ab6aafa88928c"
+      },
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": "README.md",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "b736c6eb6783dea582300dbd1cdfe95e3faa75d4"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "991ed3d64071afb1f9b5a11a3cebe0c611bc7f24"
+      },
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": "bench/TPC.CFG",
+      "status": "removed",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "9568dec5f4b795404bfe8679bbb1581a7004e5b3"
+      },
+      "current": null,
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": "bench/sndbench.pas",
+      "status": "removed",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "2d13fed858de1e892b424834ef1c0970653597b5"
+      },
+      "current": null,
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": "bench/sndbench.sh",
+      "status": "removed",
+      "baseline": {
+        "mode": "100755",
+        "kind": "blob",
+        "blob": "24e448599e1e52a61e2382d069a9839fb6c3ca90"
+      },
+      "current": null,
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": "bench/vidbench.pas",
+      "status": "removed",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "d6aeaf417b039cf93e3bd141198a6d21b234cb63"
+      },
+      "current": null,
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": "bench/vidbench.sh",
+      "status": "removed",
+      "baseline": {
+        "mode": "100755",
+        "kind": "blob",
+        "blob": "65ae9405930a3b503e5794663c668b3012e9581f"
+      },
+      "current": null,
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": "build.sh",
+      "status": "removed",
+      "baseline": {
+        "mode": "100755",
+        "kind": "blob",
+        "blob": "149b92ee3656fa880ed5967e595a1c4a95d26827"
+      },
+      "current": null,
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": "build/README.md",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "a030cb07f75f0f03b99ff971daa683ad0c7afdf8"
+      },
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": "build/build.bat",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "373d386dda66caa79494e6d2fa329c3738a62048"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "c34c972bf08baaf385fd239e150152b0aba532dc"
+      },
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": "build/ovlsizes.py",
+      "status": "removed",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "aa3f2111e83f708a8170ba0d36ab40de239d2ae1"
+      },
+      "current": null,
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": "build/toolchain",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "da666939bc0135a893bc6abe39f1be99b8c4d662"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "d44c97345cfb5b306fe7bc8c3d36ee6874f9eb85"
+      },
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": "docs/CHANGELOG.md",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "336ca495a0c1e5f46d7ceaebfd71cf3bfea9d408"
+      },
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": "docs/COMPILING.md",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "6d1b5fb39864fc0d2e60719e330b5fa6c84a2e73"
+      },
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": "docs/DETAILED-CHANGES.md",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "58b9808e57bc4ec0f8a4b0b7eb16e10ccf7e7e29"
+      },
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": "docs/README.md",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "005b7da634a9020235d27901dadae0828cd1c5c0"
+      },
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": "docs/changelog.md",
+      "status": "removed",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "8cfedb17175b32c894f015c52389d44a845e89af"
+      },
+      "current": null,
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": "docs/detailed-changes.md",
+      "status": "removed",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "30af0b7d31f0ddb40a17341385105225e39eda2d"
+      },
+      "current": null,
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": "docs/dist-readmes/linux-readme.txt",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "97532fdb891d218a9ecc2736287b2ebb3f3ca388"
+      },
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": "docs/dist-readmes/macos-readme.txt",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "eba7beec59ba6b8b67c0aeac3c0aeeba57090a1a"
+      },
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": "docs/dist-readmes/windows-readme.txt",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "43127efd49ce6ed858b177dee15443ed3a08cf95"
+      },
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": "docs/refactor-plan.md",
+      "status": "removed",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "23ec0c90e2cbecee69c3ddd337b7aa66d1884f1a"
+      },
+      "current": null,
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": "docs/screen-mocks/change-class.txt",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "17d7db9a28622838c4324871f53a6d64495decee"
+      },
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": "docs/screen-mocks/f1-help.txt",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "d37f3cb48039525297b7b424b0e506223e6007f8"
+      },
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": "docs/screen-mocks/info-cleric.txt",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "49ebe322e0aa83d80f2494fdc5f75ec046659a5f"
+      },
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": "docs/screen-mocks/info-kill-count.txt",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "2b1ce226c1d76975489eee3cc167fb4782b68df1"
+      },
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": "docs/screen-mocks/info-saving-throws.txt",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "bdc2a4c6fb7ad18bf537c34b8d1c047931d82c29"
+      },
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": "docs/screen-mocks/info-stats.txt",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "dcde48de14e622d771e8f1bba5162a4fdeced742"
+      },
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": "docs/screen-mocks/info-thief.txt",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "7698966dafb309ab06b53e9768b11d6f05ed368d"
+      },
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": "docs/screen-mocks/jrnl-entries.txt",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "c999b0169a31b44a8b66ad97d8a5efae7d472c47"
+      },
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": "docs/screen-mocks/jrnl-quests.txt",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "e7712e9ff7d7abaca7ae4181187cf4ffe31800bf"
+      },
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": "docs/screen-mocks/load-save-game.txt",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "e4438bd748fde11a3ee758ff0ae1a16ab210d23f"
+      },
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": "docs/screen-mocks/poolcfg-exit.txt",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "b3fd3a572a9cfe7c9e2d462d479e04b7c94989b7"
+      },
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": "docs/screen-mocks/poolcfg-hardware.txt",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "6a8973fa57ad36c4a32990d1a53c6deea9c14e3d"
+      },
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": "docs/screen-mocks/poolcfg-main.txt",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "073c9deb5aee4d27e9217233063153b3796f6793"
+      },
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": "docs/screen-mocks/poolcfg-notice.txt",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "43209554a402af3815bdb47913a5824d682366ae"
+      },
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": "docs/screen-mocks/poolcfg-paths.txt",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "e7360cab5f1b48e98b0223fc4ed9fceadb136ccf"
+      },
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": "docs/screen-mocks/poolcfg-settings.txt",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "0840e9c627db2ec366c9f6c03e4c765cf40fc192"
+      },
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": "docs/screen-mocks/settings-game.txt",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "dcea97effb59cd0bb81597de0ad592deee339b23"
+      },
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": "docs/screen-mocks/settings-paths.txt",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "147424421110574bab08aa909ede90b9c5474a19"
+      },
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": "docs/screen-mocks/settings-system.txt",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "4632028e99f739a7fe2ff197a5b181f0ce592d6e"
+      },
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": "docs/screen-mocks/spell-cast.txt",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "e8e607b5724da4974e453809e4c2445dfdcda7fc"
+      },
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": "docs/screen-mocks/spell-memorize.txt",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "ce6484fabeab521d995343f614bce1ecdb699542"
+      },
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": "docs/screen-mocks/spell-page.txt",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "4ccfb2a181006db2eeb845358961645301be9e9a"
+      },
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": "docs/screen-mocks/spell-scribe.txt",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "5cae5abb4180087b79dd5d6037d32be3433a397c"
+      },
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": "docs/screen-mocks/training-hall.txt",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "c4189624389aa71f5b3a8289681acac8f23ea50e"
+      },
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": "package.sh",
+      "status": "removed",
+      "baseline": {
+        "mode": "100755",
+        "kind": "blob",
+        "blob": "ecc31b2f60cb4210a12b1a72ffacd5f5de211176"
+      },
+      "current": null,
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": "scripts/BUILD.BAT",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "4157dbd55086ff668c9d35c4e1b9259450cbb751"
+      },
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": "scripts/build-native.sh",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100755",
+        "kind": "blob",
+        "blob": "1241622467a6fa9406e0fa620d66a20a777ef951"
+      },
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": "scripts/build.sh",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100755",
+        "kind": "blob",
+        "blob": "805aebd22642f2ad306fb31253270436c2a55a47"
+      },
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": "scripts/buildid.sh",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100755",
+        "kind": "blob",
+        "blob": "071d80aca847bc3b2bee9d123cbc552fa2f6bbb0"
+      },
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": "scripts/fpc-setup.sh",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100755",
+        "kind": "blob",
+        "blob": "825d39c3a5c47e9039cc6ec0fff733728a2959b2"
+      },
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": "scripts/macos-sign.sh",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100755",
+        "kind": "blob",
+        "blob": "f22fdb1de661040697e0c6ce9b022f4a51756b91"
+      },
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": "scripts/ovlsizes.py",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "a671f037f22a7cc6cd050232b9237ae40ab5488c"
+      },
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": "scripts/package-native.sh",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100755",
+        "kind": "blob",
+        "blob": "56057868df2ed2bc690cde9a88e0aa75e2a8d5c4"
+      },
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": "scripts/package.sh",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100755",
+        "kind": "blob",
+        "blob": "e1c9e4ded745616033e1ec04c7e2507ae2c20b72"
+      },
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": "scripts/sbsfx.py",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "58ed1d8ebef34cca27c429e9a2d8824bc91f42c9"
+      },
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": "scripts/sdl3-setup.sh",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100755",
+        "kind": "blob",
+        "blob": "ea1d9e30fab8cb375e75084f9a2dd9f85decf84d"
+      },
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": "scripts/snd2pas.py",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "2802f70ac5dde6132a3c1a6570672122aa11ebf2"
+      },
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": "scripts/toolchain-release.sh",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "9e9d97c140fdd98076436f250be646dcb1861d51"
+      },
+      "disposition": "platform-doc-tooling-review-required"
+    },
+    {
+      "path": "src/TPC.CFG",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "3633418d56bd20ca2fb751469fd5b5ba7fba2675"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "c34d66b8a8e9ca84538ce4036b65299bb53803fd"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/abiladj.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "0c91c285f8453f6fb70b6b16632e9c790b63b2d1"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "d3db4341acc40583ec993c8ff48d0a7ab47667a2"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/areaname.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "cb205d4ee5eea7219481870d34f23b1591f0b948"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "182e0edd3cc7d198d6848c9044ce1ec52e2a549c"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/beastfil.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "fa578beb062d66a0082dd2c5bcd3fd93e31d3017"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/beastmnu.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "e7b7509463dc8a065b6a7b369f944f0e9da97c80"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/bestiary.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "abe53e56ec1b5416c17403e4ec7eea61abd2114a"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/binaries/RAVFULL.DAX",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "a7a7b39196a279d67cef65332c183e2d06ffb556"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/binaries/SBSFX.DAT",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "2a43b2fd6efd33ae7971eac3742658108b138443"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/bldshow.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "14b7b4af88dad67c5d591063a19235c4789773b2"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "ad7a989aea548d598aabec853e38ff11cc45f492"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/blit.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "caff155a66df3c074ecf41929175b7fbbaac224a"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "1d38ecb1a9052c5107c14ad0003abf0294185e03"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/border.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "7dfdc03a56e9aadb5831faa6fe9350eed62dc25c"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "26332f99ba9ab8ae4ef70d78bb180aa9b5f774d2"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/camp.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "9b7533b1e5459dfac03804cd3e10bae1a778270a"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "9f5975e117c251b99fe787d01c8e553bc1ecd757"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/cbtacts.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "46af19556087e081ed1294aa46b3af18111965ea"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "eebfabf2acc1fdd1e946a00b8061c35de6c03d08"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/cbtlog.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "f48363ec55847663d5ccc177b15af2f2543eb181"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/cbtmap.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "f6103c4d0deecf78e97326e1ce28d4b3b2855cf8"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "888330967bc97c8de04db4708204814c076b6cec"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/cfgfile.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "16eb3c6b3860559cbb9138b8f4984c4e8d7359a2"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/chardisp.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "e50e5276fa8699088571d5cafa19d35bbc7411b6"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "3d3a5b2bfe46dd8787b20239abc29545579b27a1"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/charedit.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "b6ac5aabaf8dd6319fc1a9c26e6a773a32f85355"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "0d339c1f31a038842f6bf03b16cf32ddfecbdfa4"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/charext.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "8558e80d5e81fc48ccb74bbdb70cea06aed6535b"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/chargen.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "89cb881663aedd6e667975c31fa3bd5167600256"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "f2f544d9b67018ea20acbc5dc76564ea9e69bac4"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/charhlp.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "6d8f9dae99e5d55ee495a03a171d77234d8723f7"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "10a63d4b7c2fd88793928e44e6b01673d70b1933"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/chgclass.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "b5d29a24b78b6f185a4acece3964a47d4c1a6438"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/classcal.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "a4282310f0d8a3b04e007ef285e2eb33a76903bb"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "454c2bc031f5e9b97818112d30e3b8c8ef1218d2"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/clock.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "509a1ad05c3d7275de8e0b8ccbc51bcad95e50cd"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "87fb2b57c975c08ef4257a6ce8bca5fa53c91c15"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/cluebook.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "1e4ac4a942bd6791d759c5123dd632c83300a42e"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/combat.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "8d126e7ace0933360145c5cfe1f9dcad6d6ef7f0"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "11f2ecfc5f57ecaf115c725629a4bc0e8e597465"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/combatai.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "7dd08ce84c46cda8117a6c91cd2b452c04154a86"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "5b2ae4b0deb2170077ceb40f65c12f5f48c37805"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/combatst.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "7c05d3cca6a6a384b35b7da880fd1f4eb527f0a8"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "e4bfe35461622691ff50ec65d9636819525de96d"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/comptool.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "4adf36fe4c924a799d5231e666d8f4b5ad6a44c7"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "17e9c86798d7a9480243c4f76589a0d0c09c01ec"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/dataarc.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "253d935f6f36ac7c33d1edc75f299892ed7f4803"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "b5de9e4fec8763a4ba9c3bff3bb62c0d2a18351e"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/databld.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "5c52c46b68d7bdc3e7222f58f7fdc11f11980074"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "1fae739f6d4b34578b079ce2ff059791be71f19c"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/datapat.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "a9adf5e27cf7c8c27b6896cbf110a2b031a6e1b6"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "6e47e4fc385a827a8f89348ce07127d7f43c054f"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/daxio.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "d1ed0abb4aed10fe214ba80d68515ef898a8f963"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "b21b12fb78ea249f580ad3258e1bb342f72acab8"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/debug.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "35d19fc3d3801dda8cb0f6bb3f0ff1d85f88c6b1"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "1c2f8579dbb10d937100cbd1867f238795c40867"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/dice.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "5b4d483a99e879561706d59ca509bc491e878352"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "5e2cff7ccf989e5a60911aa011b81da998596aed"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/diskrec.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "485c4fe9458aa534bafafcab582041842774d188"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/eclmenu.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "432fe5f7290bcade5c78a62601051788e077e0c3"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "fd93c3302a7c77da6a4738c48672ec6a4a29f7d3"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/ecltrace.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "668acc8ca6ae1f9f465642492ba4aab1ea42bbfb"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "7e40aaf518d041208d71e2efa346a2269a8e3a50"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/eclvars.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "38c36400985a970b5c1177b01914fcc3c361cd34"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "98b38ab5d9bed35cf01c04d5a4b9f350a99425cd"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/eclvm.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "01d9019c68833729b88d11ffb221ea7a9ce15a55"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "c025d061487870dd59ba78117623960f4d5928d8"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/effhndlr.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "79d8bc19b80f5f0cf1815167f91e3fa0afa0c967"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "2d6c714cef2dcfa146458e4b6badf2191532f00b"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/ending.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "ca13a82389e46df5d370e9c7db0e1ec2d3b40c11"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "d4711a4a6738f27ef27249a80a39815a618f898d"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/evtkind.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "e3db85824e92a99f75f056d61d0fc432fde0c4d3"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "cc3f42b966a92a69ace04469faa9e50f0780018b"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/explore.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "2e8b952032d7535e19b777d2ea678110e67a1214"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "da6156f6f9534af99a395cd651e8ef7db586b66b"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/explored.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "059b34b1cdc904abefc2255e9afc8bd061f85033"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "e53d4f0be51851c96b3d3eff08bd261981da27a6"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/fileutil.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "1eb950514f96fe1f702281d6eb71838d7152580c"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "98f775149751e5ac7e9adf4cfbcdd6eb41d015ee"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/fixmain.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "b5177258c5448aecc9a7ae76fe7fd2d8f4d5a453"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "5b8c037cd54ccb12bd6736b6ca37dc21041c2686"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/fxengine.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "01e889328f50e19083499537a25f7a82d1d8198a"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "8d59f6f822f8237f298f7e374b5bc3332a41e777"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/gameboot.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "abe17948d39ff8a26a7740747e9e26f5a1b880c5"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "d08c1752d412211bd88eefc32c5ba8bff50ea59e"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/gamedefs.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "68788c7cabfb0f7d0412801ff0a0df19c5b838cd"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/gameinit.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "76340c1754d9f2c2b92c58a205612d6aedb7e48e"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "96e77e7c5214c16844413edab76888b98a0b29aa"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/gameio.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "be648ab1876a44b59acc3ab8b84807a1a49aeadd"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "d7d741b035174a6da094c714228a2ace3fcbae67"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/gametime.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "0e5168016bc61f76d91b439334733a51693a45cf"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "381d8859e80d78fc37175d87713bcad158af849d"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/gamevars.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "28f9b3f647842f520b295adde33c62d225528a62"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/gdconsts.pas",
+      "status": "removed",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "67d62cf6b52cb3be5688e3fe7ea83c1a767b1e02"
+      },
+      "current": null,
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/gdvars.pas",
+      "status": "removed",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "a3b7596f80e20b2955d89870db8089f800b7e8f1"
+      },
+      "current": null,
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/heaperr.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "498d98a3ec73c606519d6dde1d24fc51448805b4"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "830520b20716c3c77adb1d5d4618d10d67e55476"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/includes/COMPILER.INC",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "fc372514da1a540a492b28879e578352cbfe2de8"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/includes/c_abil.pas",
+      "status": "removed",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "5b31c80e0b13ac6a1f0f41ba603283c11584b51d"
+      },
+      "current": null,
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/includes/c_align.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "b61a36e5a610efe732d71440d9f7ea02fb1c6b9c"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "a0bac0f8fcc4001fbbc7924092b8df7212c45351"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/includes/c_area.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "fd7b6f0fc9e555727db545a3b58d7d32c7daa2b9"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "80561a40aede497a53218c549eddaa5ce08929bf"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/includes/c_beast.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "02fc76638755589be89dc4f4bf6c1e0305e21867"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/includes/c_class.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "25493959fe7b3e3f3bead958effc11db96f6b3a4"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "3ab6ce5b86be2db8c0b4c1fa1c6bad9e21f8b717"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/includes/c_cond.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "09bcca583adb435a343465484b8f3fa151164147"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "68d2c855d9ca36e4ad390d3f7ac56c585d1e7812"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/includes/c_data.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "d224de7f6df8012ee2e10fda21ba95eda620ef6b"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "40c330fb3e8ce51398f71d1a9d17483eeb63ddfa"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/includes/c_dir.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "23c96ed5a01a94cd1b36e868b3a969d2407b75e8"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "b2de9dc7b16c0312b1afdc9c810b31084750334c"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/includes/c_ecl.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "bbad04c409b487b35a55c7ab23345dd5b0cfa5e0"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "186c2593c0b0403631d15524d4355e87b53c0630"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/includes/c_effect.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "e4939825e45c636abb34345bed469f0655679a11"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "9e6e8df09f6bd26f5568d58c87398cdbf09916aa"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/includes/c_ega.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "1164ec9f8e01f80b1264a6e7e4ca1bc80f54941c"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "f22acf9f7ff371f1b68b23a265730ab03af01b78"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/includes/c_equip.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "9ae09a71dc5e14be648701b81c40275a0d7845f3"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "c0a163fc4ddb86ba51936a62cc46a57aa01898b5"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/includes/c_gbvm.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "010dd9346c57bde9bf2688689986a3af6c4c2477"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "008663599cad2f768aaef0615cf08e35b519f03a"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/includes/c_gender.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "67036722c8fcdb739f41c56951ecdf01b37a9be2"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "244e9ace7d67c3eaef4dccb45d0a82cf193221ce"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/includes/c_ifc.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "8d4e6c629d19a05fd16658758f368c00a70c64d4"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "db3e5bed019c458c6670e31c9f22e9d49a1b6ec8"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/includes/c_item.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "2bfb679d290ab6117d4977e80ff4c3ba2715b374"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "ab0379df5b3615587a3a8c5ae4baab787f8ba6d0"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/includes/c_jrnl.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "14e5935b44dac6ca2c16f764b4823e3b2547d8d7"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "163ad74ee094de153858485bf755cbe403ffbd6d"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/includes/c_keys.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "4f11f5a9de65b7d840d428a9048c9d7cb05b03b2"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "7f3c903ba3e58d1c9b8eebeb0fa8434e2d90ec3e"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/includes/c_level.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "2d3139d6ff2460eedfd03e0999bc6a27d72c5a4a"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "8f38011930b999e4827d4b515204453ab656e323"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/includes/c_money.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "0054b6ce9b96211d5a7838f20e90503004105e2b"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "e167c163bd37a9e5fd21a5b26280046c94d30940"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/includes/c_msg.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "d1010ca956d650fff5c4993c73f1e83cb88758f4"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "7a02d32bc83abc8035cb067b414cd6aa8ad2b3c8"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/includes/c_npc.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "1306dae88346e999a0920338c24925727680e5a6"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "1f3428d0d9c8d25843b0dd8c80484aad5e22f5af"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/includes/c_opt.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "9b747e769fccf2163cfcaab7c1bccaeaf740e746"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/includes/c_race.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "cf48b4b044e85d3cb0d79dfd4dd7957263bfbd0a"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "f80b291ff0dc66308487b2b43bc8462b64b4e201"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/includes/c_save.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "40ef2bbe0f9e01959b82a4be17fb021d85861c64"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "a3f4ffd4fff5a2b0eb15689d0ec40c745e999eb4"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/includes/c_sound.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "20cf83b903706bc455d890a09bbd8e9c97a702e1"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "eeaf8825e80e90ca36d0c3bb1bc8169deff3a2d7"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/includes/c_spell.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "a4510b877ad75389466dff660b27e31885626c3e"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "7e1082b71203266957e868fb4fe271531132b056"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/includes/c_sprite.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "a6a3a4f67e7c8871579120bec75b5e4d13af92b0"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/includes/c_stat.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "fe72c0169a66fe462341095cb3f6bcaf191fc414"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/includes/c_status.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "cc84db878f4be3e09a8cb7f475c221fe3a3749bb"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "bfd5e5725eaec2671acc685f6019a28d5b5192cd"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/includes/c_terr.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "04b56a8758814a9264b8d0fec301ddfd4ce202e3"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "2e88d31a11b8ef990817cad01c3aba117616d617"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/includes/c_tile.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "cb0baaaefccba1145ae676485a07f02755463e10"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "28c69bcd8d807dbf5c56b928daa73bca3e6add48"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/includes/c_time.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "a0b498f4f298689d1b7f406ba59567cbf3390f62"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "111583c5761c9645ce8c808f3567ef1c22943445"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/includes/c_video.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "4c7fe4a9df644722b1225fe1cfc11878464cef66"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "809aa9d71675cd7b7586f122c3ad5fcd04fc7bb6"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/intro.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "3731c3e65f23e8199d0daec38ce81a073412e623"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "885645396a4ed46b851fbf804f348fe6f430b16e"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/journal1.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "cdfda5e8c9bae357319feb6bd059891d087266f0"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "eab2c0dab41c7fef3564929be27e3b2379490874"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/journal2.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "fb30682957378d8435587260fd37b83a5b821328"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "0831d2095c0059348ee90f92582d1b3e724d8cc1"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/journal3.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "a1858eb6ebf10b71a9d499a285af39e1619ece74"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "5ca3e08b71b504ba6f3bb6442c24052845c4cf30"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/journal4.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "94b9ae09c50ecd3d2e6f7a046c599d1de86d2797"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "3bf35a6faaabb4e4a743aeb7be5567703728d750"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/jrnllist.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "ab79f2583bc12874e44f3f09dab0993ea5a148b5"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "3014d5a06ac1553586a5f30dc9070d0cdfda5b75"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/jrnlqst.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "d74679f5f28eeb00e882f5fffb4e51f6b0b94381"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/jrnlview.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "d528be29570a6384ec3bf6ea75dcac5c34ecdb26"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "3112a496f70c80279f6e9bf3dd9574617555f596"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/keyhelp.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "923819df54cc40f54d0262701cf01b8029edd2c9"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/lineedit.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "84b0beb2a6ac32d6d54461510ed57559f09ff843"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/logview.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "cac1b040ce61e96203f690ba789ea64f838bda50"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/logwrap.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "ddd114ae076033b193af3e3f41b986b3d3c65868"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/magic.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "2ae3d90e475eb61b059319c8257d75e4e95bddc4"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "8f6588cca434b2f458e33c5146b421f7a2dc49eb"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/mapnotes.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "f7c9c38b23857434dd5276878f368bee60eb780c"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "3534068d3dbbcccc0054602ad367ff2c3ecd78ff"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/maptiles.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "4765db34e7e9747066b8ec94eb4fa67d056eb4b8"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "c5644c2cea8e264cee0b9f1f5116d15ee4be4c49"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/mapview.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "5e09fcaae36c6c4f8dfb011f2dcb9ea50b9f4c6f"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "8bf42444f19fd6737e46ea07aba081fcc892f27a"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/memshow.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "00a5e51a02e1d709abe929d775cb41339abd71e1"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "caea0dedb74e3914c8e584fc1e3a90fcb2f1bcb5"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/menucore.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "b39b57ceb80e44b1a35034101b08e4f6a74bbbe4"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "ea0f90047f75f9d7dfc09887efbd5ddbeda688b1"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/money.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "b4573516e297c61d08c7abdc64b710dcce15a896"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "efc51dbaa6c71a775598de3cf3149bbd7dda2d17"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/moneycal.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "9b484f2e3bafa430d46dc2bc16d05cb5cb0df473"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "db44fece643d6d7b04c83990c9c76297e1d37c89"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/native/biosfont.inc",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "427b50e2fa8cb13109944bc32424823e64aece6b"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/native/crt.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "289dd1676a9a2b7ccf381b34b494583ad24be6d5"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/native/datapick.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "a658a644c6043d805095c9f2b3f88f0626d27374"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/native/gamedirs.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "c1df65fc9612388222d8406ec02b6b4027a4ea8d"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/native/host.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "99c80c9c086b6aff44ff658de6a63b48dc3bc875"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/native/natfile.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "16f875452dcbe49a05dd2c90f45b0ba934c02bef"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/native/ownterm.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "972326ddaaac5c202fda3b98f59fdbb50a889b24"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/native/portio.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "c11887a1589bfaf102f745627dde72454c2d5801"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/native/sdl3min.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "1b623502ca0ae735bff1ad7d20bc8e2edf2f52f8"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/native/sdlhost.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "326f1d5f6b5dcd05fed3af54bee403f664aa27e2"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/native/sdlsound.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "655ccdf605cce25badfd2a32c63d78edea89262a"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/native/sndchip.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "b49da2f4fc334d220e17c114078f5b1ac22e7f88"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/native/snddig.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "2998b3e32d2c76b29fcce19f24015945eb797953"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/native/sndseq.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "1b6df08b26b3db14c44109b79e26da317429a2d8"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/native/tpcompat.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "aa1954b68e67acc5958fb5f587e876600f3b77fe"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/options.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "a1dd09c0c4d095a371ce59db93c08529a23484ad"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "670f3ba88e7e0fa0631b14ffe1f717cd1f1f1297"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/party.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "bee9671531207c9b95327bd3e36b86d97d03f5cb"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "d9455a5027af8c0ab07075caf504cf420187031b"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/partymnu.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "84f5d1a2e7c9e638e6a4fc8a97ab4279ea4641d5"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/pathing.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "920ecdbe3105e818cbcfd0caf339b239b19653a8"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "1408cd77f74e34646d40ee1e2d5c3075ff6afe39"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/piccga.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "89d4437c31cff681055612707800e49a6dc89573"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "0fc13736b9f2da1f8081f146a852e2d0c4af3df6"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/picega.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "5551c6dc6768741d28bf5bb976e749a4cce6e784"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "f866060c9cc61c2e6a74120aa45a535555bafffa"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/pictdy.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "6cc1a0480fa38e9cb93b37e37fd29c5ee9cc92fb"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "0e08ee057c4a61f14f79e4d24603c7fd858f8043"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/picvga.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "86da1f38cfefe592f2eefae8fc5143d2f2bf9628"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "ce11eaace489e59a33fd9bf786f63db07abc078c"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/poolcfg.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "0cbc53c99996d9a32cf6c153061ce12e069ac9e0"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/portrait.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "101cf2c9bdd500a7d32141fc3c05ae70bb407dc7"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "0d634ff212c50c0714f5a00cc706bc1bacbeade7"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/postcbt.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "2134c3ae5464ded6f6d43996d130225ccb222f34"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "62855b4393ff2ece926310aefac83bc69f4cc56d"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/randitem.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "730583dbad8966d136519f39733d9a0276a5d2cd"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "690dc92cdffb42ec846840e22f8f08799fe768b5"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/sage.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "9a46509fcf0e5f482518bd14cb67afa4142a1055"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/saveload.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "249b4ecdcbaabe371c60be628303cdfe09b20994"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "ebf847ab05ec2e740c28e24704ee7a2a48fc8def"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/savemenu.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "929817dcde59c509ffda3dbb1fb5b7604c5060fb"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "d2083b4e8232c35ab55171f866dff63bbe1bc5e8"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/sfxfile.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "6f184b61def9f08ae8e5719a1b66be6760bd4c5b"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/shop.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "78861565c857851df69ace786de2cad1ef7d957f"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "451eb2e9bf4c0401810ef7327aae8ac6596b196c"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/sndnone.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "30cdb91871bef4238d37c1dd3615176449ec507b"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "bfeaa9218cbc37dbdc9e25d84e328d5a723f25a3"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/sndopl.inc",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "bd91a2328932f58e89b0b277c7f976020ad78224"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "0ed447d9c247397c0ab4c8365851c775e8e0fa1c"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/sndopl.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "a58cd5619e01e86fb0bc400c1efaa40e83f61b9a"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "26ec66aa0641e37d6fd4a07d55113da7e2948980"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/sndsb.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "eea2b7f5453987c4aef33f19ee114065aef96fd8"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "6bb9f51a2cf55a41427a1d889971139915e1f189"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/sndspk.inc",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "7b228c9e41ab3746d7ad4105547a05939eec8289"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "0cf8e39a67832bbf8e2e15d632c1c17710715817"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/sndspk.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "ff72fc7603952412d9f101b2c9c9fd9ac36f9281"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "95f94c202a0033deb1bd5616b6922b7e09300870"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/sndtdy.inc",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "c2347373db66d25145a1769058a68a040465eb5d"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "b229ca224896e19dbb8d6644c1068057f9c8d285"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/sndtdy.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "3375b496b73acd3d8aa84d2810403ec3b6538676"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "3744fcd26bbafeebcecdba4570194069ae1ee9d1"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/sounddrv.asm",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "f903e7adc23facba1c57b270107059a778721e76"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "8770aa1e272568f8a47b34fa7e3e71c63ceff41c"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/sounddrv.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "669707b12e4eadbe4c28123e5d45f9d32b34b139"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "482d0d545772d727a14a11afca57bed24f6ccf3e"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/spellinf.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "13ba0a97f92c6b93838065693fd777f524599231"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/spelltxt.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "5bf7aab8b6287b4c11b0d79de6292bc53c504f04"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/stats.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "1236878167234dde4cc7dd4d14de6770536581fe"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "a651a18cf135b7f3caeb6fc9a409dce12bdb996c"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/strutil.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "72be3b820aea80ea0fd367c6a4b31d4f06d963c8"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "0a791cf867dba20e3dee89386c26736ebe3a77ef"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/sym8x8.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "aac30089911456b288ee5c3cf84242d54347beb2"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "ac9021525dd3c7c2051a2c7a0cf94985ec270c0c"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/temple.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "28422b0f2758c281cbb5c972e8ff82f8b3536874"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "b88c7698404e169817449dfc7f38afe8e864e401"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/textrend.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "4496cd0ee6721f3f20df2be1b73c35650740eb4c"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "c6fb812fd0038b9e7861bd2879b3dfe66d5a05cb"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/tprand.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "82ebb1f066ebc84b74033b2be21cf42806e76225"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/tuikit.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "ab1700c64efd9838108a94198d2f81a514e3aba5"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/types.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "2deb724f03a226de1ba54451173bfb4e516ebf46"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "fdf5ef1df05debc6894f26cc7758f612ac216fce"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/usualspl.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "7f68d42ced5dd3d3f483efdb78d01b3adc31c7c3"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "0e3afce1f1ee5ff3e30c7b955c066d58186044ee"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/vault.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "948ab7ae9cc262d2c92d17358b872a88ac005eb3"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "5edc6a56493158c346cf4e8011480cc8b433edb1"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/vaultmnu.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "ad008dcdecba032871d6b4d79cc7deff3d3b7829"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "b666618cd298b44921fe106486796cb81fefdb3d"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/vidcga.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "7944f1810da92eb9ae5032a667016ddcd80c93ff"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "831e8617c32803a992c14c1bf7f82071d4f67418"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/videga.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "d9d25f140f6e280db63c139f55117940d0145b2b"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "442d99259d4d788780c2f1b6d29c4bd1d4923040"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/vidops.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "401560abcfcaff20330c4f60d387fd62d6b70dfd"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "4ce0b038ca90a8c253cc1ebde747bdf2ffbb7588"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/vidtdy.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "17e046129cc57e91b34dc62998555ac91175cf2d"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "c2c8847d54910f479e9d617788a08a602128f318"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/vidvga.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "350f886e7b80190ac2d86492ce64ad32c7dc95f4"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "3559059d8ba9d5588ddad48b4cf39c7c87a916c5"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/view3d.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "9fb568c70cf967d494606cf0d8e116f6d5a8aa50"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "d2706b870a0d5e479f41d69e7c42273fa7995106"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/viewchar.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "aa92d6fce1f8c1ce71d0cfa1a8ef72e9f0854c96"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "7b24c3a502c06e539cacaeb3808211e24a1385ee"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "src/wilds.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "e052960665e05bcb317a9def62c7a7b1030e27a7"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "3381eddb1fa3cc226e623dc44fc93bca9bddd869"
+      },
+      "disposition": "source-candidate-review-required"
+    },
+    {
+      "path": "tests/TPC.CFG",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "9568dec5f4b795404bfe8679bbb1581a7004e5b3"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "f95af95c622df2c67e0fb69c82d3e82eede3059e"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/ovlloads.py",
+      "status": "modified",
+      "baseline": {
+        "mode": "100755",
+        "kind": "blob",
+        "blob": "a02c677e626d3af2f883923071502d5b48d1de4b"
+      },
+      "current": {
+        "mode": "100755",
+        "kind": "blob",
+        "blob": "c8a9af6fdb7336a48bf7c191ef9af9f28dbb8158"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/regress.sh",
+      "status": "modified",
+      "baseline": {
+        "mode": "100755",
+        "kind": "blob",
+        "blob": "e65a169e35f07975d0d995e4e201dc29ca5d98e4"
+      },
+      "current": {
+        "mode": "100755",
+        "kind": "blob",
+        "blob": "4ffeb3d62db61851b2808ba0fb3a9ec2e5c9395e"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/scenarios/README.md",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "492e2142a52b2474b63ef6342b41ce3027bb4eaa"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "3e4d4d7ad2f9fc1a67378715812632ac22c33102"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/scenarios/areachange.txt",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "024a37a31fdc420e1d0e37090f487a2f9f1f8c1d"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "4e9a50358e191c884932ad5a7f5cffb687b7d007"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/scenarios/bane.txt",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "51976914744f9dc5989c2e90aa8fa82a3d859c21"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/scenarios/banetemple.txt",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "408d3bfd095b9a7cbd3513d45d32517d75eae6a1"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/scenarios/boot.txt",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "23125daf743e574480be8507eddc243a9ed9626b"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "b9f10b70f1cfd36599cd950bf6bd7dc51c51744c"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/scenarios/camp.txt",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "3eaee01a11d3b5b5cb096b8eef17a5d15cdb2787"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "2f69ecec435a7f307d81998084703198288de18a"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/scenarios/chargen.txt",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "a0d79bf16291c57910023b429da48d6c38909401"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "875ecbc1c198cc6a55d54b547e67eb54316c9773"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/scenarios/combat.txt",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "70310d1b90912c9c02fa8d08075632a61ac05eeb"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "358ed42c6a892d849d0e17a35cf6900a5e82362c"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/scenarios/companion.txt",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "98f6f6a769d94d346eb10a9ef8f352a54e039b9d"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "ac059405e8faca604952a6c7447d4c0b00114228"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/scenarios/journal.txt",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "2fef6e70936a73c6ba67abc40ede7805942ca9a0"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "c0259390d8ec103f73ba7ea6461dc7f36d1da373"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/scenarios/loadsave.txt",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "d38a026c546953c810c96cec79acb62f2257b99d"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "6260b7236644213b265ae84b401a2faa83d413c8"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/scenarios/saves/bane/CHRDATA6.SAV",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "5e9a82854f4b78b4c3b30fa9bebbdc4c996d99a8"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/scenarios/saves/bane/SAVGAMA.DAT",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "39d6cbf96998bf11a328c1ba252b08334aaf6c19"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/scenarios/saves/banetemple/SAVGAMA.DAT",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "99822e68e520bb2049015b0a871d2e6eff219cdd"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/scenarios/saves/stojanow/SAVGAMA.DAT",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "a292704b7b492e670f61511c625681335fd61eea"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/scenarios/shop.txt",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "571ef6eef9feb2905edaa5f2bda51fcb7592b0f7"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "b2783e103a977c3572ebfea7ba9b05027ee4cb66"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/scenarios/ssiformat.txt",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "2ffff524b5d5b1a17dc8bfc6d2fa0666cc0e3a18"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "6f859920bb1c1fa10432c7d18914d39e2793ed7e"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/scenarios/stojanow.txt",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "8049c663e304fb2835fdb7a2cd5e8254969d8bb0"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/scenarios/vault.txt",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "24425ad577d6a7c4fd1eda5db7a140175a09f6f5"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "8d0ef4778db4575eca362e37f8b40f6283f08af9"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/scenarios/wilderness.txt",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "b44ce2d1db7fa64c7a59730dd4fa88b10b16e0bb"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "3149eb48fe94f5d67b95b3cf4ea17e7190db43cb"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/scenarios/wildfight.txt",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "10a42742dba595086df339cde1a18f697745c84d"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "4df5bfb892fe52c6b7252e027ab9c38a6ad17fc7"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/sndtrc.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "5924eff7b6cac1bbd7189b3d71fb6f1848c4b438"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "a199ce912506c5ea8c32690b3698d80279bc2a31"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/tabiladj.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "522598572b347f9700fdfdae4c5af8964d072a62"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "f9730696aa98ba9ac68afd180b8392c1d2fb3417"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/tareas.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "a33550ee4d861553132cfc1e35a7ce83722aa3fe"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "c7b7c11b8241292e4d4fcf2fe9cc7e1e84b7a863"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/tatkroll.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "80119d673427398908e28c81bd80e36c6fb20198"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/tautojn.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "452a15edeabbc01a5812d6ce3a0fb56548c6e2c2"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/tbeast.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "2d71859d56d70d231ffa174d267ece57d715f50b"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/tblit.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "f325af188eee51a9dbbfd40baf915f7cd0f4e973"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/tcbtacts.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "1a5d3e078d63ce30b8876116bdaf354b29c618f7"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/tcbtlog.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "e151e6687e5007ce3f58427315b0d747beaf6569"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/tcfgfile.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "5ec133ddae4d5f6d601eb41976ee31d036230419"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/tcharhlp.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "edf94e9413e787819f54d98a771eceebc8f1665e"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "c014d9d3ccfaad31a2bb339904ef4ef094652566"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/tclascal.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "d0a975996c1263e235be74652a08e10369b343d3"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "718f942a0b2b7e6876e667846bb049ddf59d62fa"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/tclock.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "9057741fb982cf9d8cd52c34c7b37c1ada8ce14c"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "86d2fddf17f51b8cf60af6868a634b0ef9ce0c27"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/tclouds.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "725499a707bae681225c50654096b570f384d8e0"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/tcluebk.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "18ad5ddbc977f68575f93e5c821a057c2cb50999"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/tdataarc.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "c52cc9883a05a0353b94f8b066987f016ddc26bc"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "458c661edd16a14dd524db79d544aececdfaac7f"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/tdatapat.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "85e5a70e0970a8c367a240043d8a2449639cbddc"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "de62ef965cc2f8f95f49cdde13de39e48b687035"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/tdaxio.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "6f6d802c22979acb13da17532d9a895bf58a0d1c"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/tdiskrec.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "99c509c46df6e52808e87739ddb4098268d29ce8"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/tdisplac.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "ddc427f075466b2b88dd7ec42fc7ca65884ee9bc"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/tdualcls.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "7dfb54e4d65780f798d0d856d6128a259f1075f7"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/tecltrc.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "161bfc129ee74a1b033bed8edfa55e1d2c6badc0"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "d5a7dade0c15a2a231cfbb8ea6b163c736476922"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/teclvars.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "48fcfb9e3919f005e4f4c3b43d7655982e8f73a3"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "d11379d0e2ac2c4fe0752ea00a8807fe4e762e3b"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/teffhndl.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "58fe525247da671a4728bd9c3dbb2f95ab7b5293"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/testkit.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "f530e789732ae0466b0bc7953d3645e96c6435e7"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "2937ed7f5f60967afcc033d14a3ee9b1177f1a79"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/tevtkind.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "e884735a7d8111ed482336a992bea18557562a61"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "281b22039ab7b6df7f8e28268d5fe89b59709bd9"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/texplore.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "d0c068ab12bcbedf9ec88ea232d139844e237e71"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "af1de978325e2ed3b404e4eb207584453b5bc753"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/tfileutl.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "44dff42bca77b28481f5068e91b6a7e7d07f95b6"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "b3818fd4d3b9d37a37e3454974884b96d37aecb3"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/tfxremov.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "bf7e397d2ec68b52521f2df013a671a349ac8882"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "dfdfb29d308952d3ee4091ef9f27eda33f1ab7a4"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/tgamedir.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "312e2b1dca5d6b50f71e5770448fcab4944ae312"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/tgamevar.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "58836bea7293dfa91f468e76b1fe37b37b389eed"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/tjrnl.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "41b607bc060fd76fdf0926ec26d23ac3b6afed24"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "ce545246b4ea70ff878d87a3fd1cff6761859dfb"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/tjrnlqst.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "b00776d2bd5754c67d87dacae8931aeb7329e4ec"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/tkeyhelp.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "acef3c969fa1f0459337e479d6f11d3f58d3ccdb"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/tknock.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "f2b1518be42baf1eceb0c334e56ce07d00ddf6c1"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/tlinedit.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "7f362ee94c13e56c4e3605bb9aa86ca169543cc2"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/tmagres.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "c6cb8b6f8fbb8dbdab5e9048a844ccca4653001f"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/tmapnote.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "1ebd74c7bb3c0f0d1e2a5b9e3d809b0d99885772"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "2f3d97642a843514c1d93d4b3bd6c1b9b9118aa7"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/tmoneyca.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "b01f9cd5653c0cb35741a6d6c3db816379fbda30"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "99eaa0be91b5510c6ea960c7bffcf7676b49dcec"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/tparty.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "a8ac9740db74fa0254f5bc46af9f98672c0ef500"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/tpartymn.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "41e54eba17e81be77037cfbc36866a36ed1632be"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/tpathing.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "b29c988bcba76c2c7a42fb345a5d29fd6d9a917d"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "832a2148d5551bbcd262acefdb7b1853c549c433"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/tprotect.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "0460761e11ad9c0b15fc0503b0bdc39ccc05e6bd"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/tranditm.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "088c8ecd7c32966e4b087957ae116b8282074d4d"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "7eac16f32c513ee35ba77a927151b3a4eaf97883"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/treadyfx.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "d00de478876b1925e946f139e3a20a8299cfdf9f"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/treclay.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "552733b9ab91e2c7cb1e1ce7a03f08e8eb90eb39"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "42741a624e41b21eaa583463faaa4d5245054e4d"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/tsavelay.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "27d9f1066e950731a0d8c039f7db25ee9abefa6d"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "ea10777fc829b12aa613f58f871f9b2cd66f1914"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/tsavemnu.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "70462577e80f4c886699430e7b93c9710774fada"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/tscribe.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "b89b9af283fdf4d5081ab1e8b78ba387b7297a39"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/tsfxfile.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "0a5efec0315fdd81ad44cf10323b7e519f4d509e"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/tshield.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "f363b894f3e5744b5ded7eefc22b57e3971715ef"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/tsleep.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "5f51cdf94f37027c22c6ad63352604c579929976"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/tsndopl.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "d8331da17b554cbd9c91ae15afaf6e123d61b2f4"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "0908c15ef264628fc30ce824784f5111af3a1225"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/tsndseq.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "80d8a3e7eea62dc2c275324f7fd01389547b83b8"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "50dd8b3c351aa46aed08db85b0719f183134100b"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/tspcaff.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "83672de459136559ffe38cf86003e937693137dd"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/tspelinf.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "6744dd29ec7675feb9175c3f46417f314ef85587"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/tstats.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "6746943eb106d4f879fada597e98e2268e6bbcff"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "74bacec945ccc5beb369cf0837cc7b68660baa1d"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/tstrutil.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "746dd7e74362d3eb584ee534c58621e75b274542"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "7b5011a6440219ded70d2a400db41cccc97c5090"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/ttickcnt.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "052448af1ea749af5fdb456cd43b0026a5280cdd"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/ttprand.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "fe451eef40028587cea4e22a3af7f0da5ca53f0d"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/ttuikit.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "6e82116c650d48f3ee617a7f5fc3be4b44946550"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/tusualsp.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "a2492dc24d3e1f558c0ba6aeb1890764192692f4"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "02633878babdfce21f9607872cd4c4d16af3a183"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/tvidpic.pas",
+      "status": "modified",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "bd81b6678d67fae55745b16225dac1658e4a318b"
+      },
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "48cbbc2318cddc5d4b26b7511a5af731e5e2d9fc"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tests/tview3d.pas",
+      "status": "added",
+      "baseline": null,
+      "current": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "8aa29daef960f79f50536154b0dc8b47fa73a12e"
+      },
+      "disposition": "test-resource-review-required"
+    },
+    {
+      "path": "tools/sbsfx.py",
+      "status": "removed",
+      "baseline": {
+        "mode": "100644",
+        "kind": "blob",
+        "blob": "b355c8d96d948c45feeb164e405ea739aa7326ff"
+      },
+      "current": null,
+      "disposition": "platform-doc-tooling-review-required"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+# Load saved game A, look at the party, camp, save into D with a description, and compare the files written.
+boot NORAND
+ignore POOL OF RADIANCE V
+# the save menu shows each file's time, which differs from run to run
+ignore \d{4}/\d\d/\d\d \d\d:\d\d
+wait RADIANCE
+press l
+# ours lays the menu out anew (#657), so the two builds' menus are recorded apart and not compared
+golden: checkpoint load-menu
+candidate: checkpoint load-menu-657
+# a slot's letter loads it at once in ours (#652)
+golden: press a ret
+candidate: press a
+wait AREA
+checkpoint loaded
+press v
+checkpoint view
+press m
+checkpoint more-info
+press e esc
+wait AREA
+press e
+wait CAMP
+# a slot's letter opens the save popup at once in ours (#652), which saves on Enter (#656)
+golden: press s d ret
+candidate: press s d
+golden: checkpoint save-popup
+candidate: checkpoint save-popup-656
+golden: press t e s t ret o
+candidate: press t e s t ret
+wait QUIT
+press n
+# every file the save writes, but ours's .MAP of the visited squares (phase 8), which the golden build has not
+saves after-save *.CHA *.DAT *.INF *.ITM *.SAV *.SPC *.STS *.TXT

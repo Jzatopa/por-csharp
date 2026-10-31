@@ -1,9 +1,57 @@
 {
   "source_commit": "7616920a9178fa32efd45939b9360e95933bbf49",
-  "inventory_total": 129,
-  "handled_current": 129,
+  "inventory_total": 165,
+  "handled_current": 165,
   "policy": "Source dispositions are not whole-game validation. Historical per-pass evidence is retained locally, not bundled.",
   "files": [
+    {
+      "source": "bench/TPC.CFG",
+      "source_sha256": "58cefaaab10c28a7001cc283c2f7f2de1913802aa7272ffdcd6e6b0b7aa900cb",
+      "disposition": "replaced-build-configuration",
+      "targets": [
+        "docs/TPC-MANAGED-REPLACEMENT.md",
+        "src/Por.UpstreamTools/Por.UpstreamTools.csproj",
+        "tests/Por.Upstream.Tests/Por.Upstream.Tests.csproj"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Every 12-line switch mapped to explicit managed build/runtime disposition. No claim of DOS far calls/stack/CPU identity.",
+      "scope": "compile-config"
+    },
+    {
+      "source": "bench/sndbench.pas",
+      "source_sha256": "02b906436186690bee0b976c5f1369fdd0d10cd3d17db7c3b1e6be2c814ab308",
+      "disposition": "csharp-benchmark-port",
+      "targets": [
+        "src/Por.UpstreamTools/SoundBenchmark.cs",
+        "src/Por.UpstreamTools/BenchmarkHosts.cs",
+        "tests/Por.Upstream.Tests/Program.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Three-state source loop/cost/order independently checked; real managed sequencer/RAM bus in both source modes; not DOS CPU timing equivalence.",
+      "scope": "benchmark"
+    },
+    {
+      "source": "bench/vidbench.pas",
+      "source_sha256": "5822fa5b534ec28d1ff3a29e2b0008d51ee4d02b7558a362f9470dec2c6b3a2e",
+      "disposition": "csharp-benchmark-port",
+      "targets": [
+        "src/Por.UpstreamTools/VideoBenchmark.cs",
+        "src/Por.UpstreamTools/BenchmarkHosts.cs",
+        "tests/Por.Upstream.Tests/Program.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Four source workloads/coordinate order/rate formula independently checked; real source primitives in C/E/T RAM graphics buses; not DOS/display timing equivalence.",
+      "scope": "benchmark"
+    },
     {
       "source": "src/TPC.CFG",
       "source_sha256": "4140f23f7c210bd8fb0ce07c58a2d592935e50743f719d680f4b43a9b884b44d",
@@ -15,7 +63,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Build-option mapping audit"
     },
     {
       "source": "src/abiladj.pas",
@@ -27,7 +76,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Prior source-derived contract suites; see baseline reports"
     },
     {
       "source": "src/areaname.pas",
@@ -39,7 +89,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "All256x256script/map pairs plus current-area low-byte view"
     },
     {
       "source": "src/bldshow.pas",
@@ -51,7 +102,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "BldShow source-derived assertions: 5086; 5086checked assertions:2460bytebudget,all13framepixels,4006MulDivoracle vectors,source sizes/weights/cell phases,ETA/cache,midnight,lowmemory/readOnly/failure/success lifecycle and frees; headless."
     },
     {
       "source": "src/blit.pas",
@@ -64,7 +116,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "All routines implemented. Exhaustive 65536pair mirrors/256nibble mirrors; 600clipped tile and450fill fixtures; split allocation/accounting, source17byte DAX header, chained noncascading remap, masks, lifecycle/delegation/BIOS fail-closed. Headless only; host interrupt implementation pending."
     },
     {
       "source": "src/border.pas",
@@ -76,7 +129,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Border source-derived assertions: 19020; 1000seeded signed coordinate rings,16000clippedrectangles,300window event traces and allinvalidcorner styles; source-derived headless."
     },
     {
       "source": "src/camp.pas",
@@ -88,7 +142,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Self-authored oracle model of every routine (tests/Por.NextTen.Tests/CampOracle.cs) compared with the port (exception type, ordered call logs, state snapshots) over logging fakes for the UI, menus, Magic, FxEngine, GameTime, UsualSpl, Party, SaveLoad, GameIo, CharGen, ViewChar and Dice call points, plus hand-worked cases; not original DOS execution"
     },
     {
       "source": "src/cbtacts.pas",
@@ -100,7 +155,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Self-authored oracle models of every routine compared with the port (results, ordered call logs, state snapshots) over fake CbtMap/FxEngine/Magic; not original DOS execution"
     },
     {
       "source": "src/cbtmap.pas",
@@ -113,7 +169,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "2242326 self-authored source-derived assertions; geometry/occupancy, scroll call order, probes/placement/corpses, record-value targets, preview lifecycle, real renderer/framebuffer and Magic tracer integration; 16/16 semantic mutants after green baseline. Headless only."
     },
     {
       "source": "src/chardisp.pas",
@@ -125,7 +182,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "1,848,892 aggregate counted source assertions across ten-unit suite; per-group counts in final-gates.log; self-authored/headless, not DOS execution"
     },
     {
       "source": "src/charedit.pas",
@@ -137,7 +195,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Self-authored checked source-contract gates, per-group logs; not original DOS execution"
     },
     {
       "source": "src/chargen.pas",
@@ -151,7 +210,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "70577 self-authored source assertions plus47routine/33for/5while/10repeat inventory: creation, modification/undo, training caps, party rules, portrait/icon selectors and actual synthetic icon pixels. ViewChar explicit."
     },
     {
       "source": "src/charhlp.pas",
@@ -163,7 +223,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "1,848,892 aggregate counted source assertions across ten-unit suite; per-group counts in final-gates.log; self-authored/headless, not DOS execution"
     },
     {
       "source": "src/classcal.pas",
@@ -175,7 +236,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Prior source-derived contract suites; see baseline reports"
     },
     {
       "source": "src/clock.pas",
@@ -187,7 +249,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Prior source-derived contract suites; see baseline reports"
     },
     {
       "source": "src/combat.pas",
@@ -199,7 +262,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Self-authored checked source-contract gates, per-group logs; not original DOS execution"
     },
     {
       "source": "src/combatai.pas",
@@ -212,7 +276,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "402801 self-authored assertions covering AI equipment scores, morale, steps/clouds, spell/item priorities, keys and turn/move/attack/equipment scenarios. Source routine/loop audit and byte-identical generator replay. Headless; not original DOS or live gameplay execution."
     },
     {
       "source": "src/combatst.pas",
@@ -225,7 +290,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "211371 self-authored assertions covering all terrain glyph classes, dungeon stamps,72wilderness maps, quad/ring placement and CombatStart through real map/corpse routines with recorded asset/UI boundaries. Source routine/loop audit and byte-identical generator replay. Headless; not original DOS or live gameplay execution."
     },
     {
       "source": "src/comptool.pas",
@@ -237,7 +303,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "CompTool source-derived assertions: 363640; independent simultaneous colour LUT/all pixel comparisons, 16 wall combinations/exploration/note/cursor states, all256map cells, actual EvtKind/EclVars all7kind ECL fixture/legend, real input and MapNotes storage write/clear/full/clamp, feature-off and missing/bound editor; self-authored tests, headless not DOS execution"
     },
     {
       "source": "src/dataarc.pas",
@@ -249,7 +316,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Prior source-derived contract suites; see baseline reports"
     },
     {
       "source": "src/databld.pas",
@@ -268,7 +336,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Prior source-derived contract suites; see baseline reports"
     },
     {
       "source": "src/datapat.pas",
@@ -281,7 +350,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Prior source-derived contract suites; see baseline reports"
     },
     {
       "source": "src/daxio.pas",
@@ -294,7 +364,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Prior source-derived contract suites; see baseline reports"
     },
     {
       "source": "src/debug.pas",
@@ -306,7 +377,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Debug source-derived assertions: 1801; all256flagvalues with1800seeded HP/message traces including disabled hostless and40char truncation; headless only."
     },
     {
       "source": "src/dice.pas",
@@ -318,7 +390,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Prior source-derived contract suites; see baseline reports"
     },
     {
       "source": "src/eclmenu.pas",
@@ -330,7 +403,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "EclMenu source-derived assertions: 2011308; 19 source routines, fixed-buffer menu oracle, unsigned comparisons, map wrap/walls, script loading/fallback, creature packing/RNG/list identity, theft/damage ordering, Real48-format rational model, integrated VM adapters; headless not DOS runtime equivalence"
     },
     {
       "source": "src/ecltrace.pas",
@@ -342,7 +416,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "All256opcodebytes,61exactmnemonics including trailing spaces and source SUBTRAT spelling"
     },
     {
       "source": "src/eclvars.pas",
@@ -354,7 +429,9 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "compatibility_notes": "Intentional managed stabilization: CELL_35F reads return deterministic zero, whereas pinned Pascal and original game.ovr leave an uninitialized result stack word. Not SSI return-value equivalence. Real six-PC wilderness navigation/load/save path and connected decoder/COMPARE regression checked; other unsupported reads still fail. See docs/WILDERNESS-PASS-2026-10-23.md.",
+      "source_test_scope": "EclVars source-derived assertions: 916965; Raw zone/special read-writes,81byte character window,all Word facing/NPC/enabled/disk/wallvalues,356 independent6bitstrings,alloperandcounts/skipcodes,party effects and hooks; explicit undefined-result errors,headless."
     },
     {
       "source": "src/eclvm.pas",
@@ -367,7 +444,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "EclVm source-derived assertions: 569151 in 29 groups, 0 failures; 20/20 injected faults caught. All 57 routines: opcode arithmetic/flags/tables, script flow through CallEclScript, ENCOUNTER 5x5 model, treasure tables and packed 63-byte ITEM records, LOAD MONSTER copies, DAMAGE encodings and roll order, NewEclDone/GameLoop. Unported units (EclVars, EclMenu, SaveLoad, CharDisp, CharHlp, FxEngine, Explore, Shop, VaultMnu, Temple, PostCbt, Combat, CharGen, Ending, Camp, MapView, SoundDrv) behind EclVm.Units, exercised through a source-derived test double; headless."
     },
     {
       "source": "src/effhndlr.pas",
@@ -380,7 +458,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Self-authored oracle model of every routine (tests/Por.NextTen.Tests/EffHndlrOracle.cs) compared with the port (exception type, ordered call logs, state snapshots) over a recording fake FxEngine/CbtMap and logging UI, plus hand-worked cases; not original DOS execution"
     },
     {
       "source": "src/ending.pas",
@@ -392,7 +471,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "426 source-derived assertions; frame cycles including zero256wrap, midnight, full Yarash tile/sheet/dither ordering, party thresholds, interface restoration, real DAX/Portrait/Blit pixel slice; headless, not original DOS execution; added strict deadline-equality check; zero-cycle target first-iteration early exit vs byte-wrap cases"
     },
     {
       "source": "src/evtkind.pas",
@@ -405,7 +485,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "EvtKind source-derived assertions: 120022 in 10 groups, 0 failures; 16/16 injected faults caught. Assembled ECL bytecode through a test EclVars restating LoadEclVars/SkipEclCmd and again through the converted EclVars (--real): AND/ON GOTO masks, COMPARE/IF single dispatch and the IF-IF quirk, New Phlan count-up, training-hall offsets, all writers, kind ranking, walk reachability, 96/64/256/160 limits, 400 random dispatch tables; headless, not run over the shipped area scripts."
     },
     {
       "source": "src/explore.pas",
@@ -417,7 +498,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Self-authored checked source-contract gates, per-group logs; not original DOS execution"
     },
     {
       "source": "src/explored.pas",
@@ -429,7 +511,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Whole sbyte coordinate domain; raw2183bytecodec,valid-fileuntouchedbytes,capacity/headerchecks"
     },
     {
       "source": "src/fileutil.pas",
@@ -441,7 +524,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Prior source-derived contract suites; see baseline reports"
     },
     {
       "source": "src/fixmain.pas",
@@ -453,7 +537,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "1,848,892 aggregate counted source assertions across ten-unit suite; per-group counts in final-gates.log; self-authored/headless, not DOS execution"
     },
     {
       "source": "src/fxengine.pas",
@@ -467,7 +552,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "258255 self-authored source-contract assertions: dispatch, mutation-safe lists, auras, rolls, strength, raw Boolean, immunity, healing, expiration, damage/cloud/equipment/holds/revival and real VM CLOCK. Independent Pascal token audit of27APIs/20conditions/139calls.24/24 targeted semantic mutants caught after green identical baseline; headless only."
     },
     {
       "source": "src/gameboot.pas",
@@ -479,7 +565,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "1,848,892 aggregate counted source assertions across ten-unit suite; per-group counts in final-gates.log; self-authored/headless, not DOS execution"
     },
     {
       "source": "src/gameinit.pas",
@@ -492,7 +579,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Self-authored checked source-contract gates, per-group logs; not original DOS execution"
     },
     {
       "source": "src/gameio.pas",
@@ -504,7 +592,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "1135 source-derived assertions: every initial key byte, control/drain ordering, sound modes, debug linked lists/hooks including exception guard reset, fatal exit ordering and returning-Halt fail-closed; headless only."
     },
     {
       "source": "src/gametime.pas",
@@ -516,7 +605,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Self-authored checked source-contract gates, per-group logs; not original DOS execution"
     },
     {
       "source": "src/gdconsts.pas",
@@ -533,7 +623,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Prior source-derived contract suites; see baseline reports"
     },
     {
       "source": "src/gdvars.pas",
@@ -545,7 +636,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Prior source-derived contract suites; see baseline reports"
     },
     {
       "source": "src/heaperr.pas",
@@ -557,7 +649,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "12 source-derived assertions; reserve, zero request, reentry, cancelled-save retry, saved exit, Escape and missing saver; headless, not original DOS execution"
     },
     {
       "source": "src/includes/c_abil.pas",
@@ -569,7 +662,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Prior source-derived contract suites; see baseline reports"
     },
     {
       "source": "src/includes/c_align.pas",
@@ -581,7 +675,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Prior source-derived contract suites; see baseline reports"
     },
     {
       "source": "src/includes/c_area.pas",
@@ -593,7 +688,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Prior source-derived contract suites; see baseline reports"
     },
     {
       "source": "src/includes/c_class.pas",
@@ -605,7 +701,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Prior source-derived contract suites; see baseline reports"
     },
     {
       "source": "src/includes/c_cond.pas",
@@ -617,7 +714,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Prior source-derived contract suites; see baseline reports"
     },
     {
       "source": "src/includes/c_data.pas",
@@ -629,7 +727,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Prior source-derived contract suites; see baseline reports"
     },
     {
       "source": "src/includes/c_dir.pas",
@@ -641,7 +740,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Prior source-derived contract suites; see baseline reports"
     },
     {
       "source": "src/includes/c_ecl.pas",
@@ -653,7 +753,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Prior source-derived contract suites; see baseline reports"
     },
     {
       "source": "src/includes/c_effect.pas",
@@ -665,7 +766,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Prior source-derived contract suites; see baseline reports"
     },
     {
       "source": "src/includes/c_ega.pas",
@@ -677,7 +779,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Prior source-derived contract suites; see baseline reports"
     },
     {
       "source": "src/includes/c_equip.pas",
@@ -689,7 +792,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Prior source-derived contract suites; see baseline reports"
     },
     {
       "source": "src/includes/c_gbvm.pas",
@@ -701,7 +805,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Prior source-derived contract suites; see baseline reports"
     },
     {
       "source": "src/includes/c_gender.pas",
@@ -713,7 +818,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Prior source-derived contract suites; see baseline reports"
     },
     {
       "source": "src/includes/c_ifc.pas",
@@ -725,7 +831,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Prior source-derived contract suites; see baseline reports"
     },
     {
       "source": "src/includes/c_item.pas",
@@ -737,7 +844,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Prior source-derived contract suites; see baseline reports"
     },
     {
       "source": "src/includes/c_jrnl.pas",
@@ -749,7 +857,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Prior source-derived contract suites; see baseline reports"
     },
     {
       "source": "src/includes/c_keys.pas",
@@ -761,7 +870,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Prior source-derived contract suites; see baseline reports"
     },
     {
       "source": "src/includes/c_level.pas",
@@ -773,7 +883,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Prior source-derived contract suites; see baseline reports"
     },
     {
       "source": "src/includes/c_money.pas",
@@ -785,7 +896,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Prior source-derived contract suites; see baseline reports"
     },
     {
       "source": "src/includes/c_msg.pas",
@@ -797,7 +909,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Prior source-derived contract suites; see baseline reports"
     },
     {
       "source": "src/includes/c_npc.pas",
@@ -809,7 +922,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Prior source-derived contract suites; see baseline reports"
     },
     {
       "source": "src/includes/c_race.pas",
@@ -821,7 +935,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Prior source-derived contract suites; see baseline reports"
     },
     {
       "source": "src/includes/c_save.pas",
@@ -833,7 +948,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Prior source-derived contract suites; see baseline reports"
     },
     {
       "source": "src/includes/c_sound.pas",
@@ -845,7 +961,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Prior source-derived contract suites; see baseline reports"
     },
     {
       "source": "src/includes/c_spell.pas",
@@ -857,7 +974,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Prior source-derived contract suites; see baseline reports"
     },
     {
       "source": "src/includes/c_status.pas",
@@ -869,7 +987,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Prior source-derived contract suites; see baseline reports"
     },
     {
       "source": "src/includes/c_terr.pas",
@@ -881,7 +1000,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Prior source-derived contract suites; see baseline reports"
     },
     {
       "source": "src/includes/c_tile.pas",
@@ -893,7 +1013,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Prior source-derived contract suites; see baseline reports"
     },
     {
       "source": "src/includes/c_time.pas",
@@ -905,7 +1026,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Prior source-derived contract suites; see baseline reports"
     },
     {
       "source": "src/includes/c_video.pas",
@@ -917,7 +1039,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Prior source-derived contract suites; see baseline reports"
     },
     {
       "source": "src/intro.pas",
@@ -929,7 +1052,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "22601 source-derived assertions; separate expected ordered picture/music/palette/timing/credits traces, early exit and clock wrap; headless, not original DOS execution"
     },
     {
       "source": "src/journal1.pas",
@@ -941,7 +1065,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Isolated C#7.2 checked slice: all signed16 LineCount indices; chunks0..9 across all indices; all signed16 chunk indices for entries1..28; 71 exact chunks/12071bytes and assembled linecounts; 2556005 assertions"
     },
     {
       "source": "src/journal2.pas",
@@ -953,7 +1078,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Isolated checked C#7.2/.NET8; 22entries/75exact chunks/12222bytes; all signed16 count indices, chunks0..9 at all indices, all signed16 chunk indices for valid entries;2162787assertions"
     },
     {
       "source": "src/journal3.pas",
@@ -965,7 +1091,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Isolated checked C#7.2/.NET8;17entries/70exact chunks/11848bytes; all signed16 count indices, chunks0..9 across allindices and all signed16 chunk indices for valid entries;1835097assertions"
     },
     {
       "source": "src/journal4.pas",
@@ -977,7 +1104,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Both Qwen and Claude candidates:32entries/51chunks/7155bytes,2818133assertions each, checked C#7.2/.NET8; same source-derived vectors"
     },
     {
       "source": "src/jrnllist.pas",
@@ -989,7 +1117,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "723937 journal assertions; signed16indices,99entries/267chunks/43296bytes, all source textlines, labels/Roman numerals and image flags"
     },
     {
       "source": "src/jrnlview.pas",
@@ -1001,7 +1130,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "93061 source-derived assertions; independent full-session screens/key/clock traces, paging/scroll/wrap/preview idle25cs, midnight, panel restoration; headless, not original DOS execution"
     },
     {
       "source": "src/magic.pas",
@@ -1014,7 +1144,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Self-authored oracle model of every routine (tests/Por.NextTen.Tests/MagicOracle.cs) compared with the port (results, ordered call logs, state snapshots) over a recording fake FxEngine/CbtMap and logging UI; not original DOS execution"
     },
     {
       "source": "src/mapnotes.pas",
@@ -1026,7 +1157,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "4000independentstateoperations/rawhashes,4487bytecodec,negativecoordquirk,header/malformedtexttests"
     },
     {
       "source": "src/maptiles.pas",
@@ -1038,7 +1170,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "MapTiles source-derived assertions: 20044; All256tile IDs, lazy second sheet identity/reload, chained tile copies, icon naming/ID wrap/recolor, all256facings and scratch allocation accounting; headless."
     },
     {
       "source": "src/mapview.pas",
@@ -1050,7 +1183,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "227970 source-derived assertions; signed map coordinates, all colour selectors, sky/event mask, automap policy, view3d override, animation frame wrap; headless, not original DOS execution"
     },
     {
       "source": "src/memshow.pas",
@@ -1062,7 +1196,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "MemShow source-derived assertions: 301; 300full source-order display/callback traces, EMS/disk, numeric values and missing measurement fail-closed; headless."
     },
     {
       "source": "src/menucore.pas",
@@ -1074,7 +1209,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "MenuCore source-derived assertions: 567; List identities/GCretainedrefs,hotkeycase,optioncaps,allkeypadscans,callerflags,timers,1-basedanimation,YesNo,listonly,paging/selection; headless inputtrace."
     },
     {
       "source": "src/money.pas",
@@ -1086,7 +1222,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "1,848,892 aggregate counted source assertions across ten-unit suite; per-group counts in final-gates.log; self-authored/headless, not DOS execution"
     },
     {
       "source": "src/moneycal.pas",
@@ -1098,7 +1235,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Prior source-derived contract suites; see baseline reports"
     },
     {
       "source": "src/options.pas",
@@ -1110,7 +1248,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Self-authored checked source-contract gates, per-group logs; not original DOS execution"
     },
     {
       "source": "src/party.pas",
@@ -1122,7 +1261,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Prior source-derived contract suites; see baseline reports"
     },
     {
       "source": "src/pathing.pas",
@@ -1134,7 +1274,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Checked arena-domain line/direction/walk tests,5000linefixtures,1000blocked/budgetwalks,120reverseBFSreferenceboards across bodysizes,80targetsort/pointerfixtures,byte-distancewrap; not DOSruntime"
     },
     {
       "source": "src/piccga.pas",
@@ -1146,7 +1287,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "All six routines, 200 random packed mapped expansion/mask/mirror/noncascading recolor fixtures,150 remap/dither fixtures,256pixel rows,200bank rows. Headless source-derived."
     },
     {
       "source": "src/picega.pas",
@@ -1158,7 +1300,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "All six routines; 200 seeded packed/planar/masked/mirror/recolor fixtures, 100 remap/dither cases, 256 pixel rows and 200 row entries. Headless source-derived tests."
     },
     {
       "source": "src/pictdy.pas",
@@ -1170,7 +1313,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "All six routines; packed-nibble expansion/preexisting mask accumulation, multiframe offsets, first-frame reflection/recoloring, conditional dither draws, pixel rows and bank table. Headless source-derived tests."
     },
     {
       "source": "src/picvga.pas",
@@ -1182,7 +1326,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "180randompacked-expansion/mask/mirror/recolorfixtures,64dither/remapfixtures with draworder, rowtable/pixeloffsets; source-derived bytechecks"
     },
     {
       "source": "src/portrait.pas",
@@ -1194,7 +1339,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Portrait source-derived assertions: 784; Caps/XOR/bytebounds/cache/free identity,first/laterOOM,FrameNeed arithmetic,pink remap,portrait slots,validsprites andallinvaliddistances; required heap adapter,headless."
     },
     {
       "source": "src/postcbt.pas",
@@ -1206,7 +1352,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Self-authored checked source-contract gates, per-group logs; not original DOS execution"
     },
     {
       "source": "src/randitem.pas",
@@ -1218,7 +1365,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "16384seededallkindreferencevectors,drawbounds/order,19templatesandwholeitemreset"
     },
     {
       "source": "src/saveload.pas",
@@ -1230,7 +1378,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Self-authored checked source-contract gates, per-group logs; not original DOS execution"
     },
     {
       "source": "src/savemenu.pas",
@@ -1242,7 +1391,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "346698 source-derived assertions; independent menu-screen/key models,56byte metadata, file timestamps and fallback save offsets, malformed data, save/load slot navigation, description editor and directory lifecycle; headless, not original DOS execution"
     },
     {
       "source": "src/shop.pas",
@@ -1254,7 +1404,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "18 source-derived assertions; 30-column price/name clipping, value floor, label restoration, overload/funds rejection, character/pool payment after copy, extended key protection, remaining-money prompt, missing viewer; headless, not original DOS execution"
     },
     {
       "source": "src/sndnone.pas",
@@ -1266,7 +1417,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Install fields/delegate/record identity/reinstallation; all65536tunes invoked using original legitimately silent Play"
     },
     {
       "source": "src/sndopl.inc",
@@ -1279,7 +1431,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "114407 source-derived assertions: all65536Word pitches, ordered reset/waits, cached tone/noise/rhythm and mute output; required port bus/shared voice stepper. Not physical audio."
     },
     {
       "source": "src/sndopl.pas",
@@ -1291,7 +1444,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "1,848,892 aggregate counted source assertions across ten-unit suite; per-group counts in final-gates.log; self-authored/headless, not DOS execution"
     },
     {
       "source": "src/sndsb.pas",
@@ -1303,7 +1457,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Self-authored checked source-contract gates, per-group logs; not original DOS execution"
     },
     {
       "source": "src/sndspk.inc",
@@ -1317,7 +1472,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "35616 self-authored source assertions; compiled full image/song metadata, zero-pointer loader preservation, priority/PIT/gate bits;6461relocated bytes and55labels match independent GNU assembler oracle. sounddrv.asm voice_step/timer required."
     },
     {
       "source": "src/sndspk.pas",
@@ -1329,7 +1485,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "1,848,892 aggregate counted source assertions across ten-unit suite; per-group counts in final-gates.log; self-authored/headless, not DOS execution"
     },
     {
       "source": "src/sndtdy.inc",
@@ -1343,7 +1500,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "143850 self-authored source assertions; compiled full image/song metadata, loader/spares/tick/mute/OPL;6516relocated bytes and74labels match independent GNU assembler oracle. sounddrv.asm voice_step/timer required."
     },
     {
       "source": "src/sndtdy.pas",
@@ -1355,7 +1513,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "1,848,892 aggregate counted source assertions across ten-unit suite; per-group counts in final-gates.log; self-authored/headless, not DOS execution"
     },
     {
       "source": "src/sounddrv.asm",
@@ -1367,7 +1526,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "167830 self-authored assertions including all58 pinned SSI trace digests, real OPL/Tandy port-decoded pitch/levels, timer/BIOS boundaries and shared stream/LFO/envelope checks. Explicit port/timer/clock/shutdown platform required; no physical audio or original binary execution."
     },
     {
       "source": "src/sounddrv.pas",
@@ -1379,7 +1539,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "1,848,892 aggregate counted source assertions across ten-unit suite; per-group counts in final-gates.log; self-authored/headless, not DOS execution"
     },
     {
       "source": "src/stats.pas",
@@ -1391,7 +1552,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Prior source-derived contract suites; see baseline reports"
     },
     {
       "source": "src/strutil.pas",
@@ -1403,7 +1565,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Prior source-derived contract suites; see baseline reports"
     },
     {
       "source": "src/sym8x8.pas",
@@ -1415,7 +1578,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "121039 source-derived assertions: all286valid symbol mappings, every invalid ushort, signed screen coordinates, all5set guards, combat masked/unmasked byte composition, real disposable DAX/Blit loads and missing-block fatal ordering. Headless only."
     },
     {
       "source": "src/temple.pas",
@@ -1427,7 +1591,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "1,848,892 aggregate counted source assertions across ten-unit suite; per-group counts in final-gates.log; self-authored/headless, not DOS execution"
     },
     {
       "source": "src/textrend.pas",
@@ -1439,7 +1604,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "145605checked assertions including600independent window event traces; glyph/directASCII/bytewrap, signed rectangle guards, centisecond stable reads, delays, input editing/Val retries, bounded real DAX font loading; headless only."
     },
     {
       "source": "src/types.pas",
@@ -1456,7 +1622,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Prior source-derived contract suites; see baseline reports"
     },
     {
       "source": "src/usualspl.pas",
@@ -1468,7 +1635,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "43byteMEMcodec100randomnames/spellsets,owner/reference/valuecopies,cacheevictionandinvalidheaders"
     },
     {
       "source": "src/vault.pas",
@@ -1480,7 +1648,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "19683 source-derived assertions; packed35byte header/63byte items,100item capacity, exact payload/copy/delete/read-only semantics, failed writes; streaming1100records over64KB without Word clipping; headless, not original DOS execution"
     },
     {
       "source": "src/vaultmnu.pas",
@@ -1492,7 +1661,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "7 source-derived assertions; real menu/visited RNG, view and loot callbacks, panel lifecycle, persistence and missing ViewChar boundary; headless, not original DOS execution"
     },
     {
       "source": "src/vidcga.pas",
@@ -1504,7 +1674,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "VidCga source-derived assertions: 173465; Driver metadata/cold adapter,80pictures,300glyphs,100rectangles,dirtyspans,cellfill/BIOS and8000bytes perbank; recording bus only."
     },
     {
       "source": "src/videga.pas",
@@ -1516,7 +1687,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "VidEga source-derived assertions: 538697; Four-plane recording bus validates80pictures,300glyphs,100rectangles,staging/latchdirtyspans,BIOSpages/palettes/cellfill andboth8000bytepages; no desktop output."
     },
     {
       "source": "src/vidops.pas",
@@ -1528,7 +1700,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "400pairedkeyed/planarmerge-overlayfixtures(800operations) across4maskshifts; driverdelegation andselectednilguards; headless only"
     },
     {
       "source": "src/vidtdy.pas",
@@ -1540,7 +1713,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "VidTdy source-derived assertions: 282377; Driver metadata/cold adapter,80pictures,300glyphs,100rectangles,dirtyspans,cellfill/BIOS,4bank8000byteclears; host bus only."
     },
     {
       "source": "src/vidvga.pas",
@@ -1552,7 +1726,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "VidVga source-derived assertions: 641048; Signed raw adapter, metadata/hooks,80pictures,300glyphs,100rectangles, dirty spans,all256palettevalues,BIOS,and64000byteclear; required hardware adapter,not desktop display."
     },
     {
       "source": "src/view3d.pas",
@@ -1564,7 +1739,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "View3D source-derived assertions: 2754515; 2754515assertions: allsigned8coordinatepairs under3scripts,cardinal/invalidfacing fields,GEOplanes,100whole-buffer layeredcamera/maskviews,40automaps,wallblock remap/cache/symbolload; headlesssourcecontract."
     },
     {
       "source": "src/viewchar.pas",
@@ -1577,7 +1753,8 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Self-authored oracle model of every routine (tests/Por.NextTen.Tests/ViewCharOracle.cs) compared with the port (exception type, ordered call logs, state snapshots) over logging fakes for the UI, menus, FxEngine, Magic, Money, Vault, Stats and CharHlp call points, plus hand-worked cases; not original DOS execution"
     },
     {
       "source": "src/wilds.pas",
@@ -1589,7 +1766,518 @@
       "handled": true,
       "compiled": true,
       "source_tested": true,
-      "gameplay_runtime_validated": false
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "15379088 source-derived assertions; exhaustive viewport neighbourhoods, gate/flag permutations, tile coordinates and ordered windows; headless, not original DOS execution"
+    },
+    {
+      "source": "tests/TPC.CFG",
+      "source_sha256": "58cefaaab10c28a7001cc283c2f7f2de1913802aa7272ffdcd6e6b0b7aa900cb",
+      "disposition": "replaced-build-configuration",
+      "targets": [
+        "docs/TPC-MANAGED-REPLACEMENT.md",
+        "src/Por.UpstreamTools/Por.UpstreamTools.csproj",
+        "tests/Por.Upstream.Tests/Por.Upstream.Tests.csproj"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Every 12-line switch mapped to explicit managed build/runtime disposition. No claim of DOS far calls/stack/CPU identity.",
+      "scope": "compile-config"
+    },
+    {
+      "source": "tests/scenarios/POOL-CGA.CFG",
+      "source_sha256": "e4fdc971b20d78771f15476e94e871c902ef9e71c15c69757de27367395a1e77",
+      "disposition": "managed-config-input-replacement",
+      "targets": [
+        "src/Por.UpstreamTools/LegacyTools.cs",
+        "tests/UpstreamScenarios/POOL-CGA.CFG",
+        "tests/Por.Upstream.Tests/Program.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "All five source config fields preserved/parsed; real C/E/T/V engine driver installed in tests. Desktop window remains VGA, not a new native CGA/EGA renderer.",
+      "scope": "test-config"
+    },
+    {
+      "source": "tests/scenarios/POOL-TANDY.CFG",
+      "source_sha256": "a7c34b9c47955c38458d70d58bbe84725941803414eb8f230590f3390cdf3e1e",
+      "disposition": "managed-config-input-replacement",
+      "targets": [
+        "src/Por.UpstreamTools/LegacyTools.cs",
+        "tests/UpstreamScenarios/POOL-TANDY.CFG",
+        "tests/Por.Upstream.Tests/Program.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "All five source config fields preserved/parsed; real C/E/T/V engine driver installed in tests. Desktop window remains VGA, not a new native CGA/EGA renderer.",
+      "scope": "test-config"
+    },
+    {
+      "source": "tests/scenarios/POOL-VGA.CFG",
+      "source_sha256": "50d0c2fd22b9aba2955aa348d924aa9ed24816981340f919975559d47b48222f",
+      "disposition": "managed-config-input-replacement",
+      "targets": [
+        "src/Por.UpstreamTools/LegacyTools.cs",
+        "tests/UpstreamScenarios/POOL-VGA.CFG",
+        "tests/Por.Upstream.Tests/Program.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "All five source config fields preserved/parsed; real C/E/T/V engine driver installed in tests. Desktop window remains VGA, not a new native CGA/EGA renderer.",
+      "scope": "test-config"
+    },
+    {
+      "source": "tests/scenarios/POOL.CFG",
+      "source_sha256": "7bf9c84726e7674c4ea04ee6960abe20d6365e6a2c4191e494fd542df316a925",
+      "disposition": "managed-config-input-replacement",
+      "targets": [
+        "src/Por.UpstreamTools/LegacyTools.cs",
+        "tests/UpstreamScenarios/POOL.CFG",
+        "tests/Por.Upstream.Tests/Program.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "All five source config fields preserved/parsed; real C/E/T/V engine driver installed in tests. Desktop window remains VGA, not a new native CGA/EGA renderer.",
+      "scope": "test-config"
+    },
+    {
+      "source": "tests/sndtrc.pas",
+      "source_sha256": "28f13f5d281e82850f60e85c92b134e0953959ae3dbd50f89a92e1f64460845d",
+      "disposition": "csharp-trace-harness-replacement",
+      "targets": [
+        "src/Por.UpstreamTools/SoundTrace.cs",
+        "src/Por.Core/Sound/SoundDriver.cs",
+        "tests/Por.Upstream.Tests/Program.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Required trace API through real managed driver; 0..64-word capacity/reset/drop/port packing checked, plus driver golden and OPL reset consumers.",
+      "scope": "test-harness"
+    },
+    {
+      "source": "tests/tabiladj.pas",
+      "source_sha256": "d6ba7c9f1650bf45f4775e81568d29292a0010df379b52e34b4f24a45fc1604e",
+      "disposition": "csharp-test-replacement",
+      "targets": [
+        "tests/Por.Tests/RulesChecks.cs",
+        "tests/Por.NextTen.Tests/CharHlpChecks2.cs",
+        "tests/Por.NextTen.Tests/CharHlpChecks3.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Pascal test program mapped to C# test coverage: named C# test files reference the same unit. Assertion-level equivalence NOT audited.",
+      "scope": "test-harness"
+    },
+    {
+      "source": "tests/tareas.pas",
+      "source_sha256": "af1bd5dcd5cb1adc5cd86b7d0fbbb3676100ec6390937e305ef9fb209fe5a48a",
+      "disposition": "csharp-test-replacement",
+      "targets": [
+        "tests/Por.NextTen.Tests/SaveMenuChecks.cs",
+        "tests/Por.Leaf.Tests/Program.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Pascal test program mapped to C# test coverage: named C# test files reference the same unit. Assertion-level equivalence NOT audited.",
+      "scope": "test-harness"
+    },
+    {
+      "source": "tests/tcharhlp.pas",
+      "source_sha256": "2effe4866628a688b1776733eadc60c53948f839dd76226627d4d35ba0b9c32d",
+      "disposition": "csharp-test-replacement",
+      "targets": [
+        "tests/Por.FinalThree.Tests/DungeonOracle.cs",
+        "tests/Por.DirectTen.Tests/Program.cs",
+        "tests/Por.FxEngine.Tests/Program.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Pascal test program mapped to C# test coverage: named C# test files reference the same unit. Assertion-level equivalence NOT audited.",
+      "scope": "test-harness"
+    },
+    {
+      "source": "tests/tclascal.pas",
+      "source_sha256": "6f3cb9719b600aa3792e5eba89a11444b40bd80f1bb77a6b320d4ffc0adec065",
+      "disposition": "csharp-test-replacement",
+      "targets": [
+        "tests/Por.Adventure.Tests/Program.cs",
+        "tests/Por.OrderedFour.Tests/CharGenChecks.cs",
+        "tests/Por.NextTen.Tests/TenDChecks.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Pascal test program mapped to C# test coverage: named C# test files reference the same unit. Assertion-level equivalence NOT audited.",
+      "scope": "test-harness"
+    },
+    {
+      "source": "tests/tclock.pas",
+      "source_sha256": "d0a51aa2a8fc848a133a6d788ff83d94cec95597a5d1f8f61a7dab5726f9b7b6",
+      "disposition": "csharp-test-replacement",
+      "targets": [
+        "tests/Por.Global.Tests/GlobalVerification.cs",
+        "tests/Por.NextTen.Tests/CampOracle.cs",
+        "tests/Por.NextTen.Tests/SaveMenuChecks.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Pascal test program mapped to C# test coverage: named C# test files reference the same unit. Assertion-level equivalence NOT audited.",
+      "scope": "test-harness"
+    },
+    {
+      "source": "tests/tdataarc.pas",
+      "source_sha256": "c0143783fbd2aef15040871bf8a48e83b49989994ae46a9d6a95b2773a6132e6",
+      "disposition": "csharp-test-replacement",
+      "targets": [
+        "tests/Por.Data.Tests/DataLaneTests.cs",
+        "tests/Por.Data.Tests/ArchiveTests.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Pascal test program mapped to C# test coverage: named C# test files reference the same unit. Assertion-level equivalence NOT audited.",
+      "scope": "test-harness"
+    },
+    {
+      "source": "tests/tdatapat.pas",
+      "source_sha256": "7a762b7b205f98e70604db723e76826b2851468e40b46d48ab602966e72aff35",
+      "disposition": "csharp-test-replacement",
+      "targets": [
+        "tests/Por.Builder.Tests/Program.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Pascal test program mapped to C# test coverage: named C# test files reference the same unit. Assertion-level equivalence NOT audited.",
+      "scope": "test-harness"
+    },
+    {
+      "source": "tests/tecltrc.pas",
+      "source_sha256": "2af4cf69ad2bbfec88ee8910ee44b2ad33556e139ebc7ca060cf44ffd708ffe6",
+      "disposition": "csharp-test-replacement",
+      "targets": [
+        "tests/Por.SixLeaves.Tests/Program.cs",
+        "tests/Por.EclVm.Tests/CoreChecks.cs",
+        "tests/Por.SixFiles.Tests/Program.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Pascal test program mapped to C# test coverage: named C# test files reference the same unit. Assertion-level equivalence NOT audited.",
+      "scope": "test-harness"
+    },
+    {
+      "source": "tests/teclvars.pas",
+      "source_sha256": "05014a14ced6c8852d8b2778925c2e3c3babe7d8a92e72ea672322f8fb0f39de",
+      "disposition": "csharp-test-replacement",
+      "targets": [
+        "tests/Por.EclPair.Tests/EclMenuChecks.cs",
+        "tests/Por.EclPair.Tests/Program.cs",
+        "tests/Por.FxEngine.Tests/StateChecks.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Pascal test program mapped to C# test coverage: named C# test files reference the same unit. Assertion-level equivalence NOT audited.",
+      "scope": "test-harness"
+    },
+    {
+      "source": "tests/testkit.pas",
+      "source_sha256": "ac3c4c65c42d148e48557319932cef462b328bb4dfb6124733affb1d5ab884ec",
+      "disposition": "csharp-test-harness-replacement",
+      "targets": [
+        "tests/Por.NextTen.Tests/Program.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Pascal unit-test helper (Start/Check/CheckEquals). C# NextTen harness provides Yes/Eq/EqS helpers and group registration.",
+      "scope": "test-harness"
+    },
+    {
+      "source": "tests/tevtkind.pas",
+      "source_sha256": "1cb9ea6f37fc858780ae03a9e6e631a70196496d9af3bc6e269a173c1e2fc361",
+      "disposition": "csharp-test-replacement",
+      "targets": [
+        "tests/Por.EvtKind.Tests"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Pascal test program mapped to C# test coverage: named C# test files reference the same unit. Assertion-level equivalence NOT audited.",
+      "scope": "test-harness"
+    },
+    {
+      "source": "tests/texplore.pas",
+      "source_sha256": "abb15784b3f45e9935f83a804ceda43d174adf1fa5fb8680bf6ca08019e93914",
+      "disposition": "csharp-test-replacement",
+      "targets": [
+        "tests/Por.TenMore.Tests/View3DChecks.cs",
+        "tests/Por.CompTool.Tests/Program.cs",
+        "tests/Por.Leaf.Tests/Program.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Pascal test program mapped to C# test coverage: named C# test files reference the same unit. Assertion-level equivalence NOT audited.",
+      "scope": "test-harness"
+    },
+    {
+      "source": "tests/tfileutl.pas",
+      "source_sha256": "bfe08d898e9e5d6384b523a666d6940bdfbe0d624f2f0d47acc2f857c836255a",
+      "disposition": "csharp-test-replacement",
+      "targets": [
+        "tests/Por.DirectTen.Tests/Program.cs",
+        "tests/Por.Data.Tests/DataVerification.cs",
+        "tests/Por.Data.Tests/DataLaneTests.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Pascal test program mapped to C# test coverage: named C# test files reference the same unit. Assertion-level equivalence NOT audited.",
+      "scope": "test-harness"
+    },
+    {
+      "source": "tests/tfxremov.pas",
+      "source_sha256": "5170cec8725524ea9ce99ee30e38e2a08067fcda97369e40c1249973646c7544",
+      "disposition": "csharp-test-replacement",
+      "targets": [
+        "tests/Por.FxEngine.Tests/Program.cs",
+        "tests/Por.FxEngine.Tests/StateChecks.cs",
+        "tests/Por.EclVm.Tests/Fake.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Pascal test program mapped to C# test coverage: named C# test files reference the same unit. Assertion-level equivalence NOT audited.",
+      "scope": "test-harness"
+    },
+    {
+      "source": "tests/tjrnl.pas",
+      "source_sha256": "f1b45f65fe6ca71ec2ff7fd3d56f35efa1147f1920516c480c1d86363d647662",
+      "disposition": "csharp-test-replacement",
+      "targets": [
+        "tests/Por.NextTen.Tests/JrnlViewChecks.cs",
+        "tests/Por.Journal.Tests/Program.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Pascal test program mapped to C# test coverage: named C# test files reference the same unit. Assertion-level equivalence NOT audited.",
+      "scope": "test-harness"
+    },
+    {
+      "source": "tests/tmapnote.pas",
+      "source_sha256": "83344fedb8a72b078e01773ada26a5ead917249ce5be541c2503cbdec574a66d",
+      "disposition": "csharp-test-replacement",
+      "targets": [
+        "tests/Por.CompTool.Tests/Program.cs",
+        "tests/Por.Leaf.Tests/Program.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Pascal test program mapped to C# test coverage: named C# test files reference the same unit. Assertion-level equivalence NOT audited.",
+      "scope": "test-harness"
+    },
+    {
+      "source": "tests/tmoneyca.pas",
+      "source_sha256": "b627cd601e2ddff0d9b4af9bed655989462e6de3ab58df14d9b6c176b1f45f90",
+      "disposition": "csharp-test-replacement",
+      "targets": [
+        "tests/Por.DirectTen.Tests/Program.cs",
+        "tests/Por.NextTen.Tests/ViewCharChecks2.cs",
+        "tests/Por.NextTen.Tests/EasiestTenChecks.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Pascal test program mapped to C# test coverage: named C# test files reference the same unit. Assertion-level equivalence NOT audited.",
+      "scope": "test-harness"
+    },
+    {
+      "source": "tests/tpathing.pas",
+      "source_sha256": "65b257d2598a255ff7186c2071d5eeda5e457f4ef8227e58a5b071380bf05765",
+      "disposition": "csharp-test-replacement",
+      "targets": [
+        "tests/Por.Pathing.Tests/Program.cs",
+        "tests/Por.FinalThree.Tests/AiBehavior.cs",
+        "tests/Por.NextTen.Tests/MagicOracle.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Pascal test program mapped to C# test coverage: named C# test files reference the same unit. Assertion-level equivalence NOT audited.",
+      "scope": "test-harness"
+    },
+    {
+      "source": "tests/tranditm.pas",
+      "source_sha256": "27e6bf5b78ad820d4d04f15ec5df5fa8154e8ad5ac4afd3c8752e31487b1f5be",
+      "disposition": "csharp-test-replacement",
+      "targets": [
+        "tests/Por.NextTen.Tests/VaultChecks.cs",
+        "tests/Por.Leaf.Tests/Program.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Pascal test program mapped to C# test coverage: named C# test files reference the same unit. Assertion-level equivalence NOT audited.",
+      "scope": "test-harness"
+    },
+    {
+      "source": "tests/treclay.pas",
+      "source_sha256": "e624aeabc879b933ee40e6c8f0ebc5fb11548d917eeb67f13dd98e0d39d27f8a",
+      "disposition": "csharp-test-replacement",
+      "targets": [
+        "tests/Por.Types.Tests/SourceZoneLayout.cs",
+        "tests/Por.Types.Tests/TypesVerification.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Pascal test program mapped to C# test coverage: named C# test files reference the same unit. Assertion-level equivalence NOT audited.",
+      "scope": "test-harness"
+    },
+    {
+      "source": "tests/tsavelay.pas",
+      "source_sha256": "d3e7b7cd126101e0967320823bdc67ccc6bd84e479d70d6c70e34337d252fe42",
+      "disposition": "csharp-test-replacement",
+      "targets": [
+        "tests/Por.NextTen.Tests/TenDChecks.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Pascal test program mapped to C# test coverage: named C# test files reference the same unit. Assertion-level equivalence NOT audited.",
+      "scope": "test-harness"
+    },
+    {
+      "source": "tests/tsndopl.pas",
+      "source_sha256": "fc6bf84bb6c32721e6076e15ecd5dbd44414ad9ae5bb42e167d602f6f82779a5",
+      "disposition": "csharp-test-replacement",
+      "targets": [
+        "tests/Por.FinalThree.Tests/AdlibChecks.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "28 tunes x 400 ticks, tone pitch/level/key/noise checks, reset size and sounding/noisy sample thresholds. Actual existing implementation reverified; prior missing claim was stale.",
+      "scope": "test-harness"
+    },
+    {
+      "source": "tests/tsndseq.pas",
+      "source_sha256": "614693d4a27d654d9e3ec42b2aa2910c3389fce58a955a46f9e705d2b6706ac6",
+      "disposition": "csharp-test-replacement",
+      "targets": [
+        "tests/Por.FinalThree.Tests/Program.cs",
+        "tests/Por.FinalThree.Tests/SoundGoldenRecords.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "SoundGolden: all 58 upstream SSI-recorded per-tick write-count/CRC/tick-count tuples, no historical evidence file dependency.",
+      "scope": "test-harness"
+    },
+    {
+      "source": "tests/tstats.pas",
+      "source_sha256": "493211268b5c1674021e9c7fd58366781c923e26dca9c020a116c9903ff1f68b",
+      "disposition": "csharp-test-replacement",
+      "targets": [
+        "tests/Por.NextTen.Tests/ViewCharChecks2.cs",
+        "tests/Por.NextTen.Tests/ViewCharOracle.cs",
+        "tests/Por.FxEngine.Tests/Program.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Pascal test program mapped to C# test coverage: named C# test files reference the same unit. Assertion-level equivalence NOT audited.",
+      "scope": "test-harness"
+    },
+    {
+      "source": "tests/tstrutil.pas",
+      "source_sha256": "1d31d339175f02d1603bda72e2070aa9d77abe1a834d47a672b86dc20b497e4c",
+      "disposition": "csharp-test-replacement",
+      "targets": [
+        "tests/Por.Data.Tests/StrUtilTests.cs",
+        "tests/Por.Data.Tests/DataLaneTests.cs",
+        "tests/Por.Tests/ConstantChecks.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Pascal test program mapped to C# test coverage: named C# test files reference the same unit. Assertion-level equivalence NOT audited.",
+      "scope": "test-harness"
+    },
+    {
+      "source": "tests/tusualsp.pas",
+      "source_sha256": "545d4563a3de64082d744ab99b0332b1bb24600acd0f72bf7396399128a49d56",
+      "disposition": "csharp-test-replacement",
+      "targets": [
+        "tests/Por.NextTen.Tests/CampChecks1.cs",
+        "tests/Por.NextTen.Tests/CampChecks2.cs",
+        "tests/Por.Leaf.Tests/Program.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Pascal test program mapped to C# test coverage: named C# test files reference the same unit. Assertion-level equivalence NOT audited.",
+      "scope": "test-harness"
+    },
+    {
+      "source": "tests/tvidpic.pas",
+      "source_sha256": "3adc1dc98b5983b03529c422dc2b72b3f7f3eeaac36430bd100ce8773722f2db",
+      "disposition": "csharp-test-replacement",
+      "targets": [
+        "tests/Por.TenMore.Tests/VideoChecks.cs",
+        "tests/Por.TenMore.Tests/MapTilesChecks.cs"
+      ],
+      "handled": true,
+      "compiled": true,
+      "source_tested": true,
+      "gameplay_runtime_validated": false,
+      "source_test_scope": "Pascal test program mapped to C# test coverage: named C# test files reference the same unit. Assertion-level equivalence NOT audited.",
+      "scope": "test-harness"
     }
   ]
 }

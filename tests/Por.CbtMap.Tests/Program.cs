@@ -222,6 +222,13 @@ static class Checks
  {
   Rig();var c=Add(1,4,5);CbtMap.BuildArenaArrays();Combat.Services=null;CbtMapBindings.Bind();var first=Combat.Services;CbtMapBindings.Bind();Yes(ReferenceEquals(first,Combat.Services),"idempotent combat binding");Eq(4,CharDisp.CombatMap.CombatCellX(c),"CharDisp real map");Eq(5,CbtActs.CombatMap.CombatCellY(c),"CbtActs real map");Eq(1,Combat.Services.Slot(c),"Combat real map");byte cr=99,t=99;CbtActs.CombatMap.GetArenaContents(4,5,ref cr,ref t);Eq(1,cr,"ref/out adapter");Eq(23,t,"terrain adapter");bool missing=false;try{Combat.Services.CombatStart();}catch(NotSupportedException){missing=true;}Yes(missing,"non-map missing still explicit");
   var old=new RecordingCombat();Combat.Services=old;CbtMapBindings.Bind();bool done=false;object target=null;Combat.Services.CombatStart();Combat.Services.AimMenu(c,1,2,3,ref done,ref target);Yes(done&&ReferenceEquals(old,target),"nonmap ref arguments forwarded");Yes(old.Log.SequenceEqual(new[]{"CombatStart","AimMenu"}),"existing unrelated services retained");Eq(13,Combat.Services.TurnLevel(c),"nonmap return value forwarded");
+  // Diagnostic observation must happen after the service resolves, never replace it,
+  // and remain inert for normal/null-host and quick-AI calls.
+  GDVars.curChar=c;c.hpCur=17;int observed=0;CbtMapBindings.ManualActionObserved=label=>{Yes(done,"observer sees resolved ref output");Eq(17,c.hpCur,"observer does not change HP");observed++;};
+  done=false;Combat.Services.CastSpellNC(3,false,true,ref done);Eq(1,observed,"manual resolved action observed once");
+  c.quickfight=1;done=false;Combat.Services.CastSpellNC(3,false,true,ref done);Eq(1,observed,"AI spell not labeled manual");
+  CbtMapBindings.ManualActionObserved=null;GDVars.curChar=null;done=false;Combat.Services.CastSpellNC(3,false,true,ref done);Yes(done,"disabled diagnostic tolerates absent current character");
+  GDVars.curChar=c;c.quickfight=0;
   CbtMap.boltTracer=(sbyte x,sbyte y,ref TCellList list)=>{};var tracer=CbtMap.boltTracer;CbtMapBindings.Bind();Yes(ReferenceEquals(tracer,CbtMap.boltTracer),"explicit custom tracer retained");
  }
  static int Main(string[] args)

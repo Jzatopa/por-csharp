@@ -120,6 +120,7 @@ static partial class Tests
         add("EhGaze", () => EhGuarded(EhGaze));
         add("EhDrain", () => EhGuarded(EhDrain));
         add("EhItems", () => EhGuarded(EhItems));
+        add("EhDisplacedReadyNil", EhDisplacedReadyNil);
         add("EhCloud", () => EhGuarded(EhCloud));
         add("EhResist", () => EhGuarded(EhResist));
         add("EhExamples", () => EhGuarded(EhExamples));

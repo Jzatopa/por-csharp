@@ -1,0 +1,1784 @@
+{
+  "commit": "7616920a9178fa32efd45939b9360e95933bbf49",
+  "files": [
+    {
+      "source": "bench/TPC.CFG",
+      "sha256": "58cefaaab10c28a7001cc283c2f7f2de1913802aa7272ffdcd6e6b0b7aa900cb",
+      "lines": 12,
+      "bytes": 79,
+      "status": "handled",
+      "targets": [
+        "docs/TPC-MANAGED-REPLACEMENT.md",
+        "src/Por.UpstreamTools/Por.UpstreamTools.csproj",
+        "tests/Por.Upstream.Tests/Por.Upstream.Tests.csproj"
+      ],
+      "scope": "compile-config"
+    },
+    {
+      "source": "bench/sndbench.pas",
+      "sha256": "02b906436186690bee0b976c5f1369fdd0d10cd3d17db7c3b1e6be2c814ab308",
+      "lines": 93,
+      "bytes": 2558,
+      "status": "handled",
+      "targets": [
+        "src/Por.UpstreamTools/SoundBenchmark.cs",
+        "src/Por.UpstreamTools/BenchmarkHosts.cs",
+        "tests/Por.Upstream.Tests/Program.cs"
+      ],
+      "scope": "benchmark"
+    },
+    {
+      "source": "bench/vidbench.pas",
+      "sha256": "5822fa5b534ec28d1ff3a29e2b0008d51ee4d02b7558a362f9470dec2c6b3a2e",
+      "lines": 139,
+      "bytes": 4099,
+      "status": "handled",
+      "targets": [
+        "src/Por.UpstreamTools/VideoBenchmark.cs",
+        "src/Por.UpstreamTools/BenchmarkHosts.cs",
+        "tests/Por.Upstream.Tests/Program.cs"
+      ],
+      "scope": "benchmark"
+    },
+    {
+      "source": "src/TPC.CFG",
+      "sha256": "4140f23f7c210bd8fb0ce07c58a2d592935e50743f719d680f4b43a9b884b44d",
+      "lines": 12,
+      "bytes": 65,
+      "status": "handled",
+      "targets": [
+        "docs/TPC-MANAGED-REPLACEMENT.md",
+        "src/Por.Core/Por.Core.csproj"
+      ]
+    },
+    {
+      "source": "src/abiladj.pas",
+      "sha256": "71a000101c71c5f3bcbc1f72976f70a38021de27e627fb1e3964f75d5a1db62e",
+      "lines": 204,
+      "bytes": 6454,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Rules/AbilAdj.cs"
+      ]
+    },
+    {
+      "source": "src/areaname.pas",
+      "sha256": "cf95055f69f89244b58d6e8caf7c8f7f054bf4f6d0b3e96f016bb3fa078712ea",
+      "lines": 61,
+      "bytes": 2498,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Rules/AreaName.cs"
+      ]
+    },
+    {
+      "source": "src/bldshow.pas",
+      "sha256": "33045caf10fc84ad6eca78948f6ad983d69ee5f745f0b21fe5430d045f2e89e4",
+      "lines": 652,
+      "bytes": 21134,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/UI/BldShow.cs"
+      ]
+    },
+    {
+      "source": "src/blit.pas",
+      "sha256": "d19329a73ca083050d1a0d94ed49d7c712ac7d2a4fd9d3fc19587a44183c162d",
+      "lines": 786,
+      "bytes": 30966,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Video/Blit.Primitives.cs",
+        "src/Por.Core/Video/Blit.cs"
+      ]
+    },
+    {
+      "source": "src/border.pas",
+      "sha256": "072527b587e35b6f3503201bcaa7e1d68705a7ee9003f312ef4e3be58f4db5a7",
+      "lines": 71,
+      "bytes": 2442,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/UI/Border.cs"
+      ]
+    },
+    {
+      "source": "src/camp.pas",
+      "sha256": "2b28adbbf75814404e1744b46c240283b8afc9319c9006eb6f9760b2b30b36cd",
+      "lines": 1103,
+      "bytes": 39385,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/UI/Camp.cs"
+      ]
+    },
+    {
+      "source": "src/cbtacts.pas",
+      "sha256": "ba7e18d6c6ffc33b6013a56842d7c57932b461528e3a1a1c6d080d2486759b17",
+      "lines": 1830,
+      "bytes": 68179,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Rules/CbtActs.cs"
+      ]
+    },
+    {
+      "source": "src/cbtmap.pas",
+      "sha256": "a71235cf9a01b5b35ead083cbed690756ce8c320c6ca87b7924caf2f937958ce",
+      "lines": 936,
+      "bytes": 32636,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Video/CbtMap.cs",
+        "src/Por.Core/Video/CbtMapBindings.cs"
+      ]
+    },
+    {
+      "source": "src/chardisp.pas",
+      "sha256": "a96e693eb67f52ad0d4b3119d103fa1ae05b3661e60a7440316fa87fa03d3374",
+      "lines": 695,
+      "bytes": 25603,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/UI/CharDisp.cs"
+      ]
+    },
+    {
+      "source": "src/charedit.pas",
+      "sha256": "2a4fabebbcd9233437b791f69fc04fae40c6d1a162064ef81387ee5ca97e89e9",
+      "lines": 526,
+      "bytes": 18014,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/UI/CharEdit.cs"
+      ]
+    },
+    {
+      "source": "src/chargen.pas",
+      "sha256": "516004d65ba0546873e457bcc00c61346f1419908f251b2360fd77feb4dc5f24",
+      "lines": 2090,
+      "bytes": 81366,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/UI/CharGen.Generated.cs",
+        "src/Por.Core/UI/CharGen.cs",
+        "src/Por.Core/UI/CharGenBindings.cs"
+      ]
+    },
+    {
+      "source": "src/charhlp.pas",
+      "sha256": "98db200182c04211182aae2d4e6ea129b9ba75fadfa04dff9030b18cff7c32dc",
+      "lines": 1001,
+      "bytes": 37132,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Rules/CharHlp.cs"
+      ]
+    },
+    {
+      "source": "src/classcal.pas",
+      "sha256": "c265092809d928808cda5843eaaa6145db51a9084c8177b0a06a7d87a72062a9",
+      "lines": 441,
+      "bytes": 16632,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Rules/ClassCal.cs"
+      ]
+    },
+    {
+      "source": "src/clock.pas",
+      "sha256": "7c221c29b4f20eb88df1dde0343d14830a5605596a4fd3cfb4135ab1447701e5",
+      "lines": 51,
+      "bytes": 1658,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Rules/Clock.cs"
+      ]
+    },
+    {
+      "source": "src/combat.pas",
+      "sha256": "b0b49d11778430ee2f905f0c624666af26043b3f302887b8736c43acf5227194",
+      "lines": 520,
+      "bytes": 19131,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Rules/Combat.cs"
+      ]
+    },
+    {
+      "source": "src/combatai.pas",
+      "sha256": "b6872447b1ae151be66d4672f45a50bbabb2391a1776afebcbb2b864211a6d5f",
+      "lines": 887,
+      "bytes": 34053,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Rules/CombatAi.Generated.cs",
+        "src/Por.Core/Rules/CombatAi.Calls.cs"
+      ]
+    },
+    {
+      "source": "src/combatst.pas",
+      "sha256": "a5932d15492312447bb05a88dcb56d35e5a5cc38f23fd7a5b4244b2a6a91975c",
+      "lines": 889,
+      "bytes": 29264,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Rules/CombatSt.Generated.cs",
+        "src/Por.Core/Rules/CombatSt.Calls.cs"
+      ]
+    },
+    {
+      "source": "src/comptool.pas",
+      "sha256": "f7ba4abbd795890a6bf59849ca66030ccaa0e8c4717edc6be56db3c4c698429d",
+      "lines": 292,
+      "bytes": 10758,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/UI/CompTool.cs"
+      ]
+    },
+    {
+      "source": "src/dataarc.pas",
+      "sha256": "829a2c7f0d084ff33f3dd6d1f1896c99e717595ee5b7d9cda4c228cca2554a2e",
+      "lines": 188,
+      "bytes": 5889,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Data/DataArc.cs"
+      ]
+    },
+    {
+      "source": "src/databld.pas",
+      "sha256": "fefc5d7e8a988481e76e10c420fe2fe0083b900544498f31a43695350de4e1ea",
+      "lines": 1219,
+      "bytes": 40728,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Data/DataBld.Writing.cs",
+        "src/Por.Core/Data/DataBld.Encoding.cs",
+        "src/Por.Core/Data/DataBld.Startup.cs",
+        "src/Por.Core/Data/DataBld.Resolution.cs",
+        "src/Por.Core/Data/DataBld.Patching.cs",
+        "src/Por.Core/Data/DataBld.Families.cs",
+        "src/Por.Core/Data/DataBld.Sources.cs",
+        "src/Por.Core/Data/DataBld.StateCrc.cs"
+      ]
+    },
+    {
+      "source": "src/datapat.pas",
+      "sha256": "2c11fb1b6ded609792a4f4873a38d9e817b378996dee11cb46c4bfb9608c26c5",
+      "lines": 675,
+      "bytes": 46609,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Data/DataPat.Records.cs",
+        "src/Por.Core/Data/DataPat.Bytes.cs"
+      ]
+    },
+    {
+      "source": "src/daxio.pas",
+      "sha256": "bccc2b315fc1eb491cd761b5786a76b65c6bb9917d6110fa237d2269ac7f8eca",
+      "lines": 528,
+      "bytes": 19350,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Data/DaxIo.Archives.cs",
+        "src/Por.Core/Data/DaxIo.cs"
+      ]
+    },
+    {
+      "source": "src/debug.pas",
+      "sha256": "3975d94b8206ec949efa96155a27da65e8ea6f2abd993a1f5ca15e3e188717e8",
+      "lines": 29,
+      "bytes": 1121,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/UI/Debug.cs"
+      ]
+    },
+    {
+      "source": "src/dice.pas",
+      "sha256": "c287b812e4da8f7154c0b6ca5fca5197ea4f4c2442ec05cc6dcce4eacb1c554d",
+      "lines": 36,
+      "bytes": 823,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Rules/Dice.cs"
+      ]
+    },
+    {
+      "source": "src/eclmenu.pas",
+      "sha256": "3d08338ee8e5d93a09a380ba9629b33f7c34bee8eeaa8acda07ed76a1c000c00",
+      "lines": 648,
+      "bytes": 24547,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Script/EclMenu.cs"
+      ]
+    },
+    {
+      "source": "src/ecltrace.pas",
+      "sha256": "146d991360cc3fdd1fe9a97b847bae6a9d59a739dbd3439b5cba7bbdadd68d46",
+      "lines": 83,
+      "bytes": 2942,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Script/EclTrace.cs"
+      ]
+    },
+    {
+      "source": "src/eclvars.pas",
+      "sha256": "8ab0ed7cdeb90a1cfdf56369e98e2175e58bbf0e17849b185ff89aa44e0ce6f9",
+      "lines": 623,
+      "bytes": 21692,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Script/EclVars.cs"
+      ]
+    },
+    {
+      "source": "src/eclvm.pas",
+      "sha256": "81eecf20ba59fd332b206a940d8781bbc6ba9188e0a01d50f3fe22bb35bf922f",
+      "lines": 1857,
+      "bytes": 61065,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Script/EclVm.cs",
+        "src/Por.Core/Script/EclVmUnits.cs"
+      ]
+    },
+    {
+      "source": "src/effhndlr.pas",
+      "sha256": "6af7ae9f5c05ee9e62a8efaf8abaa5ce0874b8e726bc411c8dfa11b85ff33e9f",
+      "lines": 2015,
+      "bytes": 76432,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Rules/EffHndlr.cs",
+        "src/Por.Core/Rules/EffHndlrBindings.cs"
+      ]
+    },
+    {
+      "source": "src/ending.pas",
+      "sha256": "3e60654e25366b3b82c4132e23a20ef173f954f5d9f7e33f0fd0f7666df69746",
+      "lines": 172,
+      "bytes": 7470,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/UI/Ending.cs"
+      ]
+    },
+    {
+      "source": "src/evtkind.pas",
+      "sha256": "6c2ad514aba65b2c2fbc6947ce9b05ae019e37e6f2f5ead7662d7080e92a9b85",
+      "lines": 533,
+      "bytes": 16724,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Script/EvtKind.cs",
+        "src/Por.Core/Script/EclBindings.cs"
+      ]
+    },
+    {
+      "source": "src/explore.pas",
+      "sha256": "65b99104397c0e6f8510f76119d39f8a6fc6f19b98b6a44687dcbfd21e1d2eac",
+      "lines": 533,
+      "bytes": 22248,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Rules/Explore.cs"
+      ]
+    },
+    {
+      "source": "src/explored.pas",
+      "sha256": "b90843f1ed49ce1b276ed30b7f5c6ddc5febdd63babb2637717d3ac0e382fef5",
+      "lines": 122,
+      "bytes": 3096,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Data/Explored.cs"
+      ]
+    },
+    {
+      "source": "src/fileutil.pas",
+      "sha256": "8590d020d3167b1e176b1b1db73e837414d6837d9db901252173cbbfd17eb8ac",
+      "lines": 90,
+      "bytes": 2292,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Data/FileUtil.cs"
+      ]
+    },
+    {
+      "source": "src/fixmain.pas",
+      "sha256": "56d8709f568168ad94a81bec47385f2d6df098906fb8422dfb708ba5e08ff83e",
+      "lines": 108,
+      "bytes": 2786,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Startup/FixMain.cs"
+      ]
+    },
+    {
+      "source": "src/fxengine.pas",
+      "sha256": "fe0d4170ec2854004f7282a36d134afb958db732b3dfe3e7f4aff342e4b0ab18",
+      "lines": 1029,
+      "bytes": 47263,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Rules/FxEngine.cs",
+        "src/Por.Core/Rules/FxEngine.Conditions.cs",
+        "src/Por.Core/Rules/FxEngineBindings.cs"
+      ]
+    },
+    {
+      "source": "src/gameboot.pas",
+      "sha256": "41c0af3728597111495e9eb57b478b81d5a4889492e4b46d3c7aec9a66d78d0b",
+      "lines": 174,
+      "bytes": 6093,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Startup/GameBoot.cs"
+      ]
+    },
+    {
+      "source": "src/gameinit.pas",
+      "sha256": "fbfa381098b4b91387c46c6a1ae61faa4a951280afc4a5fd3a760dbf4690fabf",
+      "lines": 409,
+      "bytes": 20460,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Startup/GameInit.cs",
+        "src/Por.Core/Startup/GameInit.Tables.cs"
+      ]
+    },
+    {
+      "source": "src/gameio.pas",
+      "sha256": "d4d0838c075cd19ffa6483c9b23bf56f631a88915f6507b6bb74e48b2e222189",
+      "lines": 162,
+      "bytes": 5356,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/IO/GameIo.cs"
+      ]
+    },
+    {
+      "source": "src/gametime.pas",
+      "sha256": "73a9569be5a10ab732107796132456370bae652a19636fd2b3c5bb35e1b20b36",
+      "lines": 370,
+      "bytes": 13093,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Rules/GameTime.cs"
+      ]
+    },
+    {
+      "source": "src/gdconsts.pas",
+      "sha256": "9991af66168e76baf54cb552297acfd91a63c451918f30a2e042867973a9dd3a",
+      "lines": 2120,
+      "bytes": 89199,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/GlobalData/GDConsts.Part1.cs",
+        "src/Por.Core/GlobalData/GDConsts.Part3.cs",
+        "src/Por.Core/GlobalData/GDConsts.Part4.cs",
+        "src/Por.Core/GlobalData/GDConsts.Part5.cs",
+        "src/Por.Core/GlobalData/GDConsts.Part6.cs",
+        "src/Por.Core/GlobalData/GDConsts.Part2.cs"
+      ]
+    },
+    {
+      "source": "src/gdvars.pas",
+      "sha256": "36777a8af0b7788533cb612d6aed8643dcd565042a40a05e759fa3125db99c33",
+      "lines": 426,
+      "bytes": 17510,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/GlobalData/GDVars.cs"
+      ]
+    },
+    {
+      "source": "src/heaperr.pas",
+      "sha256": "862662eeb2bc228793ef7fc831040fa0691992819bba6fdaa1f5be112e3d94c8",
+      "lines": 83,
+      "bytes": 2717,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/UI/HeapErr.cs"
+      ]
+    },
+    {
+      "source": "src/includes/c_abil.pas",
+      "sha256": "d84feb23f7d15906315bcc407b74e323cec80143d339f3068b9c9a39f827be7e",
+      "lines": 16,
+      "bytes": 203,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Constants/C_Abil.cs"
+      ]
+    },
+    {
+      "source": "src/includes/c_align.pas",
+      "sha256": "e177deb731112fb3baffb3ed40449194c829ebdd28070ef31062ae9d0ddf9f7e",
+      "lines": 33,
+      "bytes": 718,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Constants/C_Align.cs"
+      ]
+    },
+    {
+      "source": "src/includes/c_area.pas",
+      "sha256": "6d8635a227f8061d35dc4afcdc9adaf5a0a4fa574249734143f427f72e3a8f4f",
+      "lines": 17,
+      "bytes": 309,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Constants/C_Area.cs"
+      ]
+    },
+    {
+      "source": "src/includes/c_class.pas",
+      "sha256": "8f8ff914b2ad8e298c8c68eea195f36846a86117ccc81ad9d7e08a873db6869e",
+      "lines": 28,
+      "bytes": 513,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Constants/C_Class.cs"
+      ]
+    },
+    {
+      "source": "src/includes/c_cond.pas",
+      "sha256": "e0415ab21a8eb9d7824426e06c59caa9eef9f23f00b9b022f227beb6341c3566",
+      "lines": 44,
+      "bytes": 1191,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Constants/C_Cond.cs"
+      ]
+    },
+    {
+      "source": "src/includes/c_data.pas",
+      "sha256": "c432abcdfeecb075fefe681c7d90b60571dc1406a55d59bc52c1b8a325315f53",
+      "lines": 35,
+      "bytes": 1601,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Constants/C_Data.cs"
+      ]
+    },
+    {
+      "source": "src/includes/c_dir.pas",
+      "sha256": "6790d82e65f6a7700db5fbb23cd21427618f4019b87faded31f97b7c87a2a462",
+      "lines": 21,
+      "bytes": 316,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Constants/C_Dir.cs"
+      ]
+    },
+    {
+      "source": "src/includes/c_ecl.pas",
+      "sha256": "6c6c82aaaf962e3508eb2be8cfe3b79dfb50075431104ca1d2724dbd7f5f2e1c",
+      "lines": 73,
+      "bytes": 1238,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Constants/C_Ecl.cs"
+      ]
+    },
+    {
+      "source": "src/includes/c_effect.pas",
+      "sha256": "f9fa8cc34b5b59d44476dc76dee92881a8ddee6880bfa5fbb58a95c665f8ec3e",
+      "lines": 174,
+      "bytes": 4318,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Constants/C_Effect.cs"
+      ]
+    },
+    {
+      "source": "src/includes/c_ega.pas",
+      "sha256": "92741d4a56d539ffb3cec938f6bd51d940e6deaaba608238067618eb0d04f633",
+      "lines": 26,
+      "bytes": 709,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Constants/C_Ega.cs"
+      ]
+    },
+    {
+      "source": "src/includes/c_equip.pas",
+      "sha256": "8e93cf6cab667837722ee17bfa24fb339234be3326383170077b7803ec16f5b0",
+      "lines": 23,
+      "bytes": 293,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Constants/C_Equip.cs"
+      ]
+    },
+    {
+      "source": "src/includes/c_gbvm.pas",
+      "sha256": "bd80a394c815bdd4055bb2ac0a6f15808b0fe799fafa83b4800abc8571ca5822",
+      "lines": 186,
+      "bytes": 6734,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Constants/C_Gbvm.cs"
+      ]
+    },
+    {
+      "source": "src/includes/c_gender.pas",
+      "sha256": "cb1c4efc3800b831e366f26404127f6efcb2c7ba239595f22a99e76f3288baab",
+      "lines": 12,
+      "bytes": 121,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Constants/C_Gender.cs"
+      ]
+    },
+    {
+      "source": "src/includes/c_ifc.pas",
+      "sha256": "6a070efe68f3c19e822dba9f1359c3bbdb26a28f0ef946809074cc948338a975",
+      "lines": 24,
+      "bytes": 370,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Constants/C_Ifc.cs"
+      ]
+    },
+    {
+      "source": "src/includes/c_item.pas",
+      "sha256": "cdb7fb74d8059c5363a48ba4facd55b6741c3bcf15e1f8ad5b62bd993a4c1e9a",
+      "lines": 79,
+      "bytes": 2578,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Constants/C_Item.cs"
+      ]
+    },
+    {
+      "source": "src/includes/c_jrnl.pas",
+      "sha256": "2e77fd13ee83085c73880748b3297f1abb9c9b46546ab1fe6688cafabf342196",
+      "lines": 24,
+      "bytes": 733,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Constants/C_Jrnl.cs"
+      ]
+    },
+    {
+      "source": "src/includes/c_keys.pas",
+      "sha256": "215dc5dcff62f3cdd23962ac2fb84d9e9e9bfa60d5667f5f9cc33dbc51f6f2ec",
+      "lines": 36,
+      "bytes": 859,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Constants/C_Keys.cs"
+      ]
+    },
+    {
+      "source": "src/includes/c_level.pas",
+      "sha256": "b5655b7a69f2d384daf4c245928471e26072dda2da5d0d789a8fb1f28b4ce7f5",
+      "lines": 21,
+      "bytes": 409,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Constants/C_Level.cs"
+      ]
+    },
+    {
+      "source": "src/includes/c_money.pas",
+      "sha256": "b2857591beba5bee3fa5f8c31673e2430f4f5cbfcb6d7ff9b00d78bfdc4a09cd",
+      "lines": 18,
+      "bytes": 238,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Constants/C_Money.cs"
+      ]
+    },
+    {
+      "source": "src/includes/c_msg.pas",
+      "sha256": "5d1cdd2665c3789e6d8ede8771eddedfa8e9c27cdfa3beb79dea2c79bf5dc1a9",
+      "lines": 20,
+      "bytes": 450,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Constants/C_Msg.cs"
+      ]
+    },
+    {
+      "source": "src/includes/c_npc.pas",
+      "sha256": "1fb9b93e8cfd61658508e4e7b526b52e49a0fe668f9f0f779be8f0843871ac8d",
+      "lines": 19,
+      "bytes": 471,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Constants/C_Npc.cs"
+      ]
+    },
+    {
+      "source": "src/includes/c_race.pas",
+      "sha256": "cb9e50df742d4bebb4f9caf4713617364b4b0a16ce9e24b7cf401ba156138894",
+      "lines": 18,
+      "bytes": 200,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Constants/C_Race.cs"
+      ]
+    },
+    {
+      "source": "src/includes/c_save.pas",
+      "sha256": "899682e1b297b17ce5e0ed282737cf2e92a0ebc0638d33c817ac253d506f25d9",
+      "lines": 22,
+      "bytes": 469,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Constants/C_Save.cs"
+      ]
+    },
+    {
+      "source": "src/includes/c_sound.pas",
+      "sha256": "eff425094d3433c10422284a79c9dd770010afbbda870f696d90a417d6e95b07",
+      "lines": 36,
+      "bytes": 1000,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Constants/C_Sound.cs"
+      ]
+    },
+    {
+      "source": "src/includes/c_spell.pas",
+      "sha256": "d13d20e455ce3cb741faa2b86e02822a9ffac73888cac6fe8abd96656edf6958",
+      "lines": 54,
+      "bytes": 1940,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Constants/C_Spell.cs"
+      ]
+    },
+    {
+      "source": "src/includes/c_status.pas",
+      "sha256": "43349535b4065237eb5255d8efd08490389c5ea003a4925fd9e31cfc4c839ed7",
+      "lines": 23,
+      "bytes": 383,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Constants/C_Status.cs"
+      ]
+    },
+    {
+      "source": "src/includes/c_terr.pas",
+      "sha256": "4f7e5f8a7e2d3530281bf2b78900c3c12a7aba1db633b9388469ab2ac5af4e19",
+      "lines": 16,
+      "bytes": 459,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Constants/C_Terr.cs"
+      ]
+    },
+    {
+      "source": "src/includes/c_tile.pas",
+      "sha256": "84882f409192c5ed86b0bb646ff4953c9edeb3ea9895d74964abd123990c5ef4",
+      "lines": 11,
+      "bytes": 119,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Constants/C_Tile.cs"
+      ]
+    },
+    {
+      "source": "src/includes/c_time.pas",
+      "sha256": "d73c0e4134374b0d017c09f4af15331c4e4508733cac1ec2113e13c7ce40efbe",
+      "lines": 20,
+      "bytes": 351,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Constants/C_Time.cs"
+      ]
+    },
+    {
+      "source": "src/includes/c_video.pas",
+      "sha256": "c95494c3b58cd71ed9be7d72258341b45ef29fd6215e447414eb3ab4e41e4391",
+      "lines": 23,
+      "bytes": 546,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Constants/C_Video.cs"
+      ]
+    },
+    {
+      "source": "src/intro.pas",
+      "sha256": "8db97a6ec32fbe228d0439c4e5fd5fb01771ed3b46e393aa058faaecad9a877c",
+      "lines": 136,
+      "bytes": 5336,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/UI/Intro.cs"
+      ]
+    },
+    {
+      "source": "src/journal1.pas",
+      "sha256": "10080687affd99ecc3c33e236249c69c4f117de2a717a7838da8d7296dd010c3",
+      "lines": 844,
+      "bytes": 27661,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Journal/Journal1.cs"
+      ]
+    },
+    {
+      "source": "src/journal2.pas",
+      "sha256": "0e666b93afc352fec4ba32fbd9dc5128ef1d34a4b8e7acc2a766a93e78546c35",
+      "lines": 871,
+      "bytes": 28172,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Journal/Journal2.cs"
+      ]
+    },
+    {
+      "source": "src/journal3.pas",
+      "sha256": "d211a57a0430417d11022cd821df989d3ff735203fe0dfc58956865c199b285e",
+      "lines": 834,
+      "bytes": 27196,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Journal/Journal3.cs"
+      ]
+    },
+    {
+      "source": "src/journal4.pas",
+      "sha256": "f73e2a94ef6c8c4eb8be4852f48758e13ecadebb197d0719fd8b71baac4dc653",
+      "lines": 628,
+      "bytes": 18550,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Journal/Journal4.cs"
+      ]
+    },
+    {
+      "source": "src/jrnllist.pas",
+      "sha256": "413c3d6c2b99e0e0ef60b58adfdbab061b16c76730aa04c58583d64dfe4e9409",
+      "lines": 208,
+      "bytes": 6968,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Journal/JrnlList.cs"
+      ]
+    },
+    {
+      "source": "src/jrnlview.pas",
+      "sha256": "0297fbfde72e74d843a8d5ca4d522c3316a1bee1f9a80ee8db7e344211223bcf",
+      "lines": 323,
+      "bytes": 10557,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/UI/JrnlView.cs"
+      ]
+    },
+    {
+      "source": "src/magic.pas",
+      "sha256": "c32daf28f7984aef9a18526920be295666d1c4da89510be01e9a45c1ef11e5cd",
+      "lines": 1918,
+      "bytes": 72048,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Rules/Magic.cs",
+        "src/Por.Core/Rules/MagicBindings.cs"
+      ]
+    },
+    {
+      "source": "src/mapnotes.pas",
+      "sha256": "e4028a0e2ee6047164590099b27acee87b00981b3f494a27bef0775d7eef8747",
+      "lines": 133,
+      "bytes": 3135,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Data/MapNotes.cs"
+      ]
+    },
+    {
+      "source": "src/maptiles.pas",
+      "sha256": "1ccc23ecbcdd2e4a8173f5f630dea099c31cc3040538cfdcece119dd9f0f73eb",
+      "lines": 163,
+      "bytes": 6848,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Video/MapTiles.cs"
+      ]
+    },
+    {
+      "source": "src/mapview.pas",
+      "sha256": "774a29600ccc15b42f158713575a9127462696b8435338a7e02c08981e431bc2",
+      "lines": 121,
+      "bytes": 4447,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Video/MapView.cs"
+      ]
+    },
+    {
+      "source": "src/memshow.pas",
+      "sha256": "12efabb5184ce02cc6568e03bdb7060906ee5a3cdb6f7ea9a5084ae86e8a89c1",
+      "lines": 36,
+      "bytes": 1471,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/UI/MemShow.cs"
+      ]
+    },
+    {
+      "source": "src/menucore.pas",
+      "sha256": "94977729b9dc4119d9ab68309c7133f469a67ae16e0b28e027e185b70ce7024d",
+      "lines": 692,
+      "bytes": 23875,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/UI/MenuCore.cs"
+      ]
+    },
+    {
+      "source": "src/money.pas",
+      "sha256": "bb72bc2ed2cd2887a118ccd009af09d82c1593cea99903f8b3d2cfb5370438e3",
+      "lines": 583,
+      "bytes": 20350,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/UI/Money.cs"
+      ]
+    },
+    {
+      "source": "src/moneycal.pas",
+      "sha256": "9e7651a31aa016d5e99271ee614a2e53f0cb2806f42badffaf471f543ade67cb",
+      "lines": 189,
+      "bytes": 5797,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Rules/MoneyCal.cs"
+      ]
+    },
+    {
+      "source": "src/options.pas",
+      "sha256": "c94a28bf87840f40b32e65bc775b8bc12607116c0b8798185a7128e4181f26b2",
+      "lines": 540,
+      "bytes": 17648,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/UI/Options.cs"
+      ]
+    },
+    {
+      "source": "src/party.pas",
+      "sha256": "5df8ac13aa9f5e4c0779d899226b2eaf4b0b46a36fcc194a7292f83ba8c7f552",
+      "lines": 96,
+      "bytes": 2701,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Rules/Party.cs"
+      ]
+    },
+    {
+      "source": "src/pathing.pas",
+      "sha256": "b3cf104409bc858383a223f4c70528867f382d92e70285bdb12ebd0859578cfe",
+      "lines": 482,
+      "bytes": 15669,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Rules/Pathing.cs"
+      ]
+    },
+    {
+      "source": "src/piccga.pas",
+      "sha256": "b6296a0a46bdb9c1b9df3d17959530bf9b60db7a074972a549426e42ff1b93df",
+      "lines": 178,
+      "bytes": 5507,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Video/PicCga.cs"
+      ]
+    },
+    {
+      "source": "src/picega.pas",
+      "sha256": "55464c415c72dd853aca84d112f40edf90d6726d003b714de7076b502739f54e",
+      "lines": 194,
+      "bytes": 5550,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Video/PicEga.cs"
+      ]
+    },
+    {
+      "source": "src/pictdy.pas",
+      "sha256": "30da445d34fbe2dd7ecfa14fd229fe61dd3a95037389ba76af5823fe052b1eb3",
+      "lines": 138,
+      "bytes": 4161,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Video/PicTdy.cs"
+      ]
+    },
+    {
+      "source": "src/picvga.pas",
+      "sha256": "c25ba41fa59b7415b74a1ec6a5c6a3639b92d2243d157787dccf084190fab8a9",
+      "lines": 142,
+      "bytes": 4143,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Video/PicVga.cs"
+      ]
+    },
+    {
+      "source": "src/portrait.pas",
+      "sha256": "ef295edfb4206352b5bdb73b7d3ab45cc896ba483e8d46da01029444f631f34e",
+      "lines": 302,
+      "bytes": 12132,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Video/Portrait.cs"
+      ]
+    },
+    {
+      "source": "src/postcbt.pas",
+      "sha256": "e6905086b3cc73c18cb00f5942566896a8112108eb804f0d4a1051c96a32e726",
+      "lines": 550,
+      "bytes": 20405,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Rules/PostCbt.cs"
+      ]
+    },
+    {
+      "source": "src/randitem.pas",
+      "sha256": "48ee1c07538900077a9fecd52c8639e2bb3d7b415ea8dbb01b76b98c89ca79b8",
+      "lines": 286,
+      "bytes": 8976,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Rules/RandItem.cs"
+      ]
+    },
+    {
+      "source": "src/saveload.pas",
+      "sha256": "3e30589d76739f7ef16f509e0b87032c1de02b8291c4396147523382a366325c",
+      "lines": 764,
+      "bytes": 29726,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Data/SaveLoad.cs"
+      ]
+    },
+    {
+      "source": "src/savemenu.pas",
+      "sha256": "780e5c70ce2e429cb05e8e06d7607088b3efc2b52d2f40336738a67d05da1b21",
+      "lines": 411,
+      "bytes": 14233,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/UI/SaveMenu.cs"
+      ]
+    },
+    {
+      "source": "src/shop.pas",
+      "sha256": "9c70b4e69c19eeaab9b82857a0d5cd71ce728e164fcf0f52bf4ee1810b693523",
+      "lines": 194,
+      "bytes": 6822,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/UI/Shop.cs"
+      ]
+    },
+    {
+      "source": "src/sndnone.pas",
+      "sha256": "fa3b9a1afc6d64726dda5cb4e40153743b532d71409ae6bd6c3f57de3c03996a",
+      "lines": 28,
+      "bytes": 613,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Sound/SndNone.cs"
+      ]
+    },
+    {
+      "source": "src/sndopl.inc",
+      "sha256": "102a1ac1c2ce128c91e3dd6aab0251c1a89fe12ebdd8a3c01ef432a1506b9b5c",
+      "lines": 353,
+      "bytes": 12186,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Sound/OplSequencer.cs",
+        "src/Por.Core/Sound/SoundVoice.cs"
+      ]
+    },
+    {
+      "source": "src/sndopl.pas",
+      "sha256": "ed77a40499f5e57198e4e0273f594cee6371774bec79d166683a900a7ebe0425",
+      "lines": 83,
+      "bytes": 2745,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Sound/SndOpl.cs"
+      ]
+    },
+    {
+      "source": "src/sndsb.pas",
+      "sha256": "257ab2498236d5dd7444f3bc1cc7727ede1f283acbe09813d6c0360522113675",
+      "lines": 355,
+      "bytes": 10591,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Sound/SndSb.cs"
+      ]
+    },
+    {
+      "source": "src/sndspk.inc",
+      "sha256": "b08e216ab13d00138f0015fad909e4ab99885b345684ecea5c9abd2129093383",
+      "lines": 1778,
+      "bytes": 70510,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Sound/SpeakerSequencer.cs",
+        "src/Por.Core/Sound/SpeakerArrangement.Generated.cs",
+        "src/Por.Core/Sound/SoundArrangement.cs"
+      ]
+    },
+    {
+      "source": "src/sndspk.pas",
+      "sha256": "6ce3417781bb434765939e77a5093c03ab4c940947111424af4dda919a08f784",
+      "lines": 29,
+      "bytes": 656,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Sound/SndSpk.cs"
+      ]
+    },
+    {
+      "source": "src/sndtdy.inc",
+      "sha256": "6af1d39082ac9afc40e9b91a2b62818dba42bed58a545cc5c19d07164bf793c1",
+      "lines": 1836,
+      "bytes": 71609,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Sound/TandySequencer.cs",
+        "src/Por.Core/Sound/TandyArrangement.Generated.cs",
+        "src/Por.Core/Sound/SoundArrangement.cs"
+      ]
+    },
+    {
+      "source": "src/sndtdy.pas",
+      "sha256": "3069369a14c2c358984f5fc5f0a5d18f9861c87188112f3ac7dd4631359c19d8",
+      "lines": 29,
+      "bytes": 640,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Sound/SndTdy.cs"
+      ]
+    },
+    {
+      "source": "src/sounddrv.asm",
+      "sha256": "51c1370dc86ca1270bd8192f62f250995c55181c313e702c265e039729eb77db",
+      "lines": 798,
+      "bytes": 32363,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Sound/SoundDriver.cs"
+      ]
+    },
+    {
+      "source": "src/sounddrv.pas",
+      "sha256": "78952b496b36d8a14c5ce7c908f570535088111090fbd594ab3c470df692e5c3",
+      "lines": 267,
+      "bytes": 10317,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Sound/SoundDrv.cs"
+      ]
+    },
+    {
+      "source": "src/stats.pas",
+      "sha256": "c10986a53639b01b8a6cd6294cfacb7ff013eac236dff5287a0a26859270b899",
+      "lines": 367,
+      "bytes": 11342,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Rules/Stats.cs"
+      ]
+    },
+    {
+      "source": "src/strutil.pas",
+      "sha256": "39c732bf7c4f956013b343e901e3cb367b293b3f896615549a2c05fd84de8523",
+      "lines": 60,
+      "bytes": 1273,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Data/StrUtil.cs"
+      ]
+    },
+    {
+      "source": "src/sym8x8.pas",
+      "sha256": "062da4fe78a9a7b1b4c3c7082696c338deec03329b30ddb08c91d5f78879967c",
+      "lines": 64,
+      "bytes": 2326,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Video/Sym8x8.cs"
+      ]
+    },
+    {
+      "source": "src/temple.pas",
+      "sha256": "27c7a896e184212107c8408ddb2fb716cad85b814034c4c860667c46b1845649",
+      "lines": 329,
+      "bytes": 10905,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/UI/Temple.cs"
+      ]
+    },
+    {
+      "source": "src/textrend.pas",
+      "sha256": "a12ecc6e042e3249f6490cf621fcded7a30381871642da1e4558cf87d8171c34",
+      "lines": 340,
+      "bytes": 11196,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/UI/TextRend.cs"
+      ]
+    },
+    {
+      "source": "src/types.pas",
+      "sha256": "e2afca33e47257b20c3a6b39cb1ad69e5b7da03ae69499f186fa2b3f1215506c",
+      "lines": 1061,
+      "bytes": 34582,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Types/Aliases.cs",
+        "src/Por.Core/Types/Character.cs",
+        "src/Por.Core/Types/GbvmViews.cs",
+        "src/Por.Core/Types/Records1.cs",
+        "src/Por.Core/Types/Records2.cs",
+        "src/Por.Core/Types/RuleOverlays.cs"
+      ]
+    },
+    {
+      "source": "src/usualspl.pas",
+      "sha256": "f40055e8ff5051b906c8c6b8b2d97e02414553b51ef08f6e2bb441192a0e51f0",
+      "lines": 141,
+      "bytes": 4808,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Rules/UsualSpl.cs"
+      ]
+    },
+    {
+      "source": "src/vault.pas",
+      "sha256": "881574c62f1ad2b33733f27132ae1c9ff7aa85a5975314110a75590229871e84",
+      "lines": 220,
+      "bytes": 5913,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/UI/Vault.cs"
+      ]
+    },
+    {
+      "source": "src/vaultmnu.pas",
+      "sha256": "968af385b750df79221bd8e8e4254339da6ae2d25bf415826f85965e78af6bf8",
+      "lines": 67,
+      "bytes": 2143,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/UI/VaultMnu.cs"
+      ]
+    },
+    {
+      "source": "src/vidcga.pas",
+      "sha256": "ca665e9fcea46438f550c09c9d5b7f41d6fe76133484ad095c4d3f39792a552b",
+      "lines": 160,
+      "bytes": 4480,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Video/VidCga.cs"
+      ]
+    },
+    {
+      "source": "src/videga.pas",
+      "sha256": "f3dbfe32ca7699d2cfc52b5116e568a7c63f7c1f73ec75831d0405a2d3e2159f",
+      "lines": 273,
+      "bytes": 8910,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Video/VidEga.cs"
+      ]
+    },
+    {
+      "source": "src/vidops.pas",
+      "sha256": "9b2fbafe5e293b6f82dfbddb32bafe6136f61bdc8752f512789e5b8039a7fed5",
+      "lines": 98,
+      "bytes": 3491,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Video/VidOps.cs"
+      ]
+    },
+    {
+      "source": "src/vidtdy.pas",
+      "sha256": "2d50f2b5411e0fa84ecf580486d665c5ba6304f880db1df243bb421cd8c385e0",
+      "lines": 170,
+      "bytes": 4707,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Video/VidTdy.cs"
+      ]
+    },
+    {
+      "source": "src/vidvga.pas",
+      "sha256": "9859355d4bd1dbd4f1a5372485c63e2b9b7f6b97d3340b683e074f93e6320ce1",
+      "lines": 141,
+      "bytes": 4308,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Video/VidVga.cs"
+      ]
+    },
+    {
+      "source": "src/view3d.pas",
+      "sha256": "66c3dac08298f05280dc6330940d34b9894a7a3dfad9ca7a34542d6837702a94",
+      "lines": 444,
+      "bytes": 16431,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Video/View3D.cs"
+      ]
+    },
+    {
+      "source": "src/viewchar.pas",
+      "sha256": "f784eb9154d464de20f7de4166af077fa9b5486c417ac3d683def24c6e24b437",
+      "lines": 1041,
+      "bytes": 38148,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/UI/ViewChar.cs",
+        "src/Por.Core/UI/ViewCharBindings.cs"
+      ]
+    },
+    {
+      "source": "src/wilds.pas",
+      "sha256": "cbcbcbb8fa422ae70a6895aa2763fbb1ae794e2637625ee5c3aaf6a1c47ce355",
+      "lines": 109,
+      "bytes": 3723,
+      "status": "handled",
+      "targets": [
+        "src/Por.Core/Video/Wilds.cs"
+      ]
+    },
+    {
+      "source": "tests/TPC.CFG",
+      "sha256": "58cefaaab10c28a7001cc283c2f7f2de1913802aa7272ffdcd6e6b0b7aa900cb",
+      "lines": 12,
+      "bytes": 79,
+      "status": "handled",
+      "targets": [
+        "docs/TPC-MANAGED-REPLACEMENT.md",
+        "src/Por.UpstreamTools/Por.UpstreamTools.csproj",
+        "tests/Por.Upstream.Tests/Por.Upstream.Tests.csproj"
+      ],
+      "scope": "compile-config"
+    },
+    {
+      "source": "tests/scenarios/POOL-CGA.CFG",
+      "sha256": "e4fdc971b20d78771f15476e94e871c902ef9e71c15c69757de27367395a1e77",
+      "lines": 5,
+      "bytes": 40,
+      "status": "handled",
+      "targets": [
+        "src/Por.UpstreamTools/LegacyTools.cs",
+        "tests/UpstreamScenarios/POOL-CGA.CFG",
+        "tests/Por.Upstream.Tests/Program.cs"
+      ],
+      "scope": "test-config"
+    },
+    {
+      "source": "tests/scenarios/POOL-TANDY.CFG",
+      "sha256": "a7c34b9c47955c38458d70d58bbe84725941803414eb8f230590f3390cdf3e1e",
+      "lines": 5,
+      "bytes": 40,
+      "status": "handled",
+      "targets": [
+        "src/Por.UpstreamTools/LegacyTools.cs",
+        "tests/UpstreamScenarios/POOL-TANDY.CFG",
+        "tests/Por.Upstream.Tests/Program.cs"
+      ],
+      "scope": "test-config"
+    },
+    {
+      "source": "tests/scenarios/POOL-VGA.CFG",
+      "sha256": "50d0c2fd22b9aba2955aa348d924aa9ed24816981340f919975559d47b48222f",
+      "lines": 5,
+      "bytes": 40,
+      "status": "handled",
+      "targets": [
+        "src/Por.UpstreamTools/LegacyTools.cs",
+        "tests/UpstreamScenarios/POOL-VGA.CFG",
+        "tests/Por.Upstream.Tests/Program.cs"
+      ],
+      "scope": "test-config"
+    },
+    {
+      "source": "tests/scenarios/POOL.CFG",
+      "sha256": "7bf9c84726e7674c4ea04ee6960abe20d6365e6a2c4191e494fd542df316a925",
+      "lines": 5,
+      "bytes": 40,
+      "status": "handled",
+      "targets": [
+        "src/Por.UpstreamTools/LegacyTools.cs",
+        "tests/UpstreamScenarios/POOL.CFG",
+        "tests/Por.Upstream.Tests/Program.cs"
+      ],
+      "scope": "test-config"
+    },
+    {
+      "source": "tests/sndtrc.pas",
+      "sha256": "28f13f5d281e82850f60e85c92b134e0953959ae3dbd50f89a92e1f64460845d",
+      "lines": 43,
+      "bytes": 1588,
+      "status": "handled",
+      "targets": [
+        "src/Por.UpstreamTools/SoundTrace.cs",
+        "src/Por.Core/Sound/SoundDriver.cs",
+        "tests/Por.Upstream.Tests/Program.cs"
+      ],
+      "scope": "test-harness"
+    },
+    {
+      "source": "tests/tabiladj.pas",
+      "sha256": "d6ba7c9f1650bf45f4775e81568d29292a0010df379b52e34b4f24a45fc1604e",
+      "lines": 140,
+      "bytes": 6366,
+      "status": "handled",
+      "targets": [
+        "tests/Por.Tests/RulesChecks.cs",
+        "tests/Por.NextTen.Tests/CharHlpChecks2.cs",
+        "tests/Por.NextTen.Tests/CharHlpChecks3.cs"
+      ],
+      "scope": "test-harness"
+    },
+    {
+      "source": "tests/tareas.pas",
+      "sha256": "af1bd5dcd5cb1adc5cd86b7d0fbbb3676100ec6390937e305ef9fb209fe5a48a",
+      "lines": 22,
+      "bytes": 1356,
+      "status": "handled",
+      "targets": [
+        "tests/Por.NextTen.Tests/SaveMenuChecks.cs",
+        "tests/Por.Leaf.Tests/Program.cs"
+      ],
+      "scope": "test-harness"
+    },
+    {
+      "source": "tests/tcharhlp.pas",
+      "sha256": "2effe4866628a688b1776733eadc60c53948f839dd76226627d4d35ba0b9c32d",
+      "lines": 221,
+      "bytes": 8880,
+      "status": "handled",
+      "targets": [
+        "tests/Por.FinalThree.Tests/DungeonOracle.cs",
+        "tests/Por.DirectTen.Tests/Program.cs",
+        "tests/Por.FxEngine.Tests/Program.cs"
+      ],
+      "scope": "test-harness"
+    },
+    {
+      "source": "tests/tclascal.pas",
+      "sha256": "6f3cb9719b600aa3792e5eba89a11444b40bd80f1bb77a6b320d4ffc0adec065",
+      "lines": 422,
+      "bytes": 19107,
+      "status": "handled",
+      "targets": [
+        "tests/Por.Adventure.Tests/Program.cs",
+        "tests/Por.OrderedFour.Tests/CharGenChecks.cs",
+        "tests/Por.NextTen.Tests/TenDChecks.cs"
+      ],
+      "scope": "test-harness"
+    },
+    {
+      "source": "tests/tclock.pas",
+      "sha256": "d0a51aa2a8fc848a133a6d788ff83d94cec95597a5d1f8f61a7dab5726f9b7b6",
+      "lines": 73,
+      "bytes": 2856,
+      "status": "handled",
+      "targets": [
+        "tests/Por.Global.Tests/GlobalVerification.cs",
+        "tests/Por.NextTen.Tests/CampOracle.cs",
+        "tests/Por.NextTen.Tests/SaveMenuChecks.cs"
+      ],
+      "scope": "test-harness"
+    },
+    {
+      "source": "tests/tdataarc.pas",
+      "sha256": "c0143783fbd2aef15040871bf8a48e83b49989994ae46a9d6a95b2773a6132e6",
+      "lines": 56,
+      "bytes": 2059,
+      "status": "handled",
+      "targets": [
+        "tests/Por.Data.Tests/DataLaneTests.cs",
+        "tests/Por.Data.Tests/ArchiveTests.cs"
+      ],
+      "scope": "test-harness"
+    },
+    {
+      "source": "tests/tdatapat.pas",
+      "sha256": "7a762b7b205f98e70604db723e76826b2851468e40b46d48ab602966e72aff35",
+      "lines": 81,
+      "bytes": 2859,
+      "status": "handled",
+      "targets": [
+        "tests/Por.Builder.Tests/Program.cs"
+      ],
+      "scope": "test-harness"
+    },
+    {
+      "source": "tests/tecltrc.pas",
+      "sha256": "2af4cf69ad2bbfec88ee8910ee44b2ad33556e139ebc7ca060cf44ffd708ffe6",
+      "lines": 15,
+      "bytes": 684,
+      "status": "handled",
+      "targets": [
+        "tests/Por.SixLeaves.Tests/Program.cs",
+        "tests/Por.EclVm.Tests/CoreChecks.cs",
+        "tests/Por.SixFiles.Tests/Program.cs"
+      ],
+      "scope": "test-harness"
+    },
+    {
+      "source": "tests/teclvars.pas",
+      "sha256": "05014a14ced6c8852d8b2778925c2e3c3babe7d8a92e72ea672322f8fb0f39de",
+      "lines": 209,
+      "bytes": 9196,
+      "status": "handled",
+      "targets": [
+        "tests/Por.EclPair.Tests/EclMenuChecks.cs",
+        "tests/Por.EclPair.Tests/Program.cs",
+        "tests/Por.FxEngine.Tests/StateChecks.cs"
+      ],
+      "scope": "test-harness"
+    },
+    {
+      "source": "tests/testkit.pas",
+      "sha256": "ac3c4c65c42d148e48557319932cef462b328bb4dfb6124733affb1d5ab884ec",
+      "lines": 84,
+      "bytes": 1983,
+      "status": "handled",
+      "targets": [
+        "tests/Por.NextTen.Tests/Program.cs"
+      ],
+      "scope": "test-harness"
+    },
+    {
+      "source": "tests/tevtkind.pas",
+      "sha256": "1cb9ea6f37fc858780ae03a9e6e631a70196496d9af3bc6e269a173c1e2fc361",
+      "lines": 57,
+      "bytes": 2987,
+      "status": "handled",
+      "targets": [
+        "tests/Por.EvtKind.Tests"
+      ],
+      "scope": "test-harness"
+    },
+    {
+      "source": "tests/texplore.pas",
+      "sha256": "abb15784b3f45e9935f83a804ceda43d174adf1fa5fb8680bf6ca08019e93914",
+      "lines": 33,
+      "bytes": 1459,
+      "status": "handled",
+      "targets": [
+        "tests/Por.TenMore.Tests/View3DChecks.cs",
+        "tests/Por.CompTool.Tests/Program.cs",
+        "tests/Por.Leaf.Tests/Program.cs"
+      ],
+      "scope": "test-harness"
+    },
+    {
+      "source": "tests/tfileutl.pas",
+      "sha256": "bfe08d898e9e5d6384b523a666d6940bdfbe0d624f2f0d47acc2f857c836255a",
+      "lines": 49,
+      "bytes": 1551,
+      "status": "handled",
+      "targets": [
+        "tests/Por.DirectTen.Tests/Program.cs",
+        "tests/Por.Data.Tests/DataVerification.cs",
+        "tests/Por.Data.Tests/DataLaneTests.cs"
+      ],
+      "scope": "test-harness"
+    },
+    {
+      "source": "tests/tfxremov.pas",
+      "sha256": "5170cec8725524ea9ce99ee30e38e2a08067fcda97369e40c1249973646c7544",
+      "lines": 62,
+      "bytes": 2412,
+      "status": "handled",
+      "targets": [
+        "tests/Por.FxEngine.Tests/Program.cs",
+        "tests/Por.FxEngine.Tests/StateChecks.cs",
+        "tests/Por.EclVm.Tests/Fake.cs"
+      ],
+      "scope": "test-harness"
+    },
+    {
+      "source": "tests/tjrnl.pas",
+      "sha256": "f1b45f65fe6ca71ec2ff7fd3d56f35efa1147f1920516c480c1d86363d647662",
+      "lines": 62,
+      "bytes": 3134,
+      "status": "handled",
+      "targets": [
+        "tests/Por.NextTen.Tests/JrnlViewChecks.cs",
+        "tests/Por.Journal.Tests/Program.cs"
+      ],
+      "scope": "test-harness"
+    },
+    {
+      "source": "tests/tmapnote.pas",
+      "sha256": "83344fedb8a72b078e01773ada26a5ead917249ce5be541c2503cbdec574a66d",
+      "lines": 37,
+      "bytes": 1681,
+      "status": "handled",
+      "targets": [
+        "tests/Por.CompTool.Tests/Program.cs",
+        "tests/Por.Leaf.Tests/Program.cs"
+      ],
+      "scope": "test-harness"
+    },
+    {
+      "source": "tests/tmoneyca.pas",
+      "sha256": "b627cd601e2ddff0d9b4af9bed655989462e6de3ab58df14d9b6c176b1f45f90",
+      "lines": 134,
+      "bytes": 5926,
+      "status": "handled",
+      "targets": [
+        "tests/Por.DirectTen.Tests/Program.cs",
+        "tests/Por.NextTen.Tests/ViewCharChecks2.cs",
+        "tests/Por.NextTen.Tests/EasiestTenChecks.cs"
+      ],
+      "scope": "test-harness"
+    },
+    {
+      "source": "tests/tpathing.pas",
+      "sha256": "65b257d2598a255ff7186c2071d5eeda5e457f4ef8227e58a5b071380bf05765",
+      "lines": 197,
+      "bytes": 7349,
+      "status": "handled",
+      "targets": [
+        "tests/Por.Pathing.Tests/Program.cs",
+        "tests/Por.FinalThree.Tests/AiBehavior.cs",
+        "tests/Por.NextTen.Tests/MagicOracle.cs"
+      ],
+      "scope": "test-harness"
+    },
+    {
+      "source": "tests/tranditm.pas",
+      "sha256": "27e6bf5b78ad820d4d04f15ec5df5fa8154e8ad5ac4afd3c8752e31487b1f5be",
+      "lines": 102,
+      "bytes": 4070,
+      "status": "handled",
+      "targets": [
+        "tests/Por.NextTen.Tests/VaultChecks.cs",
+        "tests/Por.Leaf.Tests/Program.cs"
+      ],
+      "scope": "test-harness"
+    },
+    {
+      "source": "tests/treclay.pas",
+      "sha256": "e624aeabc879b933ee40e6c8f0ebc5fb11548d917eeb67f13dd98e0d39d27f8a",
+      "lines": 138,
+      "bytes": 8114,
+      "status": "handled",
+      "targets": [
+        "tests/Por.Types.Tests/SourceZoneLayout.cs",
+        "tests/Por.Types.Tests/TypesVerification.cs"
+      ],
+      "scope": "test-harness"
+    },
+    {
+      "source": "tests/tsavelay.pas",
+      "sha256": "d3e7b7cd126101e0967320823bdc67ccc6bd84e479d70d6c70e34337d252fe42",
+      "lines": 58,
+      "bytes": 3199,
+      "status": "handled",
+      "targets": [
+        "tests/Por.NextTen.Tests/TenDChecks.cs"
+      ],
+      "scope": "test-harness"
+    },
+    {
+      "source": "tests/tsndopl.pas",
+      "sha256": "fc6bf84bb6c32721e6076e15ecd5dbd44414ad9ae5bb42e167d602f6f82779a5",
+      "lines": 213,
+      "bytes": 6713,
+      "status": "handled",
+      "targets": [
+        "tests/Por.FinalThree.Tests/AdlibChecks.cs"
+      ],
+      "scope": "test-harness"
+    },
+    {
+      "source": "tests/tsndseq.pas",
+      "sha256": "614693d4a27d654d9e3ec42b2aa2910c3389fce58a955a46f9e705d2b6706ac6",
+      "lines": 161,
+      "bytes": 6596,
+      "status": "handled",
+      "targets": [
+        "tests/Por.FinalThree.Tests/Program.cs",
+        "tests/Por.FinalThree.Tests/SoundGoldenRecords.cs"
+      ],
+      "scope": "test-harness"
+    },
+    {
+      "source": "tests/tstats.pas",
+      "sha256": "493211268b5c1674021e9c7fd58366781c923e26dca9c020a116c9903ff1f68b",
+      "lines": 123,
+      "bytes": 5559,
+      "status": "handled",
+      "targets": [
+        "tests/Por.NextTen.Tests/ViewCharChecks2.cs",
+        "tests/Por.NextTen.Tests/ViewCharOracle.cs",
+        "tests/Por.FxEngine.Tests/Program.cs"
+      ],
+      "scope": "test-harness"
+    },
+    {
+      "source": "tests/tstrutil.pas",
+      "sha256": "1d31d339175f02d1603bda72e2070aa9d77abe1a834d47a672b86dc20b497e4c",
+      "lines": 22,
+      "bytes": 1266,
+      "status": "handled",
+      "targets": [
+        "tests/Por.Data.Tests/StrUtilTests.cs",
+        "tests/Por.Data.Tests/DataLaneTests.cs",
+        "tests/Por.Tests/ConstantChecks.cs"
+      ],
+      "scope": "test-harness"
+    },
+    {
+      "source": "tests/tusualsp.pas",
+      "sha256": "545d4563a3de64082d744ab99b0332b1bb24600acd0f72bf7396399128a49d56",
+      "lines": 110,
+      "bytes": 4102,
+      "status": "handled",
+      "targets": [
+        "tests/Por.NextTen.Tests/CampChecks1.cs",
+        "tests/Por.NextTen.Tests/CampChecks2.cs",
+        "tests/Por.Leaf.Tests/Program.cs"
+      ],
+      "scope": "test-harness"
+    },
+    {
+      "source": "tests/tvidpic.pas",
+      "sha256": "3adc1dc98b5983b03529c422dc2b72b3f7f3eeaac36430bd100ce8773722f2db",
+      "lines": 164,
+      "bytes": 7023,
+      "status": "handled",
+      "targets": [
+        "tests/Por.TenMore.Tests/VideoChecks.cs",
+        "tests/Por.TenMore.Tests/MapTilesChecks.cs"
+      ],
+      "scope": "test-harness"
+    }
+  ]
+}

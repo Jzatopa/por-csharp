@@ -606,6 +606,8 @@ sealed class EhOracle
             }
             case "EffDisplaced":
             {
+                // ready-item path passes nil; the port documents that stray nil^ store as a no-op (campaign crash 2026-10-29)
+                if (p == null) break;
                 var e = N(p);
                 if (GDVars.roundCounter == 0 && GDVars.gAttackRoll == 0) e.strength = U8(e.strength & 15);
                 else if ((e.strength & 16) == 0) { GDVars.gAttackRoll = -1; e.strength = U8(e.strength + 16); }

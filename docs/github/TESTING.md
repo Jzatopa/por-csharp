@@ -2,7 +2,7 @@
 
 ## Portable CI slice
 
-`bash scripts/test-portable.sh` builds core/desktop and runs Adventure, Desktop, CbtMap, FxEngine, Integration, Types, Global, Pathing, GameIo, Border, Blit, Sym8x8, Debug and VideoCold tests. These use synthetic inputs and source-contract oracles embedded in code. Desktop PCM checks run without opening SDL unless `--audio-probe` is supplied. Test-generated temporary files and synthetic map pictures are not original game assets.
+`bash scripts/test-portable.sh` builds core/desktop and runs Adventure, Desktop, EclPair, Upstream, FinalThree, CbtMap, FxEngine, Integration, Types, Global, Pathing, GameIo, Border, Blit, Sym8x8, Debug and VideoCold tests. EclPair runs its 24-check `WildernessCompatibility` slice; its older full suite still needs local oracles. These portable tests use synthetic inputs and source-contract oracles embedded in code. Desktop PCM checks run without opening SDL unless `--audio-probe` is supplied. Test-generated temporary files and synthetic map pictures are not original game assets.
 
 GitHub Actions runs the same portable lane. Native and extended checks below are separate from that lane.
 
@@ -43,3 +43,9 @@ Large assertion counts measure individual comparisons, not distinct gameplay sce
 Use `python3 scripts/test-combat-smoke.py --complete` for a seeded duel victory through postcombat and save/load; specify `--script 20 --x 14 --y 1 --facing 6` for the Slums battle. Completion mode uses a synthetic level-8 fighter; the default entry/round smoke keeps the level-1 fixture. The level-1 fixture now uses the original internal AC convention (50 represents displayed AC 10). Capture snapshots include creature HP/status/XP, coins and item state; character-name white pixels are checked inside the text area, excluding decorative borders. The coverage summarizer revalidates accepted evidence instead of treating an existing result file alone as proof. See [campaign scope](CAMPAIGN-COMBAT.md).
 
 Add `--defeat` to completion mode for a normal-level-1 Slums party-loss/main-menu-reload case. It records the actual game-over input boundary before queued input can clear the transient result. The default victory replay still requires XP growth and matching postcombat saved/loaded party state; a duel defeat cannot count as a victory merely because its partyDefeated flag is false.
+
+## Six-character wilderness replay
+
+Use `scripts/test-wilderness-native.py --fixture /path/to/pinned-upstream/tests/scenarios/saves/wild --data /path/to/poolofrad --output /tmp/fresh-wilderness-run`. It loads an unchanged external save G, performs three moves, creates a quicksave, changes position, reloads and resaves, checks six party rows and item/spell/effect sidecars, then quits normally. Inputs are copied into disposable state. This is not a natural campaign route or a wilderness combat test. See [wilderness pass](WILDERNESS-PASS-2026-10-23.md) for the explicit CELL_35F compatibility policy.
+
+Upstream tests verify benchmark workload contracts, bounded trace capture, overlay helpers and all original scenario/config definitions. FinalThree runs only its evidence-free SoundGolden/Adlib/SoundTimer/SoundCore slices in this lane; other historical groups can require local oracles. Scenario parsing is not a scenario runtime pass. The 58 SSI-recorded tune CRC tuples are embedded C# constants checked against pinned tsndseq.pas.

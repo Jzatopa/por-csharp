@@ -24,12 +24,32 @@ synth.Write(0x42,0);synth.Write(0x42,0);synth.Write(0x61,3);synth.Render(samples
 var sequenced=new SpeakerPcm();var driver=sequenced.Driver;driver.SetSoundDevice(1);driver.InstallSoundTimer();driver.ProgramSpeakerVoices(21);sequenced.Render(samples,48000);CheckAudio(driver.Ticks==1193182/5041,"timer rational tick count");CheckAudio(samples.Any(x=>x!=0),"title tune emits PCM");
 short[] split=new short[48000];var second=new SpeakerPcm();second.Driver.SetSoundDevice(1);second.Driver.InstallSoundTimer();second.Driver.ProgramSpeakerVoices(21);int offset=0;while(offset<split.Length){int n=Math.Min(137,split.Length-offset);short[] chunk=new short[n];second.Render(chunk,n);chunk.CopyTo(split,offset);offset+=n;}CheckAudio(samples.SequenceEqual(split),"chunk-independent timing and PCM");
 driver.SetSoundOutputEnabled(0);sequenced.Render(samples,48000);CheckAudio(samples.Skip(204).All(x=>x==0),"mute after next sequencer tick");driver.SetSoundOutputEnabled(1);driver.ProgramSpeakerVoices(21);sequenced.Render(samples,48000);CheckAudio(samples.Any(x=>x!=0),"unmute/restart");driver.UninstallSoundTimer();ushort stopped=driver.Ticks;sequenced.Render(samples,48000);CheckAudio(driver.Ticks==stopped&&samples.All(x=>x==0),"uninstall stops timer and speaker");
-bool rejected=false;try{sequenced.Write(0x388,0);}catch(NotSupportedException){rejected=true;}CheckAudio(rejected,"unimplemented OPL rejected");
+bool rejected=false;try{sequenced.Write(0x999,0);}catch(NotSupportedException){rejected=true;}CheckAudio(rejected,"unknown port rejected");
 Console.WriteLine($"Speaker PCM: {audioChecks} checks PASS");
+FullAudioChecks.Run();
 if(args.Contains("--audio-probe")){
- using var audio=new DesktopSound((text,code)=>throw new Exception("Unexpected shutdown"));SoundDrv.Host=audio;SndSpk.Install();GDVars.soundMode=1;GDVars.soundSaved=1;GDVars.musicOn=1;GDVars.soundAutoStop=1;
+ string mode=args.FirstOrDefault(a=>a.StartsWith("--audio-mode="))?.Split('=')[1]??"adlib";
+ string realPack=args.FirstOrDefault(a=>a.StartsWith("--real-pack="))?.Substring("--real-pack=".Length);
+ if(realPack!=null){realPack=Path.GetFullPath(realPack);EffectPack.Validate(File.ReadAllBytes(realPack));GDVars.gameDir=Path.GetDirectoryName(realPack)+Path.DirectorySeparatorChar;}
+ string fixtureDir=null;
+ if(args.Contains("--sample-fixture")){fixtureDir=Path.Combine(Path.GetTempPath(),"por-sb-fixture-"+Guid.NewGuid().ToString("N"));Directory.CreateDirectory(fixtureDir);GDVars.gameDir=fixtureDir+Path.DirectorySeparatorChar;using var w=new BinaryWriter(File.Create(Path.Combine(fixtureDir,"SBSFX.DAT")));w.Write(new byte[]{83,66,70,88,2,2});w.Write((byte)6);w.Write((byte)0);w.Write((byte)156);w.Write((ushort)3000);w.Write((ushort)20);w.Write((byte)3);w.Write((byte)1);w.Write((byte)156);w.Write((ushort)501);w.Write((ushort)3020);for(int i=0;i<3000;i++)w.Write((byte)(128+80*Math.Sin(i*2*Math.PI/25)));w.Write((byte)128);for(int i=0;i<500;i++)w.Write((byte)(i%2==0?0x71:0xF9));}
+ using var audio=new DesktopSound((text,code)=>throw new Exception("Unexpected shutdown"),mode);audio.Install();GDVars.soundMode=GDVars.sound.mode;GDVars.soundSaved=GDVars.sound.mode;GDVars.musicOn=1;GDVars.soundAutoStop=1;
  SoundDrv.PlayMusic(21);var timer=System.Diagnostics.Stopwatch.StartNew();while(timer.ElapsedMilliseconds<1200){audio.Service();Thread.Sleep(2);}SoundDrv.StopMusic();
  SoundDrv.SoundCommand(7); // effect6, blocking SoundDelay internally: must not deadlock.
+ if(fixtureDir!=null){if(!audio.SamplePlaying)throw new Exception("Sample was truncated when the sequencer timer auto-stopped");var tailTimer=System.Diagnostics.Stopwatch.StartNew();while(tailTimer.ElapsedMilliseconds<300){audio.Service();Thread.Sleep(2);}if(audio.SamplePlaying)throw new Exception("Sample outlasted its source duration");Console.WriteLine("Native sampled-effect tail survives timer auto-stop PASS");GDVars.sound.Play(3);var effectTimer=System.Diagnostics.Stopwatch.StartNew();while(effectTimer.ElapsedMilliseconds<150){audio.Service();Thread.Sleep(2);}if(audio.EffectsStarted!=2)throw new Exception("Native PCM8/ADPCM4 fixture did not both play");Console.WriteLine("Native Sound Blaster PCM8 + Creative ADPCM4: 2 effects started PASS");Directory.Delete(fixtureDir,true);}
+ if(realPack!=null){SoundDrv.SoundCommand(10);if(audio.EffectsStarted==0)throw new Exception("Real recorded footstep did not start");Console.WriteLine("Real recorded footstep through system device PASS; sampled effects="+audio.EffectsStarted);
+  if(args.Contains("--all-recorded-effects")){
+   byte[] pack=File.ReadAllBytes(realPack);var cues=new HashSet<byte>();for(int entry=6;entry<6+7*pack[5];entry+=7)cues.Add(pack[entry]);
+   if(!Enumerable.Range(1,11).All(c=>cues.Contains((byte)c)))throw new Exception("All-cue probe requires the complete upstream1..11pack");
+   for(ushort cue=1;cue<=11;cue++){
+    int at=Enumerable.Range(0,pack[5]).Select(i=>6+7*i).Single(i=>pack[i]==cue);int length=pack[at+3]|pack[at+4]<<8;int decoded=pack[at+1]==1?2*(length-1):length;double expectedMs=decoded*(256-pack[at+2])/1000.0;
+    long before=audio.EffectsStarted;var playback=System.Diagnostics.Stopwatch.StartNew();SoundDrv.SoundCommand((ushort)(cue+1));if(audio.EffectsStarted!=before+1)throw new Exception("Recorded cue did not start: "+cue);
+    while(audio.SamplePlaying){audio.Service();Thread.Sleep(2);if(playback.ElapsedMilliseconds>5000)throw new Exception("Recorded cue did not finish: "+cue);}
+    if(playback.Elapsed.TotalMilliseconds<expectedMs-75)throw new Exception("Recorded cue truncated: "+cue);
+    Console.WriteLine("RECORDED cue="+cue+" format="+pack[at+1]+" decoded="+decoded+" expectedMs="+expectedMs.ToString("F1",System.Globalization.CultureInfo.InvariantCulture)+" observedMs="+playback.ElapsedMilliseconds+" PASS");
+   }
+  }
+}
  GameIo.Host=null;SoundDrv.SoundExit();Console.WriteLine("SDL native queued title + blocking effect + exit PASS");
 }
 // Wiring review: the real desktop host composition plus the converted-unit bindings pass the startup seam check, and a

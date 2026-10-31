@@ -563,9 +563,10 @@ namespace Por.Core
             GDVars.zone0.previousScriptId = GDVars.eclScriptId;
             byte id = B(EclVars.GetEclVar(1));
             GDVars.eclScriptId = id;
-            // name: TPathStr (String[79])
-            SaveLoad.CheckFileElseQuit(Short(GDVars.gameDir + DaxIo.ArchiveName("ECL" + StrUtil.NumStr(GDVars.virtualDisk)) +
-                                             ".dax", 79));
+            // Managed host paths may exceed Pascal TPathStr (79), as in FileUtil.
+            // Truncating an absolute path falsely requests a missing game disk.
+            SaveLoad.CheckFileElseQuit(GDVars.gameDir + DaxIo.ArchiveName("ECL" + StrUtil.NumStr(GDVars.virtualDisk)) +
+                                      ".dax");
             EclMenu.LoadEclScript(id);
             // a NEWECL inside a subroutine leaves return addresses on the stack, and EclInit only clears the pointer
             FreeEclStack();

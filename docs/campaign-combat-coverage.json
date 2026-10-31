@@ -1,5 +1,5 @@
 {
-  "schema": 1,
+  "schema": 4,
   "scope": "Pool of Radiance C# campaign combat validation; incomplete",
   "campaign_completion": false,
   "static_scan": {
@@ -279,9 +279,12 @@
           "static_fight_candidate_squares": 130
         }
       ],
-      "native_victory_lifecycles": 1,
+      "native_victory_lifecycles": 3,
       "native_defeat_recovery_lifecycles": 1,
-      "natural_campaign_route_validated": false
+      "natural_campaign_route_validated": false,
+      "native_flee_lifecycles": 1,
+      "native_seeded_downed_member_recovery_lifecycles": 1,
+      "native_dropped_item_acquisition_lifecycles": 1
     },
     {
       "scriptId": 21,
@@ -368,9 +371,22 @@
           "static_fight_candidate_squares": 11
         }
       ],
-      "native_victory_lifecycles": 0,
+      "native_victory_lifecycles": 12,
       "native_defeat_recovery_lifecycles": 0,
-      "natural_campaign_route_validated": false
+      "natural_campaign_route_validated": false,
+      "native_wilderness_navigation_save_load_runs": 4,
+      "native_wilderness_combat_lifecycles": 3,
+      "native_explicit_magic_missile_lifecycles": 1,
+      "native_explicit_giant_strength_item_lifecycles": 1,
+      "native_explicit_ranged_miss_lifecycles": 1,
+      "native_explicit_heal_lifecycles": 1,
+      "native_explicit_bless_lifecycles": 1,
+      "native_explicit_ranged_hit_lifecycles": 1,
+      "native_explicit_ranged_empty_lifecycles": 1,
+      "native_explicit_heal_ally_lifecycles": 1,
+      "native_explicit_heal_cap_lifecycles": 1,
+      "native_explicit_bandage_lifecycles": 1,
+      "native_explicit_turn_ineligible_lifecycles": 1
     },
     {
       "scriptId": 27,
@@ -484,16 +500,417 @@
       "combat_result": 128,
       "recovered_hp": 20,
       "evidence": "evidence/campaign-combat-2026-10-22/slums-defeat-6"
+    },
+    {
+      "id": "flee-2",
+      "script": 20,
+      "position": [
+        13,
+        1
+      ],
+      "mode": "synthetic precombat fixture, real native input/combat/serialization",
+      "status": "flee_cleanup_save_load_pass",
+      "natural_campaign_progression": false,
+      "initial_party_size": 1,
+      "final_party_size": 1,
+      "combat_result": 129,
+      "evidence": "evidence/completion-pass-2026-10-23/flee-2"
+    },
+    {
+      "id": "multi-party-2",
+      "script": 20,
+      "position": [
+        13,
+        1
+      ],
+      "mode": "synthetic precombat fixture, real native input/combat/serialization",
+      "status": "party_cleanup_save_load_pass",
+      "natural_campaign_progression": false,
+      "initial_party_size": 2,
+      "final_party_size": 2,
+      "combat_result": 0,
+      "evidence": "evidence/completion-pass-2026-10-23/multi-party-2"
+    },
+    {
+      "id": "loot-3",
+      "script": 20,
+      "position": [
+        8,
+        0
+      ],
+      "mode": "synthetic precombat fixture, real native input/combat/serialization",
+      "status": "loot_cleanup_save_load_pass",
+      "natural_campaign_progression": false,
+      "initial_party_size": 1,
+      "final_party_size": 1,
+      "combat_result": 0,
+      "evidence": "evidence/completion-pass-2026-10-23/loot-3"
+    },
+    {
+      "id": "pass-1",
+      "script": 26,
+      "position": [
+        15,
+        27
+      ],
+      "mode": "unchanged upstream six-PC fixture; managed fixed seed; real native movement/combat/serialization",
+      "status": "wilderness_victory_cleanup_save_load_pass",
+      "natural_campaign_progression": false,
+      "initial_party_size": 6,
+      "final_party_size": 6,
+      "encounter_step": 11,
+      "arena_count": 8,
+      "evidence": "evidence/wilderness-combat-2026-10-23/pass-1"
+    },
+    {
+      "id": "pass-3",
+      "script": 26,
+      "position": [
+        15,
+        27
+      ],
+      "mode": "unchanged upstream six-PC fixture; managed fixed seed; real native movement/combat/serialization",
+      "status": "wilderness_explicit_magic_missile_cleanup_save_load_pass",
+      "natural_campaign_progression": false,
+      "initial_party_size": 6,
+      "final_party_size": 6,
+      "encounter_step": 11,
+      "arena_count": 8,
+      "evidence": "evidence/explicit-spell-2026-10-24/pass-3"
+    },
+    {
+      "id": "pass-4",
+      "script": 26,
+      "position": [
+        15,
+        27
+      ],
+      "mode": "unchanged upstream six-PC fixture; managed fixed seed; real native movement/combat/serialization",
+      "status": "wilderness_explicit_giant_strength_item_cleanup_save_load_pass",
+      "natural_campaign_progression": false,
+      "initial_party_size": 6,
+      "final_party_size": 6,
+      "encounter_step": 11,
+      "arena_count": 8,
+      "evidence": "evidence/explicit-item-2026-10-24/pass-4"
+    },
+    {
+      "id": "ranged-4",
+      "script": 26,
+      "position": [
+        15,
+        27
+      ],
+      "mode": "documented synthetic pre-load variant of six-PC upstream fixture; managed fixed seed; real native input/combat/serialization",
+      "status": "explicit_ranged_miss_cleanup_save_load_pass",
+      "natural_campaign_progression": false,
+      "initial_party_size": 6,
+      "final_party_size": 6,
+      "encounter_step": 11,
+      "arena_count": 8,
+      "evidence": "evidence/three-passes-2026-10-24/ranged-4"
+    },
+    {
+      "id": "heal-3",
+      "script": 26,
+      "position": [
+        15,
+        27
+      ],
+      "mode": "documented synthetic pre-load variant of six-PC upstream fixture; managed fixed seed; real native input/combat/serialization",
+      "status": "explicit_heal_heal_cleanup_save_load_pass",
+      "natural_campaign_progression": false,
+      "initial_party_size": 6,
+      "final_party_size": 6,
+      "encounter_step": 11,
+      "arena_count": 8,
+      "evidence": "evidence/three-passes-2026-10-24/heal-3"
+    },
+    {
+      "id": "bless-4",
+      "script": 26,
+      "position": [
+        15,
+        27
+      ],
+      "mode": "unchanged six-PC upstream fixture; managed fixed seed; real native input/combat/serialization",
+      "status": "explicit_bless_bless_cleanup_save_load_pass",
+      "natural_campaign_progression": false,
+      "initial_party_size": 6,
+      "final_party_size": 6,
+      "encounter_step": 11,
+      "arena_count": 8,
+      "evidence": "evidence/three-passes-2026-10-24/bless-4"
+    },
+    {
+      "id": "ranged-hit-3",
+      "script": 26,
+      "position": [
+        15,
+        27
+      ],
+      "mode": "documented synthetic pre-load six-PC fixture; managed fixed seed; native keyboard/combat/serialization",
+      "status": "ranged-hit_cleanup_save_load_pass",
+      "natural_campaign_progression": false,
+      "initial_party_size": 6,
+      "final_party_size": 6,
+      "encounter_step": 11,
+      "arena_count": 8,
+      "evidence": "evidence/expanded-three-2026-10-25/ranged-hit-3"
+    },
+    {
+      "id": "ranged-empty-2",
+      "script": 26,
+      "position": [
+        15,
+        27
+      ],
+      "mode": "documented synthetic pre-load six-PC fixture; managed fixed seed; native keyboard/combat/serialization",
+      "status": "ranged-empty_cleanup_save_load_pass",
+      "natural_campaign_progression": false,
+      "initial_party_size": 6,
+      "final_party_size": 6,
+      "encounter_step": 11,
+      "arena_count": 8,
+      "evidence": "evidence/expanded-three-2026-10-25/ranged-empty-2"
+    },
+    {
+      "id": "heal-ally-2",
+      "script": 26,
+      "position": [
+        15,
+        27
+      ],
+      "mode": "documented synthetic pre-load six-PC fixture; managed fixed seed; native keyboard/combat/serialization",
+      "status": "heal-ally_cleanup_save_load_pass",
+      "natural_campaign_progression": false,
+      "initial_party_size": 6,
+      "final_party_size": 6,
+      "encounter_step": 11,
+      "arena_count": 8,
+      "evidence": "evidence/expanded-three-2026-10-25/heal-ally-2"
+    },
+    {
+      "id": "heal-cap-2",
+      "script": 26,
+      "position": [
+        15,
+        27
+      ],
+      "mode": "documented synthetic pre-load six-PC fixture; managed fixed seed; native keyboard/combat/serialization",
+      "status": "heal-cap_cleanup_save_load_pass",
+      "natural_campaign_progression": false,
+      "initial_party_size": 6,
+      "final_party_size": 6,
+      "encounter_step": 11,
+      "arena_count": 8,
+      "evidence": "evidence/expanded-three-2026-10-25/heal-cap-2"
+    },
+    {
+      "id": "bandage-2",
+      "script": 26,
+      "position": [
+        15,
+        27
+      ],
+      "mode": "documented synthetic pre-load six-PC fixture; managed fixed seed; native keyboard/combat/serialization",
+      "status": "bandage_cleanup_save_load_pass",
+      "natural_campaign_progression": false,
+      "initial_party_size": 6,
+      "final_party_size": 6,
+      "encounter_step": 11,
+      "arena_count": 8,
+      "evidence": "evidence/expanded-three-2026-10-25/bandage-2"
+    },
+    {
+      "id": "turn-ineligible-2",
+      "script": 26,
+      "position": [
+        15,
+        27
+      ],
+      "mode": "unchanged six-PC fixture; managed fixed seed; native keyboard/combat/serialization",
+      "status": "turn-ineligible_cleanup_save_load_pass",
+      "natural_campaign_progression": false,
+      "initial_party_size": 6,
+      "final_party_size": 6,
+      "encounter_step": 11,
+      "arena_count": 8,
+      "evidence": "evidence/expanded-three-2026-10-25/turn-ineligible-2"
+    }
+  ],
+  "native_adventure_scenarios": [
+    {
+      "id": "pass-1",
+      "script": 26,
+      "status": "six_pc_wilderness_combat_save_load_exit_pass",
+      "mode": "unchanged upstream save fixture; real native load/navigation/serialization",
+      "natural_campaign_progression": false,
+      "party_size": 6,
+      "loaded_name_text_pixels": [
+        241,
+        106,
+        139,
+        190,
+        154,
+        187
+      ],
+      "limits": "Unchanged upstream saved party; native wilderness combat lifecycle",
+      "evidence": "evidence/wilderness-combat-2026-10-23/pass-1"
+    },
+    {
+      "id": "pass-3",
+      "script": 26,
+      "status": "six_pc_wilderness_combat_save_load_exit_pass",
+      "mode": "unchanged upstream save fixture; real native load/navigation/serialization",
+      "natural_campaign_progression": false,
+      "party_size": 6,
+      "loaded_name_text_pixels": [
+        241,
+        106,
+        139,
+        190,
+        154,
+        187
+      ],
+      "limits": "Unchanged upstream save; explicit Magic Missile and native wilderness combat lifecycle; not exhaustive spell coverage or natural campaign completion",
+      "evidence": "evidence/explicit-spell-2026-10-24/pass-3"
+    },
+    {
+      "id": "native-4",
+      "script": 26,
+      "status": "six_pc_wilderness_navigation_save_load_exit_pass",
+      "mode": "unchanged upstream save fixture; real native load/navigation/serialization",
+      "natural_campaign_progression": false,
+      "party_size": 6,
+      "loaded_name_text_pixels": [
+        241,
+        106,
+        139,
+        190,
+        154,
+        187
+      ],
+      "limits": "Unchanged upstream saved party; navigation and serialization only, no wilderness combat or natural campaign route",
+      "evidence": "evidence/wilderness-pass-2026-10-23/native-4"
+    },
+    {
+      "id": "pass-4",
+      "script": 26,
+      "status": "six_pc_wilderness_combat_save_load_exit_pass",
+      "mode": "unchanged upstream save fixture; real native load/navigation/serialization",
+      "natural_campaign_progression": false,
+      "party_size": 6,
+      "loaded_name_text_pixels": [
+        241,
+        106,
+        139,
+        190,
+        154,
+        187
+      ],
+      "limits": "Unchanged upstream save; explicit Giant Strength potion consumption/effect and native wilderness combat lifecycle; ranged remains unvalidated",
+      "evidence": "evidence/explicit-item-2026-10-24/pass-4"
+    },
+    {
+      "id": "ranged-4",
+      "script": 26,
+      "status": "six_pc_explicit_ranged_combat_save_load_exit_pass",
+      "mode": "documented synthetic pre-load variant of six-PC upstream fixture; managed fixed seed; real native input/combat/serialization",
+      "natural_campaign_progression": false,
+      "party_size": 6,
+      "limits": "Documented disposable pre-load variant; explicit ranged action/native combat lifecycle; not natural campaign progression",
+      "evidence": "evidence/three-passes-2026-10-24/ranged-4"
+    },
+    {
+      "id": "heal-3",
+      "script": 26,
+      "status": "six_pc_explicit_heal_combat_save_load_exit_pass",
+      "mode": "documented synthetic pre-load variant of six-PC upstream fixture; managed fixed seed; real native input/combat/serialization",
+      "natural_campaign_progression": false,
+      "party_size": 6,
+      "limits": "Documented disposable pre-load variant; explicit heal action/native combat lifecycle; not natural campaign progression",
+      "evidence": "evidence/three-passes-2026-10-24/heal-3"
+    },
+    {
+      "id": "bless-4",
+      "script": 26,
+      "status": "six_pc_explicit_bless_combat_save_load_exit_pass",
+      "mode": "unchanged six-PC upstream fixture; managed fixed seed; real native input/combat/serialization",
+      "natural_campaign_progression": false,
+      "party_size": 6,
+      "limits": "Unchanged upstream save; explicit bless action/native combat lifecycle; not natural campaign progression",
+      "evidence": "evidence/three-passes-2026-10-24/bless-4"
+    },
+    {
+      "id": "ranged-hit-3",
+      "script": 26,
+      "status": "six_pc_ranged-hit_combat_save_load_exit_pass",
+      "mode": "documented synthetic pre-load six-PC fixture; managed fixed seed; native keyboard/combat/serialization",
+      "natural_campaign_progression": false,
+      "party_size": 6,
+      "limits": "Documented disposable pre-load variant; explicit ranged-hit action/native combat lifecycle; not natural campaign progression",
+      "evidence": "evidence/expanded-three-2026-10-25/ranged-hit-3"
+    },
+    {
+      "id": "ranged-empty-2",
+      "script": 26,
+      "status": "six_pc_ranged-empty_combat_save_load_exit_pass",
+      "mode": "documented synthetic pre-load six-PC fixture; managed fixed seed; native keyboard/combat/serialization",
+      "natural_campaign_progression": false,
+      "party_size": 6,
+      "limits": "Documented disposable pre-load variant; explicit ranged-empty action/native combat lifecycle; not natural campaign progression",
+      "evidence": "evidence/expanded-three-2026-10-25/ranged-empty-2"
+    },
+    {
+      "id": "heal-ally-2",
+      "script": 26,
+      "status": "six_pc_heal-ally_combat_save_load_exit_pass",
+      "mode": "documented synthetic pre-load six-PC fixture; managed fixed seed; native keyboard/combat/serialization",
+      "natural_campaign_progression": false,
+      "party_size": 6,
+      "limits": "Documented disposable pre-load variant; explicit heal-ally action/native combat lifecycle; not natural campaign progression",
+      "evidence": "evidence/expanded-three-2026-10-25/heal-ally-2"
+    },
+    {
+      "id": "heal-cap-2",
+      "script": 26,
+      "status": "six_pc_heal-cap_combat_save_load_exit_pass",
+      "mode": "documented synthetic pre-load six-PC fixture; managed fixed seed; native keyboard/combat/serialization",
+      "natural_campaign_progression": false,
+      "party_size": 6,
+      "limits": "Documented disposable pre-load variant; explicit heal-cap action/native combat lifecycle; not natural campaign progression",
+      "evidence": "evidence/expanded-three-2026-10-25/heal-cap-2"
+    },
+    {
+      "id": "bandage-2",
+      "script": 26,
+      "status": "six_pc_bandage_combat_save_load_exit_pass",
+      "mode": "documented synthetic pre-load six-PC fixture; managed fixed seed; native keyboard/combat/serialization",
+      "natural_campaign_progression": false,
+      "party_size": 6,
+      "limits": "Documented disposable pre-load variant; explicit bandage action/native combat lifecycle; not natural campaign progression",
+      "evidence": "evidence/expanded-three-2026-10-25/bandage-2"
+    },
+    {
+      "id": "turn-ineligible-2",
+      "script": 26,
+      "status": "six_pc_turn-ineligible_combat_save_load_exit_pass",
+      "mode": "unchanged six-PC fixture; managed fixed seed; native keyboard/combat/serialization",
+      "natural_campaign_progression": false,
+      "party_size": 6,
+      "limits": "Unchanged upstream save; explicit turn-ineligible action/native combat lifecycle; not natural campaign progression",
+      "evidence": "evidence/expanded-three-2026-10-25/turn-ineligible-2"
     }
   ],
   "natural_campaign_runs": [],
   "pending_gates": [
-    "defeat and recovery",
-    "flee / morale / continue battle",
-    "nonempty loot acquisition and redistribution",
-    "multi-PC party ordering and downed members",
-    "ranged / spells / items / turn undead / effects",
-    "wilderness / large icons / full-capacity combat",
+    "additional defeat / natural knockout / bleed / naturally downed bandaging / revival variants",
+    "multi-PC fleeing / enemy morale / continue battle",
+    "additional loot types / NPC shares / currency redistribution",
+    "naturally downed-member recovery / further larger-party combat variants (six-PC wilderness victory covered)",
+    "additional ranged / spell / item / effect variants; native equipment acquisition; positive undead turning (accepted action branches tracked individually)",
+    "additional wilderness encounter types / large icons / full-capacity combat",
     "early/middle/late story prerequisites and encounters",
     "natural campaign progression and final battle completion"
   ]

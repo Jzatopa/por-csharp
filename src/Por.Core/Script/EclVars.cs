@@ -497,7 +497,13 @@ namespace Por.Core
                             case C_Gbvm.FACING_RAW:
                                 return GDVars.gFacing;
                             case C_Gbvm.CELL_35F:
-                                throw new InvalidOperationException("CELL_35F read is undefined");
+                                // Intentional managed compatibility policy, not a recovered SSI value.
+                                // Both pinned Pascal and original game.ovr (file 0x86DE..0x8830)
+                                // leave the function's result stack word unassigned for this cell.
+                                // Wilderness script 26 reads it on movement. Stabilize that one
+                                // undefined value to zero instead of crashing or exposing stack data.
+                                // Other unsupported/write-only special reads still fail below.
+                                return 0;
                             case C_Gbvm.CELL_PARTY_X:
                                 return (ushort)(sbyte)GDVars.gMapX;
                             case C_Gbvm.CELL_PARTY_Y:

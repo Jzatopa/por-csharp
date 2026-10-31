@@ -1,0 +1,3187 @@
+{
+  "schema": 1,
+  "source_commit": "7616920a9178fa32efd45939b9360e95933bbf49",
+  "tracked_upstream_files": 227,
+  "handled": 227,
+  "unclassified": 0,
+  "source_inventory_inputs": 165,
+  "source_inventory_handled": 165,
+  "campaign_completion": false,
+  "policy": "Handled is an explicit port, platform replacement, preserved text/scenario resource, or external unchanged test-fixture disposition. Not 227 C# translations, exhaustive assertion equivalence, SSI executable reproducibility, or full-campaign validation. DOS publishing helper is replaced with an explicit opt-in managed draft helper; no upload performed. Source fixture data remains external.",
+  "disposition_counts": {
+    "csharp-benchmark-port": 2,
+    "csharp-port": 79,
+    "csharp-port-with-explicit-platform-boundary": 49,
+    "csharp-test-harness-replacement": 1,
+    "csharp-test-replacement": 26,
+    "csharp-tool-port": 2,
+    "csharp-trace-harness-replacement": 1,
+    "external-unchanged-test-fixture": 28,
+    "managed-benchmark-launcher-replacement": 2,
+    "managed-build-ignore-replacement": 1,
+    "managed-build-replacement": 2,
+    "managed-ci-replacement": 1,
+    "managed-config-input-replacement": 4,
+    "managed-draft-release-helper-replacement": 1,
+    "managed-native-regression-workflow-replacement": 1,
+    "managed-release-package-replacement": 1,
+    "managed-source-attributes-replacement": 1,
+    "managed-source-integrity-replacement": 1,
+    "managed-toolchain-replacement": 1,
+    "preserved-documentation-or-release-reference": 6,
+    "preserved-scenario-definition": 13,
+    "replaced-build-configuration": 3,
+    "verified-recorded-pack-builder-replacement": 1
+  },
+  "files": [
+    {
+      "source": ".forgejo/scripts/release.sh",
+      "source_sha256": "ec6c931d2d24dcc2442178e7b8a4022e4a691156238f58a3534f364a8ae0fd21",
+      "bytes": 3012,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "managed-draft-release-helper-replacement",
+      "targets": [
+        "scripts/release-desktop.py"
+      ],
+      "preserved_original": "references/upstream-pinned/.forgejo/scripts/release.sh",
+      "scope": "repository-support",
+      "verification": "Exact original bytes retained as historical reference; managed replacements are not SSI DOS binary reproduction or full scenario execution proof."
+    },
+    {
+      "source": ".forgejo/scripts/reproduce.sh",
+      "source_sha256": "d032881a42bbe35b517133f3fcf3f846204768c8513446616bb26307e613aac8",
+      "bytes": 1619,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "managed-source-integrity-replacement",
+      "targets": [
+        "scripts/recompare-source.py",
+        "scripts/reconcile-upstream.py",
+        "scripts/prepare-github.py"
+      ],
+      "preserved_original": "references/upstream-pinned/.forgejo/scripts/reproduce.sh",
+      "scope": "repository-support",
+      "verification": "Exact original bytes retained as historical reference; managed replacements are not SSI DOS binary reproduction or full scenario execution proof."
+    },
+    {
+      "source": ".forgejo/ssi-releases.txt",
+      "source_sha256": "e2cac131ab07450ccd865ac415050ac167cf9b06414b488f52f835355ca15523",
+      "bytes": 984,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "preserved-documentation-or-release-reference",
+      "targets": [
+        "references/upstream-pinned/.forgejo/ssi-releases.txt"
+      ],
+      "preserved_original": "references/upstream-pinned/.forgejo/ssi-releases.txt",
+      "scope": "repository-support",
+      "verification": "Exact original bytes retained as historical reference; managed replacements are not SSI DOS binary reproduction or full scenario execution proof."
+    },
+    {
+      "source": ".forgejo/workflows/build.yml",
+      "source_sha256": "5a9eee355f30b88c84adf90ff9542688856644fcafdb0ba700e0c8c85d82390b",
+      "bytes": 7146,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "managed-ci-replacement",
+      "targets": [
+        ".github/workflows/ci.yml",
+        "scripts/test-portable.sh"
+      ],
+      "preserved_original": "references/upstream-pinned/.forgejo/workflows/build.yml",
+      "scope": "repository-support",
+      "verification": "Exact original bytes retained as historical reference; managed replacements are not SSI DOS binary reproduction or full scenario execution proof."
+    },
+    {
+      "source": ".gitattributes",
+      "source_sha256": "b5683c3fcd70b56c6701b8902f9bfb71bbd40dddd8d3bb0cf42096b3ab23c24d",
+      "bytes": 285,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "managed-source-attributes-replacement",
+      "targets": [
+        ".gitattributes"
+      ],
+      "preserved_original": "references/upstream-pinned/.gitattributes",
+      "scope": "repository-support",
+      "verification": "Exact original bytes retained as historical reference; managed replacements are not SSI DOS binary reproduction or full scenario execution proof."
+    },
+    {
+      "source": ".gitignore",
+      "source_sha256": "6674adee3d2cbf10bc453acccf1f9f95920aee0a062fe4f1aedfc6df64a6ce18",
+      "bytes": 559,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "managed-build-ignore-replacement",
+      "targets": [
+        ".gitignore"
+      ],
+      "preserved_original": "references/upstream-pinned/.gitignore",
+      "scope": "repository-support",
+      "verification": "Exact original bytes retained as historical reference; managed replacements are not SSI DOS binary reproduction or full scenario execution proof."
+    },
+    {
+      "source": "README.md",
+      "source_sha256": "20f63dee3395aba0a44c11969d83a714ed32700962a8a294ffe98124964c2f14",
+      "bytes": 2311,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "preserved-documentation-or-release-reference",
+      "targets": [
+        "references/upstream-pinned/README.md"
+      ],
+      "preserved_original": "references/upstream-pinned/README.md",
+      "scope": "repository-support",
+      "verification": "Exact original bytes retained as historical reference; managed replacements are not SSI DOS binary reproduction or full scenario execution proof."
+    },
+    {
+      "source": "bench/TPC.CFG",
+      "source_sha256": "58cefaaab10c28a7001cc283c2f7f2de1913802aa7272ffdcd6e6b0b7aa900cb",
+      "bytes": 79,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "replaced-build-configuration",
+      "targets": [
+        "docs/TPC-MANAGED-REPLACEMENT.md",
+        "src/Por.UpstreamTools/Por.UpstreamTools.csproj",
+        "tests/Por.Upstream.Tests/Por.Upstream.Tests.csproj"
+      ],
+      "scope": "source-inventory",
+      "verification": "Every 12-line switch mapped to explicit managed build/runtime disposition. No claim of DOS far calls/stack/CPU identity."
+    },
+    {
+      "source": "bench/sndbench.pas",
+      "source_sha256": "02b906436186690bee0b976c5f1369fdd0d10cd3d17db7c3b1e6be2c814ab308",
+      "bytes": 2558,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-benchmark-port",
+      "targets": [
+        "src/Por.UpstreamTools/SoundBenchmark.cs",
+        "src/Por.UpstreamTools/BenchmarkHosts.cs",
+        "tests/Por.Upstream.Tests/Program.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Three-state source loop/cost/order independently checked; real managed sequencer/RAM bus in both source modes; not DOS CPU timing equivalence."
+    },
+    {
+      "source": "bench/sndbench.sh",
+      "source_sha256": "7bea2fbaab6ccdb4400e1eacb1d889fbfcb75895e178704408ad9359d1a65ada",
+      "bytes": 1805,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "managed-benchmark-launcher-replacement",
+      "targets": [
+        "src/Por.UpstreamTools/Program.cs",
+        "src/Por.UpstreamTools/SoundBenchmark.cs"
+      ],
+      "preserved_original": "references/upstream-pinned/bench/sndbench.sh",
+      "scope": "repository-support",
+      "verification": "Exact original bytes retained as historical reference; managed replacements are not SSI DOS binary reproduction or full scenario execution proof."
+    },
+    {
+      "source": "bench/vidbench.pas",
+      "source_sha256": "5822fa5b534ec28d1ff3a29e2b0008d51ee4d02b7558a362f9470dec2c6b3a2e",
+      "bytes": 4099,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-benchmark-port",
+      "targets": [
+        "src/Por.UpstreamTools/VideoBenchmark.cs",
+        "src/Por.UpstreamTools/BenchmarkHosts.cs",
+        "tests/Por.Upstream.Tests/Program.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Four source workloads/coordinate order/rate formula independently checked; real source primitives in C/E/T RAM graphics buses; not DOS/display timing equivalence."
+    },
+    {
+      "source": "bench/vidbench.sh",
+      "source_sha256": "b61f28c17a84c56737f83fe5688b4fb576f8a63611f1b10c9c9dfc1d00f7bf46",
+      "bytes": 1861,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "managed-benchmark-launcher-replacement",
+      "targets": [
+        "src/Por.UpstreamTools/Program.cs",
+        "src/Por.UpstreamTools/VideoBenchmark.cs"
+      ],
+      "preserved_original": "references/upstream-pinned/bench/vidbench.sh",
+      "scope": "repository-support",
+      "verification": "Exact original bytes retained as historical reference; managed replacements are not SSI DOS binary reproduction or full scenario execution proof."
+    },
+    {
+      "source": "build.sh",
+      "source_sha256": "afdefe7325da592d240f561bbb7acb18cdb0a982c3ba8559b5a7231f8d5f6c8a",
+      "bytes": 13813,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "managed-build-replacement",
+      "targets": [
+        "scripts/dotnet.sh",
+        "play-desktop.sh",
+        "scripts/test-portable.sh"
+      ],
+      "preserved_original": "references/upstream-pinned/build.sh",
+      "scope": "repository-support",
+      "verification": "Exact original bytes retained as historical reference; managed replacements are not SSI DOS binary reproduction or full scenario execution proof."
+    },
+    {
+      "source": "build/build.bat",
+      "source_sha256": "725bbc08369822c932e3d1aacd31d328faabeacf55cd4a49da4e41b7f4a39228",
+      "bytes": 1255,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "managed-build-replacement",
+      "targets": [
+        "src/Por.Core/Por.Core.csproj",
+        "src/Por.Desktop/Por.Desktop.csproj"
+      ],
+      "preserved_original": "references/upstream-pinned/build/build.bat",
+      "scope": "repository-support",
+      "verification": "Exact original bytes retained as historical reference; managed replacements are not SSI DOS binary reproduction or full scenario execution proof."
+    },
+    {
+      "source": "build/ovlsizes.py",
+      "source_sha256": "c11cd641e50742887e8bfdff132ddad844b2099f732b3a74a43e76b720da187b",
+      "bytes": 1628,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-tool-port",
+      "targets": [
+        "src/Por.UpstreamTools/LegacyTools.cs",
+        "tests/Por.Upstream.Tests/Program.cs"
+      ],
+      "preserved_original": "references/upstream-pinned/build/ovlsizes.py",
+      "scope": "repository-support",
+      "verification": "Exact original bytes retained as historical reference; managed replacements are not SSI DOS binary reproduction or full scenario execution proof."
+    },
+    {
+      "source": "build/toolchain",
+      "source_sha256": "98f3ecef05d8fa5c6fed9f1367b8e127296a585cc6b1ce35c03ed9fad98ab693",
+      "bytes": 18,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "managed-toolchain-replacement",
+      "targets": [
+        "scripts/dotnet.sh",
+        "docs/TPC-MANAGED-REPLACEMENT.md"
+      ],
+      "preserved_original": "references/upstream-pinned/build/toolchain",
+      "scope": "repository-support",
+      "verification": "Exact original bytes retained as historical reference; managed replacements are not SSI DOS binary reproduction or full scenario execution proof."
+    },
+    {
+      "source": "docs/changelog.md",
+      "source_sha256": "8fc83996a6cbf0cc02d827ac83cafeeb6a6875d585d8bf80df1f4340b03c3593",
+      "bytes": 10003,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "preserved-documentation-or-release-reference",
+      "targets": [
+        "references/upstream-pinned/docs/changelog.md"
+      ],
+      "preserved_original": "references/upstream-pinned/docs/changelog.md",
+      "scope": "repository-support",
+      "verification": "Exact original bytes retained as historical reference; managed replacements are not SSI DOS binary reproduction or full scenario execution proof."
+    },
+    {
+      "source": "docs/detailed-changes.md",
+      "source_sha256": "33048a053b84f9bc9a0f6033ab9062840f9158034fea02f801ab0f54f750637d",
+      "bytes": 72998,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "preserved-documentation-or-release-reference",
+      "targets": [
+        "references/upstream-pinned/docs/detailed-changes.md"
+      ],
+      "preserved_original": "references/upstream-pinned/docs/detailed-changes.md",
+      "scope": "repository-support",
+      "verification": "Exact original bytes retained as historical reference; managed replacements are not SSI DOS binary reproduction or full scenario execution proof."
+    },
+    {
+      "source": "docs/refactor-plan.md",
+      "source_sha256": "d3871cf8e4381a2ab91d9255330d142de0a09a0016e2b6315dec9dc0936ccd72",
+      "bytes": 70807,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "preserved-documentation-or-release-reference",
+      "targets": [
+        "references/upstream-pinned/docs/refactor-plan.md"
+      ],
+      "preserved_original": "references/upstream-pinned/docs/refactor-plan.md",
+      "scope": "repository-support",
+      "verification": "Exact original bytes retained as historical reference; managed replacements are not SSI DOS binary reproduction or full scenario execution proof."
+    },
+    {
+      "source": "package.sh",
+      "source_sha256": "f2e4f3c8f08e376802063a2c0ecd950ece003225b710cd38ebb5d72331ad6648",
+      "bytes": 3635,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "managed-release-package-replacement",
+      "targets": [
+        "scripts/package-desktop.py"
+      ],
+      "preserved_original": "references/upstream-pinned/package.sh",
+      "scope": "repository-support",
+      "verification": "Exact original bytes retained as historical reference; managed replacements are not SSI DOS binary reproduction or full scenario execution proof."
+    },
+    {
+      "source": "src/TPC.CFG",
+      "source_sha256": "4140f23f7c210bd8fb0ce07c58a2d592935e50743f719d680f4b43a9b884b44d",
+      "bytes": 65,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "replaced-build-configuration",
+      "targets": [
+        "docs/TPC-MANAGED-REPLACEMENT.md",
+        "src/Por.Core/Por.Core.csproj"
+      ],
+      "scope": "source-inventory",
+      "verification": "Build-option mapping audit"
+    },
+    {
+      "source": "src/abiladj.pas",
+      "source_sha256": "71a000101c71c5f3bcbc1f72976f70a38021de27e627fb1e3964f75d5a1db62e",
+      "bytes": 6454,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Rules/AbilAdj.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Prior source-derived contract suites; see baseline reports"
+    },
+    {
+      "source": "src/areaname.pas",
+      "source_sha256": "cf95055f69f89244b58d6e8caf7c8f7f054bf4f6d0b3e96f016bb3fa078712ea",
+      "bytes": 2498,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Rules/AreaName.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "All256x256script/map pairs plus current-area low-byte view"
+    },
+    {
+      "source": "src/bldshow.pas",
+      "source_sha256": "33045caf10fc84ad6eca78948f6ad983d69ee5f745f0b21fe5430d045f2e89e4",
+      "bytes": 21134,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/UI/BldShow.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "BldShow source-derived assertions: 5086; 5086checked assertions:2460bytebudget,all13framepixels,4006MulDivoracle vectors,source sizes/weights/cell phases,ETA/cache,midnight,lowmemory/readOnly/failure/success lifecycle and frees; headless."
+    },
+    {
+      "source": "src/blit.pas",
+      "source_sha256": "d19329a73ca083050d1a0d94ed49d7c712ac7d2a4fd9d3fc19587a44183c162d",
+      "bytes": 30966,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/Video/Blit.Primitives.cs",
+        "src/Por.Core/Video/Blit.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "All routines implemented. Exhaustive 65536pair mirrors/256nibble mirrors; 600clipped tile and450fill fixtures; split allocation/accounting, source17byte DAX header, chained noncascading remap, masks, lifecycle/delegation/BIOS fail-closed. Headless only; host interrupt implementation pending."
+    },
+    {
+      "source": "src/border.pas",
+      "source_sha256": "072527b587e35b6f3503201bcaa7e1d68705a7ee9003f312ef4e3be58f4db5a7",
+      "bytes": 2442,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/UI/Border.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Border source-derived assertions: 19020; 1000seeded signed coordinate rings,16000clippedrectangles,300window event traces and allinvalidcorner styles; source-derived headless."
+    },
+    {
+      "source": "src/camp.pas",
+      "source_sha256": "2b28adbbf75814404e1744b46c240283b8afc9319c9006eb6f9760b2b30b36cd",
+      "bytes": 39385,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/UI/Camp.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Self-authored oracle model of every routine (tests/Por.NextTen.Tests/CampOracle.cs) compared with the port (exception type, ordered call logs, state snapshots) over logging fakes for the UI, menus, Magic, FxEngine, GameTime, UsualSpl, Party, SaveLoad, GameIo, CharGen, ViewChar and Dice call points, plus hand-worked cases; not original DOS execution"
+    },
+    {
+      "source": "src/cbtacts.pas",
+      "source_sha256": "ba7e18d6c6ffc33b6013a56842d7c57932b461528e3a1a1c6d080d2486759b17",
+      "bytes": 68179,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/Rules/CbtActs.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Self-authored oracle models of every routine compared with the port (results, ordered call logs, state snapshots) over fake CbtMap/FxEngine/Magic; not original DOS execution"
+    },
+    {
+      "source": "src/cbtmap.pas",
+      "source_sha256": "a71235cf9a01b5b35ead083cbed690756ce8c320c6ca87b7924caf2f937958ce",
+      "bytes": 32636,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/Video/CbtMap.cs",
+        "src/Por.Core/Video/CbtMapBindings.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "2242326 self-authored source-derived assertions; geometry/occupancy, scroll call order, probes/placement/corpses, record-value targets, preview lifecycle, real renderer/framebuffer and Magic tracer integration; 16/16 semantic mutants after green baseline. Headless only."
+    },
+    {
+      "source": "src/chardisp.pas",
+      "source_sha256": "a96e693eb67f52ad0d4b3119d103fa1ae05b3661e60a7440316fa87fa03d3374",
+      "bytes": 25603,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/UI/CharDisp.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "1,848,892 aggregate counted source assertions across ten-unit suite; per-group counts in final-gates.log; self-authored/headless, not DOS execution"
+    },
+    {
+      "source": "src/charedit.pas",
+      "source_sha256": "2a4fabebbcd9233437b791f69fc04fae40c6d1a162064ef81387ee5ca97e89e9",
+      "bytes": 18014,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/UI/CharEdit.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Self-authored checked source-contract gates, per-group logs; not original DOS execution"
+    },
+    {
+      "source": "src/chargen.pas",
+      "source_sha256": "516004d65ba0546873e457bcc00c61346f1419908f251b2360fd77feb4dc5f24",
+      "bytes": 81366,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/UI/CharGen.Generated.cs",
+        "src/Por.Core/UI/CharGen.cs",
+        "src/Por.Core/UI/CharGenBindings.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "70577 self-authored source assertions plus47routine/33for/5while/10repeat inventory: creation, modification/undo, training caps, party rules, portrait/icon selectors and actual synthetic icon pixels. ViewChar explicit."
+    },
+    {
+      "source": "src/charhlp.pas",
+      "source_sha256": "98db200182c04211182aae2d4e6ea129b9ba75fadfa04dff9030b18cff7c32dc",
+      "bytes": 37132,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Rules/CharHlp.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "1,848,892 aggregate counted source assertions across ten-unit suite; per-group counts in final-gates.log; self-authored/headless, not DOS execution"
+    },
+    {
+      "source": "src/classcal.pas",
+      "source_sha256": "c265092809d928808cda5843eaaa6145db51a9084c8177b0a06a7d87a72062a9",
+      "bytes": 16632,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Rules/ClassCal.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Prior source-derived contract suites; see baseline reports"
+    },
+    {
+      "source": "src/clock.pas",
+      "source_sha256": "7c221c29b4f20eb88df1dde0343d14830a5605596a4fd3cfb4135ab1447701e5",
+      "bytes": 1658,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Rules/Clock.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Prior source-derived contract suites; see baseline reports"
+    },
+    {
+      "source": "src/combat.pas",
+      "source_sha256": "b0b49d11778430ee2f905f0c624666af26043b3f302887b8736c43acf5227194",
+      "bytes": 19131,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/Rules/Combat.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Self-authored checked source-contract gates, per-group logs; not original DOS execution"
+    },
+    {
+      "source": "src/combatai.pas",
+      "source_sha256": "b6872447b1ae151be66d4672f45a50bbabb2391a1776afebcbb2b864211a6d5f",
+      "bytes": 34053,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Rules/CombatAi.Generated.cs",
+        "src/Por.Core/Rules/CombatAi.Calls.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "402801 self-authored assertions covering AI equipment scores, morale, steps/clouds, spell/item priorities, keys and turn/move/attack/equipment scenarios. Source routine/loop audit and byte-identical generator replay. Headless; not original DOS or live gameplay execution."
+    },
+    {
+      "source": "src/combatst.pas",
+      "source_sha256": "a5932d15492312447bb05a88dcb56d35e5a5cc38f23fd7a5b4244b2a6a91975c",
+      "bytes": 29264,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Rules/CombatSt.Generated.cs",
+        "src/Por.Core/Rules/CombatSt.Calls.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "211371 self-authored assertions covering all terrain glyph classes, dungeon stamps,72wilderness maps, quad/ring placement and CombatStart through real map/corpse routines with recorded asset/UI boundaries. Source routine/loop audit and byte-identical generator replay. Headless; not original DOS or live gameplay execution."
+    },
+    {
+      "source": "src/comptool.pas",
+      "source_sha256": "f7ba4abbd795890a6bf59849ca66030ccaa0e8c4717edc6be56db3c4c698429d",
+      "bytes": 10758,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/UI/CompTool.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "CompTool source-derived assertions: 363640; independent simultaneous colour LUT/all pixel comparisons, 16 wall combinations/exploration/note/cursor states, all256map cells, actual EvtKind/EclVars all7kind ECL fixture/legend, real input and MapNotes storage write/clear/full/clamp, feature-off and missing/bound editor; self-authored tests, headless not DOS execution"
+    },
+    {
+      "source": "src/dataarc.pas",
+      "source_sha256": "829a2c7f0d084ff33f3dd6d1f1896c99e717595ee5b7d9cda4c228cca2554a2e",
+      "bytes": 5889,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Data/DataArc.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Prior source-derived contract suites; see baseline reports"
+    },
+    {
+      "source": "src/databld.pas",
+      "source_sha256": "fefc5d7e8a988481e76e10c420fe2fe0083b900544498f31a43695350de4e1ea",
+      "bytes": 40728,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Data/DataBld.Writing.cs",
+        "src/Por.Core/Data/DataBld.Encoding.cs",
+        "src/Por.Core/Data/DataBld.Startup.cs",
+        "src/Por.Core/Data/DataBld.Resolution.cs",
+        "src/Por.Core/Data/DataBld.Patching.cs",
+        "src/Por.Core/Data/DataBld.Families.cs",
+        "src/Por.Core/Data/DataBld.Sources.cs",
+        "src/Por.Core/Data/DataBld.StateCrc.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Prior source-derived contract suites; see baseline reports"
+    },
+    {
+      "source": "src/datapat.pas",
+      "source_sha256": "2c11fb1b6ded609792a4f4873a38d9e817b378996dee11cb46c4bfb9608c26c5",
+      "bytes": 46609,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Data/DataPat.Records.cs",
+        "src/Por.Core/Data/DataPat.Bytes.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Prior source-derived contract suites; see baseline reports"
+    },
+    {
+      "source": "src/daxio.pas",
+      "source_sha256": "bccc2b315fc1eb491cd761b5786a76b65c6bb9917d6110fa237d2269ac7f8eca",
+      "bytes": 19350,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Data/DaxIo.Archives.cs",
+        "src/Por.Core/Data/DaxIo.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Prior source-derived contract suites; see baseline reports"
+    },
+    {
+      "source": "src/debug.pas",
+      "source_sha256": "3975d94b8206ec949efa96155a27da65e8ea6f2abd993a1f5ca15e3e188717e8",
+      "bytes": 1121,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/UI/Debug.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Debug source-derived assertions: 1801; all256flagvalues with1800seeded HP/message traces including disabled hostless and40char truncation; headless only."
+    },
+    {
+      "source": "src/dice.pas",
+      "source_sha256": "c287b812e4da8f7154c0b6ca5fca5197ea4f4c2442ec05cc6dcce4eacb1c554d",
+      "bytes": 823,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Rules/Dice.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Prior source-derived contract suites; see baseline reports"
+    },
+    {
+      "source": "src/eclmenu.pas",
+      "source_sha256": "3d08338ee8e5d93a09a380ba9629b33f7c34bee8eeaa8acda07ed76a1c000c00",
+      "bytes": 24547,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/Script/EclMenu.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "EclMenu source-derived assertions: 2011308; 19 source routines, fixed-buffer menu oracle, unsigned comparisons, map wrap/walls, script loading/fallback, creature packing/RNG/list identity, theft/damage ordering, Real48-format rational model, integrated VM adapters; headless not DOS runtime equivalence"
+    },
+    {
+      "source": "src/ecltrace.pas",
+      "source_sha256": "146d991360cc3fdd1fe9a97b847bae6a9d59a739dbd3439b5cba7bbdadd68d46",
+      "bytes": 2942,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Script/EclTrace.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "All256opcodebytes,61exactmnemonics including trailing spaces and source SUBTRAT spelling"
+    },
+    {
+      "source": "src/eclvars.pas",
+      "source_sha256": "8ab0ed7cdeb90a1cfdf56369e98e2175e58bbf0e17849b185ff89aa44e0ce6f9",
+      "bytes": 21692,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/Script/EclVars.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "EclVars source-derived assertions: 916965; Raw zone/special read-writes,81byte character window,all Word facing/NPC/enabled/disk/wallvalues,356 independent6bitstrings,alloperandcounts/skipcodes,party effects and hooks; explicit undefined-result errors,headless."
+    },
+    {
+      "source": "src/eclvm.pas",
+      "source_sha256": "81eecf20ba59fd332b206a940d8781bbc6ba9188e0a01d50f3fe22bb35bf922f",
+      "bytes": 61065,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/Script/EclVm.cs",
+        "src/Por.Core/Script/EclVmUnits.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "EclVm source-derived assertions: 569151 in 29 groups, 0 failures; 20/20 injected faults caught. All 57 routines: opcode arithmetic/flags/tables, script flow through CallEclScript, ENCOUNTER 5x5 model, treasure tables and packed 63-byte ITEM records, LOAD MONSTER copies, DAMAGE encodings and roll order, NewEclDone/GameLoop. Unported units (EclVars, EclMenu, SaveLoad, CharDisp, CharHlp, FxEngine, Explore, Shop, VaultMnu, Temple, PostCbt, Combat, CharGen, Ending, Camp, MapView, SoundDrv) behind EclVm.Units, exercised through a source-derived test double; headless."
+    },
+    {
+      "source": "src/effhndlr.pas",
+      "source_sha256": "6af7ae9f5c05ee9e62a8efaf8abaa5ce0874b8e726bc411c8dfa11b85ff33e9f",
+      "bytes": 76432,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/Rules/EffHndlr.cs",
+        "src/Por.Core/Rules/EffHndlrBindings.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Self-authored oracle model of every routine (tests/Por.NextTen.Tests/EffHndlrOracle.cs) compared with the port (exception type, ordered call logs, state snapshots) over a recording fake FxEngine/CbtMap and logging UI, plus hand-worked cases; not original DOS execution"
+    },
+    {
+      "source": "src/ending.pas",
+      "source_sha256": "3e60654e25366b3b82c4132e23a20ef173f954f5d9f7e33f0fd0f7666df69746",
+      "bytes": 7470,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/UI/Ending.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "426 source-derived assertions; frame cycles including zero256wrap, midnight, full Yarash tile/sheet/dither ordering, party thresholds, interface restoration, real DAX/Portrait/Blit pixel slice; headless, not original DOS execution; added strict deadline-equality check; zero-cycle target first-iteration early exit vs byte-wrap cases"
+    },
+    {
+      "source": "src/evtkind.pas",
+      "source_sha256": "6c2ad514aba65b2c2fbc6947ce9b05ae019e37e6f2f5ead7662d7080e92a9b85",
+      "bytes": 16724,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/Script/EvtKind.cs",
+        "src/Por.Core/Script/EclBindings.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "EvtKind source-derived assertions: 120022 in 10 groups, 0 failures; 16/16 injected faults caught. Assembled ECL bytecode through a test EclVars restating LoadEclVars/SkipEclCmd and again through the converted EclVars (--real): AND/ON GOTO masks, COMPARE/IF single dispatch and the IF-IF quirk, New Phlan count-up, training-hall offsets, all writers, kind ranking, walk reachability, 96/64/256/160 limits, 400 random dispatch tables; headless, not run over the shipped area scripts."
+    },
+    {
+      "source": "src/explore.pas",
+      "source_sha256": "65b99104397c0e6f8510f76119d39f8a6fc6f19b98b6a44687dcbfd21e1d2eac",
+      "bytes": 22248,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/Rules/Explore.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Self-authored checked source-contract gates, per-group logs; not original DOS execution"
+    },
+    {
+      "source": "src/explored.pas",
+      "source_sha256": "b90843f1ed49ce1b276ed30b7f5c6ddc5febdd63babb2637717d3ac0e382fef5",
+      "bytes": 3096,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Data/Explored.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Whole sbyte coordinate domain; raw2183bytecodec,valid-fileuntouchedbytes,capacity/headerchecks"
+    },
+    {
+      "source": "src/fileutil.pas",
+      "source_sha256": "8590d020d3167b1e176b1b1db73e837414d6837d9db901252173cbbfd17eb8ac",
+      "bytes": 2292,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Data/FileUtil.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Prior source-derived contract suites; see baseline reports"
+    },
+    {
+      "source": "src/fixmain.pas",
+      "source_sha256": "56d8709f568168ad94a81bec47385f2d6df098906fb8422dfb708ba5e08ff83e",
+      "bytes": 2786,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/Startup/FixMain.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "1,848,892 aggregate counted source assertions across ten-unit suite; per-group counts in final-gates.log; self-authored/headless, not DOS execution"
+    },
+    {
+      "source": "src/fxengine.pas",
+      "source_sha256": "fe0d4170ec2854004f7282a36d134afb958db732b3dfe3e7f4aff342e4b0ab18",
+      "bytes": 47263,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/Rules/FxEngine.cs",
+        "src/Por.Core/Rules/FxEngine.Conditions.cs",
+        "src/Por.Core/Rules/FxEngineBindings.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "258255 self-authored source-contract assertions: dispatch, mutation-safe lists, auras, rolls, strength, raw Boolean, immunity, healing, expiration, damage/cloud/equipment/holds/revival and real VM CLOCK. Independent Pascal token audit of27APIs/20conditions/139calls.24/24 targeted semantic mutants caught after green identical baseline; headless only."
+    },
+    {
+      "source": "src/gameboot.pas",
+      "source_sha256": "41c0af3728597111495e9eb57b478b81d5a4889492e4b46d3c7aec9a66d78d0b",
+      "bytes": 6093,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/Startup/GameBoot.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "1,848,892 aggregate counted source assertions across ten-unit suite; per-group counts in final-gates.log; self-authored/headless, not DOS execution"
+    },
+    {
+      "source": "src/gameinit.pas",
+      "source_sha256": "fbfa381098b4b91387c46c6a1ae61faa4a951280afc4a5fd3a760dbf4690fabf",
+      "bytes": 20460,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/Startup/GameInit.cs",
+        "src/Por.Core/Startup/GameInit.Tables.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Self-authored checked source-contract gates, per-group logs; not original DOS execution"
+    },
+    {
+      "source": "src/gameio.pas",
+      "source_sha256": "d4d0838c075cd19ffa6483c9b23bf56f631a88915f6507b6bb74e48b2e222189",
+      "bytes": 5356,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/IO/GameIo.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "1135 source-derived assertions: every initial key byte, control/drain ordering, sound modes, debug linked lists/hooks including exception guard reset, fatal exit ordering and returning-Halt fail-closed; headless only."
+    },
+    {
+      "source": "src/gametime.pas",
+      "source_sha256": "73a9569be5a10ab732107796132456370bae652a19636fd2b3c5bb35e1b20b36",
+      "bytes": 13093,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/Rules/GameTime.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Self-authored checked source-contract gates, per-group logs; not original DOS execution"
+    },
+    {
+      "source": "src/gdconsts.pas",
+      "source_sha256": "9991af66168e76baf54cb552297acfd91a63c451918f30a2e042867973a9dd3a",
+      "bytes": 89199,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/GlobalData/GDConsts.Part1.cs",
+        "src/Por.Core/GlobalData/GDConsts.Part3.cs",
+        "src/Por.Core/GlobalData/GDConsts.Part4.cs",
+        "src/Por.Core/GlobalData/GDConsts.Part5.cs",
+        "src/Por.Core/GlobalData/GDConsts.Part6.cs",
+        "src/Por.Core/GlobalData/GDConsts.Part2.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Prior source-derived contract suites; see baseline reports"
+    },
+    {
+      "source": "src/gdvars.pas",
+      "source_sha256": "36777a8af0b7788533cb612d6aed8643dcd565042a40a05e759fa3125db99c33",
+      "bytes": 17510,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/GlobalData/GDVars.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Prior source-derived contract suites; see baseline reports"
+    },
+    {
+      "source": "src/heaperr.pas",
+      "source_sha256": "862662eeb2bc228793ef7fc831040fa0691992819bba6fdaa1f5be112e3d94c8",
+      "bytes": 2717,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/UI/HeapErr.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "12 source-derived assertions; reserve, zero request, reentry, cancelled-save retry, saved exit, Escape and missing saver; headless, not original DOS execution"
+    },
+    {
+      "source": "src/includes/c_abil.pas",
+      "source_sha256": "d84feb23f7d15906315bcc407b74e323cec80143d339f3068b9c9a39f827be7e",
+      "bytes": 203,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Constants/C_Abil.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Prior source-derived contract suites; see baseline reports"
+    },
+    {
+      "source": "src/includes/c_align.pas",
+      "source_sha256": "e177deb731112fb3baffb3ed40449194c829ebdd28070ef31062ae9d0ddf9f7e",
+      "bytes": 718,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Constants/C_Align.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Prior source-derived contract suites; see baseline reports"
+    },
+    {
+      "source": "src/includes/c_area.pas",
+      "source_sha256": "6d8635a227f8061d35dc4afcdc9adaf5a0a4fa574249734143f427f72e3a8f4f",
+      "bytes": 309,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Constants/C_Area.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Prior source-derived contract suites; see baseline reports"
+    },
+    {
+      "source": "src/includes/c_class.pas",
+      "source_sha256": "8f8ff914b2ad8e298c8c68eea195f36846a86117ccc81ad9d7e08a873db6869e",
+      "bytes": 513,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Constants/C_Class.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Prior source-derived contract suites; see baseline reports"
+    },
+    {
+      "source": "src/includes/c_cond.pas",
+      "source_sha256": "e0415ab21a8eb9d7824426e06c59caa9eef9f23f00b9b022f227beb6341c3566",
+      "bytes": 1191,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Constants/C_Cond.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Prior source-derived contract suites; see baseline reports"
+    },
+    {
+      "source": "src/includes/c_data.pas",
+      "source_sha256": "c432abcdfeecb075fefe681c7d90b60571dc1406a55d59bc52c1b8a325315f53",
+      "bytes": 1601,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Constants/C_Data.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Prior source-derived contract suites; see baseline reports"
+    },
+    {
+      "source": "src/includes/c_dir.pas",
+      "source_sha256": "6790d82e65f6a7700db5fbb23cd21427618f4019b87faded31f97b7c87a2a462",
+      "bytes": 316,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Constants/C_Dir.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Prior source-derived contract suites; see baseline reports"
+    },
+    {
+      "source": "src/includes/c_ecl.pas",
+      "source_sha256": "6c6c82aaaf962e3508eb2be8cfe3b79dfb50075431104ca1d2724dbd7f5f2e1c",
+      "bytes": 1238,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Constants/C_Ecl.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Prior source-derived contract suites; see baseline reports"
+    },
+    {
+      "source": "src/includes/c_effect.pas",
+      "source_sha256": "f9fa8cc34b5b59d44476dc76dee92881a8ddee6880bfa5fbb58a95c665f8ec3e",
+      "bytes": 4318,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Constants/C_Effect.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Prior source-derived contract suites; see baseline reports"
+    },
+    {
+      "source": "src/includes/c_ega.pas",
+      "source_sha256": "92741d4a56d539ffb3cec938f6bd51d940e6deaaba608238067618eb0d04f633",
+      "bytes": 709,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Constants/C_Ega.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Prior source-derived contract suites; see baseline reports"
+    },
+    {
+      "source": "src/includes/c_equip.pas",
+      "source_sha256": "8e93cf6cab667837722ee17bfa24fb339234be3326383170077b7803ec16f5b0",
+      "bytes": 293,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Constants/C_Equip.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Prior source-derived contract suites; see baseline reports"
+    },
+    {
+      "source": "src/includes/c_gbvm.pas",
+      "source_sha256": "bd80a394c815bdd4055bb2ac0a6f15808b0fe799fafa83b4800abc8571ca5822",
+      "bytes": 6734,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Constants/C_Gbvm.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Prior source-derived contract suites; see baseline reports"
+    },
+    {
+      "source": "src/includes/c_gender.pas",
+      "source_sha256": "cb1c4efc3800b831e366f26404127f6efcb2c7ba239595f22a99e76f3288baab",
+      "bytes": 121,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Constants/C_Gender.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Prior source-derived contract suites; see baseline reports"
+    },
+    {
+      "source": "src/includes/c_ifc.pas",
+      "source_sha256": "6a070efe68f3c19e822dba9f1359c3bbdb26a28f0ef946809074cc948338a975",
+      "bytes": 370,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Constants/C_Ifc.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Prior source-derived contract suites; see baseline reports"
+    },
+    {
+      "source": "src/includes/c_item.pas",
+      "source_sha256": "cdb7fb74d8059c5363a48ba4facd55b6741c3bcf15e1f8ad5b62bd993a4c1e9a",
+      "bytes": 2578,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Constants/C_Item.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Prior source-derived contract suites; see baseline reports"
+    },
+    {
+      "source": "src/includes/c_jrnl.pas",
+      "source_sha256": "2e77fd13ee83085c73880748b3297f1abb9c9b46546ab1fe6688cafabf342196",
+      "bytes": 733,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Constants/C_Jrnl.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Prior source-derived contract suites; see baseline reports"
+    },
+    {
+      "source": "src/includes/c_keys.pas",
+      "source_sha256": "215dc5dcff62f3cdd23962ac2fb84d9e9e9bfa60d5667f5f9cc33dbc51f6f2ec",
+      "bytes": 859,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Constants/C_Keys.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Prior source-derived contract suites; see baseline reports"
+    },
+    {
+      "source": "src/includes/c_level.pas",
+      "source_sha256": "b5655b7a69f2d384daf4c245928471e26072dda2da5d0d789a8fb1f28b4ce7f5",
+      "bytes": 409,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Constants/C_Level.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Prior source-derived contract suites; see baseline reports"
+    },
+    {
+      "source": "src/includes/c_money.pas",
+      "source_sha256": "b2857591beba5bee3fa5f8c31673e2430f4f5cbfcb6d7ff9b00d78bfdc4a09cd",
+      "bytes": 238,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Constants/C_Money.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Prior source-derived contract suites; see baseline reports"
+    },
+    {
+      "source": "src/includes/c_msg.pas",
+      "source_sha256": "5d1cdd2665c3789e6d8ede8771eddedfa8e9c27cdfa3beb79dea2c79bf5dc1a9",
+      "bytes": 450,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Constants/C_Msg.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Prior source-derived contract suites; see baseline reports"
+    },
+    {
+      "source": "src/includes/c_npc.pas",
+      "source_sha256": "1fb9b93e8cfd61658508e4e7b526b52e49a0fe668f9f0f779be8f0843871ac8d",
+      "bytes": 471,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Constants/C_Npc.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Prior source-derived contract suites; see baseline reports"
+    },
+    {
+      "source": "src/includes/c_race.pas",
+      "source_sha256": "cb9e50df742d4bebb4f9caf4713617364b4b0a16ce9e24b7cf401ba156138894",
+      "bytes": 200,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Constants/C_Race.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Prior source-derived contract suites; see baseline reports"
+    },
+    {
+      "source": "src/includes/c_save.pas",
+      "source_sha256": "899682e1b297b17ce5e0ed282737cf2e92a0ebc0638d33c817ac253d506f25d9",
+      "bytes": 469,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Constants/C_Save.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Prior source-derived contract suites; see baseline reports"
+    },
+    {
+      "source": "src/includes/c_sound.pas",
+      "source_sha256": "eff425094d3433c10422284a79c9dd770010afbbda870f696d90a417d6e95b07",
+      "bytes": 1000,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Constants/C_Sound.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Prior source-derived contract suites; see baseline reports"
+    },
+    {
+      "source": "src/includes/c_spell.pas",
+      "source_sha256": "d13d20e455ce3cb741faa2b86e02822a9ffac73888cac6fe8abd96656edf6958",
+      "bytes": 1940,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Constants/C_Spell.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Prior source-derived contract suites; see baseline reports"
+    },
+    {
+      "source": "src/includes/c_status.pas",
+      "source_sha256": "43349535b4065237eb5255d8efd08490389c5ea003a4925fd9e31cfc4c839ed7",
+      "bytes": 383,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Constants/C_Status.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Prior source-derived contract suites; see baseline reports"
+    },
+    {
+      "source": "src/includes/c_terr.pas",
+      "source_sha256": "4f7e5f8a7e2d3530281bf2b78900c3c12a7aba1db633b9388469ab2ac5af4e19",
+      "bytes": 459,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Constants/C_Terr.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Prior source-derived contract suites; see baseline reports"
+    },
+    {
+      "source": "src/includes/c_tile.pas",
+      "source_sha256": "84882f409192c5ed86b0bb646ff4953c9edeb3ea9895d74964abd123990c5ef4",
+      "bytes": 119,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Constants/C_Tile.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Prior source-derived contract suites; see baseline reports"
+    },
+    {
+      "source": "src/includes/c_time.pas",
+      "source_sha256": "d73c0e4134374b0d017c09f4af15331c4e4508733cac1ec2113e13c7ce40efbe",
+      "bytes": 351,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Constants/C_Time.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Prior source-derived contract suites; see baseline reports"
+    },
+    {
+      "source": "src/includes/c_video.pas",
+      "source_sha256": "c95494c3b58cd71ed9be7d72258341b45ef29fd6215e447414eb3ab4e41e4391",
+      "bytes": 546,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Constants/C_Video.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Prior source-derived contract suites; see baseline reports"
+    },
+    {
+      "source": "src/intro.pas",
+      "source_sha256": "8db97a6ec32fbe228d0439c4e5fd5fb01771ed3b46e393aa058faaecad9a877c",
+      "bytes": 5336,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/UI/Intro.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "22601 source-derived assertions; separate expected ordered picture/music/palette/timing/credits traces, early exit and clock wrap; headless, not original DOS execution"
+    },
+    {
+      "source": "src/journal1.pas",
+      "source_sha256": "10080687affd99ecc3c33e236249c69c4f117de2a717a7838da8d7296dd010c3",
+      "bytes": 27661,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Journal/Journal1.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Isolated C#7.2 checked slice: all signed16 LineCount indices; chunks0..9 across all indices; all signed16 chunk indices for entries1..28; 71 exact chunks/12071bytes and assembled linecounts; 2556005 assertions"
+    },
+    {
+      "source": "src/journal2.pas",
+      "source_sha256": "0e666b93afc352fec4ba32fbd9dc5128ef1d34a4b8e7acc2a766a93e78546c35",
+      "bytes": 28172,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Journal/Journal2.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Isolated checked C#7.2/.NET8; 22entries/75exact chunks/12222bytes; all signed16 count indices, chunks0..9 at all indices, all signed16 chunk indices for valid entries;2162787assertions"
+    },
+    {
+      "source": "src/journal3.pas",
+      "source_sha256": "d211a57a0430417d11022cd821df989d3ff735203fe0dfc58956865c199b285e",
+      "bytes": 27196,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Journal/Journal3.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Isolated checked C#7.2/.NET8;17entries/70exact chunks/11848bytes; all signed16 count indices, chunks0..9 across allindices and all signed16 chunk indices for valid entries;1835097assertions"
+    },
+    {
+      "source": "src/journal4.pas",
+      "source_sha256": "f73e2a94ef6c8c4eb8be4852f48758e13ecadebb197d0719fd8b71baac4dc653",
+      "bytes": 18550,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Journal/Journal4.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Both Qwen and Claude candidates:32entries/51chunks/7155bytes,2818133assertions each, checked C#7.2/.NET8; same source-derived vectors"
+    },
+    {
+      "source": "src/jrnllist.pas",
+      "source_sha256": "413c3d6c2b99e0e0ef60b58adfdbab061b16c76730aa04c58583d64dfe4e9409",
+      "bytes": 6968,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Journal/JrnlList.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "723937 journal assertions; signed16indices,99entries/267chunks/43296bytes, all source textlines, labels/Roman numerals and image flags"
+    },
+    {
+      "source": "src/jrnlview.pas",
+      "source_sha256": "0297fbfde72e74d843a8d5ca4d522c3316a1bee1f9a80ee8db7e344211223bcf",
+      "bytes": 10557,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/UI/JrnlView.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "93061 source-derived assertions; independent full-session screens/key/clock traces, paging/scroll/wrap/preview idle25cs, midnight, panel restoration; headless, not original DOS execution"
+    },
+    {
+      "source": "src/magic.pas",
+      "source_sha256": "c32daf28f7984aef9a18526920be295666d1c4da89510be01e9a45c1ef11e5cd",
+      "bytes": 72048,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/Rules/Magic.cs",
+        "src/Por.Core/Rules/MagicBindings.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Self-authored oracle model of every routine (tests/Por.NextTen.Tests/MagicOracle.cs) compared with the port (results, ordered call logs, state snapshots) over a recording fake FxEngine/CbtMap and logging UI; not original DOS execution"
+    },
+    {
+      "source": "src/mapnotes.pas",
+      "source_sha256": "e4028a0e2ee6047164590099b27acee87b00981b3f494a27bef0775d7eef8747",
+      "bytes": 3135,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Data/MapNotes.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "4000independentstateoperations/rawhashes,4487bytecodec,negativecoordquirk,header/malformedtexttests"
+    },
+    {
+      "source": "src/maptiles.pas",
+      "source_sha256": "1ccc23ecbcdd2e4a8173f5f630dea099c31cc3040538cfdcece119dd9f0f73eb",
+      "bytes": 6848,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Video/MapTiles.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "MapTiles source-derived assertions: 20044; All256tile IDs, lazy second sheet identity/reload, chained tile copies, icon naming/ID wrap/recolor, all256facings and scratch allocation accounting; headless."
+    },
+    {
+      "source": "src/mapview.pas",
+      "source_sha256": "774a29600ccc15b42f158713575a9127462696b8435338a7e02c08981e431bc2",
+      "bytes": 4447,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Video/MapView.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "227970 source-derived assertions; signed map coordinates, all colour selectors, sky/event mask, automap policy, view3d override, animation frame wrap; headless, not original DOS execution"
+    },
+    {
+      "source": "src/memshow.pas",
+      "source_sha256": "12efabb5184ce02cc6568e03bdb7060906ee5a3cdb6f7ea9a5084ae86e8a89c1",
+      "bytes": 1471,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/UI/MemShow.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "MemShow source-derived assertions: 301; 300full source-order display/callback traces, EMS/disk, numeric values and missing measurement fail-closed; headless."
+    },
+    {
+      "source": "src/menucore.pas",
+      "source_sha256": "94977729b9dc4119d9ab68309c7133f469a67ae16e0b28e027e185b70ce7024d",
+      "bytes": 23875,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/UI/MenuCore.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "MenuCore source-derived assertions: 567; List identities/GCretainedrefs,hotkeycase,optioncaps,allkeypadscans,callerflags,timers,1-basedanimation,YesNo,listonly,paging/selection; headless inputtrace."
+    },
+    {
+      "source": "src/money.pas",
+      "source_sha256": "bb72bc2ed2cd2887a118ccd009af09d82c1593cea99903f8b3d2cfb5370438e3",
+      "bytes": 20350,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/UI/Money.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "1,848,892 aggregate counted source assertions across ten-unit suite; per-group counts in final-gates.log; self-authored/headless, not DOS execution"
+    },
+    {
+      "source": "src/moneycal.pas",
+      "source_sha256": "9e7651a31aa016d5e99271ee614a2e53f0cb2806f42badffaf471f543ade67cb",
+      "bytes": 5797,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Rules/MoneyCal.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Prior source-derived contract suites; see baseline reports"
+    },
+    {
+      "source": "src/options.pas",
+      "source_sha256": "c94a28bf87840f40b32e65bc775b8bc12607116c0b8798185a7128e4181f26b2",
+      "bytes": 17648,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/UI/Options.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Self-authored checked source-contract gates, per-group logs; not original DOS execution"
+    },
+    {
+      "source": "src/party.pas",
+      "source_sha256": "5df8ac13aa9f5e4c0779d899226b2eaf4b0b46a36fcc194a7292f83ba8c7f552",
+      "bytes": 2701,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Rules/Party.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Prior source-derived contract suites; see baseline reports"
+    },
+    {
+      "source": "src/pathing.pas",
+      "source_sha256": "b3cf104409bc858383a223f4c70528867f382d92e70285bdb12ebd0859578cfe",
+      "bytes": 15669,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Rules/Pathing.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Checked arena-domain line/direction/walk tests,5000linefixtures,1000blocked/budgetwalks,120reverseBFSreferenceboards across bodysizes,80targetsort/pointerfixtures,byte-distancewrap; not DOSruntime"
+    },
+    {
+      "source": "src/piccga.pas",
+      "source_sha256": "b6296a0a46bdb9c1b9df3d17959530bf9b60db7a074972a549426e42ff1b93df",
+      "bytes": 5507,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Video/PicCga.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "All six routines, 200 random packed mapped expansion/mask/mirror/noncascading recolor fixtures,150 remap/dither fixtures,256pixel rows,200bank rows. Headless source-derived."
+    },
+    {
+      "source": "src/picega.pas",
+      "source_sha256": "55464c415c72dd853aca84d112f40edf90d6726d003b714de7076b502739f54e",
+      "bytes": 5550,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Video/PicEga.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "All six routines; 200 seeded packed/planar/masked/mirror/recolor fixtures, 100 remap/dither cases, 256 pixel rows and 200 row entries. Headless source-derived tests."
+    },
+    {
+      "source": "src/pictdy.pas",
+      "source_sha256": "30da445d34fbe2dd7ecfa14fd229fe61dd3a95037389ba76af5823fe052b1eb3",
+      "bytes": 4161,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Video/PicTdy.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "All six routines; packed-nibble expansion/preexisting mask accumulation, multiframe offsets, first-frame reflection/recoloring, conditional dither draws, pixel rows and bank table. Headless source-derived tests."
+    },
+    {
+      "source": "src/picvga.pas",
+      "source_sha256": "c25ba41fa59b7415b74a1ec6a5c6a3639b92d2243d157787dccf084190fab8a9",
+      "bytes": 4143,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Video/PicVga.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "180randompacked-expansion/mask/mirror/recolorfixtures,64dither/remapfixtures with draworder, rowtable/pixeloffsets; source-derived bytechecks"
+    },
+    {
+      "source": "src/portrait.pas",
+      "source_sha256": "ef295edfb4206352b5bdb73b7d3ab45cc896ba483e8d46da01029444f631f34e",
+      "bytes": 12132,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/Video/Portrait.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Portrait source-derived assertions: 784; Caps/XOR/bytebounds/cache/free identity,first/laterOOM,FrameNeed arithmetic,pink remap,portrait slots,validsprites andallinvaliddistances; required heap adapter,headless."
+    },
+    {
+      "source": "src/postcbt.pas",
+      "source_sha256": "e6905086b3cc73c18cb00f5942566896a8112108eb804f0d4a1051c96a32e726",
+      "bytes": 20405,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/Rules/PostCbt.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Self-authored checked source-contract gates, per-group logs; not original DOS execution"
+    },
+    {
+      "source": "src/randitem.pas",
+      "source_sha256": "48ee1c07538900077a9fecd52c8639e2bb3d7b415ea8dbb01b76b98c89ca79b8",
+      "bytes": 8976,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Rules/RandItem.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "16384seededallkindreferencevectors,drawbounds/order,19templatesandwholeitemreset"
+    },
+    {
+      "source": "src/saveload.pas",
+      "source_sha256": "3e30589d76739f7ef16f509e0b87032c1de02b8291c4396147523382a366325c",
+      "bytes": 29726,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/Data/SaveLoad.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Self-authored checked source-contract gates, per-group logs; not original DOS execution"
+    },
+    {
+      "source": "src/savemenu.pas",
+      "source_sha256": "780e5c70ce2e429cb05e8e06d7607088b3efc2b52d2f40336738a67d05da1b21",
+      "bytes": 14233,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/UI/SaveMenu.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "346698 source-derived assertions; independent menu-screen/key models,56byte metadata, file timestamps and fallback save offsets, malformed data, save/load slot navigation, description editor and directory lifecycle; headless, not original DOS execution"
+    },
+    {
+      "source": "src/shop.pas",
+      "source_sha256": "9c70b4e69c19eeaab9b82857a0d5cd71ce728e164fcf0f52bf4ee1810b693523",
+      "bytes": 6822,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/UI/Shop.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "18 source-derived assertions; 30-column price/name clipping, value floor, label restoration, overload/funds rejection, character/pool payment after copy, extended key protection, remaining-money prompt, missing viewer; headless, not original DOS execution"
+    },
+    {
+      "source": "src/sndnone.pas",
+      "source_sha256": "fa3b9a1afc6d64726dda5cb4e40153743b532d71409ae6bd6c3f57de3c03996a",
+      "bytes": 613,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Sound/SndNone.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Install fields/delegate/record identity/reinstallation; all65536tunes invoked using original legitimately silent Play"
+    },
+    {
+      "source": "src/sndopl.inc",
+      "source_sha256": "102a1ac1c2ce128c91e3dd6aab0251c1a89fe12ebdd8a3c01ef432a1506b9b5c",
+      "bytes": 12186,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/Sound/OplSequencer.cs",
+        "src/Por.Core/Sound/SoundVoice.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "114407 source-derived assertions: all65536Word pitches, ordered reset/waits, cached tone/noise/rhythm and mute output; required port bus/shared voice stepper. Not physical audio."
+    },
+    {
+      "source": "src/sndopl.pas",
+      "source_sha256": "ed77a40499f5e57198e4e0273f594cee6371774bec79d166683a900a7ebe0425",
+      "bytes": 2745,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/Sound/SndOpl.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "1,848,892 aggregate counted source assertions across ten-unit suite; per-group counts in final-gates.log; self-authored/headless, not DOS execution"
+    },
+    {
+      "source": "src/sndsb.pas",
+      "source_sha256": "257ab2498236d5dd7444f3bc1cc7727ede1f283acbe09813d6c0360522113675",
+      "bytes": 10591,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/Sound/SndSb.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Self-authored checked source-contract gates, per-group logs; not original DOS execution"
+    },
+    {
+      "source": "src/sndspk.inc",
+      "source_sha256": "b08e216ab13d00138f0015fad909e4ab99885b345684ecea5c9abd2129093383",
+      "bytes": 70510,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/Sound/SpeakerSequencer.cs",
+        "src/Por.Core/Sound/SpeakerArrangement.Generated.cs",
+        "src/Por.Core/Sound/SoundArrangement.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "35616 self-authored source assertions; compiled full image/song metadata, zero-pointer loader preservation, priority/PIT/gate bits;6461relocated bytes and55labels match independent GNU assembler oracle. sounddrv.asm voice_step/timer required."
+    },
+    {
+      "source": "src/sndspk.pas",
+      "source_sha256": "6ce3417781bb434765939e77a5093c03ab4c940947111424af4dda919a08f784",
+      "bytes": 656,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/Sound/SndSpk.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "1,848,892 aggregate counted source assertions across ten-unit suite; per-group counts in final-gates.log; self-authored/headless, not DOS execution"
+    },
+    {
+      "source": "src/sndtdy.inc",
+      "source_sha256": "6af1d39082ac9afc40e9b91a2b62818dba42bed58a545cc5c19d07164bf793c1",
+      "bytes": 71609,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/Sound/TandySequencer.cs",
+        "src/Por.Core/Sound/TandyArrangement.Generated.cs",
+        "src/Por.Core/Sound/SoundArrangement.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "143850 self-authored source assertions; compiled full image/song metadata, loader/spares/tick/mute/OPL;6516relocated bytes and74labels match independent GNU assembler oracle. sounddrv.asm voice_step/timer required."
+    },
+    {
+      "source": "src/sndtdy.pas",
+      "source_sha256": "3069369a14c2c358984f5fc5f0a5d18f9861c87188112f3ac7dd4631359c19d8",
+      "bytes": 640,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/Sound/SndTdy.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "1,848,892 aggregate counted source assertions across ten-unit suite; per-group counts in final-gates.log; self-authored/headless, not DOS execution"
+    },
+    {
+      "source": "src/sounddrv.asm",
+      "source_sha256": "51c1370dc86ca1270bd8192f62f250995c55181c313e702c265e039729eb77db",
+      "bytes": 32363,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/Sound/SoundDriver.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "167830 self-authored assertions including all58 pinned SSI trace digests, real OPL/Tandy port-decoded pitch/levels, timer/BIOS boundaries and shared stream/LFO/envelope checks. Explicit port/timer/clock/shutdown platform required; no physical audio or original binary execution."
+    },
+    {
+      "source": "src/sounddrv.pas",
+      "source_sha256": "78952b496b36d8a14c5ce7c908f570535088111090fbd594ab3c470df692e5c3",
+      "bytes": 10317,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/Sound/SoundDrv.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "1,848,892 aggregate counted source assertions across ten-unit suite; per-group counts in final-gates.log; self-authored/headless, not DOS execution"
+    },
+    {
+      "source": "src/stats.pas",
+      "source_sha256": "c10986a53639b01b8a6cd6294cfacb7ff013eac236dff5287a0a26859270b899",
+      "bytes": 11342,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Rules/Stats.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Prior source-derived contract suites; see baseline reports"
+    },
+    {
+      "source": "src/strutil.pas",
+      "source_sha256": "39c732bf7c4f956013b343e901e3cb367b293b3f896615549a2c05fd84de8523",
+      "bytes": 1273,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Data/StrUtil.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Prior source-derived contract suites; see baseline reports"
+    },
+    {
+      "source": "src/sym8x8.pas",
+      "source_sha256": "062da4fe78a9a7b1b4c3c7082696c338deec03329b30ddb08c91d5f78879967c",
+      "bytes": 2326,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Video/Sym8x8.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "121039 source-derived assertions: all286valid symbol mappings, every invalid ushort, signed screen coordinates, all5set guards, combat masked/unmasked byte composition, real disposable DAX/Blit loads and missing-block fatal ordering. Headless only."
+    },
+    {
+      "source": "src/temple.pas",
+      "source_sha256": "27c7a896e184212107c8408ddb2fb716cad85b814034c4c860667c46b1845649",
+      "bytes": 10905,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/UI/Temple.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "1,848,892 aggregate counted source assertions across ten-unit suite; per-group counts in final-gates.log; self-authored/headless, not DOS execution"
+    },
+    {
+      "source": "src/textrend.pas",
+      "source_sha256": "a12ecc6e042e3249f6490cf621fcded7a30381871642da1e4558cf87d8171c34",
+      "bytes": 11196,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/UI/TextRend.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "145605checked assertions including600independent window event traces; glyph/directASCII/bytewrap, signed rectangle guards, centisecond stable reads, delays, input editing/Val retries, bounded real DAX font loading; headless only."
+    },
+    {
+      "source": "src/types.pas",
+      "source_sha256": "e2afca33e47257b20c3a6b39cb1ad69e5b7da03ae69499f186fa2b3f1215506c",
+      "bytes": 34582,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Types/Aliases.cs",
+        "src/Por.Core/Types/Character.cs",
+        "src/Por.Core/Types/GbvmViews.cs",
+        "src/Por.Core/Types/Records1.cs",
+        "src/Por.Core/Types/Records2.cs",
+        "src/Por.Core/Types/RuleOverlays.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Prior source-derived contract suites; see baseline reports"
+    },
+    {
+      "source": "src/usualspl.pas",
+      "source_sha256": "f40055e8ff5051b906c8c6b8b2d97e02414553b51ef08f6e2bb441192a0e51f0",
+      "bytes": 4808,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Rules/UsualSpl.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "43byteMEMcodec100randomnames/spellsets,owner/reference/valuecopies,cacheevictionandinvalidheaders"
+    },
+    {
+      "source": "src/vault.pas",
+      "source_sha256": "881574c62f1ad2b33733f27132ae1c9ff7aa85a5975314110a75590229871e84",
+      "bytes": 5913,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/UI/Vault.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "19683 source-derived assertions; packed35byte header/63byte items,100item capacity, exact payload/copy/delete/read-only semantics, failed writes; streaming1100records over64KB without Word clipping; headless, not original DOS execution"
+    },
+    {
+      "source": "src/vaultmnu.pas",
+      "source_sha256": "968af385b750df79221bd8e8e4254339da6ae2d25bf415826f85965e78af6bf8",
+      "bytes": 2143,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/UI/VaultMnu.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "7 source-derived assertions; real menu/visited RNG, view and loot callbacks, panel lifecycle, persistence and missing ViewChar boundary; headless, not original DOS execution"
+    },
+    {
+      "source": "src/vidcga.pas",
+      "source_sha256": "ca665e9fcea46438f550c09c9d5b7f41d6fe76133484ad095c4d3f39792a552b",
+      "bytes": 4480,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/Video/VidCga.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "VidCga source-derived assertions: 173465; Driver metadata/cold adapter,80pictures,300glyphs,100rectangles,dirtyspans,cellfill/BIOS and8000bytes perbank; recording bus only."
+    },
+    {
+      "source": "src/videga.pas",
+      "source_sha256": "f3dbfe32ca7699d2cfc52b5116e568a7c63f7c1f73ec75831d0405a2d3e2159f",
+      "bytes": 8910,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/Video/VidEga.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "VidEga source-derived assertions: 538697; Four-plane recording bus validates80pictures,300glyphs,100rectangles,staging/latchdirtyspans,BIOSpages/palettes/cellfill andboth8000bytepages; no desktop output."
+    },
+    {
+      "source": "src/vidops.pas",
+      "source_sha256": "9b2fbafe5e293b6f82dfbddb32bafe6136f61bdc8752f512789e5b8039a7fed5",
+      "bytes": 3491,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Video/VidOps.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "400pairedkeyed/planarmerge-overlayfixtures(800operations) across4maskshifts; driverdelegation andselectednilguards; headless only"
+    },
+    {
+      "source": "src/vidtdy.pas",
+      "source_sha256": "2d50f2b5411e0fa84ecf580486d665c5ba6304f880db1df243bb421cd8c385e0",
+      "bytes": 4707,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/Video/VidTdy.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "VidTdy source-derived assertions: 282377; Driver metadata/cold adapter,80pictures,300glyphs,100rectangles,dirtyspans,cellfill/BIOS,4bank8000byteclears; host bus only."
+    },
+    {
+      "source": "src/vidvga.pas",
+      "source_sha256": "9859355d4bd1dbd4f1a5372485c63e2b9b7f6b97d3340b683e074f93e6320ce1",
+      "bytes": 4308,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/Video/VidVga.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "VidVga source-derived assertions: 641048; Signed raw adapter, metadata/hooks,80pictures,300glyphs,100rectangles, dirty spans,all256palettevalues,BIOS,and64000byteclear; required hardware adapter,not desktop display."
+    },
+    {
+      "source": "src/view3d.pas",
+      "source_sha256": "66c3dac08298f05280dc6330940d34b9894a7a3dfad9ca7a34542d6837702a94",
+      "bytes": 16431,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Video/View3D.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "View3D source-derived assertions: 2754515; 2754515assertions: allsigned8coordinatepairs under3scripts,cardinal/invalidfacing fields,GEOplanes,100whole-buffer layeredcamera/maskviews,40automaps,wallblock remap/cache/symbolload; headlesssourcecontract."
+    },
+    {
+      "source": "src/viewchar.pas",
+      "source_sha256": "f784eb9154d464de20f7de4166af077fa9b5486c417ac3d683def24c6e24b437",
+      "bytes": 38148,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port-with-explicit-platform-boundary",
+      "targets": [
+        "src/Por.Core/UI/ViewChar.cs",
+        "src/Por.Core/UI/ViewCharBindings.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Self-authored oracle model of every routine (tests/Por.NextTen.Tests/ViewCharOracle.cs) compared with the port (exception type, ordered call logs, state snapshots) over logging fakes for the UI, menus, FxEngine, Magic, Money, Vault, Stats and CharHlp call points, plus hand-worked cases; not original DOS execution"
+    },
+    {
+      "source": "src/wilds.pas",
+      "source_sha256": "cbcbcbb8fa422ae70a6895aa2763fbb1ae794e2637625ee5c3aaf6a1c47ce355",
+      "bytes": 3723,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-port",
+      "targets": [
+        "src/Por.Core/Video/Wilds.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "15379088 source-derived assertions; exhaustive viewport neighbourhoods, gate/flag permutations, tile coordinates and ordered windows; headless, not original DOS execution"
+    },
+    {
+      "source": "tests/TPC.CFG",
+      "source_sha256": "58cefaaab10c28a7001cc283c2f7f2de1913802aa7272ffdcd6e6b0b7aa900cb",
+      "bytes": 79,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "replaced-build-configuration",
+      "targets": [
+        "docs/TPC-MANAGED-REPLACEMENT.md",
+        "src/Por.UpstreamTools/Por.UpstreamTools.csproj",
+        "tests/Por.Upstream.Tests/Por.Upstream.Tests.csproj"
+      ],
+      "scope": "source-inventory",
+      "verification": "Every 12-line switch mapped to explicit managed build/runtime disposition. No claim of DOS far calls/stack/CPU identity."
+    },
+    {
+      "source": "tests/ovlloads.py",
+      "source_sha256": "bc6323a9def88c6386dc18052e55dbd56c65b91ea6b97b41569d77eff913754d",
+      "bytes": 991,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-tool-port",
+      "targets": [
+        "src/Por.UpstreamTools/LegacyTools.cs",
+        "tests/Por.Upstream.Tests/Program.cs"
+      ],
+      "preserved_original": "references/upstream-pinned/tests/ovlloads.py",
+      "scope": "repository-support",
+      "verification": "Exact original bytes retained as historical reference; managed replacements are not SSI DOS binary reproduction or full scenario execution proof."
+    },
+    {
+      "source": "tests/regress.sh",
+      "source_sha256": "6d0b5a11fb49231cd9cfd78bcc31799f92c18f6549aa5b686bee191c09fb02f3",
+      "bytes": 5050,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "managed-native-regression-workflow-replacement",
+      "targets": [
+        "scripts/test-adventure-smoke.py",
+        "scripts/test-combat-smoke.py",
+        "scripts/test-combat-extended.py",
+        "scripts/test-wilderness-native.py",
+        "src/Por.UpstreamTools/Scenario.cs",
+        "docs/REPOSITORY-CLOSURE-2026-10-23.md"
+      ],
+      "preserved_original": "references/upstream-pinned/tests/regress.sh",
+      "scope": "repository-support",
+      "verification": "Exact original bytes retained as historical reference; managed replacements are not SSI DOS binary reproduction or full scenario execution proof."
+    },
+    {
+      "source": "tests/scenarios/POOL-CGA.CFG",
+      "source_sha256": "e4fdc971b20d78771f15476e94e871c902ef9e71c15c69757de27367395a1e77",
+      "bytes": 40,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "managed-config-input-replacement",
+      "targets": [
+        "src/Por.UpstreamTools/LegacyTools.cs",
+        "tests/UpstreamScenarios/POOL-CGA.CFG",
+        "tests/Por.Upstream.Tests/Program.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "All five source config fields preserved/parsed; real C/E/T/V engine driver installed in tests. Desktop window remains VGA, not a new native CGA/EGA renderer."
+    },
+    {
+      "source": "tests/scenarios/POOL-TANDY.CFG",
+      "source_sha256": "a7c34b9c47955c38458d70d58bbe84725941803414eb8f230590f3390cdf3e1e",
+      "bytes": 40,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "managed-config-input-replacement",
+      "targets": [
+        "src/Por.UpstreamTools/LegacyTools.cs",
+        "tests/UpstreamScenarios/POOL-TANDY.CFG",
+        "tests/Por.Upstream.Tests/Program.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "All five source config fields preserved/parsed; real C/E/T/V engine driver installed in tests. Desktop window remains VGA, not a new native CGA/EGA renderer."
+    },
+    {
+      "source": "tests/scenarios/POOL-VGA.CFG",
+      "source_sha256": "50d0c2fd22b9aba2955aa348d924aa9ed24816981340f919975559d47b48222f",
+      "bytes": 40,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "managed-config-input-replacement",
+      "targets": [
+        "src/Por.UpstreamTools/LegacyTools.cs",
+        "tests/UpstreamScenarios/POOL-VGA.CFG",
+        "tests/Por.Upstream.Tests/Program.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "All five source config fields preserved/parsed; real C/E/T/V engine driver installed in tests. Desktop window remains VGA, not a new native CGA/EGA renderer."
+    },
+    {
+      "source": "tests/scenarios/POOL.CFG",
+      "source_sha256": "7bf9c84726e7674c4ea04ee6960abe20d6365e6a2c4191e494fd542df316a925",
+      "bytes": 40,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "managed-config-input-replacement",
+      "targets": [
+        "src/Por.UpstreamTools/LegacyTools.cs",
+        "tests/UpstreamScenarios/POOL.CFG",
+        "tests/Por.Upstream.Tests/Program.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "All five source config fields preserved/parsed; real C/E/T/V engine driver installed in tests. Desktop window remains VGA, not a new native CGA/EGA renderer."
+    },
+    {
+      "source": "tests/scenarios/README.md",
+      "source_sha256": "2a1a92d7e3a5214bbb044de9a0cdc947a22151862acf20f35caebb369e7081b4",
+      "bytes": 3695,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "preserved-documentation-or-release-reference",
+      "targets": [
+        "references/upstream-pinned/tests/scenarios/README.md"
+      ],
+      "preserved_original": "references/upstream-pinned/tests/scenarios/README.md",
+      "scope": "repository-support",
+      "verification": "Exact original bytes retained as historical reference; managed replacements are not SSI DOS binary reproduction or full scenario execution proof."
+    },
+    {
+      "source": "tests/scenarios/areachange.txt",
+      "source_sha256": "f6b7281840503a1d2457a81a3085346c604af08d30991ea05c7ee45c63cd61e1",
+      "bytes": 958,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "preserved-scenario-definition",
+      "targets": [
+        "tests/UpstreamScenarios/areachange.txt",
+        "src/Por.UpstreamTools/Scenario.cs",
+        "tests/Por.Upstream.Tests/Program.cs"
+      ],
+      "preserved_original": "references/upstream-pinned/tests/scenarios/areachange.txt",
+      "scope": "repository-support",
+      "verification": "Exact original bytes retained as historical reference; managed replacements are not SSI DOS binary reproduction or full scenario execution proof."
+    },
+    {
+      "source": "tests/scenarios/boot.txt",
+      "source_sha256": "5db6c25b4cf205313db827980f4a74603c60bcda835fc1838085374463c6bf55",
+      "bytes": 559,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "preserved-scenario-definition",
+      "targets": [
+        "tests/UpstreamScenarios/boot.txt",
+        "src/Por.UpstreamTools/Scenario.cs",
+        "tests/Por.Upstream.Tests/Program.cs"
+      ],
+      "preserved_original": "references/upstream-pinned/tests/scenarios/boot.txt",
+      "scope": "repository-support",
+      "verification": "Exact original bytes retained as historical reference; managed replacements are not SSI DOS binary reproduction or full scenario execution proof."
+    },
+    {
+      "source": "tests/scenarios/camp.txt",
+      "source_sha256": "de6acae11de66a6f6ea7a13126b146f3cdcc77f4d15b9155c84eeceb9bda160c",
+      "bytes": 574,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "preserved-scenario-definition",
+      "targets": [
+        "tests/UpstreamScenarios/camp.txt",
+        "src/Por.UpstreamTools/Scenario.cs",
+        "tests/Por.Upstream.Tests/Program.cs"
+      ],
+      "preserved_original": "references/upstream-pinned/tests/scenarios/camp.txt",
+      "scope": "repository-support",
+      "verification": "Exact original bytes retained as historical reference; managed replacements are not SSI DOS binary reproduction or full scenario execution proof."
+    },
+    {
+      "source": "tests/scenarios/chargen.txt",
+      "source_sha256": "daef236949740e9c68c80efec24278b40beeef56c18ea92a64bf2edabe90983b",
+      "bytes": 566,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "preserved-scenario-definition",
+      "targets": [
+        "tests/UpstreamScenarios/chargen.txt",
+        "src/Por.UpstreamTools/Scenario.cs",
+        "tests/Por.Upstream.Tests/Program.cs"
+      ],
+      "preserved_original": "references/upstream-pinned/tests/scenarios/chargen.txt",
+      "scope": "repository-support",
+      "verification": "Exact original bytes retained as historical reference; managed replacements are not SSI DOS binary reproduction or full scenario execution proof."
+    },
+    {
+      "source": "tests/scenarios/combat.txt",
+      "source_sha256": "9544783e4d610568ee13388698ece37dd4ae6b8e35df43f6a15507e3f72dfe24",
+      "bytes": 1473,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "preserved-scenario-definition",
+      "targets": [
+        "tests/UpstreamScenarios/combat.txt",
+        "src/Por.UpstreamTools/Scenario.cs",
+        "tests/Por.Upstream.Tests/Program.cs"
+      ],
+      "preserved_original": "references/upstream-pinned/tests/scenarios/combat.txt",
+      "scope": "repository-support",
+      "verification": "Exact original bytes retained as historical reference; managed replacements are not SSI DOS binary reproduction or full scenario execution proof."
+    },
+    {
+      "source": "tests/scenarios/companion.txt",
+      "source_sha256": "0abf3fdecd5f62d5a1b72a2c61e4927028694837fdee9fa6643319b6103517ae",
+      "bytes": 2457,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "preserved-scenario-definition",
+      "targets": [
+        "tests/UpstreamScenarios/companion.txt",
+        "src/Por.UpstreamTools/Scenario.cs",
+        "tests/Por.Upstream.Tests/Program.cs"
+      ],
+      "preserved_original": "references/upstream-pinned/tests/scenarios/companion.txt",
+      "scope": "repository-support",
+      "verification": "Exact original bytes retained as historical reference; managed replacements are not SSI DOS binary reproduction or full scenario execution proof."
+    },
+    {
+      "source": "tests/scenarios/journal.txt",
+      "source_sha256": "7b88df9fe39e9b8c90b03a1f072718786712a04e642173c2df8a94695a847b23",
+      "bytes": 283,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "preserved-scenario-definition",
+      "targets": [
+        "tests/UpstreamScenarios/journal.txt",
+        "src/Por.UpstreamTools/Scenario.cs",
+        "tests/Por.Upstream.Tests/Program.cs"
+      ],
+      "preserved_original": "references/upstream-pinned/tests/scenarios/journal.txt",
+      "scope": "repository-support",
+      "verification": "Exact original bytes retained as historical reference; managed replacements are not SSI DOS binary reproduction or full scenario execution proof."
+    },
+    {
+      "source": "tests/scenarios/loadsave.txt",
+      "source_sha256": "75e6414ea49764d4c39e9b20c1387286bc0fe0f7f3acab9d821e23a31d364337",
+      "bytes": 1098,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "preserved-scenario-definition",
+      "targets": [
+        "tests/UpstreamScenarios/loadsave.txt",
+        "src/Por.UpstreamTools/Scenario.cs",
+        "tests/Por.Upstream.Tests/Program.cs"
+      ],
+      "preserved_original": "references/upstream-pinned/tests/scenarios/loadsave.txt",
+      "scope": "repository-support",
+      "verification": "Exact original bytes retained as historical reference; managed replacements are not SSI DOS binary reproduction or full scenario execution proof."
+    },
+    {
+      "source": "tests/scenarios/saves/wild/CHRDATG1.ITM",
+      "source_sha256": "5f0ade7bbb922f10a3321a6a629a522e1223855aec21379bd6a7fa8f8612e3f9",
+      "bytes": 819,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "external-unchanged-test-fixture",
+      "targets": [
+        "scripts/test-wilderness-native.py",
+        "docs/REPOSITORY-CLOSURE-2026-10-23.md"
+      ],
+      "scope": "external-test-data",
+      "verification": "All 28 fixture files were actually consumed by native six-PC load/navigation/save/reload test. Referenced by hash, not bundled as original game data; no language conversion applies."
+    },
+    {
+      "source": "tests/scenarios/saves/wild/CHRDATG1.SAV",
+      "source_sha256": "8e32c4f741491b1dff74ff5d124ba4a3ecc597309d1ff9cd86a68856dea7ca6c",
+      "bytes": 285,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "external-unchanged-test-fixture",
+      "targets": [
+        "scripts/test-wilderness-native.py",
+        "docs/REPOSITORY-CLOSURE-2026-10-23.md"
+      ],
+      "scope": "external-test-data",
+      "verification": "All 28 fixture files were actually consumed by native six-PC load/navigation/save/reload test. Referenced by hash, not bundled as original game data; no language conversion applies."
+    },
+    {
+      "source": "tests/scenarios/saves/wild/CHRDATG1.SPC",
+      "source_sha256": "315b675b359c646070290b3aac7ef8fbed5ab27ad0828bea4525a7f2345d92b1",
+      "bytes": 27,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "external-unchanged-test-fixture",
+      "targets": [
+        "scripts/test-wilderness-native.py",
+        "docs/REPOSITORY-CLOSURE-2026-10-23.md"
+      ],
+      "scope": "external-test-data",
+      "verification": "All 28 fixture files were actually consumed by native six-PC load/navigation/save/reload test. Referenced by hash, not bundled as original game data; no language conversion applies."
+    },
+    {
+      "source": "tests/scenarios/saves/wild/CHRDATG1.STS",
+      "source_sha256": "7b6dfd4b101291b9d672f37cb407df1e67a908e1602f7c6d1fb8600de5926401",
+      "bytes": 1032,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "external-unchanged-test-fixture",
+      "targets": [
+        "scripts/test-wilderness-native.py",
+        "docs/REPOSITORY-CLOSURE-2026-10-23.md"
+      ],
+      "scope": "external-test-data",
+      "verification": "All 28 fixture files were actually consumed by native six-PC load/navigation/save/reload test. Referenced by hash, not bundled as original game data; no language conversion applies."
+    },
+    {
+      "source": "tests/scenarios/saves/wild/CHRDATG2.ITM",
+      "source_sha256": "41b8a496dc8b36295d57cb37003e3ed570c5eb19dd6734d3b52fe0a88aefb9b6",
+      "bytes": 252,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "external-unchanged-test-fixture",
+      "targets": [
+        "scripts/test-wilderness-native.py",
+        "docs/REPOSITORY-CLOSURE-2026-10-23.md"
+      ],
+      "scope": "external-test-data",
+      "verification": "All 28 fixture files were actually consumed by native six-PC load/navigation/save/reload test. Referenced by hash, not bundled as original game data; no language conversion applies."
+    },
+    {
+      "source": "tests/scenarios/saves/wild/CHRDATG2.MEM",
+      "source_sha256": "56fa9de6f9f57ba7a091c3d30958156acc46108f2841bea8862415f37f2fb7e3",
+      "bytes": 44,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "external-unchanged-test-fixture",
+      "targets": [
+        "scripts/test-wilderness-native.py",
+        "docs/REPOSITORY-CLOSURE-2026-10-23.md"
+      ],
+      "scope": "external-test-data",
+      "verification": "All 28 fixture files were actually consumed by native six-PC load/navigation/save/reload test. Referenced by hash, not bundled as original game data; no language conversion applies."
+    },
+    {
+      "source": "tests/scenarios/saves/wild/CHRDATG2.SAV",
+      "source_sha256": "5f19169be09e16cfd753a449acea5bba05e13a5291388e2943e5afb71f499244",
+      "bytes": 285,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "external-unchanged-test-fixture",
+      "targets": [
+        "scripts/test-wilderness-native.py",
+        "docs/REPOSITORY-CLOSURE-2026-10-23.md"
+      ],
+      "scope": "external-test-data",
+      "verification": "All 28 fixture files were actually consumed by native six-PC load/navigation/save/reload test. Referenced by hash, not bundled as original game data; no language conversion applies."
+    },
+    {
+      "source": "tests/scenarios/saves/wild/CHRDATG2.STS",
+      "source_sha256": "3983a9b26e5c20f5feae3dc98ff51e9cd0cbb27a645478bde49f3f4d509f423c",
+      "bytes": 1032,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "external-unchanged-test-fixture",
+      "targets": [
+        "scripts/test-wilderness-native.py",
+        "docs/REPOSITORY-CLOSURE-2026-10-23.md"
+      ],
+      "scope": "external-test-data",
+      "verification": "All 28 fixture files were actually consumed by native six-PC load/navigation/save/reload test. Referenced by hash, not bundled as original game data; no language conversion applies."
+    },
+    {
+      "source": "tests/scenarios/saves/wild/CHRDATG3.ITM",
+      "source_sha256": "93acf3f612b4aae4591aa15d574fe5b111a7677ee6a3d0bd3d87790b6e73b303",
+      "bytes": 189,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "external-unchanged-test-fixture",
+      "targets": [
+        "scripts/test-wilderness-native.py",
+        "docs/REPOSITORY-CLOSURE-2026-10-23.md"
+      ],
+      "scope": "external-test-data",
+      "verification": "All 28 fixture files were actually consumed by native six-PC load/navigation/save/reload test. Referenced by hash, not bundled as original game data; no language conversion applies."
+    },
+    {
+      "source": "tests/scenarios/saves/wild/CHRDATG3.MEM",
+      "source_sha256": "0ab6e7e28b14e7dbc0ed8384de764f9c7c67ff3fac9df5a1d1ad9acfd65769cd",
+      "bytes": 44,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "external-unchanged-test-fixture",
+      "targets": [
+        "scripts/test-wilderness-native.py",
+        "docs/REPOSITORY-CLOSURE-2026-10-23.md"
+      ],
+      "scope": "external-test-data",
+      "verification": "All 28 fixture files were actually consumed by native six-PC load/navigation/save/reload test. Referenced by hash, not bundled as original game data; no language conversion applies."
+    },
+    {
+      "source": "tests/scenarios/saves/wild/CHRDATG3.SAV",
+      "source_sha256": "83f9058a3c99471ec9819141ed86d890a70c604f457e63373699d5297f1126a7",
+      "bytes": 285,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "external-unchanged-test-fixture",
+      "targets": [
+        "scripts/test-wilderness-native.py",
+        "docs/REPOSITORY-CLOSURE-2026-10-23.md"
+      ],
+      "scope": "external-test-data",
+      "verification": "All 28 fixture files were actually consumed by native six-PC load/navigation/save/reload test. Referenced by hash, not bundled as original game data; no language conversion applies."
+    },
+    {
+      "source": "tests/scenarios/saves/wild/CHRDATG3.SPC",
+      "source_sha256": "61f7d673eb99a32864a435af45fdcdf23ca4c3ee8d2fc1265395f687d86c33fd",
+      "bytes": 9,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "external-unchanged-test-fixture",
+      "targets": [
+        "scripts/test-wilderness-native.py",
+        "docs/REPOSITORY-CLOSURE-2026-10-23.md"
+      ],
+      "scope": "external-test-data",
+      "verification": "All 28 fixture files were actually consumed by native six-PC load/navigation/save/reload test. Referenced by hash, not bundled as original game data; no language conversion applies."
+    },
+    {
+      "source": "tests/scenarios/saves/wild/CHRDATG3.STS",
+      "source_sha256": "dbd41cdd439a77168bd075beb945ee5587fa0fbd69aece7f1f8c5c5b20f977e9",
+      "bytes": 1032,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "external-unchanged-test-fixture",
+      "targets": [
+        "scripts/test-wilderness-native.py",
+        "docs/REPOSITORY-CLOSURE-2026-10-23.md"
+      ],
+      "scope": "external-test-data",
+      "verification": "All 28 fixture files were actually consumed by native six-PC load/navigation/save/reload test. Referenced by hash, not bundled as original game data; no language conversion applies."
+    },
+    {
+      "source": "tests/scenarios/saves/wild/CHRDATG4.ITM",
+      "source_sha256": "c6891f6b3e9044038948cb069c61b08c0d5c8d83beb64ba4272f2b1d78a1e35d",
+      "bytes": 189,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "external-unchanged-test-fixture",
+      "targets": [
+        "scripts/test-wilderness-native.py",
+        "docs/REPOSITORY-CLOSURE-2026-10-23.md"
+      ],
+      "scope": "external-test-data",
+      "verification": "All 28 fixture files were actually consumed by native six-PC load/navigation/save/reload test. Referenced by hash, not bundled as original game data; no language conversion applies."
+    },
+    {
+      "source": "tests/scenarios/saves/wild/CHRDATG4.MEM",
+      "source_sha256": "7a122b1ef25b083097b27425898f76707a71365b684e9ee735989cd75645e4ad",
+      "bytes": 44,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "external-unchanged-test-fixture",
+      "targets": [
+        "scripts/test-wilderness-native.py",
+        "docs/REPOSITORY-CLOSURE-2026-10-23.md"
+      ],
+      "scope": "external-test-data",
+      "verification": "All 28 fixture files were actually consumed by native six-PC load/navigation/save/reload test. Referenced by hash, not bundled as original game data; no language conversion applies."
+    },
+    {
+      "source": "tests/scenarios/saves/wild/CHRDATG4.SAV",
+      "source_sha256": "949965bcdd17674d044b16958c19184a4f99ef431ba285a8cdd2f3e54befd903",
+      "bytes": 285,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "external-unchanged-test-fixture",
+      "targets": [
+        "scripts/test-wilderness-native.py",
+        "docs/REPOSITORY-CLOSURE-2026-10-23.md"
+      ],
+      "scope": "external-test-data",
+      "verification": "All 28 fixture files were actually consumed by native six-PC load/navigation/save/reload test. Referenced by hash, not bundled as original game data; no language conversion applies."
+    },
+    {
+      "source": "tests/scenarios/saves/wild/CHRDATG4.STS",
+      "source_sha256": "1fac0d0cbf7efd489680108497c6574caa532eecbc7b3488826e4364fa7d95b3",
+      "bytes": 1032,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "external-unchanged-test-fixture",
+      "targets": [
+        "scripts/test-wilderness-native.py",
+        "docs/REPOSITORY-CLOSURE-2026-10-23.md"
+      ],
+      "scope": "external-test-data",
+      "verification": "All 28 fixture files were actually consumed by native six-PC load/navigation/save/reload test. Referenced by hash, not bundled as original game data; no language conversion applies."
+    },
+    {
+      "source": "tests/scenarios/saves/wild/CHRDATG5.ITM",
+      "source_sha256": "d844f0910856244cda46528fa24fd00def254e0cabf9ac0472b8188b7134e056",
+      "bytes": 126,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "external-unchanged-test-fixture",
+      "targets": [
+        "scripts/test-wilderness-native.py",
+        "docs/REPOSITORY-CLOSURE-2026-10-23.md"
+      ],
+      "scope": "external-test-data",
+      "verification": "All 28 fixture files were actually consumed by native six-PC load/navigation/save/reload test. Referenced by hash, not bundled as original game data; no language conversion applies."
+    },
+    {
+      "source": "tests/scenarios/saves/wild/CHRDATG5.MEM",
+      "source_sha256": "77bd4b8b30f59a4773b91cbcc16903ec44302e61c7db10fd31848813304b1b15",
+      "bytes": 44,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "external-unchanged-test-fixture",
+      "targets": [
+        "scripts/test-wilderness-native.py",
+        "docs/REPOSITORY-CLOSURE-2026-10-23.md"
+      ],
+      "scope": "external-test-data",
+      "verification": "All 28 fixture files were actually consumed by native six-PC load/navigation/save/reload test. Referenced by hash, not bundled as original game data; no language conversion applies."
+    },
+    {
+      "source": "tests/scenarios/saves/wild/CHRDATG5.SAV",
+      "source_sha256": "dd9b5dc1aecce155d09a2dd80fb85570d42d70b79fa1f7ed072c3b8936062b08",
+      "bytes": 285,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "external-unchanged-test-fixture",
+      "targets": [
+        "scripts/test-wilderness-native.py",
+        "docs/REPOSITORY-CLOSURE-2026-10-23.md"
+      ],
+      "scope": "external-test-data",
+      "verification": "All 28 fixture files were actually consumed by native six-PC load/navigation/save/reload test. Referenced by hash, not bundled as original game data; no language conversion applies."
+    },
+    {
+      "source": "tests/scenarios/saves/wild/CHRDATG5.STS",
+      "source_sha256": "ce8e9794f1dcde660af658559f72354fcfffb890d4434e1964120847510c3a3f",
+      "bytes": 1032,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "external-unchanged-test-fixture",
+      "targets": [
+        "scripts/test-wilderness-native.py",
+        "docs/REPOSITORY-CLOSURE-2026-10-23.md"
+      ],
+      "scope": "external-test-data",
+      "verification": "All 28 fixture files were actually consumed by native six-PC load/navigation/save/reload test. Referenced by hash, not bundled as original game data; no language conversion applies."
+    },
+    {
+      "source": "tests/scenarios/saves/wild/CHRDATG6.ITM",
+      "source_sha256": "8f15fd92db33e447ede2adc4a6a819e9470cd39fc829a14d718212b4b593c822",
+      "bytes": 189,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "external-unchanged-test-fixture",
+      "targets": [
+        "scripts/test-wilderness-native.py",
+        "docs/REPOSITORY-CLOSURE-2026-10-23.md"
+      ],
+      "scope": "external-test-data",
+      "verification": "All 28 fixture files were actually consumed by native six-PC load/navigation/save/reload test. Referenced by hash, not bundled as original game data; no language conversion applies."
+    },
+    {
+      "source": "tests/scenarios/saves/wild/CHRDATG6.SAV",
+      "source_sha256": "3b34c8bdc5ce2d1e1e223521130bd8c0e915ceb2c0385a292b755733441f07fc",
+      "bytes": 285,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "external-unchanged-test-fixture",
+      "targets": [
+        "scripts/test-wilderness-native.py",
+        "docs/REPOSITORY-CLOSURE-2026-10-23.md"
+      ],
+      "scope": "external-test-data",
+      "verification": "All 28 fixture files were actually consumed by native six-PC load/navigation/save/reload test. Referenced by hash, not bundled as original game data; no language conversion applies."
+    },
+    {
+      "source": "tests/scenarios/saves/wild/CHRDATG6.SPC",
+      "source_sha256": "61f7d673eb99a32864a435af45fdcdf23ca4c3ee8d2fc1265395f687d86c33fd",
+      "bytes": 9,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "external-unchanged-test-fixture",
+      "targets": [
+        "scripts/test-wilderness-native.py",
+        "docs/REPOSITORY-CLOSURE-2026-10-23.md"
+      ],
+      "scope": "external-test-data",
+      "verification": "All 28 fixture files were actually consumed by native six-PC load/navigation/save/reload test. Referenced by hash, not bundled as original game data; no language conversion applies."
+    },
+    {
+      "source": "tests/scenarios/saves/wild/CHRDATG6.STS",
+      "source_sha256": "04e1f5ae6be4394050094f0fe6bb61ba719b0d5eef2df40f79819e5925c54927",
+      "bytes": 1032,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "external-unchanged-test-fixture",
+      "targets": [
+        "scripts/test-wilderness-native.py",
+        "docs/REPOSITORY-CLOSURE-2026-10-23.md"
+      ],
+      "scope": "external-test-data",
+      "verification": "All 28 fixture files were actually consumed by native six-PC load/navigation/save/reload test. Referenced by hash, not bundled as original game data; no language conversion applies."
+    },
+    {
+      "source": "tests/scenarios/saves/wild/SAVGAMG.DAT",
+      "source_sha256": "561ecc0904d294abfeaef786d75c83b8666e8777c86af934254845d14ba191bb",
+      "bytes": 13137,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "external-unchanged-test-fixture",
+      "targets": [
+        "scripts/test-wilderness-native.py",
+        "docs/REPOSITORY-CLOSURE-2026-10-23.md"
+      ],
+      "scope": "external-test-data",
+      "verification": "All 28 fixture files were actually consumed by native six-PC load/navigation/save/reload test. Referenced by hash, not bundled as original game data; no language conversion applies."
+    },
+    {
+      "source": "tests/scenarios/saves/wild/SAVGAMG.INF",
+      "source_sha256": "ff73369e7b4c956c417889591ababed43974dcb43a5f79dce91357afa6c460c6",
+      "bytes": 56,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "external-unchanged-test-fixture",
+      "targets": [
+        "scripts/test-wilderness-native.py",
+        "docs/REPOSITORY-CLOSURE-2026-10-23.md"
+      ],
+      "scope": "external-test-data",
+      "verification": "All 28 fixture files were actually consumed by native six-PC load/navigation/save/reload test. Referenced by hash, not bundled as original game data; no language conversion applies."
+    },
+    {
+      "source": "tests/scenarios/saves/wild/SAVGAMG.STS",
+      "source_sha256": "7e9084e5fdb53331df77e57f8190be836d6de17d8436f8efb86c89925bca67be",
+      "bytes": 1032,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "external-unchanged-test-fixture",
+      "targets": [
+        "scripts/test-wilderness-native.py",
+        "docs/REPOSITORY-CLOSURE-2026-10-23.md"
+      ],
+      "scope": "external-test-data",
+      "verification": "All 28 fixture files were actually consumed by native six-PC load/navigation/save/reload test. Referenced by hash, not bundled as original game data; no language conversion applies."
+    },
+    {
+      "source": "tests/scenarios/shop.txt",
+      "source_sha256": "4a84c664c741140fdcfd221bd3a8de8970c8a1b3505b49a020ee7b3a503096cb",
+      "bytes": 929,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "preserved-scenario-definition",
+      "targets": [
+        "tests/UpstreamScenarios/shop.txt",
+        "src/Por.UpstreamTools/Scenario.cs",
+        "tests/Por.Upstream.Tests/Program.cs"
+      ],
+      "preserved_original": "references/upstream-pinned/tests/scenarios/shop.txt",
+      "scope": "repository-support",
+      "verification": "Exact original bytes retained as historical reference; managed replacements are not SSI DOS binary reproduction or full scenario execution proof."
+    },
+    {
+      "source": "tests/scenarios/ssiformat.txt",
+      "source_sha256": "51404947b9a6e26c61064c7fca91fd928c53bbe923b3badd244bf5f5671bcd5d",
+      "bytes": 2365,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "preserved-scenario-definition",
+      "targets": [
+        "tests/UpstreamScenarios/ssiformat.txt",
+        "src/Por.UpstreamTools/Scenario.cs",
+        "tests/Por.Upstream.Tests/Program.cs"
+      ],
+      "preserved_original": "references/upstream-pinned/tests/scenarios/ssiformat.txt",
+      "scope": "repository-support",
+      "verification": "Exact original bytes retained as historical reference; managed replacements are not SSI DOS binary reproduction or full scenario execution proof."
+    },
+    {
+      "source": "tests/scenarios/vault.txt",
+      "source_sha256": "6652e95ecca1c5a3e2ef319b4cd41fa67040ee92c839f92a627cb610b0a98584",
+      "bytes": 960,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "preserved-scenario-definition",
+      "targets": [
+        "tests/UpstreamScenarios/vault.txt",
+        "src/Por.UpstreamTools/Scenario.cs",
+        "tests/Por.Upstream.Tests/Program.cs"
+      ],
+      "preserved_original": "references/upstream-pinned/tests/scenarios/vault.txt",
+      "scope": "repository-support",
+      "verification": "Exact original bytes retained as historical reference; managed replacements are not SSI DOS binary reproduction or full scenario execution proof."
+    },
+    {
+      "source": "tests/scenarios/wilderness.txt",
+      "source_sha256": "fedf211fd2ce04733783bf0cb8637ffa6603c98ade15ad9ff869cee8ac0047ab",
+      "bytes": 984,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "preserved-scenario-definition",
+      "targets": [
+        "tests/UpstreamScenarios/wilderness.txt",
+        "src/Por.UpstreamTools/Scenario.cs",
+        "tests/Por.Upstream.Tests/Program.cs"
+      ],
+      "preserved_original": "references/upstream-pinned/tests/scenarios/wilderness.txt",
+      "scope": "repository-support",
+      "verification": "Exact original bytes retained as historical reference; managed replacements are not SSI DOS binary reproduction or full scenario execution proof."
+    },
+    {
+      "source": "tests/scenarios/wildfight.txt",
+      "source_sha256": "3c97cdf22231380af6d7a4f65560b72765e5ef15a6474d6ec418b349462373db",
+      "bytes": 1978,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "preserved-scenario-definition",
+      "targets": [
+        "tests/UpstreamScenarios/wildfight.txt",
+        "src/Por.UpstreamTools/Scenario.cs",
+        "tests/Por.Upstream.Tests/Program.cs"
+      ],
+      "preserved_original": "references/upstream-pinned/tests/scenarios/wildfight.txt",
+      "scope": "repository-support",
+      "verification": "Exact original bytes retained as historical reference; managed replacements are not SSI DOS binary reproduction or full scenario execution proof."
+    },
+    {
+      "source": "tests/sndtrc.pas",
+      "source_sha256": "28f13f5d281e82850f60e85c92b134e0953959ae3dbd50f89a92e1f64460845d",
+      "bytes": 1588,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-trace-harness-replacement",
+      "targets": [
+        "src/Por.UpstreamTools/SoundTrace.cs",
+        "src/Por.Core/Sound/SoundDriver.cs",
+        "tests/Por.Upstream.Tests/Program.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Required trace API through real managed driver; 0..64-word capacity/reset/drop/port packing checked, plus driver golden and OPL reset consumers."
+    },
+    {
+      "source": "tests/tabiladj.pas",
+      "source_sha256": "d6ba7c9f1650bf45f4775e81568d29292a0010df379b52e34b4f24a45fc1604e",
+      "bytes": 6366,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-test-replacement",
+      "targets": [
+        "tests/Por.Tests/RulesChecks.cs",
+        "tests/Por.NextTen.Tests/CharHlpChecks2.cs",
+        "tests/Por.NextTen.Tests/CharHlpChecks3.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Pascal test program mapped to C# test coverage: named C# test files reference the same unit. Assertion-level equivalence NOT audited."
+    },
+    {
+      "source": "tests/tareas.pas",
+      "source_sha256": "af1bd5dcd5cb1adc5cd86b7d0fbbb3676100ec6390937e305ef9fb209fe5a48a",
+      "bytes": 1356,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-test-replacement",
+      "targets": [
+        "tests/Por.NextTen.Tests/SaveMenuChecks.cs",
+        "tests/Por.Leaf.Tests/Program.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Pascal test program mapped to C# test coverage: named C# test files reference the same unit. Assertion-level equivalence NOT audited."
+    },
+    {
+      "source": "tests/tcharhlp.pas",
+      "source_sha256": "2effe4866628a688b1776733eadc60c53948f839dd76226627d4d35ba0b9c32d",
+      "bytes": 8880,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-test-replacement",
+      "targets": [
+        "tests/Por.FinalThree.Tests/DungeonOracle.cs",
+        "tests/Por.DirectTen.Tests/Program.cs",
+        "tests/Por.FxEngine.Tests/Program.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Pascal test program mapped to C# test coverage: named C# test files reference the same unit. Assertion-level equivalence NOT audited."
+    },
+    {
+      "source": "tests/tclascal.pas",
+      "source_sha256": "6f3cb9719b600aa3792e5eba89a11444b40bd80f1bb77a6b320d4ffc0adec065",
+      "bytes": 19107,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-test-replacement",
+      "targets": [
+        "tests/Por.Adventure.Tests/Program.cs",
+        "tests/Por.OrderedFour.Tests/CharGenChecks.cs",
+        "tests/Por.NextTen.Tests/TenDChecks.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Pascal test program mapped to C# test coverage: named C# test files reference the same unit. Assertion-level equivalence NOT audited."
+    },
+    {
+      "source": "tests/tclock.pas",
+      "source_sha256": "d0a51aa2a8fc848a133a6d788ff83d94cec95597a5d1f8f61a7dab5726f9b7b6",
+      "bytes": 2856,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-test-replacement",
+      "targets": [
+        "tests/Por.Global.Tests/GlobalVerification.cs",
+        "tests/Por.NextTen.Tests/CampOracle.cs",
+        "tests/Por.NextTen.Tests/SaveMenuChecks.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Pascal test program mapped to C# test coverage: named C# test files reference the same unit. Assertion-level equivalence NOT audited."
+    },
+    {
+      "source": "tests/tdataarc.pas",
+      "source_sha256": "c0143783fbd2aef15040871bf8a48e83b49989994ae46a9d6a95b2773a6132e6",
+      "bytes": 2059,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-test-replacement",
+      "targets": [
+        "tests/Por.Data.Tests/DataLaneTests.cs",
+        "tests/Por.Data.Tests/ArchiveTests.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Pascal test program mapped to C# test coverage: named C# test files reference the same unit. Assertion-level equivalence NOT audited."
+    },
+    {
+      "source": "tests/tdatapat.pas",
+      "source_sha256": "7a762b7b205f98e70604db723e76826b2851468e40b46d48ab602966e72aff35",
+      "bytes": 2859,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-test-replacement",
+      "targets": [
+        "tests/Por.Builder.Tests/Program.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Pascal test program mapped to C# test coverage: named C# test files reference the same unit. Assertion-level equivalence NOT audited."
+    },
+    {
+      "source": "tests/tecltrc.pas",
+      "source_sha256": "2af4cf69ad2bbfec88ee8910ee44b2ad33556e139ebc7ca060cf44ffd708ffe6",
+      "bytes": 684,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-test-replacement",
+      "targets": [
+        "tests/Por.SixLeaves.Tests/Program.cs",
+        "tests/Por.EclVm.Tests/CoreChecks.cs",
+        "tests/Por.SixFiles.Tests/Program.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Pascal test program mapped to C# test coverage: named C# test files reference the same unit. Assertion-level equivalence NOT audited."
+    },
+    {
+      "source": "tests/teclvars.pas",
+      "source_sha256": "05014a14ced6c8852d8b2778925c2e3c3babe7d8a92e72ea672322f8fb0f39de",
+      "bytes": 9196,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-test-replacement",
+      "targets": [
+        "tests/Por.EclPair.Tests/EclMenuChecks.cs",
+        "tests/Por.EclPair.Tests/Program.cs",
+        "tests/Por.FxEngine.Tests/StateChecks.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Pascal test program mapped to C# test coverage: named C# test files reference the same unit. Assertion-level equivalence NOT audited."
+    },
+    {
+      "source": "tests/testkit.pas",
+      "source_sha256": "ac3c4c65c42d148e48557319932cef462b328bb4dfb6124733affb1d5ab884ec",
+      "bytes": 1983,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-test-harness-replacement",
+      "targets": [
+        "tests/Por.NextTen.Tests/Program.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Pascal unit-test helper (Start/Check/CheckEquals). C# NextTen harness provides Yes/Eq/EqS helpers and group registration."
+    },
+    {
+      "source": "tests/tevtkind.pas",
+      "source_sha256": "1cb9ea6f37fc858780ae03a9e6e631a70196496d9af3bc6e269a173c1e2fc361",
+      "bytes": 2987,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-test-replacement",
+      "targets": [
+        "tests/Por.EvtKind.Tests"
+      ],
+      "scope": "source-inventory",
+      "verification": "Pascal test program mapped to C# test coverage: named C# test files reference the same unit. Assertion-level equivalence NOT audited."
+    },
+    {
+      "source": "tests/texplore.pas",
+      "source_sha256": "abb15784b3f45e9935f83a804ceda43d174adf1fa5fb8680bf6ca08019e93914",
+      "bytes": 1459,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-test-replacement",
+      "targets": [
+        "tests/Por.TenMore.Tests/View3DChecks.cs",
+        "tests/Por.CompTool.Tests/Program.cs",
+        "tests/Por.Leaf.Tests/Program.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Pascal test program mapped to C# test coverage: named C# test files reference the same unit. Assertion-level equivalence NOT audited."
+    },
+    {
+      "source": "tests/tfileutl.pas",
+      "source_sha256": "bfe08d898e9e5d6384b523a666d6940bdfbe0d624f2f0d47acc2f857c836255a",
+      "bytes": 1551,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-test-replacement",
+      "targets": [
+        "tests/Por.DirectTen.Tests/Program.cs",
+        "tests/Por.Data.Tests/DataVerification.cs",
+        "tests/Por.Data.Tests/DataLaneTests.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Pascal test program mapped to C# test coverage: named C# test files reference the same unit. Assertion-level equivalence NOT audited."
+    },
+    {
+      "source": "tests/tfxremov.pas",
+      "source_sha256": "5170cec8725524ea9ce99ee30e38e2a08067fcda97369e40c1249973646c7544",
+      "bytes": 2412,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-test-replacement",
+      "targets": [
+        "tests/Por.FxEngine.Tests/Program.cs",
+        "tests/Por.FxEngine.Tests/StateChecks.cs",
+        "tests/Por.EclVm.Tests/Fake.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Pascal test program mapped to C# test coverage: named C# test files reference the same unit. Assertion-level equivalence NOT audited."
+    },
+    {
+      "source": "tests/tjrnl.pas",
+      "source_sha256": "f1b45f65fe6ca71ec2ff7fd3d56f35efa1147f1920516c480c1d86363d647662",
+      "bytes": 3134,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-test-replacement",
+      "targets": [
+        "tests/Por.NextTen.Tests/JrnlViewChecks.cs",
+        "tests/Por.Journal.Tests/Program.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Pascal test program mapped to C# test coverage: named C# test files reference the same unit. Assertion-level equivalence NOT audited."
+    },
+    {
+      "source": "tests/tmapnote.pas",
+      "source_sha256": "83344fedb8a72b078e01773ada26a5ead917249ce5be541c2503cbdec574a66d",
+      "bytes": 1681,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-test-replacement",
+      "targets": [
+        "tests/Por.CompTool.Tests/Program.cs",
+        "tests/Por.Leaf.Tests/Program.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Pascal test program mapped to C# test coverage: named C# test files reference the same unit. Assertion-level equivalence NOT audited."
+    },
+    {
+      "source": "tests/tmoneyca.pas",
+      "source_sha256": "b627cd601e2ddff0d9b4af9bed655989462e6de3ab58df14d9b6c176b1f45f90",
+      "bytes": 5926,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-test-replacement",
+      "targets": [
+        "tests/Por.DirectTen.Tests/Program.cs",
+        "tests/Por.NextTen.Tests/ViewCharChecks2.cs",
+        "tests/Por.NextTen.Tests/EasiestTenChecks.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Pascal test program mapped to C# test coverage: named C# test files reference the same unit. Assertion-level equivalence NOT audited."
+    },
+    {
+      "source": "tests/tpathing.pas",
+      "source_sha256": "65b257d2598a255ff7186c2071d5eeda5e457f4ef8227e58a5b071380bf05765",
+      "bytes": 7349,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-test-replacement",
+      "targets": [
+        "tests/Por.Pathing.Tests/Program.cs",
+        "tests/Por.FinalThree.Tests/AiBehavior.cs",
+        "tests/Por.NextTen.Tests/MagicOracle.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Pascal test program mapped to C# test coverage: named C# test files reference the same unit. Assertion-level equivalence NOT audited."
+    },
+    {
+      "source": "tests/tranditm.pas",
+      "source_sha256": "27e6bf5b78ad820d4d04f15ec5df5fa8154e8ad5ac4afd3c8752e31487b1f5be",
+      "bytes": 4070,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-test-replacement",
+      "targets": [
+        "tests/Por.NextTen.Tests/VaultChecks.cs",
+        "tests/Por.Leaf.Tests/Program.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Pascal test program mapped to C# test coverage: named C# test files reference the same unit. Assertion-level equivalence NOT audited."
+    },
+    {
+      "source": "tests/treclay.pas",
+      "source_sha256": "e624aeabc879b933ee40e6c8f0ebc5fb11548d917eeb67f13dd98e0d39d27f8a",
+      "bytes": 8114,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-test-replacement",
+      "targets": [
+        "tests/Por.Types.Tests/SourceZoneLayout.cs",
+        "tests/Por.Types.Tests/TypesVerification.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Pascal test program mapped to C# test coverage: named C# test files reference the same unit. Assertion-level equivalence NOT audited."
+    },
+    {
+      "source": "tests/tsavelay.pas",
+      "source_sha256": "d3e7b7cd126101e0967320823bdc67ccc6bd84e479d70d6c70e34337d252fe42",
+      "bytes": 3199,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-test-replacement",
+      "targets": [
+        "tests/Por.NextTen.Tests/TenDChecks.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Pascal test program mapped to C# test coverage: named C# test files reference the same unit. Assertion-level equivalence NOT audited."
+    },
+    {
+      "source": "tests/tsndopl.pas",
+      "source_sha256": "fc6bf84bb6c32721e6076e15ecd5dbd44414ad9ae5bb42e167d602f6f82779a5",
+      "bytes": 6713,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-test-replacement",
+      "targets": [
+        "tests/Por.FinalThree.Tests/AdlibChecks.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "28 tunes x 400 ticks, tone pitch/level/key/noise checks, reset size and sounding/noisy sample thresholds. Actual existing implementation reverified; prior missing claim was stale."
+    },
+    {
+      "source": "tests/tsndseq.pas",
+      "source_sha256": "614693d4a27d654d9e3ec42b2aa2910c3389fce58a955a46f9e705d2b6706ac6",
+      "bytes": 6596,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-test-replacement",
+      "targets": [
+        "tests/Por.FinalThree.Tests/Program.cs",
+        "tests/Por.FinalThree.Tests/SoundGoldenRecords.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "SoundGolden: all 58 upstream SSI-recorded per-tick write-count/CRC/tick-count tuples, no historical evidence file dependency."
+    },
+    {
+      "source": "tests/tstats.pas",
+      "source_sha256": "493211268b5c1674021e9c7fd58366781c923e26dca9c020a116c9903ff1f68b",
+      "bytes": 5559,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-test-replacement",
+      "targets": [
+        "tests/Por.NextTen.Tests/ViewCharChecks2.cs",
+        "tests/Por.NextTen.Tests/ViewCharOracle.cs",
+        "tests/Por.FxEngine.Tests/Program.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Pascal test program mapped to C# test coverage: named C# test files reference the same unit. Assertion-level equivalence NOT audited."
+    },
+    {
+      "source": "tests/tstrutil.pas",
+      "source_sha256": "1d31d339175f02d1603bda72e2070aa9d77abe1a834d47a672b86dc20b497e4c",
+      "bytes": 1266,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-test-replacement",
+      "targets": [
+        "tests/Por.Data.Tests/StrUtilTests.cs",
+        "tests/Por.Data.Tests/DataLaneTests.cs",
+        "tests/Por.Tests/ConstantChecks.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Pascal test program mapped to C# test coverage: named C# test files reference the same unit. Assertion-level equivalence NOT audited."
+    },
+    {
+      "source": "tests/tusualsp.pas",
+      "source_sha256": "545d4563a3de64082d744ab99b0332b1bb24600acd0f72bf7396399128a49d56",
+      "bytes": 4102,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-test-replacement",
+      "targets": [
+        "tests/Por.NextTen.Tests/CampChecks1.cs",
+        "tests/Por.NextTen.Tests/CampChecks2.cs",
+        "tests/Por.Leaf.Tests/Program.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Pascal test program mapped to C# test coverage: named C# test files reference the same unit. Assertion-level equivalence NOT audited."
+    },
+    {
+      "source": "tests/tvidpic.pas",
+      "source_sha256": "3adc1dc98b5983b03529c422dc2b72b3f7f3eeaac36430bd100ce8773722f2db",
+      "bytes": 7023,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "csharp-test-replacement",
+      "targets": [
+        "tests/Por.TenMore.Tests/VideoChecks.cs",
+        "tests/Por.TenMore.Tests/MapTilesChecks.cs"
+      ],
+      "scope": "source-inventory",
+      "verification": "Pascal test program mapped to C# test coverage: named C# test files reference the same unit. Assertion-level equivalence NOT audited."
+    },
+    {
+      "source": "tools/sbsfx.py",
+      "source_sha256": "f17db8ef5f5371ef37e77639f3401b693f10d798fb3f7a118de450f5bfa54600",
+      "bytes": 8303,
+      "handled": true,
+      "gameplay_runtime_validated": false,
+      "disposition": "verified-recorded-pack-builder-replacement",
+      "targets": [
+        "scripts/build-sbsfx.py",
+        "scripts/test-sbsfx.py"
+      ],
+      "preserved_original": "references/upstream-pinned/tools/sbsfx.py",
+      "scope": "repository-support",
+      "verification": "Exact original bytes retained as historical reference; managed replacements are not SSI DOS binary reproduction or full scenario execution proof."
+    }
+  ]
+}

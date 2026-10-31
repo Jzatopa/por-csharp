@@ -48,6 +48,8 @@ namespace Por.Core
         {
             finalSfx = GDVars.virtualDisk.ToString(System.Globalization.CultureInfo.InvariantCulture).Substring(0,1);
             savedIfc = GDVars.ifcState; GDVars.ifcState = C_Ifc.WON_GAME; finalPic = null;
+            // Post-pin upstream 8149706 (#1100): the loot menu otherwise survives the whole ending.
+            TextRend.ClearBottomLine();
             TextRend.ClearRect(1,17,38,22);
             TextRend.DisplayString(1,17,10,"Mortally wounded, the dragon roars!");
             TextRend.DisplayString(1,18,10,"The spirit of Tyranthraxus flares up");

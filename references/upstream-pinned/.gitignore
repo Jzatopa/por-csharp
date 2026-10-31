@@ -1,0 +1,33 @@
+# The game, the DOS tools and the build's output: local to each machine.
+/drive_c/
+/drive_d/
+/obj/
+/build/logs/
+*.TPU
+*.OBJ
+*.OUT
+GPATH
+GRTAGS
+GTAGS
+
+# The disassembly project's tooling and notes, which this repository does not carry.
+/AGENTS.md
+/CLAUDE.md
+/gametools/
+/goldbox.toml
+/requirements.txt
+/.build.lock
+/.claude/
+/.venv/
+/.pytest_cache/
+/*.py
+__pycache__/
+
+# DOSBox-X captures
+capture/
+
+# Release zips made by package.sh
+/dist/
+
+# Golden builds the behaviour regression compares against (tests/scenarios; goldbox-player tools/regress.py)
+/.golden/

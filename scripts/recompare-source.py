@@ -33,7 +33,11 @@ for entry in ledger['files']:
     raw = path.read_bytes()
     assert hashlib.sha256(raw).hexdigest() == entry['source_sha256'], ('source changed', entry['source'])
     targets = [root/t for t in entry['targets']]
-    assert targets and all(t.is_file() for t in targets), ('missing target', entry['source'])
+    if entry['handled']:
+        assert targets and all(t.exists() for t in targets), ('missing target', entry['source'])
+    if not entry['source'].startswith('src/'):
+        rows.append(dict(source=entry['source'], source_sha256=entry['source_sha256'], handled=entry['handled'], routine_identifiers=0, adaptations={}, audit_scope='Auxiliary input hash/target existence only; not assertion equivalence'))
+        continue
     names = set()
     if path.suffix.lower() == '.pas':
         text = re.sub(r"\{.*?\}|\(\*.*?\*\)|'(?:''|[^'])*'", ' ', raw.decode('cp437'), flags=re.S)

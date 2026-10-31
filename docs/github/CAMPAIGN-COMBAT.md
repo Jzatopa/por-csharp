@@ -1,6 +1,6 @@
 # Campaign combat validation
 
-Status: started, incomplete. No natural-route campaign completion is claimed.
+Status: incomplete. The current ledger records 18 fixture encounter outcomes and 13 overlapping wilderness adventure lifecycles, not thirty-one distinct encounters. No natural-route campaign completion is claimed.
 
 ## Accepted native outcomes
 
@@ -32,4 +32,6 @@ Pass `--data /path/to/poolofrad` to native replays when media is not in the laun
 
 Independent Claude review confirmed the new victory/persistence evidence. Pinned Pascal corroborates the intentional flee result `$81`, disabled-monster defeat counting, and unconditional transient-modifier reset. These are not identified implementation defects.
 
-Pending: natural campaign progression and quest prerequisites; late-game/final battles; actual fleeing; multi-PC/downed-member cases; dropped-item acquisition; ranged/spell/item/turn-undead/status interactions; wilderness/large-icon/capacity cases; additional loss/recovery variants. Static classification, two native victories and one defeat/recovery do not establish full-game correctness. Defeat state is recorded at the actual game-over input boundary; timing-based controller attempts are not counted as passes.
+Additional accepted seeded runs cover actual single-PC fleeing, a pre-seeded unconscious positive-HP ally recovering, and native dropped-item acquisition, each through actual exploration/save/load. The earlier six outcomes have expanded to 18 fixture outcomes in schema 4, including six-PC wilderness victory, explicit Magic Missile, Giant Strength potion, ranged firing/miss, Cure Light Wounds and Bless. Thirteen wilderness adventure entries overlap these outcomes. The latest six branches cover enhanced ranged damage, last-ammunition removal, ally healing, HP ceiling, seeded bandaging, and ineligible/once-only turning; see [expanded passes](EXPANDED-THREE-PASSES-2026-10-25.md). Ranged/healing use explicitly documented disposable pre-load variants; Bless uses the unchanged fixture. See [three action passes](THREE-ACTION-PASSES-2026-10-24.md). Pending: natural campaign progression and quest prerequisites; late-game/final battles; multi-PC flee and natural downing/revival; additional ranged/spell/item/status interactions and positive undead turning; additional wilderness types/large-icon/capacity cases; additional loss/recovery variants. These narrow cases do not establish full-game correctness. Defeat state is recorded at the actual game-over input boundary; timing-based controller attempts are not counted as passes.
+
+See [six-character wilderness pass](WILDERNESS-PASS-2026-10-23.md) for fixture scope and the explicit stabilization of an undefined legacy read.
